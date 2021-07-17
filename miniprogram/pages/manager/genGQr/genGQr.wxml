@@ -1,0 +1,6 @@
+<view>
+{{description}}
+</view>
+<view class="bottom-opt">
+  <text class="btn"  bindtap="shareGoods" data-page="" data-params="">分享</text>
+</view>

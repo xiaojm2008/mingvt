@@ -1,0 +1,50 @@
+<view class="ext-horiz-view bar" wx:if="{{selectedArr.length > 0}}">
+  <view class="view-item">
+    <view class="flex-box no-line" style="padding-left:20px;">
+      <block wx:for="{{selectedArr}}" wx:for-index="index" wx:key="code" wx:for-item="item">
+        <view class="flex-item2" data-index="{{index}}" catchtap="tapCategoryItem">
+          <icon class="icon" type="{{item.active? 'success_circle':'circle'}}" size="20"></icon>
+          <text class="line-clamp text">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="ext-horiz-view bar" wx:else>
+  <view class="view-item center">
+    <view>
+      <text class="iconshow iconfont icon-fuwu"></text>请选择{{catetype=='1'?'商品':'店铺'}}分类</view>
+  </view>
+</view>
+<view class="cate-panel" style="height:{{windowHeight-offsetHeight}}px;">
+  <scroll-view class="navigate" scroll-y="yes">
+    <view wx:for="{{category}}" wx:key="code" wx:for-index="index" data-index="{{index}}" hover-class="hover-item" class="item {{selected == index ? 'select-item':''}}" catchtap="tapHandler" data-code="{{item.code}}">
+      <text class="txt">{{item.name}}</text>
+    </view>
+  </scroll-view>
+  <scroll-view class="content" scroll-y="yes">
+    <view class="header"></view>
+    <view class="body">
+      <view class="ext-horiz-view">
+        <view class="view-item fix-item">
+          <block wx:for="{{category[selected].items}}" wx:key="id" wx:for-item="child" wx:for-index="index">
+            <view class="flex-item" hover-class="flex-active" catchtap="selectAction" data-index="{{index}}">
+              <view class="cell-item">
+                <image class="svgimg" src="{{child.img?child.img:defaultImg}}"></image>
+              </view>
+              <text class='cell-item line-clamp'>{{child.name}}</text>
+              <text wx:if="{{child.active!==undefined}}" class="triangle-tr"><text class="iconfont {{child.active?'icon-gou':'icon-closes'}}"></text></text>
+            </view>
+          </block>
+          <block wx:if="{{category[selected].items.length % 3 == 2}}">
+            <view class="flex-item">
+              <text class="cell-item"></text>
+              <text class="cell-item"></text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="tail"></view>
+  </scroll-view>
+</view>

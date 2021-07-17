@@ -1,0 +1,50 @@
+@import "../../components/template/orderlist/orderlist.wxss";
+
+.order-center .right{
+  flex:1 1 80px;
+}
+/*
+.order-shopinfo .icon-rightarrow{
+  padding-left: 2px;
+}*/
+.custom{
+  position: fixed;
+  height: 45px;
+  width: 100%;  
+  right: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  box-sizing: border-box;/*盒子模式，nav.height:100%+custom.padding-top=65px*/
+}
+.custom .nav{
+  flex:1 1 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+}
+.custom .nav .operBtn{
+  width: 25px;
+  font-size: 22px;
+  margin-left: 8px;
+  color: rgb(180, 174, 174);
+}
+.custom .nav .reback{
+  margin-left:17rpx;
+  font-weight:500;
+  font-size:26px;
+}
+.custom .nav .title{
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+}
+.custom .content{
+  position:fixed;
+  left:0;
+  right:0;
+  z-index:99;
+}

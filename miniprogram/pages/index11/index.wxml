@@ -1,0 +1,75 @@
+<import src="../../components/coupon/coupon.wxml" />
+<import src="../../components/goodsList/goodsList.wxml" />
+<scroll-view scroll-y style="height:{{windowHeight}}px;" bindscrolltolower="loadMore" class="home">
+  <!--跑马灯 Linyufan.com-->
+  <view class="marquee_container" style="--marqueeWidth--:-12em">
+    <view class="marquee_text"> {{announcementText}}</view>
+  </view>
+  <!--跑马灯-->
+
+  <view class='carousel'>
+    <view class="carousel-head">
+      <view class="carousel-title">美丽美家精选</view>
+    </view>
+    <swiper display-multiple-items='1' circular="true" autoplay="true" interval="2000" duration="750" previous-margin='40px' next-margin='40px'>
+      <block wx:for="{{carousel}}" wx:key="goodsno">
+        <swiper-item catchtap="tapToItemHandler" data-goodsno="{{item.goodsno}}">
+          <view class='box'>
+            <image src='{{item.picpath}}'></image>
+            <view class='swiper-text'>
+              <text>{{item.name}}</text>
+            </view>
+            <view class='swiper-price'>
+              <text style="float:left">现价：¥{{item.price}}</text>
+              <text style="float:right">已售：{{item.buycount}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='coupon' wx:if="{{coupons && coupons.length > 0}}">
+    <view catchtap="goToPage" data-page="myCoupon" class="subject">
+      <text class="subname">优惠券</text>
+      <!-- <label class="sub-icon-right ico-moon icon-rightarrow"></label>-->
+    </view>
+    <template is="coupon" data="{{coupons:coupons}}"></template>
+  </view>
+  <view class="toprank">
+    <view catchtap="goToPage" data-page="myRank" class="subject">
+      <text class="subname">销售排名</text>
+      <!-- <label class="sub-icon-right ico-moon icon-rightarrow"></label>-->
+    </view>
+    <block wx:for="{{toprank}}" wx:key="goodsno">
+      <view class="showline">
+        <view class="row" catchtap="tapToItemHandler" data-goodsno="{{item.goodsno}}">
+          <view class="column1">
+            <image class="trump" src="{{item.picpath}}"></image>
+          </view>
+          <view class="column2">
+            <view class="row">
+              <view class="text-col" style="height:30px;line-height: 30px;">{{item.goodsname}}</view>
+            </view>
+            <view class="row">
+              <view class="text-col" style="height:40px;font-size:13px">
+                <text>售价:</text>
+                <text style="color:red">¥{{item.price}}</text>
+              </view>
+              <view class="text-col" style="height:40px;font-size:13px">
+                <text>库存:</text>
+                <text style="color:red">{{item.stock}}</text>
+                <text style="padding-left:10px;">销量:</text>
+                <text style="color:red">{{item.sales_vol}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- toprank -->
+  <view class="list-wrap">
+    <template is="goodsList" data="{{goodsList:goodsList,titleName:'热销产品',loadFinish:loadFinish}}"></template>
+  </view>
+</scroll-view>

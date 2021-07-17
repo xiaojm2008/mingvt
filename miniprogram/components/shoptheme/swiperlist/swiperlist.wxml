@@ -1,0 +1,40 @@
+<import src="../../template/goodslist/goodslist.wxml" />
+<import src="../../template/rows/rows.wxml" />
+<import src="../../template/orderlist/orderlist.wxml" />
+<import src="../../template/orderdo/orderdo.wxml" />
+<import src="../../template/promcenter/promcenter.wxml" />
+<import src="../../template/shopimg/shopimg.wxml" />
+<import src="../../template/dodelivery/dodelivery.wxml" />
+<import src="../../template/payment/payment.wxml" />
+<import src="../../template/themalist/themalist.wxml" />
+<!-- <block wx:if="{{temptype=='actionlist'}}"> -->
+  <import src="../../template/actionlist/actionlist.wxml" />
+  <import src="../../template/enrolllist/enrolllist.wxml" />
+<!-- </block> -->
+
+<view id="topview" class="topview"></view>
+<view class="top-wrap" id="swipertab" style="">
+  <swipertab id="category" tab-data="{{categoryMenu}}" tab-cur="{{categoryCur}}" padding="0" size="{{refreshSize}}" scroll="{{true}}" bindchange="tabTogger" my-style="{{myStyle}}">
+  </swipertab>
+</view>
+
+<swiper id="swiper" class="swiper" current="{{categoryCur}}" duration="{{duration}}" bindanimationfinish="swipeChange" style="margin-top:-{{refreshSize}}rpx;">
+  <swiper-item wx:for="{{categoryData}}" wx:key="name">
+    <scroll my-style="{{myStyle}}" requesting="{{item.requesting}}" end="{{item.loadFinish}}" eventnone="{{eventnone}}" scrolllock="{{scrolllock}}" refreshlock="{{refreshlock}}" empty-show="{{item.emptyShow}}" list-count="{{item.listData.length}}" has-top="{{true}}" refresh-size="{{refreshSize}}" bottomSize="{{bottomSize}}" bind:refresh="refresh" bind:more="more">
+    <!--wx:if="{{temptype||item.temptype}}"--> 
+      <template  is="{{temptype||item.temptype}}" data="{{listData:item.listData,options:options}}"></template>
+    </scroll>
+  </swiper-item>
+</swiper>
+<block wx:if="{{options.mymenu}}">
+  <mymenu id="myMenu"></mymenu>
+</block>
+<block wx:if="{{options.enrolldetail}}">
+  <enrolldetail id="enrollDetail" height="{{options.windowHeight||0}}"></enrolldetail>
+</block>
+<block wx:if="{{options.mymodal}}">
+  <mymodal id="myModal"></mymodal>
+</block>
+<block wx:if="{{options.modaldlg}}">
+  <modaldialog id="modalDlg"></modaldialog>
+</block>

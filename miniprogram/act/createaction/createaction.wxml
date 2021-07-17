@@ -1,0 +1,289 @@
+<wxs module="dictTrs" src="../../lib/dictTrs.wxs"></wxs>
+<wxs module="substr" src="../../lib/substr.wxs"></wxs>
+<wxs module="pipi" src="../../lib/pipi.wxs"></wxs>
+
+<view class="fu-page">
+  <view class="flow">
+    <flowView flows="{{flows}}" bind:togger="flowTogger" itemWidth="{{itemWidth}}" toggerDisabled='{{toggerDisabled}}' activeIndex="{{activeIndex}}">
+    </flowView>
+  </view>
+  <view class="fu-content" wx:if="{{activeIndex == 0}}">
+    <view class="panel-view" catchtap="chooseImg" data-initflag="1" id="actioninfo.imginfo" >
+      <view class="item-view" style="height:180px" id="spicpath">
+        <swiper indicator-dots="true" current="{{current}}" indicator-active-color="rgb(168, 6, 6)" indicator-color="rgb(223, 157, 157)" style="height:100%;">
+          <block wx:for="{{actioninfo.imginfo }}" wx:key="digest" wx:for-index="index" wx:for-item="item" data-index="{{index}}">
+            <swiper-item>
+              <image src="{{ item.fileID||item.path }}" data-src="{{item.fileID||item.path}}" style="height:100%;" class="slide-image" catchtap="previewImg"></image>           
+              <view class="top-desc" data-initflag="1" data-imgindex="{{index}}" id="actioninfo.imginfo" catchtap="delImg">{{item.oriWidth}}~{{item.oriHeight}}->{{item.width}}~{{item.height}},SIZE：{{substr.toFix(item.size/1024,2)}}KB <text class="iconfont icon-delete"></text></view> 
+              <view class="bottom-desc">
+                <text>{{item.errMsg}}</text>
+              </view>           
+            </swiper-item>
+          </block>     
+        </swiper>
+        <view class="add-plus">
+          <text>+</text>
+          <text style="font-size:13px;">添加轮播图片</text>
+        </view>
+      </view>
+    </view>
+     <view class="ext-horiz-view">
+      <view class="view-item {{focusSet.picpath?'item-prompt':''}}">
+        <view class="row" style="border-bottom:1px solid #eee" >
+          <view class="left subname">
+            <text class="required">海报</text>
+          </view>
+          <view class="right">
+           <text>至少选择一张海报</text>
+           <label class="iconfont icon-rightarrow"></label>
+          </view>
+        </view>
+        <view class="flex-item ext-item">
+          <image src="{{actioninfo.picpath[0].fileID||actioninfo.picpath[0].path}}" mode="aspectFit"></image>
+          <view class="icon-addimg" data-imgindex="0" id="actioninfo.picpath" data-maxcount="2" catchtap="chooseImg">
+            <text class="iconfont icon-pic"></text>
+            <text style="font-size:11px;">请选择海报1</text>
+          </view>
+        </view>
+         <view class="flex-item ext-item">
+          <image src="{{actioninfo.picpath[1].fileID||actioninfo.picpath[1].path}}" mode="aspectFit"></image>
+          <view class="icon-addimg" data-imgindex="1" id="actioninfo.picpath" data-maxcount="2" catchtap="chooseImg">
+            <text class="iconfont icon-pic"></text>
+            <text style="font-size:11px;">请选择海报2</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='ext-horiz-view'>
+      <view class="view-item {{focusSet.actionname?'item-prompt':''}}">
+        <text class='left subname required'>活动名称</text>
+        <view class='right'>
+          <input class="text-input" placeholder="活动名称" id="actioninfo.actionname" value="{{ actioninfo.actionname }}" bindinput="inputTogger" />
+        </view>
+      </view>
+      <view class="view-item {{focusSet.actiontype?'item-prompt':''}}">
+        <text class="left subname required">活动类型</text>
+        <view class='right'>
+          <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="100033" id="actioninfo.actiontype" value="{{ dictTrs.idx(dict['100033'],actioninfo.actiontype) }}" range="{{ dict['100033'] }}" range-key="name">
+            <input class="text-input" disabled placeholder="活动类型" value="{{dictTrs.trs(dict['100033'],actioninfo.actiontype) }}"></input>
+          </picker>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+      <view class="view-item">
+        <text class='left subname'>最少人数</text>
+        <view class='right'>
+          <input class="text-input" type="number" placeholder="活动发起最少人数" id="actioninfo.minperson" value="{{ actioninfo.minperson }}" bindinput="inputTogger" />
+        </view>
+      </view>
+      <view class="view-item">
+        <text class='left subname'>最多人数</text>
+        <view class='right'>
+          <input class="text-input" type="number" placeholder="活动人数上限" id="actioninfo.maxperson" value="{{ actioninfo.maxperson }}" bindinput="inputTogger" />
+        </view>
+      </view>
+      <view class="view-item {{focusSet.enrollbegintime?'item-prompt':''}}">
+        <text class='left subname required'>报名开始时间</text>
+        <view class='right'>
+          <picker mode="date" start="{{pipi.nowStr()}}" end="2099-01-01" class="inp-selector2" bindchange="inputTogger" id="actioninfo.enrollbegintime" data-validx="[0]" value="{{actioninfo.enrollbegintime[0]}}" >
+            <input class="text-input" disabled placeholder="{{pipi.nowStr()}}" value="{{actioninfo.enrollbegintime[0]}}"></input>
+          </picker>
+          <picker mode="time" start="08:00" end="23:59" class="inp-selector3" bindchange="inputTogger" id="actioninfo.enrollbegintime" data-validx="[1]" value="{{actioninfo.enrollbegintime[1]}}">
+            <input class="text-input" disabled placeholder="00:00" value="{{actioninfo.enrollbegintime[1]}}"></input>
+          </picker>
+        </view>
+      </view>
+      <view class="view-item {{focusSet.enrollendtime?'item-prompt':''}}">
+        <text class='left subname required'>报名截止时间</text>
+        <view class='right'>
+          <picker mode="date" start="{{pipi.nowStr()}}" end="2099-01-01" class="inp-selector2" bindchange="inputTogger" id="actioninfo.enrollendtime" data-validx="[0]" value="{{actioninfo.endtime[0]}}" >
+            <input class="text-input" disabled placeholder="{{pipi.nowStr()}}" value="{{actioninfo.enrollendtime[0]}}"></input>
+          </picker>
+          <picker mode="time" start="08:00" end="23:59" class="inp-selector3" bindchange="inputTogger" id="actioninfo.enrollendtime" data-validx="[1]" value="{{actioninfo.enrollendtime[1]}}">
+            <input class="text-input" disabled placeholder="00:00" value="{{actioninfo.enrollendtime[1]}}"></input>
+          </picker>
+        </view>
+      </view>
+      <view class="view-item {{focusSet.actbegintime?'item-prompt':''}}">
+        <text class='left subname required'>活动开始时间</text>
+        <view class='right'>
+          <picker mode="date" start="{{pipi.nowStr()}}" end="2099-01-01" class="inp-selector2" bindchange="inputTogger" id="actioninfo.actbegintime" data-validx="[0]" value="{{actioninfo.actbegintime[0]}}" >
+            <input class="text-input" disabled placeholder="{{pipi.nowStr()}}" value="{{actioninfo.actbegintime[0]}}"></input>
+          </picker>
+          <picker mode="time" start="08:00" end="23:59" class="inp-selector3" bindchange="inputTogger" id="actioninfo.actbegintime" data-validx="[1]" value="{{actioninfo.actbegintime[1]}}">
+            <input class="text-input" disabled placeholder="00:00" value="{{actioninfo.actbegintime[1]}}"></input>
+          </picker>
+        </view>
+      </view>
+      <view class="view-item {{focusSet.actendtime?'item-prompt':''}}">
+        <text class='left subname required'>活动结束时间</text>
+        <view class='right'>
+          <picker mode="date" start="{{pipi.nowStr()}}" end="2099-01-01" class="inp-selector2" bindchange="inputTogger" id="actioninfo.actendtime" data-validx="[0]" value="{{actioninfo.actendtime[0]}}" >
+            <input class="text-input" disabled placeholder="{{pipi.nowStr()}}" value="{{actioninfo.actendtime[0]}}"></input>
+          </picker>
+          <picker mode="time" start="08:00" end="23:59" class="inp-selector3" bindchange="inputTogger" id="actioninfo.actendtime" data-validx="[1]" value="{{actioninfo.actendtime[1]}}">
+            <input class="text-input" disabled placeholder="00:00" value="{{actioninfo.actendtime[1]}}"></input>
+          </picker>
+        </view>
+      </view>
+      <view class="view-item" wx:if="{{actioninfo.actiontype!='6'}}">
+        <text class='left subname'>活动地点</text>
+        <view class='right'>
+          <input class="text-input" style="margin-right:10px;" value="{{actioninfo.actaddress}}" placeholder="活动地点"></input>
+          <text bindtap="chooseLocation" style="color:green" class="iconfont icon-location"></text>
+        </view>
+      </view>
+      <view class="view-item {{focusSet.feetype?'item-prompt':''}}" wx:if="{{actioninfo.actiontype!='6'}}">
+        <text class='left subname'>费用方式</text>
+        <view class='right'>
+          <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="100032" id="actioninfo.feetype" value="{{ dictTrs.idx(dict['100032'],actioninfo.feetype) }}" range="{{ dict['100032'] }}" range-key="name">
+            <input class="text-input" disabled placeholder="费用方式" value="{{dictTrs.trs(dict['100032'],actioninfo.feetype) }}"></input>
+          </picker>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+  
+      <!--
+        6:问卷调查
+      -->
+      <block wx:if="{{actioninfo.feetype=='1'}}">
+        <block wx:if="{{feeAction03[actioninfo.actiontype]}}">
+          <view class="view-item {{focusSet.fee?'item-prompt':''}}" >
+            <text class='left subname required'>活动费用</text>
+            <view class='right'>
+              <input class="text-input" type="digit" placeholder="即每成人费用" id="actioninfo.fee" value="{{ actioninfo.fee }}" bindinput="inputTogger" />
+            </view>
+          </view>
+          <view class="view-item {{focusSet.feechild?'item-prompt':''}}">
+            <text class='left subname required'>儿童费用</text>
+            <view class='right'>
+              <input class="text-input" type="digit" placeholder="活动规定内一定年龄的小孩" id="actioninfo.feechild" value="{{ actioninfo.feechild }}" bindinput="inputTogger" />
+            </view>
+          </view>
+          <!--
+          <view class="view-item {{focusSet.personnum?'item-prompt':''}}" >
+            <text class='left subname required'>人数</text>
+            <view class='right'>
+              <input class="text-input" type="number" placeholder="成人数量" id="actioninfo.personnum" value="{{ actioninfo.personnum }}" bindinput="inputTogger" />
+            </view>
+          </view>
+          <view class="view-item {{focusSet.childnum?'item-prompt':''}}">
+            <text class='left subname required'>儿童数</text>
+            <view class='right'>
+              <input class="text-input" type="number" placeholder="儿童数量" id="actioninfo.childnum" value="{{ actioninfo.childnum }}" bindinput="inputTogger" />
+            </view>
+          </view>
+          -->
+        </block>
+        <!-- {"code": "4", "name": "预约报名"} -->
+        <block wx:elif="{{actioninfo.actiontype=='4'}}">
+          <view class="view-item {{focusSet.fee?'item-prompt':''}}" >
+            <text class='left subname required'>预约费</text>
+            <view class='right'>
+              <input class="text-input" type="digit" placeholder="请输入预约费" id="actioninfo.fee" value="{{ actioninfo.fee }}" bindinput="inputTogger" />
+            </view>
+          </view>
+        </block>
+        <!--{"code": "5", "name": "社交交友"}, -->
+        <block wx:elif="{{actioninfo.actiontype=='5'}}">
+          <view class="view-item {{focusSet.fee?'item-prompt':''}}" >
+            <text class='left subname required'>每人费用</text>
+            <view class='right'>
+              <input class="text-input" type="digit" placeholder="请输入每人费用" id="actioninfo.fee" value="{{ actioninfo.fee }}" bindinput="inputTogger" />
+            </view>
+          </view>
+        </block>
+        <block wx:elif="{{actioninfo.actiontype!='6'}}">
+          <view class="view-item {{focusSet.fee?'item-prompt':''}}" >
+            <text class='left subname required'>费用</text>
+            <view class='right'>
+              <input class="text-input" type="digit" placeholder="请输入费用" id="actioninfo.fee" value="{{ actioninfo.fee }}" bindinput="inputTogger" />
+            </view>
+          </view>
+        </block>
+      </block>
+      <view class="view-item {{focusSet.apprflag?'item-prompt':''}}">
+        <text class="left subname ">活动是否审核</text>
+        <view class='right'>
+          <switch checked="{{actioninfo.apprflag}}" id="actioninfo.apprflag"  value="{{actioninfo.apprflag}}" bindchange="inputTogger" />
+        </view>
+      </view>
+      <view class="view-item {{focusSet.siginflag?'item-prompt':''}}">
+        <text class="left subname ">活动是否签到</text>
+        <view class='right'>
+          <switch checked="{{actioninfo.siginflag}}" id="actioninfo.siginflag"  value="{{actioninfo.siginflag}}" bindchange="inputTogger" />
+        </view>
+      </view>
+      <!-- 
+      <view class="view-area">
+      <multitext class="text-input" fixed='true' bind:togger="inputTogger" cols='4' rows='15' placeholder="活动简单的介绍"></multitext>
+      </view>
+      -->
+      <view class="view-item no-line">
+        <multitext class="textarea" bind:togger="inputTogger" value="{{actioninfo.intro}}" id="actioninfo.intro" placeholder="活动简单的介绍"></multitext>
+      </view>
+    </view>
+  </view>
+
+  <view class="fu-content" style="height:{{windowHeight}}px" wx:if="{{activeIndex == 1}}">
+    <myeditor bind:togger="hideBottomOperBtn" windowHeight="{{windowHeight}}" windowWidth="{{windowWidth}}" style="height:{{windowHeight-118}}px" actionid="{{actionid}}" id="myEditor"></myeditor>
+  </view>
+
+  <view class="fu-content" wx:if="{{activeIndex == 2}}">
+    <view class="ext-horiz-view" id="enrollform">  
+      <view class="view-item">
+        <view class="left" catchtap="sortEnrollTap" data-sortenroll='enrollformSort'>
+         <text class="subname required">表单配置</text>
+         <text class="iconfont icon-sort" style="margin-left:2px;"></text>
+        </view>
+        <view class="right" catchtap="showParameterDlg" id="enrollform" data-type="enrollform">         
+          <text>点击配置报名表单字段</text>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>   
+      <enroll id="myEnroll" bind:togger="inputTogger2" screenwidth="{{windowWidth}}" screenheight="{{windowHeight}}" initcache="" moveable='{{enrollformSort}}' bind:sort="{{enrollformSort?'sortTogger':''}}" data-id="enrollform" style="width:100%;" enrolldata="{{enrollform}}"></enroll>
+      <block wx:if="{{actioninfo.feetype=='1'}}">
+        <view class="view-item">
+          <view class="left">
+          <text class="subname required">费用配置</text>
+          </view>
+          <view class="right" catchtap="showFeeCfgDlg">         
+            <text>点击配置费用计算公式</text>
+            <label class="iconfont icon-rightarrow"></label>
+          </view>
+        </view>
+        <view class="view-item" style="justify-content:flex-end">  
+          <block wx:for="{{actioninfo.expression}}" wx:key="id">
+          {{item.name}}
+          </block>     
+        </view>  
+      </block>
+    </view>
+  </view>
+
+  <view class="fu-content preview" wx:if="{{activeIndex == 3}}">
+    <action dataid="" dataobj="{{actioninfo}}"></action>
+  </view>
+
+  <view class="fu-bottom" wx:if="{{bOperBtnShow}}">
+    <text class="btn one" bindtap="nextStep" wx:if="{{activeIndex === 0}}" data-params="">下一步</text>
+    <text class="btn" bindtap="preStep" wx:if="{{activeIndex > 0}}" data-params="">上一步</text>
+    <text class="btn" bindtap="nextStep" wx:if="{{activeIndex >0 && activeIndex < flows.length-1}}" data-params="">下一步</text>
+    <text class="btn" bindtap="save" wx:if="{{activeIndex == flows.length-1}}" data-params="">提交</text>
+  </view>
+</view>
+
+<parameterdlg id="parameterDlg" type="{{parameterType}}" cate=""></parameterdlg>
+<modaldialog id="modalDlg"></modaldialog>
+
+<!--
+<view class="canvas-box">
+  <canvas style="width: 1242px;height: 400px;background:#eee;" canvas-id="myCanvas0" />
+  <canvas style="width: 1242px;height: 400px;background:#eee;" canvas-id="myCanvas1" />
+  <canvas style="width: 1242px;height: 400px;background:#eee;" canvas-id="myCanvas2" />
+  <canvas style="width: 1242px;height: 400px;background:#eee;" canvas-id="myCanvas3" />
+</view>
+-->
+<view class="canvas-box">
+  <canvas style="width: 1000px;height: 500px;" canvas-id="myCanvas0" />
+</view>

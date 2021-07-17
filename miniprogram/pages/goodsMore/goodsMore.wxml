@@ -1,0 +1,2 @@
+<condilist id="condilist" condi="{{condi}}" action="{{action}}" manager="{{manager}}" def-params="{{defParams}}" order-by="{{orderBy}}" temptype="{{temptype}}">
+</condilist>

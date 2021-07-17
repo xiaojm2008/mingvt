@@ -1,0 +1,245 @@
+@import "../../../components/template/dodelivery/dodelivery.wxss";
+/* use dodelivery.wxss
+.sr {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.send {
+  background-color: #03ccba;
+}
+
+.recv {
+  background-color: #ffae0c;
+}
+
+.add-text {
+  box-sizing: border-box;
+  padding: 5px 20px 5px 10px;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.addrinfo{
+  margin-left: 10px;
+  color:black;
+}
+.addr_name{
+  width:80px;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  overflow: hidden;
+}*/
+.top-btn{
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index:99;
+  width: 100%;
+  background-color:white;
+}
+.fu-content{
+}
+.summary{
+  padding: 5px 10px 5px 10px;
+  color:#ccc;
+  font-size:13px;
+  padding-left:10px; 
+  margin-bottom: 80px;
+}
+.multitext{
+  width:280px;
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  color:black;
+}
+.subname{
+   color: #ccc;
+}
+.ext-horiz-view{
+  padding: 0 0 0 0;
+  margin-top: 0;
+}
+.ext-horiz-view text {
+  display: inline-block;
+}
+
+.ext-horiz-view .view-item .left{
+  flex:2 0 auto;
+  justify-content:flex-start;
+  text-align: left;
+}
+.ext-horiz-view .view-item .right {
+  flex:0 1 auto;
+}
+
+.ext-horiz-view .ext-left{
+  display: flex;
+  justify-content: space-between;
+}
+.ext-horiz-view .ext-left .item{
+  display: inline-block;
+  width:60px;
+  flex:2 0 auto;
+}
+
+/* use by import from dodelivery.wxss
+.panel-view {
+  border-bottom:0px;
+  padding: 0 10px;
+  box-sizing:border-box;
+}
+
+.panel-view .item-view {
+  text-align: left;
+  min-height: 40px;
+  line-height: 40px;
+  border-top:1px solid #eee;
+}
+.panel-view .item-view:first-child{
+  border-top: 0px;
+}
+.panel-view .item-view .text {
+  display: block;
+  font-size: 15px;
+  color: #999;
+}
+*/
+.panel-view .item-view .line{
+  width:100%;
+}
+
+.panel-view .textarea{
+  background-color: white;
+  border-radius: 8px;
+  margin: 8px;
+  border: 1px solid #eee;
+}
+
+.dialog2 {
+  border:1px solid white!important;
+  bottom: 0;
+  width: 100%;
+  z-index:51 !important;
+  /*max-height: 489px !important;*/
+}
+.dialog2 .dialog-content{
+  overflow-y: yes;
+  max-height: 598px !important;
+}
+.dialog2 .dlghead{
+  justify-content: center !important;
+}
+.dialog2 .dialog-head .cancel-text{
+  color:green;
+  width:80px;
+  text-align:right;
+  font-size:15px;
+  display:block;
+  float:right;
+}
+
+
+/*subject-view*/
+.subject-view  {
+  display: flex;
+  background: #fff;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 14px;
+  padding:0 8px;
+}
+.subject-view .row{
+  height: 60px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-right: 10px;
+  margin-top:10px;
+  /*border-bottom: 1px solid #eee;*/
+}
+.subject-view .more{
+  height:30px;
+  color:green;
+  text-align:center;
+  border-top:1px solid #eee;
+  justify-content: center;
+}
+.subject-view .row .left {
+  flex: 1 0 300px;
+  font-size: 14px;
+  color: #333;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.subject-view .row .right {
+  flex: 0 1 30px;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+  line-height: 60px;
+}
+.subject-view .row .cover-thumb {
+  width: 60px;
+  height: 60px;
+  flex:0 0 auto;
+  border-radius: 50%;
+}
+.subject-view .row .cover-text{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  border:1px solid #ccc;
+  font-weight: 800;
+  color:blue;
+  font-size: 30px;
+  text-align: center;
+}
+.subject-view .row .subject-text {
+  vertical-align: middle;
+  padding-left: 10px;
+  flex: 0 1 100%;/*宽度200px;但是可以自动扩宽到100%*/
+  width:200px;
+  text-align: left;
+}
+.subject-view .row .subject-text .text{
+  width: 100%;
+  display: block;
+  line-height: 20px;
+}
+.subject-view .row .subject-text .line-num {
+  text-align:right;
+}
+.subject-view .row .right .iconfont{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.subject-view .row .right .icon-ok{
+  color:green;
+}
+.subject-view .row .left .sum{
+  padding-left: 10px;
+  color: green;
+  font-size: 15px;
+  font-weight: 800;
+  flex:0 0 auto;
+  width: 60px;
+  text-align: center;
+}

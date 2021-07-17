@@ -1,0 +1,48 @@
+@import "../../style/dialog.wxss";
+.iconfont {
+  display: inline-block;
+  font-family: 'iconfont' !important;
+}
+.icon-dict:before {
+  content: "\e8aa";
+}
+.icon-usercenter:before {
+  content: "\e686";
+}
+.icon-edit:before {
+  content: "\e622";
+}
+.icon-gou:before {
+  content: "\e937";
+}
+.icon-plus:before {
+  content: "\e931";
+}
+.icon-closes:before {
+  content: "\e93c";
+}
+.icon-leftarrow:before {
+  content: "\e94d";
+}
+.simple-btn{
+  background-color:rgba(10, 126, 10,0.1);
+  border: 1px solid rgb(10, 126, 10);
+  border-radius: 50%;
+  text-align: center;
+  position: relative !important;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  display: inline-block;
+  color: rgb(10, 126, 10) ;
+  margin-right: 5px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.temp-active{
+   border: 1px solid rgba(221, 132, 132,0.9);
+   color:rgba(221, 132, 132,0.7);
+}
+.dialog {
+  min-height: 400px;
+}

@@ -1,0 +1,15 @@
+{"_id":"4d37e613-cf57-4ba9-bcdd-d4fbbd5059f6","actionname":"getGoods","desc":"获取商品","status":"1","shopid":"S0000","userid":"ounQF5gNI1fojHjR6JnyBekJpowQ"}
+{"_id":"59964141-9445-4cb6-97f6-5c7343daaefc","status":"1","shopid":"S0000","actionname":"getGoodsDetail","desc": "获取商品详情","userid":"ounQF5gNI1fojHjR6JnyBekJpowQ"}
+{"_id":"825d8944-71b4-4776-9b88-87d535239ccd","userid":"ounQF5gNI1fojHjR6JnyBekJpowQ","shopid":"S0000","status":"1","actionname":"getOrderDetail","desc": "获取订单详情"}
+{"_id":"b90d2e42-1e63-4943-8997-0b9c9af2e09b","actionname":"cancelLogistics","desc": "取消预约取件","status":"1","userid":"ounQF5gNI1fojHjR6JnyBekJpowQ","shopid":"S0000"}
+{"_id":"c9d5aad3-6432-43b5-80b6-9c469114b01d","shopid":"S0000","actionname":"addGoods","desc": "新增商品","userid":"ounQF5gNI1fojHjR6JnyBekJpowQ","status":"1"}
+{"_id":"d052e05e-ad42-4e47-afb3-55cc455646f5","actionname":"createLogistics","desc": "预约取件","shopid":"S0000","status":"1","userid":"ounQF5gNI1fojHjR6JnyBekJpowQ"}
+{"_id":"ec8fe71d-47fb-49f5-b0a2-fb91812c49d2","actionname":"getOrderList","desc": "获取订单","shopid":"S0000","status":"1","userid":"ounQF5gNI1fojHjR6JnyBekJpowQ"}
+{"_id":"ee420e40-7e43-413c-ad2c-c7e7fba13aa1","actionname":"modGoods","desc": "修改商品","userid":"ounQF5gNI1fojHjR6JnyBekJpowQ","status":"1","shopid":"S0000"}
+{
+  "actionname": "getMenuList",
+  "desc": "获取用户菜单",
+  "userid": "ounQF5gNI1fojHjR6JnyBekJpowQ",
+  "status": "1",
+  "shopid": "S0000"
+}

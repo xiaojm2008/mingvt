@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "flowView": "../../components/flow/flow",
+    "myeditor": "../../components/myeditor/myeditor",
+    "action": "../../components/action/action",
+    "enroll": "../../components/enroll/enroll",
+    "enrollitem": "../../components/enrollitem/enrollitem",
+    "modaldialog": "../../components/modaldialog/modaldialog",
+    "parameterdlg": "../../components/parameterdlg/parameterdlg",
+    "multitext": "../../components/multitext/multitext"
+  },
+    "navigationBarTitleText": "发起活动"
+}

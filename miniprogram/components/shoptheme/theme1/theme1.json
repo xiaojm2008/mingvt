@@ -1,0 +1,16 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nproperty": "../nproperty/nproperty",
+    "cproperty": "../cproperty/cproperty",
+    "modaldialog": "../../modaldialog/modaldialog",
+    "sideslip": "../../sideslip/sideslip",
+    "floatbtn": "../../floatbtn/floatbtn",
+    "mytree": "../../mytree/mytree",
+    "mymenu": "../../mymenu/mymenu",
+    "nodetree": "../nodetree/nodetree",
+    "preview":"../preview/preview",
+    "mymover": "../mymover/mymover",
+    "mysearch": "../../mysearch/mysearch"
+  }
+}

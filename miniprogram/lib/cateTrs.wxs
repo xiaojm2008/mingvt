@@ -1,0 +1,6 @@
+var cateTrs = function (arr, val, idx) {
+  //console.log('val=' + val+',idx='+idx);
+  //console.log('arr', arr[val[idx]] && arr[val[idx]].items ? arr[val[idx]].items : []);
+  return arr[val[idx]] && arr[val[idx]].items ? arr[val[idx]].items : [];
+}
+module.exports = cateTrs;

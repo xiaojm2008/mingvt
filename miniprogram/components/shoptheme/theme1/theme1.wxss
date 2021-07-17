@@ -1,0 +1,24 @@
+@import "../template/tools.wxss";
+.body{
+  height: 100%;
+}
+.panel-view{
+  padding:0px 5px 0px 5px;
+  box-sizing: border-box;
+}
+.top_btn {
+  background-color: #fff0e3;
+  height: 40px;
+  line-height: 40px;
+  position: relative;/*sticky*/
+  width: 100%;
+  margin-top: 0;
+  text-align: center;
+}
+.top_btn text {
+  color: #a0a0a0;
+  font-size: 14px;
+  display: inline-block;
+  white-space: nowrap;
+}
+

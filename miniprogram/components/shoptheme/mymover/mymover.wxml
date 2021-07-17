@@ -1,0 +1,23 @@
+<import src="../template/tools.wxml" />
+<movable-area class='movable-box' scale-area="{{options.scale}}" style="{{options.pstyle||''}}">
+  <slot/>
+  <movable-view wx:if="{{show}}" class='movable-zoom' x='{{options.x}}' y='{{options.y}}' direction='all' style="width:{{options.width}}px;height:{{options.height}}px;{{options.style}}" disabled="{{options.disabled}}" scale="{{options.scale}}"
+    bindscale="scaleTogger" bindchange="chgTogger" htouchmove="hTouchMove" vtouchmove="vTouchMove">
+    <view class="ctrl-area" style="display:absolute;{{options.y<29?'top:0px;':'top:-29px;'}}">
+      <template is="tools" data="{{node:options.node}}"></template>
+    </view>
+    <view class="title">
+      <block wx:if="{{options.height>40 && options.width>55}}">
+        <text class="posi">{{options.x+"/"+options.y}}</text>
+        <text class="txt">{{options.title}}</text>
+        <text class="txt1">{{"{"+options.width+"/"+options.height+"}"}}</text>
+      </block>
+      <block wx:else>
+        <text class="txt">{{options.title+"{"+options.width+"/"+options.height+"}"}}</text>
+      </block>
+    </view>
+    <view class="close" style="display:absolute;top:{{options.height>winHeight?200:(options.height+30)}}px;">
+      <text catchtap='hide' class="iconfont icon-clear"></text>
+    </view>
+  </movable-view>
+</movable-area>

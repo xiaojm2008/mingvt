@@ -1,0 +1,2232 @@
+{
+  "desc": "商品参数",
+  "brandname": {
+    "seq": 0,
+    "label": true,
+    "id": "brandname",
+    "name": "品牌名称",
+    "type": "0",
+    "required": "O",
+    "length": 200.0
+  },
+  "manufacturedate": {
+    "seq": 1,
+    "label": true,
+    "length": 10,
+    "id": "manufacturedate",
+    "name": "生产日期",
+    "type": "d",
+    "required": "O"
+  },
+  "manufacturebatch": {
+    "seq": 2,
+    "label": true,
+    "length": 10,
+    "id": "manufacturebatch",
+    "name": "生产批次",
+    "type": "0",
+    "required": "O"
+  },
+  "supplycontract": {
+    "seq": 3,
+    "label": true,
+    "length": 200.0,
+    "id": "supplycontract",
+    "name": "供应商联系方式",
+    "type": "0",
+    "required": "O"
+  },
+  "area": {
+    "seq": 4,
+    "label": true,
+    "id": "area",
+    "name": "区",
+    "type": "0",
+    "required": "O",
+    "length": 200.0
+  },
+  "spec": {
+    "seq": 5,
+    "label": true,
+    "type": "0",
+    "required": "O",
+    "length": 200.0,
+    "id": "spec",
+    "name": "规格描述"
+  },
+  "periodguarant": {
+    "seq": 6,
+    "label": true,
+    "id": "periodguarant",
+    "name": "保质期",
+    "type": "0",
+    "required": "O",
+    "length": 200.0
+  },
+  "workmanship": {
+    "label": true,
+    "type": "0",
+    "required": "O",
+    "length": 200.0,
+    "id": "workmanship",
+    "name": "工艺"
+  },
+  "tempid": 0.0,
+  "productionlicense": {
+    "label": true,
+    "id": "productionlicense",
+    "name": "生产许可编号",
+    "type": "0",
+    "required": "O",
+    "length": 200.0
+  },
+  "openid": "0",
+  "factorycontract": {
+    "label": true,
+    "name": "厂家联系方式",
+    "type": "0",
+    "required": "O",
+    "length": 200.0,
+    "id": "factorycontract"
+  },
+  "productionarea": {
+    "label": true,
+    "length": 200.0,
+    "id": "productionprov",
+    "name": "省市区",
+    "type": "p",
+    "required": "O"
+  },
+  "province": {
+    "label": true,
+    "id": "province",
+    "name": "省份",
+    "type": "0",
+    "required": "O",
+    "length": 200.0
+  },
+  "supplyname": {
+    "label": true,
+    "name": "供应商名称",
+    "type": "0",
+    "required": "O",
+    "length": 200.0,
+    "id": "supplyname"
+  },
+  "temptype": "goods",
+  "packing": {
+    "label": true,
+    "name": "包装方式",
+    "type": "0",
+    "required": "O",
+    "length": 200.0,
+    "id": "packing"
+  },
+  "netweight": {
+    "label": true,
+    "length": 200.0,
+    "id": "netweight",
+    "name": "净含量",
+    "type": "0",
+    "required": "O"
+  },
+  "style": {
+    "label": true,
+    "id": "style",
+    "name": "风格",
+    "type": "0",
+    "required": "O",
+    "length": 200.0
+  },
+  "ingredients": {
+    "label": false,
+    "id": "ingredients",
+    "name": "配料表",
+    "type": "9",
+    "required": "O",
+    "length": 500.0
+  },
+  "city": {
+    "label": true,
+    "id": "city",
+    "name": "城市",
+    "type": "0",
+    "required": "O",
+    "length": 200.0
+  },
+  "factoryname": {
+    "label": true,
+    "id": "factoryname",
+    "name": "厂名",
+    "type": "0",
+    "required": "O",
+    "length": 200.0
+  },
+  "materialtexture": {
+    "label": true,
+    "length": 200.0,
+    "id": "materialtexture",
+    "name": "材质",
+    "type": "0",
+    "required": "O"
+  },
+  "productionplace": {
+    "label": true,
+    "length": 200.0,
+    "id": "productionplace",
+    "name": "详细地址",
+    "type": "0",
+    "required": "O"
+  },
+  "productionstate": {
+    "label": true,
+    "required": "O",
+    "dictlist": "STKEY_STATEINFO",
+    "dict": "storage",
+    "id": "productionstate",
+    "name": "产地",
+    "type": "3"
+  },
+  "factorysite": {
+    "label": true,
+    "id": "factorysite",
+    "name": "厂址",
+    "type": "0",
+    "required": "O",
+    "length": 200.0
+  },
+  "goods_type": {
+    "seq": 0,
+    "label": true,
+    "id": "goods_type",
+    "name": "商品类型",
+    "dict": "dict",
+    "dictlist": 100002,
+    "type": "3",
+    "required": "O"
+  }
+}
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "goods_subid",
+  "desc": "商品子分类",
+  "promsubid": {
+    "seq": 0,
+    "required": "O",
+    "name": "活动区域分类",
+    "type": "m",
+    "id": "promsubid",
+    "dict": "dict",
+    "dictlist": "100027",
+    "value": "",
+    "label": true
+  }
+}
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "goods_ensure",
+  "desc": "服务保障",
+  "servcompensation": {
+    "seq": 0,
+    "required": "O",
+    "name": "假一赔四",
+    "type": "9",
+    "id": "servcompensation",
+    "length": 100,
+    "value": "商家承诺在向消费者提供商品时,若有欺诈消费者行为假一赔四",
+    "label": true
+  },
+  "servdelivery": {
+    "seq": 1,
+    "required": "O",
+    "name": "送货入户",
+    "type": "9",
+    "id": "servdelivery",
+    "length": 100,
+    "value": "在购买大件货物的时候,会有送货入户的服务",
+    "label": true
+  },
+  "servinstall": {
+    "seq": 2,
+    "required": "O",
+    "name": "预约安装",
+    "type": "9",
+    "id": "servinstall",
+    "length": 200,
+    "label": true,
+    "value": "商家派出技术人员到现场负责指导或直接进行安装调试，保障产品顺利安装、正确调试、可靠地启动运行。"
+  },
+  "servquickrefund": {
+    "seq": 3,
+    "required": "O",
+    "name": "急速退款",
+    "type": "9",
+    "id": "servquickrefund",
+    "length": 200,
+    "label": true,
+    "value": "极速退款是为交易诚信记录良好的会员提供的优质服务，目的是让诚信记录良好的会员享受到尊贵的退款服务。系统会根据买家平时的诚信交易记录来进行打分。只要条件达到了自动就会给你开启极速退款的。"
+  },
+  "serv7exchange": {
+    "seq": 4,
+    "required": "O",
+    "name": "七天无理由退换",
+    "type": "9",
+    "id": "serv7exchange",
+    "length": 200,
+    "label": true,
+    "value": "除特殊商品外，七天无理由退货指商品到货日起7日内无理由退货。"
+  },
+  "servdamagerefund": {
+    "seq": 5,
+    "required": "O",
+    "name": "破损包退",
+    "type": "9",
+    "id": "servdamagerefund",
+    "length": 200,
+    "label": true,
+    "value": "消费者签收后发现商品存在破损、变形等情况，且在商品签收之后24小时内，发起“破损”相关原因的退款申请，并提交商品存在明显破损、变形等情形的有效凭证，商家同意判定为卖家责任的，在退款完成后，在72小时内将订单金额赔付给商家。"
+  },
+  ,
+  "bizlicense": {
+    "seq": 6,
+    "required": "O",
+    "name": "营业执照",
+    "type": "b",
+    "id": "bizlicense",
+    "initflag": true,
+    "maxwidth": 400,
+    "maxheight": 800,
+    "maxcount": 1,
+    "label": true
+  },
+  "footlicense": {
+    "seq": 6,
+    "required": "O",
+    "name": "食品经营许可",
+    "type": "b",
+    "id": "footlicense",
+    "initflag": true,
+    "maxwidth": 400,
+    "maxheight": 800,
+    "maxcount": 1,
+    "label": true
+  },
+  "antifakelabel": {
+    "seq": 7,
+    "required": "O",
+    "name": "防伪验证",
+    "type": "b",
+    "id": "antifakelabel",
+    "initflag": true,
+    "maxwidth": 200,
+    "maxheight": 200,
+    "maxcount": 3,
+    "label": true
+  },
+  "traceability": {
+    "seq": 8,
+    "required": "O",
+    "name": "防伪溯源验证",
+    "type": "a",
+    "id": "traceability",
+    "initflag": true,
+    "maxwidth": 200,
+    "maxheight": 200,
+    "maxcount": 3,
+    "label": true
+  }
+}
+
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "shop_parameter",
+  "desc": "商户信息",
+  "businesshours": {
+    "seq": 0,
+    "basic": 1,
+    "required": "O",
+    "name": "营业时间",
+    "type": "0",
+    "id": "businesshours",
+    "length": 200,
+    "label": true
+  },
+  "storearea": {
+    "seq": 1,
+    "basic": 1,
+    "required": "O",
+    "name": "门店面积",
+    "type": "0",
+    "id": "storearea",
+    "length": 200,
+    "label": true
+  },
+  "openingdate": {
+    "seq": 2,
+    "basic": 1,
+    "required": "O",
+    "name": "开业时间",
+    "type": "d",
+    "id": "openingdate",
+    "length": 10,
+    "label": true
+  },
+  "seatnum": {
+    "seq": 3,
+    "basic": 1,
+    "required": "O",
+    "name": "座位",
+    "type": "2",
+    "id": "seatnum",
+    "length": 10,
+    "label": true
+  },
+  "services": {
+    "seq": 4,
+    "required": "O",
+    "name": "特色服务",
+    "type": "m",
+    "id": "services",
+    "length": 200,
+    "dict": "dict",
+    "dictlist": "100024",
+    "label": true
+  },
+  "consumeway": {
+    "seq": 5,
+    "required": "O",
+    "name": "消费方式",
+    "type": "m",
+    "id": "consumeway",
+    "length": 200,
+    "dict": "dict",
+    "dictlist": "100025",
+    "label": true
+  },
+  "facilities": {
+    "seq": 6,
+    "required": "O",
+    "name": "环境设施",
+    "type": "m",
+    "id": "facilities",
+    "length": 200,
+    "dict": "dict",
+    "dictlist": "100026",
+    "label": true
+  }
+}
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "shop_credentials",
+  "desc": "资质与服务保障证信息",
+  "servcompensation": {
+    "seq": 0,
+    "required": "O",
+    "name": "假一赔四",
+    "type": "9",
+    "id": "servcompensation",
+    "length": 100,
+    "value": "商家承诺在向消费者提供商品时,若有欺诈消费者行为假一赔四",
+    "label": true
+  },
+  "servdelivery": {
+    "seq": 1,
+    "required": "O",
+    "name": "送货入户",
+    "type": "9",
+    "id": "servdelivery",
+    "length": 100,
+    "value": "在购买大件货物的时候,会有送货入户的服务",
+    "label": true
+  },
+  "servinstall": {
+    "seq": 2,
+    "required": "O",
+    "name": "预约安装",
+    "type": "9",
+    "id": "servinstall",
+    "length": 200,
+    "label": true,
+    "value": "商家派出技术人员到现场负责指导或直接进行安装调试，保障产品顺利安装、正确调试、可靠地启动运行。"
+  },
+  "servquickrefund": {
+    "seq": 3,
+    "required": "O",
+    "name": "急速退款",
+    "type": "9",
+    "id": "servquickrefund",
+    "length": 200,
+    "label": true,
+    "value": "极速退款是为交易诚信记录良好的会员提供的优质服务，目的是让诚信记录良好的会员享受到尊贵的退款服务。系统会根据买家平时的诚信交易记录来进行打分。只要条件达到了自动就会给你开启极速退款的。"
+  },
+  "serv7exchange": {
+    "seq": 4,
+    "required": "O",
+    "name": "七天无理由退换",
+    "type": "9",
+    "id": "serv7exchange",
+    "length": 200,
+    "label": true,
+    "value": "除特殊商品外，七天无理由退货指商品到货日起7日内无理由退货。"
+  },
+  "servdamagerefund": {
+    "seq": 5,
+    "required": "O",
+    "name": "破损包退",
+    "type": "9",
+    "id": "servdamagerefund",
+    "length": 200,
+    "label": true,
+    "value": "消费者签收后发现商品存在破损、变形等情况，且在商品签收之后24小时内，发起“破损”相关原因的退款申请，并提交商品存在明显破损、变形等情形的有效凭证，商家同意判定为卖家责任的，在退款完成后，在72小时内将订单金额赔付给商家。"
+  },
+  "bizlicense": {
+    "seq": 6,
+    "required": "O",
+    "name": "营业执照",
+    "type": "b",
+    "id": "bizlicense",
+    "initflag": true,
+    "maxwidth": 400,
+    "maxheight": 800,
+    "maxcount": 1,
+    "label": true
+  },
+  "footlicense": {
+    "seq": 6,
+    "required": "O",
+    "name": "食品经营许可",
+    "type": "b",
+    "id": "footlicense",
+    "initflag": true,
+    "maxwidth": 400,
+    "maxheight": 800,
+    "maxcount": 1,
+    "label": true
+  },
+  "antifakelabel": {
+    "seq": 7,
+    "required": "O",
+    "name": "防伪验证",
+    "type": "b",
+    "id": "antifakelabel",
+    "initflag": true,
+    "maxwidth": 200,
+    "maxheight": 200,
+    "maxcount": 3,
+    "label": true
+  },
+  "traceability": {
+    "seq": 8,
+    "required": "O",
+    "name": "防伪溯源验证",
+    "type": "a",
+    "id": "traceability",
+    "initflag": true,
+    "maxwidth": 200,
+    "maxheight": 200,
+    "maxcount": 3,
+    "label": true
+  }
+}
+
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "shop_imginfo",
+  "desc": "店铺图片视频",
+  "shopenvironment": {
+    "seq": 0,
+    "required": "R",
+    "name": "门店环境",
+    "type": "b",
+    "id": "shopenvironment",
+    "initflag": true,
+    "maxwidth": 400,
+    "maxheight": 800,
+    "maxcount": 12,
+    "label": true
+  },
+  "effectiveshow": {
+    "seq": 1,
+    "required": "O",
+    "name": "效果展示",
+    "type": "b",
+    "id": "effectiveshow",
+    "initflag": true,
+    "maxwidth": 400,
+    "maxheight": 800,
+    "maxcount": 12,
+    "label": true
+  },
+  "bestshow": {
+    "seq": 2,
+    "required": "R",
+    "name": "精品展示",
+    "type": "a",
+    "id": "bestshow",
+    "initflag": true,
+    "maxwidth": 400,
+    "maxheight": 800,
+    "maxcount": 6,
+    "label": true
+  },
+  "goodsshow": {
+    "seq": 3,
+    "required": "R",
+    "name": "商品展示",
+    "type": "b",
+    "id": "goodsshow",
+    "initflag": true,
+    "maxwidth": 400,
+    "maxheight": 800,
+    "maxcount": 12,
+    "label": true
+  },
+  "pricelist": {
+    "seq": 9,
+    "required": "R",
+    "name": "价目表",
+    "type": "a",
+    "id": "pricelist",
+    "initflag": true,
+    "maxwidth": 200,
+    "maxheight": 400,
+    "maxcount": 6,
+    "label": true
+  }
+}
+
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "css_style",
+  "desc": "CSS样式",
+  "height": {
+    "seq": 0,
+    "id": "height",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "name": "高度",
+    "label": true
+  },
+  "width": {
+    "seq": 0,
+    "id": "width",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "name": "宽度",
+    "label": true
+  },
+  "margin-top": {
+    "seq": 0,
+    "id": "margin-top",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "name": "上边距",
+    "label": true
+  },
+  "margin-right": {
+    "seq": 0,
+    "id": "margin-right",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "name": "右边距",
+    "label": true
+  },
+  "margin-bottom": {
+    "seq": 0,
+    "id": "margin-bottom",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "name": "下边距",
+    "label": true
+  },
+  "margin-left": {
+    "seq": 0,
+    "id": "margin-left",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "name": "左边距",
+    "label": true
+  },
+  "padding-top": {
+    "seq": 0,
+    "id": "padding-top",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "name": "上内边距",
+    "label": true
+  },
+  "padding-right": {
+    "seq": 0,
+    "id": "padding-right",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "name": "右内边距",
+    "label": true
+  },
+  "padding-bottom": {
+    "seq": 0,
+    "id": "padding-bottom",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "name": "下内边距",
+    "label": true
+  },
+  "padding-left": {
+    "seq": 0,
+    "id": "padding-left",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "name": "左内边距",
+    "label": true
+  },
+  "color": {
+    "seq": 0,
+    "id": "color",
+    "type": "0",
+    "required": "O",
+    "name": "字体颜色",
+    "placeholder": "格式：#ddd;red;#cdcdcd",
+    "label": true
+  },
+  "font-size": {
+    "seq": 0,
+    "id": "font-size",
+    "type": "1",
+    "required": "O",
+    "name": "字体大小",
+    "suffix": [
+      "px"
+    ],
+    "label": true
+  },
+  "font-weight": {
+    "seq": 0,
+    "id": "font-weight",
+    "type": "1",
+    "required": "O",
+    "name": "字体粗细",
+    "label": true
+  },
+  "text-align": {
+    "seq": 0,
+    "id": "text-align",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "left",
+        "name": "左"
+      },
+      {
+        "code": "right",
+        "name": "右"
+      },
+      {
+        "code": "center",
+        "name": "中间"
+      },
+      {
+        "code": "justify",
+        "name": "两端对齐"
+      },
+      {
+        "code": "inherit",
+        "name": "父元素继承属性"
+      }
+    ],
+    "required": "O",
+    "name": "文本对齐方式",
+    "label": true
+  },
+  "position": {
+    "seq": 0,
+    "id": "position",
+    "required": "O",
+    "name": "position",
+    "label": true,
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "absolute",
+        "name": "绝对定位"
+      },
+      {
+        "code": "fixed",
+        "name": "浏览器窗口进行绝对定位"
+      },
+      {
+        "code": "relative",
+        "name": "相对定位"
+      },
+      {
+        "code": "static",
+        "name": "正常的流中显示"
+      },
+      {
+        "code": "sticky",
+        "name": "黏性显示"
+      },
+      {
+        "code": "inherit",
+        "name": "父元素继承"
+      }
+    ]
+  },
+  "display": {
+    "seq": 0,
+    "id": "display",
+    "required": "O",
+    "name": "显示方式",
+    "label": true,
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "block",
+        "name": "块元素"
+      },
+      {
+        "code": "inline",
+        "name": "内联元素"
+      },
+      {
+        "code": "inline-block",
+        "name": "行内块元素"
+      },
+      {
+        "code": "flex",
+        "name": "弹性布局"
+      },
+      {
+        "code": "grid",
+        "name": "网格布局"
+      },
+      {
+        "code": "inline-grid",
+        "name": "行内网格布局"
+      },
+      {
+        "code": "subgrid",
+        "name": "嵌套子网格容器"
+      },
+      {
+        "code": "list-item",
+        "name": "列表显示"
+      },
+      {
+        "code": "inherit",
+        "name": "继承父元素"
+      }
+    ]
+  },
+  "top": {
+    "seq": 0,
+    "id": "top",
+    "type": "2",
+    "required": "O",
+    "suffix": 100029,
+    "name": "元素顶部位置",
+    "label": true
+  },
+  "right": {
+    "seq": 0,
+    "id": "right",
+    "type": "2",
+    "required": "O",
+    "suffix": 100029,
+    "name": "元素右部位置",
+    "label": true
+  },
+  "bottom": {
+    "seq": 0,
+    "id": "bottom",
+    "type": "2",
+    "required": "O",
+    "suffix": 100029,
+    "name": "元素右部位置",
+    "label": true
+  },
+  "left": {
+    "seq": 0,
+    "id": "left",
+    "type": "2",
+    "required": "O",
+    "suffix": 100029,
+    "name": "元素左部位置",
+    "label": true
+  },
+  "z-index": {
+    "seq": 0,
+    "id": "z-index",
+    "type": "1",
+    "required": "O",
+    "name": "Z序",
+    "label": true
+  },
+  "opacity": {
+    "seq": 0,
+    "id": "opacity",
+    "type": "2",
+    "required": "O",
+    "name": "透明度",
+    "label": true
+  },
+  "flex": {
+    "seq": 0,
+    "id": "flex",
+    "type": "0",
+    "required": "O",
+    "name": "flex",
+    "placeholder": "",
+    "label": true
+  },
+  "flex-direction": {
+    "seq": 0,
+    "id": "flex-direction",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "row",
+        "name": "沿水平主轴让元素从左向右排列"
+      },
+      {
+        "code": "column",
+        "name": "让元素沿垂直主轴从上到下垂直排列"
+      },
+      {
+        "code": "row-reverse",
+        "name": "沿水平主轴让元素从右向左排列"
+      }
+    ],
+    "required": "O",
+    "name": "flex-direction",
+    "placeholder": "",
+    "label": true
+  },
+  "flex-wrap": {
+    "seq": 0,
+    "id": "flex-wrap",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "nowrap",
+        "name": "元素不换行"
+      },
+      {
+        "code": "wrap",
+        "name": "元素换行"
+      }
+    ],
+    "required": "O",
+    "name": "flex-wrap",
+    "placeholder": "",
+    "label": true
+  },
+  "justify-content": {
+    "seq": 0,
+    "id": "justify-content",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "center",
+        "name": "center"
+      },
+      {
+        "code": "flex-start",
+        "name": "flex-start"
+      },
+      {
+        "code": "flex-end",
+        "name": "flex-end"
+      },
+      {
+        "code": "space-between",
+        "name": "space-between"
+      },
+      {
+        "code": "space-around",
+        "name": "space-around"
+      },
+      {
+        "code": "start",
+        "name": "grid布局左排列"
+      },
+      {
+        "code": "end",
+        "name": "grid布局右排列"
+      },
+      {
+        "code": "stretch",
+        "name": "grid布局填满"
+      },
+      {
+        "code": "space-evenly",
+        "name": "grid布局网格项间隔相等"
+      }
+    ],
+    "required": "O",
+    "name": "justify-content",
+    "placeholder": "flex布局启用",
+    "label": true
+  },
+  "align-items": {
+    "seq": 0,
+    "id": "align-items",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "center",
+        "name": "center"
+      },
+      {
+        "code": "flex-start",
+        "name": "flex-start"
+      },
+      {
+        "code": "flex-end",
+        "name": "flex-end"
+      },
+      {
+        "code": "baseline",
+        "name": "flex布局baseline"
+      },
+      {
+        "code": "start",
+        "name": "grid布局左排列"
+      },
+      {
+        "code": "end",
+        "name": "grid布局右排列"
+      },
+      {
+        "code": "stretch",
+        "name": "grid布局填满"
+      }
+    ],
+    "required": "O",
+    "name": "align-items",
+    "placeholder": "flex/grid布局启用",
+    "label": true
+  },
+  "align-content": {
+    "seq": 0,
+    "id": "align-content",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "center",
+        "name": "center"
+      },
+      {
+        "code": "flex-start",
+        "name": "flex-start"
+      },
+      {
+        "code": "flex-end",
+        "name": "flex-end"
+      },
+      {
+        "code": "stretch",
+        "name": "stretch"
+      },
+      {
+        "code": "space-between",
+        "name": "space-between"
+      },
+      {
+        "code": "space-around",
+        "name": "space-around"
+      },
+      {
+        "code": "start",
+        "name": "grid布局左排列"
+      },
+      {
+        "code": "end",
+        "name": "grid布局右排列"
+      },
+      {
+        "code": "stretch",
+        "name": "grid布局填满"
+      },
+      {
+        "code": "space-evenly",
+        "name": "grid布局网格项间隔相等"
+      }
+    ],
+    "required": "O",
+    "name": "align-content",
+    "placeholder": "flex布局启用",
+    "label": true
+  },
+  "grid-template-columns": {
+    "seq": 0,
+    "id": "grid-template-columns",
+    "type": "0",
+    "required": "O",
+    "length": 100,
+    "name": "grid-template-columns",
+    "placeholder": "[first] 40px [line2]50px auto 50px [five]40px;",
+    "label": true
+  },
+  "grid-template-rows": {
+    "seq": 0,
+    "id": "grid-template-rows",
+    "type": "0",
+    "required": "O",
+    "length": 100,
+    "placeholder": "40px 50px auto 50px 40px;",
+    "name": "grid-template-rows",
+    "label": true
+  },
+  "grid-column-gap": {
+    "seq": 0,
+    "id": "grid-column-gap",
+    "type": "0",
+    "required": "O",
+    "length": 100,
+    "placeholder": "",
+    "name": "grid-column-gap",
+    "label": true
+  },
+  "grid-row-gap": {
+    "seq": 0,
+    "id": "grid-row-gap",
+    "type": "0",
+    "required": "O",
+    "length": 100,
+    "placeholder": "4px;",
+    "name": "grid-row-gap",
+    "label": true
+  },
+  "justify-items": {
+    "seq": 0,
+    "id": "justify-items",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "center",
+        "name": "居中排列"
+      },
+      {
+        "code": "start",
+        "name": "左排列"
+      },
+      {
+        "code": "end",
+        "name": "右排列"
+      },
+      {
+        "code": "stretch",
+        "name": "填满"
+      }
+    ],
+    "required": "O",
+    "length": 100,
+    "placeholder": "grid布局启用",
+    "name": "justify-items",
+    "label": true
+  },
+  "align-items2": {
+    "seq": 0,
+    "id": "align-items2",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "center",
+        "name": "居中排列"
+      },
+      {
+        "code": "start",
+        "name": "左排列"
+      },
+      {
+        "code": "end",
+        "name": "右排列"
+      },
+      {
+        "code": "stretch",
+        "name": "填满"
+      }
+    ],
+    "required": "O",
+    "length": 100,
+    "placeholder": "grid布局启用",
+    "name": "align-items2",
+    "label": true
+  },
+  "justify-content2": {
+    "seq": 0,
+    "id": "justify-content2",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "center",
+        "name": "居中排列"
+      },
+      {
+        "code": "start",
+        "name": "左排列"
+      },
+      {
+        "code": "end",
+        "name": "右排列"
+      },
+      {
+        "code": "stretch",
+        "name": "填满"
+      },
+      {
+        "code": "space-around",
+        "name": "网格项两边间距相等"
+      },
+      {
+        "code": "space-between",
+        "name": "两边对齐"
+      },
+      {
+        "code": "space-evenly",
+        "name": "网格项间隔相等"
+      }
+    ],
+    "required": "O",
+    "length": 100,
+    "placeholder": "grid布局启用",
+    "name": "justify-content2",
+    "label": true
+  },
+  "align-content2": {
+    "seq": 0,
+    "id": "align-content2",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "center",
+        "name": "居中排列"
+      },
+      {
+        "code": "start",
+        "name": "左排列"
+      },
+      {
+        "code": "end",
+        "name": "右排列"
+      },
+      {
+        "code": "stretch",
+        "name": "填满"
+      },
+      {
+        "code": "space-around",
+        "name": "网格项两边间距相等"
+      },
+      {
+        "code": "space-between",
+        "name": "两边对齐"
+      },
+      {
+        "code": "space-evenly",
+        "name": "网格项间隔相等"
+      }
+    ],
+    "required": "O",
+    "length": 100,
+    "placeholder": "grid布局启用",
+    "name": "align-content2",
+    "label": true
+  },
+  "grid-template-areas": {
+    "seq": 0,
+    "id": "grid-template-areas",
+    "type": "0",
+    "required": "O",
+    "length": 100,
+    "name": "grid-template-areas",
+    "label": true
+  },
+  "grid-area": {
+    "seq": 0,
+    "id": "grid-areas",
+    "type": "0",
+    "required": "O",
+    "length": 100,
+    "name": "grid-areas",
+    "label": true
+  },
+  "styletext": {
+    "seq":1110,
+    "id": "styletext",
+    "type": "9",
+    "required": "O",
+    "length": 512,
+    "name": "样式文本",
+    "label": true
+  }
+}
+
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "layout_icon",
+  "desc": "图标属性",
+  "type": {
+    "seq": 0,
+    "id": "type",
+    "name": "类型",
+    "type": "3",
+    "required": "R",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "success",
+        "name": "success"
+      },
+      {
+        "code": "success_no_circle",
+        "name": "success_no_circle"
+      },
+      {
+        "code": "info",
+        "name": "info"
+      },
+      {
+        "code": "warn",
+        "name": "warn"
+      },
+      {
+        "code": "waiting",
+        "name": "waiting"
+      },
+      {
+        "code": "cancel",
+        "name": "cancel"
+      },
+      {
+        "code": "download",
+        "name": "download"
+      },
+      {
+        "code": "search",
+        "name": "search"
+      },
+      {
+        "code": "clear",
+        "name": "clear"
+      }
+    ],
+    "label": true
+  },
+  "size": {
+    "seq": 0,
+    "id": "size",
+    "name": "尺寸",
+    "type": "1",
+    "required": "R",
+    "label": true
+  },
+  "color": {
+    "seq": 0,
+    "id": "color",
+    "name": "颜色",
+    "type": "0",
+    "placeholder": "con的颜色，同css的color",
+    "required": "O",
+    "label": true
+  }
+}
+
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "layout_text",
+  "desc": "文本属性",
+  "selectable": {
+    "seq": 0,
+    "id": "selectable",
+    "name": "文本是否可选",
+    "type": "s",
+    "required": "O",
+    "label": true
+  },
+  "space": {
+    "seq": 0,
+    "id": "space",
+    "name": "显示连续空格",
+    "type": "s",
+    "required": "O",
+    "label": true
+  },
+  "decode": {
+    "seq": 0,
+    "id": "decode",
+    "name": "是否解码",
+    "type": "s",
+    "placeholder": "是否解码",
+    "required": "O",
+    "label": true
+  },
+  "text":{
+    "seq": 0,
+    "id": "text",
+    "name": "文本内容",
+    "type": "0",
+    "placeholder": "文本内容",
+    "required": "O",
+    "label": true
+  }
+}
+
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "layout_view",
+  "desc": "视图容器",
+  "hover-class": {
+    "seq": 0,
+    "id": "hover-class",
+    "name": "按下去样式类",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "none",
+        "name": "无样式"
+      },
+      {
+        "code": "hover-view",
+        "name": "默认样式"
+      },
+      {
+        "code": "hover-view2",
+        "name": "渐灰色样式"
+      }
+    ],
+    "required": "O",
+    "label": true
+  }
+}
+
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "layout_swiper",
+  "desc": "滑块视图容器",
+  "indicator-dots": {
+    "id": "indicator-dots",
+    "name": "面板指示点",
+    "type": "s",
+    "required": "O",
+    "label": true,
+    "value": false
+  },
+  "autoplay": {
+    "id": "autoplay",
+    "name": "自动播放",
+    "type": "s",
+    "required": "O",
+    "label": true,
+    "value": false
+  },
+  "interval": {
+    "id": "interval",
+    "name": "切换时间间隔",
+    "type": "2",
+    "required": "O",
+    "placeholder": "自动切换时间间隔",
+    "label": true,
+    "value": 5000
+  },
+  "previous-margin": {
+    "id": "previous-margin",
+    "name": "前边距",
+    "type": "0",
+    "required": 2,
+    "suffix": 100028,
+    "placeholder": "可用于露出前一项的一小部分,接受 px和rpx值",
+    "label": true,
+    "value": 0
+  },
+  "next-margin": {
+    "id": "next-margin",
+    "name": "后边距",
+    "type": "2",
+    "required": "O",
+    "suffix": 100028,
+    "placeholder": "可用于露出后一项的一小部分,接受px和rpx值",
+    "label": true,
+    "value": 0
+  }
+}
+
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "layout_scroll-view",
+  "desc": "可滚动视图区域",
+  "scroll-x": {
+    "seq": 0,
+    "id": "scroll-x",
+    "name": "允许横向滚动",
+    "type": "s",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "none",
+        "name": "无样式"
+      },
+      {
+        "code": "hover-view",
+        "name": "默认样式"
+      },
+      {
+        "code": "hover-view2",
+        "name": "渐灰色样式"
+      }
+    ],
+    "required": "O",
+    "label": true
+  },
+  "scroll-y": {
+    "seq": 0,
+    "id": "scroll-y",
+    "name": "允许纵向滚动",
+    "type": "s",
+    "required": "O",
+    "label": true
+  },
+  "upper-threshold": {
+    "seq": 0,
+    "id": "upper-threshold",
+    "name": "scrolltoupper事件阈值",
+    "type": "1",
+    "required": "O",
+    "label": true
+  },
+  "lower-threshold": {
+    "seq": 0,
+    "id": "lower-threshold",
+    "name": "scrolltolower事件阈值",
+    "type": "1",
+    "required": "O",
+    "label": true
+  },
+  "enable-flex": {
+    "seq": 0,
+    "id": "enable-flex",
+    "name": "启用flexbox布局",
+    "type": "s",
+    "required": "O",
+    "label": true
+  }
+}
+
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "layout_image",
+  "desc": "可滚动视图区域",
+  "src": {
+    "seq": 0,
+    "id": "src",
+    "name": "图片资源地址",
+    "type": "0",
+    "required": "O",
+    "label": true
+  },
+  "mode": {
+    "seq": 0,
+    "id": "mode",
+    "name": "允许纵向滚动",
+    "type": "3",
+    "dict": "dict",
+    "dictlist": [
+      {
+        "code": "scaleToFill",
+        "name": "图片的宽高完全拉伸至填满 image 元素"
+      },
+      {
+        "code": "aspectFit",
+        "name": "纵横比缩放图片完整地将图片显示出来"
+      },
+      {
+        "code": "widthFix",
+        "name": "宽度不变，高度自动变化，保持原图宽高比不变"
+      },
+      {
+        "code": "top",
+        "name": "裁剪模式，不缩放图片，只显示图片的顶部区域"
+      },
+      {
+        "code": "bottom",
+        "name": "裁剪模式，不缩放图片，只显示图片的底部区域"
+      },
+      {
+        "code": "center",
+        "name": "裁剪模式，不缩放图片，只显示图片的中间区域"
+      },
+      {
+        "code": "left",
+        "name": "裁剪模式，不缩放图片，只显示图片的左边区域"
+      },
+      {
+        "code": "right",
+        "name": "裁剪模式，不缩放图片，只显示图片的右边区域"
+      },
+      {
+        "code": "top left",
+        "name": "裁剪模式，不缩放图片，只显示图片的左上边区域"
+      },
+      {
+        "code": "top right",
+        "name": "裁剪模式，不缩放图片，只显示图片的右上边区域"
+      },
+      {
+        "code": "bottom left",
+        "name": "裁剪模式，不缩放图片，只显示图片的左下边区域"
+      },
+      {
+        "code": "bottom right",
+        "name": "裁剪模式，不缩放图片，只显示图片的右下边区域"
+      }
+    ],
+    "required": "O",
+    "label": true
+  },
+  "lazy-load": {
+    "seq": 0,
+    "id": "lazy-load",
+    "name": "图片懒加载",
+    "type": "s",
+    "required": "O",
+    "label": true
+  },
+  "show-menu-by-longpress": {
+    "seq": 0,
+    "id": "show-menu-by-longpress",
+    "name": "识别小程序码",
+    "type": "s",
+    "required": "O",
+    "label": true
+  },
+  "src": {
+    "seq": 0,
+    "id": "src",
+    "name": "图片地址",
+    "type": "9",
+    "required": "O",
+    "label": true
+  }
+}
+
+{
+  "openid": "0",
+  "temptype": "promotion",
+  "limittimeflag": {
+    "seq": 3,
+    "required": "R",
+    "name": "限时标识",
+    "type": "3",
+    "id": "limittimeflag",
+    "label": true,
+    "dict": "dict",
+    "dictlist": "100017"
+  },
+  "endtime": {
+    "seq": 5,
+    "id": "endtime",
+    "name": "活动结束时间",
+    "label": true,
+    "type": "x",
+    "required": "R",
+    "hidden": true,
+    "condition": "limittimeflag==1"
+  },
+  "status": {
+    "dictlist": "100018",
+    "seq": 6.0,
+    "id": "status",
+    "name": "状态",
+    "label": true,
+    "type": "3",
+    "required": "O",
+    "dict": "dict"
+  },
+  "marqueeshow": {
+    "id": "marqueeshow",
+    "name": "详情滚屏播放",
+    "type": "s",
+    "required": "O",
+    "length": 1,
+    "label": true,
+    "seq": 9.0,
+    "placeholder": "活动详情将会滚屏播放显示"
+  },
+  "prominfo": {
+    "id": "prominfo",
+    "name": "活动详情",
+    "type": "9",
+    "required": "R",
+    "length": 300.0,
+    "label": false,
+    "seq": 10.0,
+    "placeholder": "请在此处介绍下活动详细规则"
+  },
+  "tempid": 0.0,
+  "promtype": {
+    "seq": 0,
+    "id": "promtype",
+    "name": "活动类型",
+    "label": true,
+    "type": "3",
+    "dict": "dict",
+    "dictlist": 100016.0,
+    "required": "R"
+  },
+  "promname": {
+    "id": "promname",
+    "name": "活动名称",
+    "label": true,
+    "type": "0",
+    "required": "R",
+    "seq": 1
+  },
+  "begtime": {
+    "condition": "limittimeflag==1",
+    "seq": 4,
+    "id": "begtime",
+    "name": "活动开始时间",
+    "label": true,
+    "type": "x",
+    "required": "R",
+    "hidden": true
+  },
+  "promfullname": {
+    "type": "0",
+    "required": "R",
+    "seq": 2,
+    "id": "promfullname",
+    "name": "活动全称",
+    "label": true
+  },
+  "prompic": {
+    "desc": "initflag: false, 在初始化upimg 对象的时候，不传pack参数，即第三个参数传NULL",
+    "id": "prompic",
+    "required": "O",
+    "maxwidth": 780.0,
+    "maxheight": 280.0,
+    "initflag": false,
+    "label": true,
+    "maxcount": 1.0,
+    "seq": 8.0,
+    "name": "活动图片",
+    "type": "b"
+  }
+}
+{
+  "openid": "0",
+  "tempid": 0,
+  "nickname": {
+    "label": true,
+    "id": "nickname",
+    "name": "昵称",
+    "type": "0",
+    "required": "O",
+    "length": 200
+  },
+  "username": {
+    "label": true,
+    "id": "username",
+    "name": "姓名",
+    "type": "0",
+    "required": "R",
+    "length": 200
+  },
+  "personnum": {
+    "label": true,
+    "id": "personnum",
+    "name": "人数",
+    "type": "1",
+    "required": "R",
+    "fix": "1",
+    "length": 11
+  },
+  "childnum": {
+    "label": true,
+    "id": "childnnum",
+    "name": "儿童数",
+    "type": "1",
+    "required": "R",
+    "fix": "1",
+    "length": 11
+  },
+  "phone": {
+    "label": true,
+    "id": "phone",
+    "name": "手机号码",
+    "type": "8",
+    "required": "R",
+    "fix": "1",
+    "length": 11
+  },
+  "gender": {
+    "label": true,
+    "id": "gender",
+    "name": "性别",
+    "type": "3",
+    "required": "R",
+    "dict": "dict",
+    "dictlist": 100015
+  },
+  "desc": "报名活动表单配置",
+  "temptype": "enrollform"
+}
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "promotion_1",
+  "immediatecutamt": {
+    "label": true,
+    "id": "immediatecutamt",
+    "name": "直减金额",
+    "type": "2",
+    "required": "R",
+    "seq": 0,
+    "placeholder": "直减金额金额不累减，1000减去100，2000一样",
+    "length": 20
+  },
+  "thresholdamt": {
+    "label": true,
+    "id": "thresholdamt",
+    "name": "直减起点金额",
+    "type": "2",
+    "required": "R",
+    "length": 20,
+    "seq": 1,
+    "placeholder": "购买商品总价格大于等于才能参入直减活动"
+  },
+  "maxbuyqty": {
+    "label": true,
+    "id": "maxbuyqty",
+    "name": "可购单商品量",
+    "type": "1",
+    "required": "O",
+    "length": 6,
+    "seq": 2,
+    "placeholder": "每人最多可购买活动内单个商品数量"
+  },
+  "maxbuypromqty": {
+    "label": true,
+    "id": "maxbuypromqty",
+    "name": "可购活动商品量",
+    "type": "1",
+    "required": "O",
+    "length": 6,
+    "seq": 3,
+    "placeholder": "每人最多可购买活动内所有商品数量"
+  }
+},
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "promotion_2",
+  "discount": {
+    "label": true,
+    "id": "discount",
+    "name": "折扣",
+    "type": "2",
+    "required": "R",
+    "seq": 0,
+    "placeholder": "商品最低折扣【0.1-9.9】之间",
+    "length": 20
+  },
+  "thresholdamt": {
+    "label": true,
+    "id": "thresholdamt",
+    "name": "折扣起点金额",
+    "type": "2",
+    "required": "R",
+    "length": 20,
+    "seq": 1,
+    "placeholder": "购买商品价格大于等于才能参入折扣活动,填0无要求"
+  },
+  "maxbuyqty": {
+    "label": true,
+    "id": "maxbuyqty",
+    "name": "可购单商品量",
+    "type": "1",
+    "required": "O",
+    "length": 5,
+    "seq": 2,
+    "placeholder": "每人最多可购买活动内单个商品数量"
+  },
+  "maxbuypromqty": {
+    "label": true,
+    "id": "maxbuypromqty",
+    "name": "可购活动商品量",
+    "type": "1",
+    "required": "O",
+    "length": 5,
+    "seq": 3,
+    "placeholder": "每人最多可购买活动内所有商品数量"
+  }
+},
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "promotion_4",
+  "fullcutamt": {
+    "label": true,
+    "id": "fullcutamt",
+    "name": "满减金额",
+    "type": "2",
+    "required": "R",
+    "seq": 0,
+    "placeholder": "符合满减要求减掉的金额可累减：满1000减100，2000减去200",
+    "length": 20
+  },
+  "thresholdamt": {
+    "label": true,
+    "id": "thresholdamt",
+    "name": "满减起点金额",
+    "type": "2",
+    "required": "R",
+    "seq": 1,
+    "length": 20,
+    "placeholder": "购买商品总价格大于等于才能参入满减活动，譬如起点是满1000减"
+  },
+  "maxbuyqty": {
+    "label": true,
+    "id": "maxbuyqty",
+    "name": "可购单商品量",
+    "type": "1",
+    "required": "O",
+    "length": 5,
+    "seq": 2,
+    "placeholder": "每人最多可购买活动内单个商品数量"
+  },
+  "maxbuypromqty": {
+    "label": true,
+    "id": "maxbuypromqty",
+    "name": "可购活动商品量",
+    "type": "1",
+    "required": "O",
+    "seq": 3,
+    "length": 5,
+    "placeholder": "每人最多可购买活动内所有商品数量"
+  }
+},
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "promotion_5",
+  "seckilltype": {
+    "label": true,
+    "id": "seckilltype",
+    "name": "秒杀方式",
+    "type": "3",
+    "required": "R",
+    "dictlist": 100020,
+    "dict": "dict",
+    "seq": 0,
+    "placeholder": ""
+  },
+  "promamt": {
+    "label": true,
+    "id": "promamt",
+    "name": "活动价格",
+    "type": "2",
+    "required": "R",
+    "hidden": true,
+    "condition": "seckilltype!=0",
+    "length": 20,
+    "seq": 1,
+    "placeholder": "商品秒杀价格"
+  },
+  "promqty": {
+    "label": true,
+    "id": "promqty",
+    "name": "活动商品量",
+    "type": "2",
+    "required": "O",
+    "hidden": true,
+    "condition": "seckilltype!=0",
+    "length": 20,
+    "seq": 2,
+    "placeholder": "可供秒杀的商品数量，全部商品售完秒杀活动结束"
+  },
+  "preparebegtime": {
+    "label": true,
+    "id": "preparebegtime",
+    "name": "预热开始时间",
+    "type": "x",
+    "required": "O",
+    "seq": 3,
+    "length": 20,
+    "placeholder": "开买前预热推广时间"
+  },
+  "begtime": {
+    "label": true,
+    "id": "begtime",
+    "name": "秒杀开始时间",
+    "type": "x",
+    "required": "O",
+    "length": 20,
+    "seq": 4,
+    "placeholder": "秒杀开始时间"
+  },
+  "endtime": {
+    "label": true,
+    "id": "endtime",
+    "name": "秒杀结束时间",
+    "type": "x",
+    "required": "O",
+    "length": 20,
+    "seq": 5,
+    "placeholder": "秒杀结束时间，时间一到，活动结束"
+  },
+  "maxbuyqty": {
+    "label": true,
+    "id": "maxbuyqty",
+    "name": "可购数量",
+    "type": "1",
+    "required": "O",
+    "length": 5,
+    "seq": 6,
+    "placeholder": "每人最多秒杀单个商品数量"
+  },
+  "maxbuypromqty": {
+    "label": true,
+    "id": "maxbuypromqty",
+    "name": "可购活动商品量",
+    "type": "1",
+    "required": "O",
+    "length": 5,
+    "seq": 7,
+    "placeholder": "每人最多秒杀活动内商品数量"
+  }
+},
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "promotion_6",
+  "promamt": {
+    "label": true,
+    "id": "promamt",
+    "name": "活动价格",
+    "type": "2",
+    "required": "R",
+    "seq": 0,
+    "length": 20,
+    "placeholder": "商品团购价格"
+  },
+  "promqty": {
+    "label": true,
+    "id": "promqty",
+    "name": "活动商品量",
+    "type": "2",
+    "required": "R",
+    "length": 20,
+    "seq": 1,
+    "placeholder": "可供团购销售的商品数量"
+  },
+  "preparebegtime": {
+    "label": true,
+    "id": "preparebegtime",
+    "name": "预热开始时间",
+    "type": "x",
+    "required": "O",
+    "seq": 2,
+    "length": 20,
+    "placeholder": "开团前预热推广时间"
+  },
+  "begtime": {
+    "label": true,
+    "id": "begtime",
+    "name": "开团时间",
+    "type": "x",
+    "required": "R",
+    "length": 20,
+    "seq": 3,
+    "placeholder": "即活动开始时间，基本信息中可设置"
+  },
+  "endtime": {
+    "seq": 6.0,
+    "id": "endtime",
+    "name": "结束时间",
+    "label": true,
+    "type": "x",
+    "required": "R",
+    "seq": 4,
+    "placeholder": "即活动结束时间，基本信息中可设置"
+  },
+  "maxbuyqty": {
+    "label": true,
+    "id": "maxbuyqty",
+    "name": "可购数量",
+    "type": "1",
+    "required": "O",
+    "seq": 5,
+    "length": 5,
+    "placeholder": "每人最多秒杀单个商品数量"
+  },
+  "maxbuypromqty": {
+    "label": true,
+    "id": "maxbuypromqty",
+    "name": "可购活动商品量",
+    "type": "1",
+    "required": "O",
+    "seq": 6,
+    "length": 5,
+    "placeholder": "每人最多秒杀活动内商品数量"
+  }
+},
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "promotion_8",
+  "bargaintype": {
+    "label": true,
+    "id": "bargaintype",
+    "name": "砍价金额类型",
+    "type": "3",
+    "required": "R",
+    "dictlist": 100022,
+    "dict": "dict",
+    "seq": 0,
+    "placeholder": "固定/随机",
+    "desc": "砍去金额随机/固定"
+  },
+  "personqty": {
+    "label": true,
+    "id": "personqty",
+    "name": "砍价人数上限",
+    "type": "1",
+    "required": "O",
+    "length": 5,
+    "seq": 1,
+    "placeholder": "商品可承受帮助砍价人数上限"
+  },
+  "minbargainamt": {
+    "label": true,
+    "id": "minbargainamt",
+    "name": "砍价下限",
+    "type": "2",
+    "required": "R",
+    "length": 20,
+    "seq": 2,
+    "placeholder": "固定模式下为固定砍去金额"
+  },
+  "maxbargainamt": {
+    "label": true,
+    "id": "maxbargainamt",
+    "name": "砍价上限",
+    "type": "2",
+    "required": "O",
+    "condition": "bargaintype==1",
+    "length": 20,
+    "seq": 3,
+    "placeholder": ""
+  },
+  "promqty": {
+    "label": true,
+    "id": "promqty",
+    "name": "活动商品量",
+    "type": "2",
+    "required": "R",
+    "seq": 4,
+    "length": 20,
+    "placeholder": "可供砍价销售的商品数量"
+  },
+  "maxbuyqty": {
+    "label": true,
+    "id": "maxbuyqty",
+    "name": "可购数量",
+    "type": "1",
+    "required": "O",
+    "length": 6,
+    "seq": 5,
+    "placeholder": "每人最多可买单商品数量"
+  },
+  "maxbuypromqty": {
+    "label": true,
+    "id": "maxbuypromqty",
+    "name": "可购活动商品量",
+    "type": "1",
+    "seq": 6,
+    "required": "O",
+    "length": 6,
+    "placeholder": "每人最多可买活动内商品数量"
+  }
+},
+{
+  "openid": "0",
+  "tempid": 0,
+  "temptype": "promotion_9",
+  "promamt": {
+    "label": true,
+    "id": "promamt",
+    "name": "活动价格",
+    "type": "2",
+    "required": "R",
+    "length": 20,
+    "seq": 0,
+    "placeholder": "特价商品活动售价"
+  },
+  "promqty": {
+    "label": true,
+    "id": "promqty",
+    "name": "活动商品量",
+    "type": "2",
+    "required": "R",
+    "seq": 1,
+    "length": 6,
+    "placeholder": "可供特价销售的商品数量"
+  },
+  "maxbuyqty": {
+    "label": true,
+    "id": "maxbuyqty",
+    "name": "可购数量",
+    "type": "1",
+    "required": "O",
+    "length": 6,
+    "seq": 2,
+    "placeholder": "每人最多可买单个商品数量"
+  },
+  "maxbuypromqty": {
+    "label": true,
+    "id": "maxbuypromqty",
+    "name": "可购活动商品量",
+    "type": "1",
+    "required": "O",
+    "seq": 3,
+    "length": 6,
+    "placeholder": "每人最多可买活动内商品数量"
+  }
+}
+}

@@ -1,0 +1,60 @@
+ <wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<view class="ext-horiz-view top-view">
+  <view class="view-item view-ext">
+    <view class="row">
+      <view class='left'>
+        <image class="cover-thumb" wx:if="{{userinfo.avatarurl}}" src="{{userinfo.avatarurl}}"></image>
+        <view class="cover-text" wx:else>{{substr.subs(userinfo.username,1)}}</view>
+        <view class="nickname">
+          <text class="line-clamp">{{ userinfo.username }}({{substr.subs2(userinfo.shopinfo.shopid,20)}})</text>
+          <text class="line-clamp">{{userinfo.shopinfo.shopname}}</text>
+          <text class="phone">{{ userinfo.phone||''}}</text>
+        </view>
+      </view>
+      <view class="right" catchtap="goToShop">
+        <text>店铺信息</text>
+        <label class="iconfont icon-rightarrow"></label>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="ext-horiz-view {{index==0?'top-view':''}}" wx:for="{{menu}}" wx:key="id" wx:for-item="item" wx:for-index="index" style="{{item.active?'':'background-color:#ccc'}}">
+  <block wx:if="{{item.active}}">
+    <view class="view-item">
+      <view class="row" style="border-bottom: 1px solid #eee;">
+        <view class='left'>
+          <text wx:if="{{item.icon}}" style="padding-right:5px;" class="iconfont {{item.icon}}"></text>
+          <text>{{item.name}}</text>
+        </view>
+        <view class='right'>
+          <text></text>
+          <!--<label class="ico-moon icon-rightarrow"></label>-->
+        </view>
+      </view>
+    </view>
+    <view class="view-item">
+      <block wx:for="{{item.children}}" wx:key="id" wx:for-item="child" wx:for-index="cindex">
+        <view wx:if="{{child && child.active}}" class="flex-item" hover-class="flex-active" catchtap="{{child.active?'goToPage':''}}" data-page="{{child.url}}" data-params="{{child.params}}" style="{{child.active?'':'background-color:#ccc'}}">
+          <text class="cell-item icon2 iconfont {{child.icon}}"></text>
+          <text class='cell-item'>{{child.name}}</text>
+        </view>
+      </block>
+      <block wx:if="{{(item.children.length-delCount[item.id]) % 3 == 1}}">
+        <view class="flex-item">
+          <text class="cell-item"></text>
+          <text class="cell-item"></text>
+        </view>
+        <view class="flex-item">
+          <text class="cell-item"></text>
+          <text class="cell-item"></text>
+        </view>
+      </block>
+      <block wx:if="{{(item.children.length-delCount[item.id]) % 3 == 2}}">
+        <view class="flex-item">
+          <text class="cell-item"></text>
+          <text class="cell-item"></text>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

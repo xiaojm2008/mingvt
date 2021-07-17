@@ -1,0 +1,374 @@
+{
+  "_id": {
+    "$oid": "5c904e036b8f80822971df49"
+  },
+  "vgno": "",
+  "goodno": "",
+  "goodname": "",
+  "supply": {
+    "supplyid": "",
+    "supplyname": ""
+  },
+  "deptid": "",
+  "busmodel": "",
+  "spec": "",
+  "unit": "",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "",
+    "detail": ""
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "hotsell": "",
+  "preflag": "",
+  "quantity": {
+    "minqty": 0,
+    "stockqty": 0,
+    "totalqty": 0,
+    "availableqty": 0,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 0,
+    "originalprice": 0,
+    "taxprice": 0,
+    "saleprice": 0,
+    "stockprice": 0,
+    "memberprice": 0
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [
+    "h",
+    "s"
+  ],
+  "hpicpath": "",
+  "mpicpath": "",
+  "spicpath": "",
+  "settime": "",
+  "updatetime": ""
+}
+{
+  "_id": {
+    "$oid": "5c905b106b8f80822971e637"
+  },
+  "vgno": "1000",
+  "goodno": "100000000001",
+  "goodname": "特惠商品1",
+  "supply": {
+    "supplyid": "S0001",
+    "supplyname": "一号供应商"
+  },
+  "deptid": "12",
+  "busmodel": "2",
+  "spec": "瓶/500毫升",
+  "unit": "2",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "0000",
+    "detail": "深圳"
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "hotsell": "1",
+  "preflag": "0",
+  "quantity": {
+    "minqty": 1,
+    "stockqty": 10,
+    "totalqty": 10,
+    "availableqty": 10,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 5,
+    "originalprice": 5,
+    "taxprice": 5,
+    "saleprice": 5,
+    "stockprice": 5,
+    "memberprice": 4.5
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [],
+  "hpicpath": "",
+  "mpicpath": "attachFiles\\hotsell\\hotsell1-1.jpg",
+  "spicpath": "",
+  "settime": "",
+  "updatetime": ""
+}
+{
+  "_id": {
+    "$oid": "5c905c9f6b8f80822971e70a"
+  },
+  "vgno": "1000",
+  "goodno": "100000000008",
+  "goodname": "特惠商品8",
+  "supply": {
+    "supplyid": "S0001",
+    "supplyname": "一号供应商"
+  },
+  "deptid": "12",
+  "busmodel": "2",
+  "spec": "0.5-1kg",
+  "unit": "1",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "0000",
+    "detail": "深圳"
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "hotsell": "1",
+  "preflag": "0",
+  "quantity": {
+    "minqty": 1,
+    "stockqty": 10,
+    "totalqty": 10,
+    "availableqty": 10,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 5,
+    "originalprice": 5,
+    "taxprice": 5,
+    "saleprice": 5,
+    "stockprice": 5,
+    "memberprice": 4.5
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [],
+  "hpicpath": "",
+  "mpicpath": "attachFiles\\hotsell\\hotsell3-2.jpg",
+  "spicpath": "",
+  "settime": "",
+  "updatetime": ""
+}
+{
+  "_id": {
+    "$oid": "5c905e846b8f80822971e82a"
+  },
+  "vgno": "1000",
+  "goodno": "100000000008",
+  "goodname": "特惠商品8",
+  "supply": {
+    "supplyid": "S0001",
+    "supplyname": "一号供应商"
+  },
+  "deptid": "12",
+  "busmodel": "2",
+  "spec": "0.5-1kg",
+  "unit": "1",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "0000",
+    "detail": "深圳"
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "hotsell": "1",
+  "preflag": "0",
+  "quantity": {
+    "minqty": 1,
+    "stockqty": 10,
+    "totalqty": 10,
+    "availableqty": 10,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 5,
+    "originalprice": 5,
+    "taxprice": 5,
+    "saleprice": 5,
+    "stockprice": 5,
+    "memberprice": 4.5
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [],
+  "hpicpath": "",
+  "mpicpath": "attachFiles\\hotsell\\hotsell3-2.jpg",
+  "spicpath": "",
+  "settime": "",
+  "updatetime": ""
+}
+{
+  "_id": {
+    "$oid": "5c905e976b8f80822971e848"
+  },
+  "vgno": "1000",
+  "goodno": "100000000008",
+  "goodname": "特惠商品8",
+  "supply": {
+    "supplyid": "S0001",
+    "supplyname": "一号供应商"
+  },
+  "deptid": "12",
+  "busmodel": "2",
+  "spec": "0.5-1kg",
+  "unit": "1",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "0000",
+    "detail": "深圳"
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "hotsell": "1",
+  "preflag": "0",
+  "quantity": {
+    "minqty": 1,
+    "stockqty": 10,
+    "totalqty": 10,
+    "availableqty": 10,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 5,
+    "originalprice": 5,
+    "taxprice": 5,
+    "saleprice": 5,
+    "stockprice": 5,
+    "memberprice": 4.5
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [],
+  "hpicpath": "",
+  "mpicpath": "attachFiles\\hotsell\\hotsell3-2.jpg",
+  "spicpath": "",
+  "settime": "",
+  "updatetime": ""
+}
+{
+  "_id": {
+    "$oid": "5c905f046b8f80822971e89d"
+  },
+  "vgno": "1000",
+  "goodno": "100000000008",
+  "goodname": "特惠商品8",
+  "supply": {
+    "supplyid": "S0001",
+    "supplyname": "一号供应商"
+  },
+  "deptid": "12",
+  "busmodel": "2",
+  "spec": "0.5-1kg",
+  "unit": "1",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "0000",
+    "detail": "深圳"
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "hotsell": "1",
+  "preflag": "0",
+  "quantity": {
+    "minqty": 1,
+    "stockqty": 10,
+    "totalqty": 10,
+    "availableqty": 10,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 5,
+    "originalprice": 5,
+    "taxprice": 5,
+    "saleprice": 5,
+    "stockprice": 5,
+    "memberprice": 4.5
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [],
+  "hpicpath": "",
+  "mpicpath": "attachFiles\\hotsell\\hotsell3-2.jpg",
+  "spicpath": "",
+  "settime": "",
+  "updatetime": ""
+}
+{
+  "_id": {
+    "$oid": "5c905f566b8f80822971e8da"
+  },
+  "vgno": "1000",
+  "goodno": "100000000008",
+  "goodname": "特惠商品8",
+  "supply": {
+    "supplyid": "S0001",
+    "supplyname": "一号供应商"
+  },
+  "deptid": "12",
+  "busmodel": "2",
+  "spec": "0.5-1kg",
+  "unit": "1",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "0000",
+    "detail": "深圳"
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "hotsell": "1",
+  "preflag": "0",
+  "quantity": {
+    "minqty": 1,
+    "stockqty": 10,
+    "totalqty": 10,
+    "availableqty": 10,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 5,
+    "originalprice": 5,
+    "taxprice": 5,
+    "saleprice": 5,
+    "stockprice": 5,
+    "memberprice": 4.5
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [],
+  "hpicpath": "",
+  "mpicpath": "attachFiles\\hotsell\\hotsell3-2.jpg",
+  "spicpath": "",
+  "settime": "",
+  "updatetime": ""
+}

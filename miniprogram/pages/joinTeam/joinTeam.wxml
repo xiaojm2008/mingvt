@@ -1,0 +1,22 @@
+<wxs module="pipi" src="../../lib/pipi.wxs"></wxs>
+<view class="center-panel" bindtap="goBack">
+  <view class="img-box">
+    <view class='img-p'>
+      <image class="cover-thumb" src="{{ myTeam.p_avatarurl }}"></image>
+      <image class="cover-thumb2" src="{{ myTeam.avatarurl }}"></image>
+    </view>
+    <view>感谢您加入</view>
+  </view>
+  <view class="panel-bottom">
+    <view class="username">
+      <text>{{myTeam.p_username||myTeam.p_nickname}}</text>的团体
+      您可致电<text class="ico-moon icon-phone" catchtap="callPhone" data-phone="{{myTeam.p_phone}}">{{myTeam.p_phone}}</text>与其联系
+    </view>
+    <view class="other">
+      您的级别：<text class="level">{{myTeam.level}}</text>      
+    </view>
+    <view class="prompt" wx:if="{{myTeam.message}}">{{myTeam.message}}</view>
+   
+  </view>
+</view>
+ <view class="time"> 时间：{{pipi.dFormat(myTeam.settime)}}</view>

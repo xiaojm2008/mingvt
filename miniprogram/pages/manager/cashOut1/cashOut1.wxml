@@ -1,0 +1,34 @@
+  <view class="ext-horiz-view">
+  	<view class="view-item">
+  		<view class="row" style="border-bottom: 1px solid #eee;">
+  			<view class='left' style="width:195px;justify-content:flex-start;">
+  				<text style="padding-right:5px;" class="iconfont icon-calendar"></text>
+					<picker mode="date" fields="year" start="2019" end="{{start}}" bindchange="bindChange">
+    				<view class="picker">
+      				当前选择:{{year||start}}年
+    				</view>
+  				</picker>
+  			</view>
+  			<view class='right'>
+  				<text></text>
+  				<!--<label class="ico-moon icon-rightarrow"></label>-->
+  			</view>
+  		</view>
+  	</view>
+  </view>
+  <view class="x-grid">
+  	<view catchtap="cashOut" class="x-item" wx:for="{{deals}}" wx:key="name">
+			<view class="x-cell">
+  			<text class="line-clamp"></text>
+  		</view>
+  		<view class="x-cell">
+  			<text>{{item.remains}}</text>  			
+  		</view>
+		  <view class="x-cell" catchtap="qryAmt" data-index="{{index}}">
+  			<text class="line-clamp">查看</text>
+  		</view>
+  		<view class="x-cell">
+  			<text class="line-clamp">{{item.name}}</text>
+  		</view>
+  	</view>
+  </view>

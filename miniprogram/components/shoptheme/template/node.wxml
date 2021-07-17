@@ -1,0 +1,323 @@
+<template name="search">
+  <mysearch id="mysearch" placeholder="请在此输入您的希望" bindselectresult="selectResult" search="{{search}}"></mysearch>
+</template>
+<template name="swiperlist">
+  <!-- <view id="slisttop" class="slisttop"></view> -->
+  <swiperlist id="swipernode" category="{{node.attrs.datasource.value}}" action="{{node.attrs.action}}" manager="{{node.attrs.manager}}" refreshlock="{{refreshlock||true}}" lockflag="{{lockflag||true}}" bind:releasetop="releaseTop">
+  </swiperlist>
+</template>
+<template name="icon">
+  <icon type="{{node.attrs.type}}" size="{{node.attrs.size}}" style="{{node.attrs.style}}" color="{{node.attrs.color}}"></icon>
+</template>
+<template name="text">
+  <text class="{{node.attrs.class}}" style="{{node.attrs.style}}">{{node.attrs.title||node.value||'文'}}</text>
+</template>
+
+<template name="image">
+  <image class="{{node.attrs.class}}" mode="{{node.attrs.mode||'scaleToFill'}}" style="{{node.attrs.style}}" src="{{node.attrs.src||node.value||'/images/pic.png'}}" catchtap="{{node.event?'tapNode':''}}" data-url="{{node.attrs.url || node.url}}"></image>
+</template>
+
+<template name="node">
+  <block wx:for="{{node}}" wx:key="id" wx:for-item="node">
+    <template is="node0" data="{{node:node,layer:0}}" />
+  </block>
+</template>
+
+<template name="node0">
+  <block wx:if="{{node}}">
+    <block wx:if="{{node.name=='swiper'}}">
+      <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+        next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+        <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-url="{{child.attrs.url || child.url}}" catchtap="{{child.event?'tapNode':''}}">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:elif="{{node.name=='scroll-view'}}">
+      <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </scroll-view>
+    </block>
+    <block wx:elif="{{node.name=='view'}}">
+      <view class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-url="{{node.attrs.url || node.url}}" catchtap="{{node.event?'tapNode':''}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{node.name}}">
+      <template is="{{node.name}}" data="{{node:node}}" />
+    </block>
+  </block>
+</template>
+<template name="node1">
+  <block wx:if="{{node}}">
+    <block wx:if="{{node.name=='swiper'}}">
+      <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+        next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+        <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-url="{{child.attrs.url || child.url}}" catchtap="{{child.event?'tapNode':''}}">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:elif="{{node.name=='scroll-view'}}">
+      <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </scroll-view>
+    </block>
+    <block wx:elif="{{node.name=='view'}}">
+      <view class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-url="{{node.attrs.url || node.url}}" catchtap="{{node.event?'tapNode':''}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{node.name}}">
+      <template is="{{node.name}}" data="{{node:node}}" />
+    </block>
+  </block>
+</template>
+
+<template name="node2">
+  <block wx:if="{{node}}">
+    <block wx:if="{{node.name=='swiper'}}">
+      <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+        next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+        <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-url="{{child.attrs.url || child.url}}" catchtap="{{child.event?'tapNode':''}}">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:elif="{{node.name=='scroll-view'}}">
+      <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </scroll-view>
+    </block>
+    <block wx:elif="{{node.name=='view'}}">
+      <view class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-url="{{node.attrs.url || node.url}}" catchtap="{{node.event?'tapNode':''}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{node.name}}">
+      <template is="{{node.name}}" data="{{node:node}}" />
+    </block>
+  </block>
+</template>
+
+<template name="node3">
+  <block wx:if="{{node}}">
+    <block wx:if="{{node.name=='swiper'}}">
+      <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+        next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+        <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-url="{{child.attrs.url || child.url}}" catchtap="{{child.event?'tapNode':''}}">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:elif="{{node.name=='scroll-view'}}">
+      <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </scroll-view>
+    </block>
+    <block wx:elif="{{node.name=='view'}}">
+      <view class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-url="{{node.attrs.url || node.url}}" catchtap="{{node.event?'tapNode':''}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{node.name}}">
+      <template is="{{node.name}}" data="{{node:node}}" />
+    </block>
+  </block>
+</template>
+
+<template name="node4">
+  <block wx:if="{{node}}">
+    <block wx:if="{{node.name=='swiper'}}">
+      <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+        next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+        <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-url="{{child.attrs.url || child.url}}" catchtap="{{child.event?'tapNode':''}}">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:elif="{{node.name=='scroll-view'}}">
+      <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </scroll-view>
+    </block>
+    <block wx:elif="{{node.name=='view'}}">
+      <view class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-url="{{node.attrs.url || node.url}}" catchtap="{{node.event?'tapNode':''}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{node.name}}">
+      <template is="{{node.name}}" data="{{node:node}}" />
+    </block>
+  </block>
+</template>
+
+<template name="node5">
+  <block wx:if="{{node}}">
+    <block wx:if="{{node.name=='swiper'}}">
+      <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+        next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+        <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-url="{{child.attrs.url || child.url}}" catchtap="{{child.event?'tapNode':''}}">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:elif="{{node.name=='scroll-view'}}">
+      <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </scroll-view>
+    </block>
+    <block wx:elif="{{node.name=='view'}}">
+      <view class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-url="{{node.attrs.url || node.url}}" catchtap="{{node.event?'tapNode':''}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{node.name}}">
+      <template is="{{node.name}}" data="{{node:node}}" />
+    </block>
+  </block>
+</template>
+
+<template name="node6">
+  <block wx:if="{{node}}">
+    <block wx:if="{{node.name=='swiper'}}">
+      <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+        next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+        <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-url="{{child.attrs.url || child.url}}" catchtap="{{child.event?'tapNode':''}}">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:elif="{{node.name=='scroll-view'}}">
+      <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </scroll-view>
+    </block>
+    <block wx:elif="{{node.name=='view'}}">
+      <view class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-url="{{node.attrs.url || node.url}}" catchtap="{{node.event?'tapNode':''}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{node.name}}">
+      <template is="{{node.name}}" data="{{node:node}}" />
+    </block>
+  </block>
+</template>
+
+<template name="node7">
+  <block wx:if="{{node}}">
+    <block wx:if="{{node.name=='swiper'}}">
+      <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+        next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+        <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-url="{{child.attrs.url || child.url}}" catchtap="{{child.event?'tapNode':''}}">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:elif="{{node.name=='scroll-view'}}">
+      <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </scroll-view>
+    </block>
+    <block wx:elif="{{node.name=='view'}}">
+      <view class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-url="{{node.attrs.url || node.url}}" catchtap="{{node.event?'tapNode':''}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{node.name}}">
+      <template is="{{node.name}}" data="{{node:node}}" />
+    </block>
+  </block>
+</template>
+
+<template name="node8">
+  <block wx:if="{{node}}">
+    <block wx:if="{{node.name=='swiper'}}">
+      <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+        next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+        <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-url="{{child.attrs.url || child.url}}" catchtap="{{child.event?'tapNode':''}}">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:elif="{{node.name=='scroll-view'}}">
+      <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </scroll-view>
+    </block>
+    <block wx:elif="{{node.name=='view'}}">
+      <view class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-url="{{node.attrs.url || node.url}}" catchtap="{{node.event?'tapNode':''}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{node.name}}">
+      <template is="{{node.name}}" data="{{node:node}}" />
+    </block>
+  </block>
+</template>
+
+<template name="node9">
+  <block wx:if="{{node}}">
+    <block wx:if="{{node.name=='swiper'}}">
+      <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+        next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+        <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-url="{{child.attrs.url || child.url}}" catchtap="{{child.event?'tapNode':''}}">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </swiper-item>
+      </swiper>
+    </block>
+    <block wx:elif="{{node.name=='scroll-view'}}">
+      <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </scroll-view>
+    </block>
+    <block wx:elif="{{node.name=='view'}}">
+      <view class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-url="{{node.attrs.url || node.url}}" catchtap="{{node.event?'tapNode':''}}">
+        <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+          <template is="node{{layer+1}}" data="{{node:child,layer:layer+1}}" />
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{node.name}}">
+      <template is="{{node.name}}" data="{{node:node}}" />
+    </block>
+  </block>
+</template>

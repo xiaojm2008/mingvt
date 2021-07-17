@@ -1,0 +1,28 @@
+{
+  "name": "yutian",
+  "version": "1.0.12",
+  "description": "wx yutian comm business lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaojinming2018/yutian.git"
+  },
+  "keywords": [
+    "wx",
+    "miniprogram",
+    "yutian",
+    "yixiuxiu"
+  ],
+  "author": "xiaojinming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiaojinming2018/yutian/issues"
+  },
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  },
+  "homepage": "https://github.com/xiaojinming2018/yutian#readme"
+}

@@ -1,0 +1,75 @@
+/*
+ [
+    {
+      "desc": "优惠活动",
+      "code": "0",
+      "name": "主题活动"
+    },
+    {
+      "desc": "优惠活动",
+      "code": "1",
+      "name": "直减"
+    },
+    {
+      "code": "2",
+      "name": "折扣"
+    },
+    {
+      "name": "限时抢购",
+      "code": "3"
+    },
+    {
+      "name": "满减(组合价格)",
+      "code": "4"
+    },
+    {
+      "code": "5",
+      "name": "秒杀"
+    },
+    {
+      "code": "6",
+      "name": "量贩团"
+    },
+    {
+      "name": "品牌团",
+      "code": "7"
+    },
+    {
+      "code": "8",
+      "name": "砍价"
+    },
+    {
+      "code": "9",
+      "name": "特价"
+    }
+  ],
+*/
+module.exports = {
+  cutDown: function(prom) {
+    var a = 0;
+    for (var i = 0; i < prom.goods.length; i++) {     
+      a = a + parseFloat(prom.goods[i].price ? prom.goods[i].price.originalprice || prom.goods[i].price.saleprice:0);
+    }
+    //console.log("*******" + a + "-》" + prom.promamt);
+    var r = null;
+    if (prom.promtype === '1') {
+      return '直减' + prom.immediatecutamt;
+    } else if (prom.promtype === '2') {
+      return prom.discount + '折酬宾';
+    } else if (prom.promtype === '4') {
+      return '满减' + prom.fullcutamt;
+    } else if (prom.promtype === '8') {
+      return '求砍';
+    }  else if (prom.promtype === '5' || prom.promtype === '6' || prom.promtype === '7' || prom.promtype === '9') {
+      r = (parseFloat(prom.promamt) - a).toFixed(0);
+      if (r > 10000) {
+      r = "劲省1万+"
+      } else if(r > 500) {
+        r = "劲省" + r;
+      } else {
+        r = "可省"+r;
+      }
+    }
+    return r;
+  }
+}

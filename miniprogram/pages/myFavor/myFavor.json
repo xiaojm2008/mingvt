@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "scroll": "../../components/scroll/scroll",
+    "mymenu": "../../components/mymenu/mymenu",
+    "mysearch": "../../components/mysearch/mysearch"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "我的收藏"
+}

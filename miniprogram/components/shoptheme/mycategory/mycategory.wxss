@@ -1,0 +1,23 @@
+@import "../../../style/dialog.wxss";
+.dialog  .dialog-head .right-btn {
+  position: absolute;
+  right: 3px;
+  top: 0px;
+  width: 60px;
+  height: 30px;
+  z-index: 50;
+  font-size: 15px;
+  color: rgb(1, 49, 182);
+  line-height: 30px;
+  text-align: center;
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  display: inline-block;
+}
+
+.icon-gou:before {
+  content: "\e937";
+  margin-right:5px;
+  font-size:20px;
+}

@@ -1,0 +1,13 @@
+<template name="rows">
+  <view class="cells">
+    <view class="cell" wx:for="{{listData}}" wx:key="{{index}}">
+      <view class="cell-hd">
+        <image mode="aspectFill" src="{{item.images}}" alt="" />
+      </view>
+      <view class="cell-bd">
+        <view class="name">{{item.title}}</view>
+        <view class="des">{{item.description}}</view>
+      </view>
+    </view>
+  </view>
+</template>

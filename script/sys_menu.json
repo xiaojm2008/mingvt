@@ -1,0 +1,282 @@
+{
+  "id": "100",
+  "name": "常用",
+  "seq": 0,
+  "icon": "",
+  "url": "",
+  "params": "",
+  "level": "1",
+  "children": [
+    {
+      "id": "100100",
+      "name": "新增商品",
+      "seq": 0,
+      "icon": "icon-RectangleCopy22",
+      "url": "addGoods",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100101",
+      "name": "商品维护",
+      "seq": 1,
+      "icon": "icon-RectangleCopy21",
+      "url": "listGoods",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100102",
+      "name": "活动维护",
+      "seq": 2,
+      "icon": "icon-tuandui",
+      "url": "listAction",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100103",
+      "name": "团购活动",
+      "seq": 3,
+      "icon": "icon-tuangou",
+      "url": "groupAction",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100104",
+      "name": "折扣活动",
+      "seq": 4,
+      "icon": "icon-zhekou",
+      "url": "discountAction",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100105",
+      "name": "特价活动",
+      "seq": 5,
+      "icon": "icon-tejia",
+      "url": "specialAction",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100106",
+      "name": "秒杀活动",
+      "seq": 6,
+      "icon": "icon-yingxiaogongju-tuangoumiaosha",
+      "url": "cutAction",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100107",
+      "name": "报名活动",
+      "seq": 7,
+      "icon": "icon-kehu2",
+      "url": "enrollAction",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100108",
+      "name": "广告位申请",
+      "seq": 8,
+      "icon": "icon-mark",
+      "url": "appAdvert",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100109",
+      "name": "订单处理",
+      "seq": 9,
+      "icon": "icon-dingdanchuli",
+      "url": "orderDo",
+      "params": "tabindex=0",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100110",
+      "name": "营收明细",
+      "seq": 10,
+      "icon": "icon-rili-xianxing-xi",
+      "url": "revenueDetail",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100111",
+      "name": "物流信息",
+      "seq": 11,
+      "icon": "icon-daishouhuo",
+      "url": "logisticsInfo",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "100112",
+      "name": "申请提现",
+      "seq": 12,
+      "icon": "icon-RectangleCopy29",
+      "url": "cashOutApp",
+      "params": "",
+      "level": "2",
+      "children": []
+    }
+  ]
+}
+{
+  "id": "101",
+  "name": "查询",
+  "seq": 1,
+  "icon": "",
+  "url": "",
+  "params": "",
+  "level": "1",
+  "children": [
+    {
+      "id": "101000",
+      "name": "历史订单查询",
+      "icon": "icon-lishihistory2",
+      "url": "qryHisOrder",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "101001",
+      "name": "客户查询",
+      "icon": "icon-kehu1",
+      "url": "qryCustInfo",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "101002",
+      "name": "商品查询",
+      "icon": "icon-RectangleCopy4",
+      "url": "qryGoodsInfo",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "101003",
+      "name": "活动查询",
+      "icon": "icon-tuandui",
+      "url": "qryActionInfo",
+      "params": "",
+      "level": "2",
+      "children": []
+    }
+  ]
+}
+{
+  "id": "102",
+  "name": "统计报表",
+  "seq": 2,
+  "icon": "",
+  "url": "",
+  "params": "",
+  "level": "1",
+  "children": [
+    {
+      "id": "102000",
+      "name": "交易报表",
+      "icon": "icon-RectangleCopy22",
+      "url": "orderRpt",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "102001",
+      "name": "营收报表",
+      "icon": "icon-RectangleCopy28",
+      "url": "revenueRpt",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "102002",
+      "name": "其他",
+      "icon": "icon-duoweiduyingshoufenxi",
+      "url": "otherRpt",
+      "params": "",
+      "level": "2",
+      "children": []
+    }
+  ]
+}
+{
+  "id": "103",
+  "name": "系统管理",
+  "seq": 3,
+  "icon": "",
+  "url": "",
+  "params": "",
+  "level": "1",
+  "children": [
+    {
+      "id": "103000",
+      "name": "用户信息",
+      "icon": "icon-quanxian",
+      "url": "listUser",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "103001",
+      "name": "角色信息",
+      "icon": "icon-qunzu",
+      "url": "listRole",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "103002",
+      "name": "菜单",
+      "icon": "icon-RectangleCopy22",
+      "url": "listMenu",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "103003",
+      "name": "字典",
+      "icon": "icon-RectangleCopy6",
+      "url": "listDict",
+      "params": "",
+      "level": "2",
+      "children": []
+    },
+    {
+      "id": "103004",
+      "name": "系统参数",
+      "icon": "icon-checkdevice",
+      "url": "listMixed",
+      "params": "",
+      "level": "2",
+      "children": []
+    }
+  ]
+}

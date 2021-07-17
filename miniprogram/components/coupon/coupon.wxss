@@ -1,0 +1,91 @@
+
+
+.coupon {
+  padding-top: 0px;
+}
+
+.coupon .one-pg {
+  width: 95%;
+  padding: 10px;
+  background: white;
+}
+
+.coupon .wrapper {
+  width: 100%;
+  display: flex;
+  background: rgb(243, 228, 228);
+  border-radius: 8px;
+}
+
+.coupon .content {
+  flex: 1;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 2px 2px 2px #ccc;
+  background: rgb(243, 228, 228);
+}
+
+.coupon .title {
+  font-size: 12px;
+}
+
+.coupon .time {
+  margin-top: 5px;
+  font-size: 10px;
+  color: #9e9e9e;
+}
+
+.coupon .limit {
+  margin-top: 5px;
+  font-size: 10px;
+  color: #9e9e9e;
+}
+
+.coupon .tip {
+  position: relative;
+  flex: 0 0 70px;
+  text-align: center;
+  color: #ff4242;
+  padding: 20px;
+  border-radius: 8px 0 0 8px;
+  box-shadow: -2px 2px 2px #ccc;
+  background: rgb(243, 228, 228);
+}
+
+.coupon .split-line {
+  position: relative;
+  flex: 0 0 0;
+  border-left: 2px dashed #eee;
+  margin: 0 5px 0 3px;
+  background: #fff;
+}
+
+.coupon .split-line:before, .coupon .split-line:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 8px;
+  background: white;
+  left: -9px;
+  z-index: 1;
+}
+
+.coupon .split-line:before {
+  border-radius: 0 0 8px 8px;
+  top: 0;
+}
+
+.coupon .split-line:after {
+  border-radius: 8px 8px 0 0;
+  bottom: 0;
+}
+
+.coupon .money {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.coupon .pay-line {
+  margin-top: 15px;
+  font-size: 12px;
+}

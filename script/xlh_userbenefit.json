@@ -1,0 +1,24 @@
+{
+    "openid": "o8ffM4gPON7jvaDmSsZ2OLLcTVhE",
+    "invitation_code":"",
+    "level":"A",
+    "income":0,
+    "cashout": 0,
+    "rewards":0,
+    "commission":0,
+    "can_cashout":0,
+    "settime": 1.560560342417e+12,
+    "updatetime": 1.560560342417e+12
+}
+{
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "invitation_code": "",
+  "level": "A",
+  "income": 99999,
+  "cashout": 10000,
+  "rewards": 10,
+  "commission": 0,
+  "can_cashout": 88888,
+  "settime": 1.560560342417e+12,
+  "updatetime": 1.560560342417e+12
+}

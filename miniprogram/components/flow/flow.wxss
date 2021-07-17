@@ -1,0 +1,176 @@
+page {
+  font-size: 13px;
+}
+
+.cssNav {
+  margin: 0 5px 0 5px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cssNav .stepItem {
+  flex: 2 0 auto;
+  padding: 0px 10px;
+  line-height: 30px;
+  background: #50abe4;
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cssNav .stepItem:after {
+  content: '';
+  display: block;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #50abe4;
+  position: absolute;
+  right: -14px;
+  top: 0;
+  z-index: 10;
+}
+
+.cssNav .stepItem:before {
+  content: '';
+  display: block;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid white;
+  position: absolute;
+  left: 0px;
+  top: 0;
+}
+
+.cssNav .stepItem:first-child {
+  border-radius: 4px 0 0 4px;
+  padding-left: 10px;
+}
+
+.cssNav .stepItem:last-child {
+  border-radius: 0px 4px 4px 0px;
+  padding-right: 10px;
+}
+
+.cssNav .stepItem:first-child:before {
+  display: none;
+}
+
+.cssNav .stepItem:last-child:after, .cssNavEnd:after {
+  display: none;
+}
+
+.cssNav .active {
+  background-color: #5cb85c;
+}
+
+.cssNav .active:after {
+  border-left-color: #5cb85c;
+}
+
+.cssNav .stepItem .index {
+  padding: 0 2px 0 8px;
+}
+
+/* 使当前之后的view都变灰色 */
+.cssNav .active ~ view {
+  background: #ccc;
+}
+
+.cssNav .active ~ view:after {
+  content: '';
+  display: block;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #ccc;
+  position: absolute;
+  right: -14px;
+  top: 0;
+  z-index: 10;
+}
+
+.linear-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6cd62e;
+  margin: 10px 10px 5px 10px;
+}
+.linear-flow .node{
+  display: flex;
+  flex:2 0 auto;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 28%;
+}
+.linear-flow .active2 {
+  color: #5cb85c;
+}
+/* 使当前之后的 item 都变灰色,但是虚拟元素没有变!
+.linear-flow .active ~ .node .item {
+  color:#ccc;
+  border-bottom-color:#e3e6e1;
+} */
+/* .active之后和active当前子代都变灰色*/
+.linear-flow .active ~ .node .linear::after,.linear-flow .active ~ .node .linear::before,.linear-flow .active > .linear::after {
+  background-color: #ccc;
+  border-bottom-color:#e3e6e1;
+}
+.linear-flow .active ~ .node .iconfont{
+  color:#ccc;
+} 
+.linear-flow .node .item{
+  width: 100%;
+  align-items:center;
+  justify-content: center;
+  display:flex;
+}
+.linear-flow .node .text{
+  text-align: center;
+}
+.linear-flow .node .title{
+  color: #333;
+  font-size: 13px;
+}
+
+.linear-flow .node .sub{
+  color: #b1b1b1;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+.linear-flow .linear::after,.linear-flow .linear::before{
+  content:"";
+  height: 1px;
+  border-bottom:1px solid  #6cd62e;
+  background-color: #6cd62e;
+  width: 50%;
+  display: block;
+  bottom: 0;
+  top: 0px;
+}
+.linear-flow .node:last-child > .linear::after,.linear-flow .node:first-child > .linear::before{
+  border-bottom:0px;
+  height: 0;
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 28px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-ok:before {
+  content: "\e677";
+}
+.icon-refresh:before {
+  content: "\e601";
+}
+.icon-center:before {
+  content: "\e61f";
+}
+.icon-downward:before {
+  content: "\e94f";
+}

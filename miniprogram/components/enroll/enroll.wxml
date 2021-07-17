@@ -1,0 +1,295 @@
+<wxs module="dictTrs" src="../../lib/dictTrs.wxs"></wxs>
+<wxs module="pipi" src="../../lib/pipi.wxs"></wxs>
+<wxs module="str" src="../../lib/substr.wxs"></wxs>
+<template name="prompt">
+  <view class="row prompt-row" wx:if="{{field.prompt.type}}">
+    <block wx:if="{{field.prompt.type=='m'}}">
+      <block wx:if="{{field.prompt.value[0].name}}">
+        <text class="item-text" wx:for="{{field.prompt.value}}" wx:key="name" wx:for-index="seq" wx:for-item="item">{{item.name}}</text>
+      </block>
+      <block wx:else>
+        <text class="item-text" wx:for="{{field.prompt.value}}" wx:key="*this" wx:for-index="seq" wx:for-item="code">{{dictTrs.trs(field.prompt.dictlist,code,1)}}</text>
+      </block>
+    </block>
+    <block wx:elif="{{field.prompt.type=='3'}}">
+      <text class="content-text" wx:if="{{field.prompt.dictlist[0].name}}">{{dictTrs.trs(field.prompt.dictlist,field.prompt.value,'1')}}</text>
+      <text class="content-text" wx:else>{{dictTrs.trs(dict[field.prompt.dictlist],field.prompt.value,'1')}}</text>
+    </block>
+    <block wx:elif="{{field.prompt.type=='a'||field.prompt.type=='b'||field.prompt.type=='5'}}">
+      <view class="inner-text" wx:if="{{field.prompt.text}}">{{field.prompt.text}}</view>
+      <view class="flex-item ext-item" wx:for="{{field.prompt.value}}" wx:for-index="imgindex" wx:key="id" wx:for-item="img">
+        <image src="{{ img.fileID }}" catchtap="{{field.prompt.retogger?'selPromptTogger':''}}" data-imgindex="{{imgindex}}" data-index="{{index}}" mode="scaleToFill"></image>
+      </view>
+      <view class="inner-text">{{field.value}}</view>
+    </block>
+    <block wx:else>
+      <text class="content-text">{{field.prompt.value}}</text>
+    </block>
+  </view>
+</template>
+<view class="ext-horiz-view {{classname}}" style="margin-top:0;{{mystyle}}" data-cache="{{initcache}}" wx:if="{{moveable}}">
+  <block wx:for="{{enrollinfo}}" wx:for-index="index" wx:key="index" wx:for-item="field">
+    <view class=" view-item {{pageInfo.readyPlaceIndex == index ? 'ready-place' : ''}}" hover-class="view-active" style='height: {{pageInfo.rowHeight}}px;'>
+      <view class="row">
+        <view class="left subname" style="width:165px;">
+          <text class="iconfont icon-sort icon-moveable" hover-class="hover-movable" style="maring-right:2px;" catchtap="goDownStep" data-index="{{index}}"></text>
+          <text class="text {{field.required=='R'?'required':''}}">{{field.name||'未定义名称'}}</text>
+        </view>
+        <view class='right'>
+          <input class="text-input" disabled placeholder="点击左边图标调整位置" data-pack="enrollinfo" id="{{index}}" />
+          <text bindtouchstart='dragStart' bindtouchmove='dragMove' bindtouchend='dragEnd' data-index='{{index}}' class="icon-moveable" style="background-color:#eee;">=</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="ext-horiz-view {{classname}}" data-cache="{{initcache}}" style="margin-top:0;{{mystyle}}" wx:else>
+  <block wx:for="{{enrollinfo}}" wx:for-index="index" wx:key="index" wx:for-item="field">
+    <block wx:if="{{!specail_fieldtype[field.type]}}">
+      <view class="view-item {{field.focus?'item-prompt':''}}" wx:if="{{!field.hidden}}">
+        <view class="row">
+          <view class="left subname" wx:if="{{field.name && field.label}}">
+            <text class="text {{field.required=='R'?'required':''}}">{{field.name}}</text>
+          </view>
+          <view class='right'>
+            <block wx:if="{{field.type == '0' ||field.type == '1'||field.type == '2' ||field.type == '4' ||field.type == '6'}}">
+              <input class="text-input" disabled="{{field.disabled}}" focus="{{field.focus}}" type="{{field.type == '2'?'digit':(field.type == '4'?'idcard':(field.type == '6'||field.type == '1'?'number':('text')))}}" placeholder="{{field.placeholder||'请在此输入'}}" data-pack="enrollinfo"
+                id="{{index}}" value="{{ field.value }}" bindinput="inputTogger" />
+              <button wx:if="{{field.event}}" catchtap="fieldTapTogger" id="event_{{index}}" data-index="{{index}}" class="btn-icon">{{field.event.name}}</button>
+              <view wx:elif="{{field.suffix}}" catchtap="showMenu" id="suffix_{{index}}" data-index="{{index}}" class="suffix">
+                <text>{{str.subs2(field.suffixvalue,-5)||'请选择'}}</text>
+                <text class="iconfont icon-down"></text>
+              </view>
+            </block>
+            <block wx:elif="{{field.type == '3'&&field.dict=='dict'}}">
+              <picker mode="selector" disabled="{{field.disabled}}" class="inp-selector" bindchange="inputTogger" data-pack="enrollinfo" id="{{index}}" value="{{ dictTrs.idx(dict[field.dictlist],field.value) }}" range="{{ dict[field.dictlist]}}"
+                range-key="name">
+                <input class="text-input" disabled placeholder="{{field.placeholder||'请选择'}}" value="{{dictTrs.trs(dict[field.dictlist],field.value) }}"></input>
+              </picker>
+              <text class='iconfont icon-rightarrow'></text>
+            </block>
+            <block wx:elif="{{field.type == '3'&&field.dict=='storage'}}">
+              <picker mode="selector" disabled="{{field.disabled}}" class="inp-selector" bindchange="inputTogger" data-pack="enrollinfo" id="{{index}}" value="{{ dictTrs.idx(storage[field.dictlist],field.value) }}" range="{{ storage[field.dictlist]}}"
+                range-key="name">
+                <input class="text-input" disabled placeholder="{{field.placeholder||'请选择'}}" value="{{dictTrs.trs(storage[field.dictlist],field.value) }}"></input>
+              </picker>
+              <text class='iconfont icon-rightarrow'></text>
+            </block>
+            <block wx:elif="{{field.type == '3'}}">
+              <picker mode="selector" disabled="{{field.disabled}}" class="inp-selector" bindchange="inputTogger" data-pack="enrollinfo" id="{{index}}" value="{{ dictTrs.idx(field.dictlist,field.value) }}" range="{{ field.dictlist }}"
+                range-key="name">
+                <input class="text-input" disabled placeholder="{{field.placeholder||'请选择'}}" value="{{dictTrs.trs(field.dictlist,field.value) }}"></input>
+              </picker>
+              <text class='iconfont icon-rightarrow'></text>
+            </block>
+            <block wx:elif="{{field.type == '6'||field.type == '7'}}">
+              <input class="text-input" disabled="{{field.disabled?true:false}}" type="number" focus="{{field.focus}}" placeholder="{{field.placeholder||'请在此输入'}}" data-pack="enrollinfo" id="{{index}}" value="{{ field.value }}" bindinput="inputTogger" />
+              <button wx:if="{{field.type == '7'}}" data-index="{{index}}" catchtap="checkPhone" class="btn-icon">验证</button>
+            </block>
+            <block wx:elif="{{field.type == '8'}}">
+              <input class="text-input" disabled="{{field.disabled?true:false}}" type="number" focus="{{field.focus}}" placeholder="{{field.placeholder||'请在此输入'}}" data-pack="enrollinfo" id="{{index}}" value="{{ field.value }}" bindinput="inputTogger" />
+              <button class="btn-icon" data-index="{{index}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取</button>
+            </block>
+            <block wx:elif="{{field.type=='9'}}">
+              <multitext class="text-input" fixed='true' bind:togger="inputTogger" id="{{index}}" data-pack="enrollinfo" cols='3' rows='10' placeholder="{{field.placeholder||'请在此输入'}}"></multitext>
+            </block>
+            <block wx:elif="{{field.type=='i'}}">
+              <block wx:if="{{field.id=='userinfo'}}">
+                <view class="flex-item prompt no-line" style="{{field.style||''}}">
+                  <image class="cover-thumb" src="{{field.value.avatarurl || '../../images/ic_user.png'}}"></image>
+                  <view class="nickname">
+                    <text>{{ field.value.username || field.value.nickname }}</text>
+                    <text class="phone">{{ field.value.phone }}</text>
+                  </view>
+                </view>
+              </block>
+              <block wx:else>
+                <input class="text-input" disabled placeholder="{{field.placeholder||''}}"></input>
+                <button wx:if="{{field.event}}" catchtap="fieldTapTogger" id="event_{{index}}" data-index="{{index}}" class="btn-icon">{{field.event.name}}</button>
+              </block>
+            </block>
+            <block wx:elif="{{field.type=='l' && field.link.items}}">
+              <block wx:for="{{field.link.items}}" wx:for-item="lk" wx:key="url">
+                <text wx:if="{{lk.type=='1'}}" class="link-text" hover-class='link-hover' data-url="{{lk.url}}" data-params="{{lk.params}}" catchtap="openUrl" style="color:green">{{lk.name}}</text>
+                <navigator wx:else class="link-text" hover-class='link-hover' url="{{lk.url+'?'+lk.params}}">{{lk.name}}</navigator>
+              </block>
+            </block>
+            <block wx:elif="{{field.type=='d'}}">
+              <picker mode="date" start="1900-12-01" end="2099-01-01" class="inp-selector" data-pack="enrollinfo" id="{{index}}" bindchange="inputTogger" value="{{ field.value }}">
+                <input class="text-input" disabled placeholder="{{pipi.nowStr()}}" value="{{field.value}}"></input>
+              </picker>
+              <text data-index="{{index}}" catchtap="clearValue" class='iconfont icon-clear clear'></text>
+            </block>
+            <block wx:elif="{{field.type=='t'}}">
+              <picker mode="time" start="08:00" end="23:59" class="inp-selector" bindchange="inputTogger" data-pack="enrollinfo" id="{{index}}" value="{{field.value}}">
+                <input class="text-input" disabled placeholder="00:00" value="{{field.value}}"></input>
+              </picker>
+            </block>
+            <block wx:elif="{{field.type=='p'}}">
+              <picker mode="selector" mode="region" class="inp-selector" bindchange="inputTogger" data-pack="enrollinfo" id="{{index}}" value="{{ field.value||[] }}">
+                <input class="text-input" disabled placeholder="地区选择" value="{{field.value[0]}} {{field.value[1]}} {{field.value[2]}}"></input>
+              </picker>
+              <text class='iconfont icon-rightarrow'></text>
+            </block>
+            <block wx:elif="{{field.type=='x'}}">
+              <picker mode="date" start="1900-12-01" end="2099-01-01" class="inp-selector2" bindchange="inputTogger" data-pack="enrollinfo" id="{{index}}" data-validx="[0]" value="{{field.value[0]}}">
+                <input class="text-input" disabled placeholder="{{pipi.nowStr()}}" value="{{field.value[0]}}"></input>
+              </picker>
+              <picker mode="time" start="08:00" end="23:59" class="inp-selector3" bindchange="inputTogger" data-pack="enrollinfo" id="{{index}}" data-validx="[1]" value="{{field.value[1]}}">
+                <input class="text-input" disabled placeholder="00:00" value="{{field.value[1]}}"></input>
+              </picker>
+              <text data-index="{{index}}" catchtap="clearValue" class='iconfont icon-clear clear'></text>
+            </block>
+            <block wx:elif="{{field.type=='s'}}">
+              <switch class="text-input" disabled="{{field.disabled?true:false}}" focus="{{field.focus}}" data-pack="enrollinfo" id="{{index}}" checked="{{field.value}}" value="{{ field.value }}" bindchange="inputTogger" />
+            </block>
+            <!-- wx:elif= field.type == '3' 未定义
+            <block wx:else>
+              <input class="text-input" disabled="{{field.disabled?true:false}}" focus="{{field.focus}}" placeholder="{{field.placeholder||'请在此输入'}}" data-pack="enrollinfo" id="{{index}}" value="{{ field.value }}" bindinput="inputTogger" />
+            </block>-->
+          </view>
+        </view>
+        <block wx:if="{{field.prompt}}">
+          <view class="flex-item prompt" style="{{enrollinfo.length>=1 ? 'border-bottom: 1px solid #eee;':''}}" wx:if="{{field.prompt.phone}}">
+            <image class="cover-thumb" src="{{field.prompt.avatarurl || '../../images/ic_user.png'}}"></image>
+            <view class="nickname">
+              <text>{{ field.prompt.username || field.prompt.nickname }}</text>
+              <text class="phone">{{ field.prompt.phone }}</text>
+            </view>
+          </view>
+          <template is="prompt" data="{{field:field,index:index}}"></template>
+        </block>
+      </view>
+    </block>
+    <block wx:elif="{{!field.hidden}}">
+      <!--
+      <view class="flex-box {{field.focus?'item-prompt':''}}" wx:if="{{field.type=='m'}}" style="padding:0 10px 0 10px;">
+        <block wx:for="{{field.checkbox}}" wx:key="code" wx:for-index="cindex" wx:for-item="ccheck">
+          <view class="flex-item" data-cindex="{{cindex}}" data-index="{{index}}" catchtap="checkBoxTogger">
+            <icon class="icon" type="{{ccheck.active? 'success_circle':'circle'}}" size="20" data-index="{{cindex}}"></icon>
+            <text class="line-clamp">{{ccheck.name}}</text>
+          </view>
+        </block>
+      </view>
+      -->
+      <view class="view-item {{field.focus?'item-prompt':''}}">
+        <view class="row {{field.type=='9'?'no-line':''}}" wx:if="{{field.label}}">
+          <view class="left subname">
+            <block wx:if="{{field.type=='5'}}">          
+              <text class="{{field.required=='R'?'required':''}}">身份证上传</text>
+            </block>
+            <block wx:else> 
+              <text class="text {{field.required=='R'?'required':''}}">{{field.name}}</text>
+            </block>
+          </view>
+          <view class="right">
+            <block wx:if="{{field.type=='9'}}">  
+              <text class="text-input"></text>
+            </block>
+            <block wx:elif="{{field.type=='a'||field.type=='b'}}">  
+              <text class="text-input">尺寸:{{field.maxwidth}}x{{field.maxheight}}</text>
+              <button focus="{{field.focus}}" disabled="{{field.disabled?true:false}}" class="btn-icon" data-pack="enrollinfo" id="{{index}}" data-initflag='true' catchtap="chooseImg">请上传</button>
+            </block>
+            <block wx:else> 
+              <text class="text-input">{{field.placeholder}}</text>
+              <text class='iconfont icon-rightarrow'></text>
+            </block>
+          </view>
+        </view>
+        <block wx:if="{{field.type=='5'}}">
+          <view class="flex-item ext-item" style="border-bottom:1px solid #eee">
+            <image src="{{ field.value[0].fileID || field.value[0].path }}" mode="aspectFit" catchtap="previewImg" data-index="{{index}}" data-imgindex="0"></image>
+            <block wx:if="{{!field.disabled}}">
+              <view class="icon-addimg" data-imgindex="0" data-pack="enrollinfo" id="{{index}}" catchtap="chooseImg">
+                <text class="iconfont icon-idcard2"></text>
+                <text style="font-size:13px;">国徽面</text>
+              </view>
+            </block>
+          </view>
+          <view class="flex-item ext-item" style="border-bottom:1px solid #eee">
+            <image src="{{ field.value[1].fileID || field.value[1].path }}" mode="aspectFit" catchtap="previewImg" data-index="{{index}}" data-imgindex="1"></image>
+            <block wx:if="{{!field.disabled}}">
+              <view class="icon-addimg" data-imgindex="1" data-pack="enrollinfo" id="{{index}}" catchtap="chooseImg">
+                <text class="iconfont icon-idcard1"></text>
+                <text style="font-size:13px;">人像面</text>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{field.type=='9'}}">
+          <view class="flex-item ext-item" style="border-bottom:1px solid #eee">
+            <multitext fixed='true' inputstatus="{{field.focus}}" maxlength="{{field.length||200}}" className="textarea" class="textarea" style="{{field.style||''}}" bind:togger="inputTogger" id="{{index}}" data-pack="enrollinfo" value="{{field.value}}" placeholder="{{field.placeholder||'请在此输入'}}"></multitext>
+          </view>
+        </block>
+        <block wx:if="{{field.type=='b'}}">
+          <view class="flex-item ext-item" wx:for="{{field.value}}" wx:for-index="imgindex" wx:key="digest" wx:for-item="img" style="border-bottom:1px solid #eee">
+            <image src="{{ img.fileID||img.path }}" style="height:80px;width:60px;" catchtap="previewImg" data-index="{{index}}" data-imgindex="{{imgindex}}"></image>
+            <!-- <block wx:if="{{!field.disabled}}">
+              <view class="icon-addimg" data-pack="enrollinfo" id="{{index}}"  catchtap="chooseImg">
+                <text class="iconfont icon-pic"></text>
+                <text style="font-size:13px;">图片上传</text>
+              </view>
+               </block> -->
+            <view class="top-desc" data-pack="enrollinfo" id="{{index}}" data-imgindex="{{imgindex}}" catchtap="delImg">
+              <text class="iconfont icon-delete"></text>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{field.type=='a'}}">
+          <view class="flex-item ext-item" wx:for="{{field.value}}" wx:for-index="imgindex" wx:key="digest" wx:for-item="img" style="border-bottom:1px solid #eee;flex:1 0 40%;">
+            <image src="{{ img.fileID||img.path }}" style="height:80px;width:60px;" mode="scaleToFill" catchtap="previewImg" data-index="{{index}}" data-imgindex="{{imgindex}}"></image>
+            <!--
+            <block wx:if="{{!field.disabled}}">
+              <view class="icon-addimg" data-pack="enrollinfo" id="{{index}}"  catchtap="chooseImg">
+                <text class="iconfont icon-pic"></text>
+                <text style="font-size:13px;">图片上传</text>
+              </view>  </block>
+              -->
+            <view class="top-desc" data-pack="enrollinfo" id="{{index}}" data-imgindex="{{imgindex}}" catchtap="delImg">
+              <text class="iconfont icon-delete"></text>
+            </view>
+          </view>
+          <view class="flex-item ext-item" style="flex:1 0 40%;{{field.value.length%2===0?'border-bottom:1px solid #eee;':'padding-left:6px;'}}" wx:if="{{field.value.length>0}}">
+            <multitext fixed='true' inputstatus="{{field.focus}}" maxlength="{{field.length||200}}" className="textarea" class="textarea" myStyle="height:100%;" bind:togger="inputTextTogger" id="{{index}}" data-pack="enrollinfo" value="{{field.text||field.value[0].text}}" placeholder="{{field.placeholder||'请在此输入'}}"></multitext>
+          </view>
+        </block>
+        <block wx:if="{{field.type=='b1'}}">
+          <view class="flex-item ext-item" wx:for="{{field.value}}" wx:for-index="imgindex" wx:key="digest" wx:for-item="img" style="border-bottom:1px solid #eee">
+            <image src="{{ img.fileID||img.path }}" mode="aspectFit" catchtap="previewImg" data-index="{{index}}" data-imgindex="{{imgindex}}"></image>
+            <block wx:if="{{!field.disabled}}">
+              <view class="icon-addimg" data-imgindex="{{imgindex}}" data-pack="enrollinfo" id="{{index}}" catchtap="chooseImg">
+                <text class="iconfont icon-pic"></text>
+                <text style="font-size:11px;height:15px;">{{img.width}}x{{img.height}}</text>
+                <text style="font-size:13px;height:15px;">{{img.name}}</text>
+              </view>
+            </block>
+          </view>
+        </block>
+        <block wx:if="{{field.type=='m'}}">
+          <view class="row flex-box {{field.focus?'item-prompt':''}}" style="padding:0 10px 0 10px;">
+            <block wx:for="{{field.checkbox}}" wx:key="code" wx:for-index="cindex" wx:for-item="ccheck">
+              <view class="checkbox-item" style="{{field.style?'width:100%':''}}" data-cindex="{{cindex}}" data-index="{{index}}" catchtap="{{field.disabled?'':'checkBoxTogger'}}">
+                <icon class="icon" type="{{ccheck.active? 'success_circle':'circle'}}" size="20" data-index="{{cindex}}"></icon>
+                <text class="multi-line">{{ccheck.name}}</text>
+              </view>
+            </block>
+          </view>
+          <template is="prompt" data="{{field:field,index:index}}"></template>
+        </block>
+      </view>
+    </block>
+  </block>
+</view>
+
+<movable-area wx:if="{{moveable}}" class="movable-area" style='display:{{movableViewInfo.showClass}}; height:{{pageInfo.scrollHeight}};'>
+  <movable-view class=" movable-row" out-of-bounds='true' damping='999' style='height:{{pageInfo.rowHeight}}px;' direction="vertical" y="{{movableViewInfo.y}}">
+    <view class="text">
+      {{movableViewInfo.data}}
+    </view>
+  </movable-view>
+</movable-area>
+<view class="canvas-box" wx:if="{{showCanvas}}">
+  <canvas style="width: {{canvasWidth}}px;height: {{canvasHeight}}px;" canvas-id="myCanvas0" />
+</view>
+<mymenu id="myMenu"></mymenu>

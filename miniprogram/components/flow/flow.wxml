@@ -1,0 +1,34 @@
+<block wx:if="{{linear}}">
+  <view class="linear-flow" style="{{myStyle}}">
+    <block wx:for="{{flows}}" wx:key="step" wx:for-index="index" wx:key="step">
+      <block wx:if="{{toggerDisabled}}">
+        <view wx:if="{{index >=begIndex && index <= endIndex}}" class="node {{num == index ? 'active':''}}" style="width:{{item.width||itemWidth}}px" catchtap="{{toggerDisabled ?'':'toggle'}}" data-index="{{index}}">
+          <view class="item linear">
+            <text wx:if="{{num > index}}" class="iconfont icon-center"></text>
+            <text wx:elif="{{num == index}}" class="iconfont icon-ok"></text>
+            <text wx:else class="iconfont icon-refresh"></text>
+          </view>
+          <text class="item text title">{{item.step}}</text>
+          <text class="item text sub">{{item.sub}}</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view wx:if="{{index >=begIndex && index <= endIndex}}" class="node active" style="width:{{item.width?item.width:itemWidth}}px" catchtap="toggle" data-index="{{index}}">
+          <view class="item linear">
+            <text class="iconfont {{item.icon||'icon-ok'}} " style="{{num == index ? 'color:#5cb85c;':'color:#888;'}}"></text>
+          </view>
+          <text class="item text title">{{item.step}}</text>
+          <text class="item text sub">{{item.sub}}</text>
+        </view>       
+      </block>
+    </block>
+  </view>
+</block>
+<view class="cssNav" style="{{myStyle}}" wx:else>
+  <block wx:for="{{flows}}" wx:key="step" wx:for-index="index" wx:key="step">
+    <view wx:if="{{index >=begIndex && index <= endIndex}}" class="stepItem {{num == index ? 'active':''}}" style="width:{{item.width||itemWidth}}px" catchtap="{{toggerDisabled ?'':'toggle'}}" data-index="{{index}}">
+      <text class="index">{{index+1}}</text>
+      <text class="c_fff">{{item.step}}</text>
+    </view>
+  </block>
+</view>

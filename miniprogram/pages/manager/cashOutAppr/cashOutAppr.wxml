@@ -1,0 +1,61 @@
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<!--
+<view class="list-top">
+	<view class="label">提现审批({{listData.length}})</view>
+	<view class="oper" catchtap="goRpt">
+		<text></text>
+		<text class="iconfont icon-rightarrow"></text>
+	</view>
+</view>-->
+<view class='tab'>
+  <view catchtap='tabFun' data-index="0">
+    <text class='{{tabIndex=="0"?"active":""}}'>待审核</text>
+  </view>
+  <view catchtap='tabFun' data-index="1">
+    <text class='{{tabIndex=="1"?"active":""}}'>已审核</text>
+  </view>
+  <view catchtap='tabFun' data-index="3">
+    <text class='{{tabIndex=="3"?"active":""}}'>已提现</text>
+  </view>
+  <view catchtap='tabFun' data-index="2">
+    <text class='{{tabIndex=="2"?"active":""}}'>审核不过</text>
+  </view>
+  <view catchtap='tabFun' data-index="">
+    <text class='{{tabIndex==""?"active":""}}'>全部</text>
+  </view>
+</view>
+<scroll requesting="{{requesting}}" end="{{loadFinish}}" scrolllock="{{false}}" refreshlock="{{false}}" empty-show="{{true}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="88" bind:refresh="refresh" bind:more="more">
+	<view class='list' wx:if="{{listData.length>0}}">
+		<view class="list-content">
+			<view class='item' wx:for="{{listData}}" wx:key="_id">
+				<view class='content'>
+					<view class='text'>
+						<view class='title'>
+							<text class="sub">{{item.shopname}}</text>						
+						</view>
+						<view class='price'>
+							<text style="font-size:18px;">¥{{item.amt||0}}</text>            
+						</view>			
+						<view style="" wx:if="{{item.status=='0'}}">
+              <text class="btn red right" catchtap="disPass" data-idx="{{index}}">拒绝</text>
+              <text class="btn right" catchtap="pass" data-idx="{{index}}">通过</text>
+            </view>
+          	<view style="" wx:elif="{{item.status=='1'}}">              
+              <text wx:if="{{sysadmin=='1'}}" class="btn right" catchtap="cashout" data-idx="{{index}}">提现</text>
+              <text wx:else style="float:right;">{{ dictTrs.trs(dict['100030'],item.status) }}</text>
+            </view>
+           	<view style="spec" wx:else>
+              <text style="float:left;font-size:13px;">{{ pipi.dFormat(item.settime) }}</text>
+              <text style="float:right;">{{ dictTrs.trs(dict['100030'],item.status) }}</text>
+             </view>
+             <view style="spec">
+              <text style="float:left;margin-right:8px;color:red;" wx:if="{{item.status=='2'}}">{{item.appr_errmsg}}</text>
+              <text style="float:left;margin-right:8px;color:red;" wx:elif="{{item.status=='4'}}">{{item.cashout_errcode}}:{{item.cashout_errmsg}}</text>
+             </view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</scroll>

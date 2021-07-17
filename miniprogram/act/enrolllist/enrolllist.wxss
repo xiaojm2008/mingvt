@@ -1,0 +1,139 @@
+@import "../../components/template/orderlist/orderlist.wxss";
+
+.order-center .right{
+  flex:1 1 80px;
+}
+.custom{
+  position: fixed;
+  height: 45px;
+  width: 100%;  
+  right: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  box-sizing: border-box;/*盒子模式，nav.height:100%+custom.padding-top=65px*/
+}
+.custom .nav{
+  flex:1 1 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+}
+.custom .nav .operBtn{
+  width: 25px;
+  font-size: 22px;
+  margin-left: 8px;
+  color: rgb(180, 174, 174);
+}
+.custom .nav .reback{
+  margin-left:17rpx;
+  font-weight:500;
+  font-size:26px;
+}
+.custom .nav .title{
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+}
+.custom .content{
+  position:fixed;
+  left:0;
+  right:0;
+  z-index:99;
+}
+
+/*
+.list {
+  position: relative;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+}
+
+.list .item {
+  box-sizing: border-box;
+  display: flex;
+  min-height: 95px;
+  align-items: center;
+  padding-left: 15px;
+}
+.list .item-hover{
+  background-color:rgb(243, 242, 242);
+  filter: grayscale(50%);  
+}
+.list .content {
+  flex-grow: 1;
+  display: flex; 
+  padding: 10px 10px 10px 0px;  
+  border-bottom: 1px solid #ededed;
+}
+.list >.item:last-child .content{
+  border-bottom: 0;
+}
+.list .label {
+  flex: 0 0 auto;
+  padding: 10px 0;
+}
+.list .content .thumpnail{
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  padding:0 10px 0 0;
+}
+.list .content image {
+  height: 60px;
+  width: 60px;
+  border-radius: 5px;
+}
+
+.list .content .text {
+  flex-grow: 1;
+  font-size: 14px;
+}
+
+.list .content .title {
+  overflow: hidden;
+}
+
+.list .content .spec {
+  font-size: 12px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 24px;
+  max-height: 24px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+}
+
+.list .content .price {
+  display: flex;
+  font-size: 16px;
+}
+.list .content .price text:nth-child(1) {
+  color: #ff5f19;
+  flex: 1 0 50%;
+}
+*/
+
+.time-show .st-btn:last-child{
+  margin-right: 5px;
+}
+.st-btn{
+  height: 20px;
+  line-height: 20px;
+  display:inline-block;
+  font-size:13px;
+  border-radius: 8px;
+  margin-left: 5px;  
+}
+.right-red{
+  /*border: 1px solid red;*/
+  color:red;
+}
+.right-green{
+  /*border: 1px solid green;*/
+  color:green;
+}

@@ -1,0 +1,54 @@
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<import src="../../../components/loading/loading.wxml" />
+<view class="ext-horiz-view top-head">
+  <view class="view-item" hover-class="view-active">
+    <view class="row">
+      <view class="left">
+        用户信息({{totalNum}}/{{inList.length}})
+      </view>
+      <view class="right" catchtap="showAddUserDlg">
+        <text>新增</text>
+        <text class="iconfont icon-rightarrow"></text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='list' wx:if="{{inList.length>0}}">
+  <view class='item' hover-class="item-hover" wx:for="{{inList}}" wx:key="_id">
+    <view class='content' bindtap="goToPage" data-page="/pages/manager/userdetail/userdetail?userid={{item.userid}}">
+      <view class="thumpnail">
+        <image src='{{item.avatarurl||"../../../images/icontab/icon_member.png"}}'></image>
+      </view>
+      <view class='text' data-index="{{index}}" catchtap="showMenu" catchlongtap="showOperatedDlg">
+        <view class='title'>
+          <text wx:if="{{item.ldflag=='1'}}" class="iconfont icon-positive-active" style="color:red"></text>
+          <text>{{item.username||item.nickname}}</text>
+          <text class="iconfont icon-phone" catchtap="callPhone" data-phone="{{item.phone}}" style="padding-left:5px;color:#999">{{item.phone}}</text>
+          <text class="st st-green" wx:if="{{item.status=='1'}}">{{dictTrs.trs(dict['100012'],item.status)}}</text>
+          <text class="st st-red" wx:elif="{{item.status}}">{{dictTrs.trs(dict['100012'],item.status||'0')}}</text>
+        </view>
+        <view>
+          <text class='spec'>店面：{{item.shopinfo.shopname}}-{{dictTrs.trs(dict['100013'],item.shopinfo.status)}}</text>
+        </view>
+        <view class='spec'>
+          {{ pipi.dFormat(item.regtime) }}
+        </view>
+        <view class='spec'>
+          {{item.summary}}
+        </view>
+        <view class='price'>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="loading-wrap">
+  <template is="loading" data="{{loadFinish:loadFinish,len:inList.length}}"></template>
+</view>
+
+<view class="">
+  <modaldialog id="modalDlg"></modaldialog>
+  <mymenu id="myMenu"></mymenu>
+</view>

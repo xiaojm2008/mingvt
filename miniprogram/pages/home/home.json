@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mysearch": "../../components/mysearch/mysearch",
+    "swiperlist": "../../components/shoptheme/swiperlist/swiperlist"
+  },
+  "navigationBarBackgroundColor": "#FFC63C",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "首页"
+}

@@ -1,0 +1,62 @@
+
+<template name="search">
+  <mysearch id="mysearch" placeholder="请在此输入您的希望" bindselectresult="selectResult" search="{{search}}"></mysearch>
+</template>
+
+<template name="icon">
+  <icon id="icon_{{node.id}}" type="{{node.attrs.type}}" size="{{node.attrs.size}}" style="{{node.attrs.style}}" color="{{node.attrs.color}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}"></icon>
+</template>
+<template name="text">
+  <text id="txt_{{node.id}}" class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}" catchtap="tapNode">{{node.attrs.title||node.value||'文'}}</text>
+</template>
+
+<template name="image">
+  <image id="img_{{node.id}}" class="{{node.attrs.class}}" mode="{{node.attrs.mode||'scaleToFill'}}" style="{{node.attrs.style}}" src="{{node.attrs.src||node.value||'/images/pic.png'}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}"
+    catchtap="tapNode" data-url="{{child.attrs.url}}"></image>
+</template>
+<!-- grid布局必须这样定义 -->
+<template name="xgrid">
+  <view class="{{node.attrs.class}}" id="view_{{node.id}}" style="{{node.attrs.style}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}">
+    <view wx:for="{{ node.children }}" wx:key="id" wx:for-item="child" wx:for-index="index" data-index="{{index}}" class="{{child.attrs.class}}" style="{{child.attrs.style}}" data-url="{{child.attrs.url || child.value}}" catchtap="tapNode">
+    <!-- 注意：这里不需要考虑nodeindex了 -->
+      <block wx:if="{{child.define||child.children}}">
+        <block wx:for="{{child.define||child.children}}" wx:key="id" wx:for-item="cnode" wx:for-index="cindex">
+          <nodeShow node="{{cnode}}"  bind:taptogger="tapTogger"></nodeShow>
+        </block>
+      </block>     
+      <block wx:else>
+        <nodeShow node="{{child}}" bind:taptogger="tapTogger"></nodeShow>
+      </block>
+    </view>
+  </view>
+</template>
+
+<!-- {{node.name=='text'||node.name=='icon'|| -->
+<block wx:if="{{node.attrs.class=='x-grid' || node.attrs.class=='fu-grid'}}">
+  <template is="xgrid" data="{{node:node}}" />
+</block>
+<block wx:elif="{{node.name=='text'||node.name=='icon'||node.name=='image'}}">
+  <template is="{{node.name}}" data="{{node:node}}" />
+</block>
+<block wx:elif="{{node.name=='swiper'}}">
+  <swiper class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}"
+    next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}">
+    <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child"  data-url="{{child.attrs.url || child.value}}" catchtap="tapNode">
+      <nodeShow node="{{child}}" bind:taptogger="tapTogger"></nodeShow>
+    </swiper-item>
+  </swiper>
+</block>
+<block wx:elif="{{node.name=='scroll-view'}}">
+  <scroll-view class="{{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y='{{node.attrs.scroll-y}}' scroll-x='{{node.attrs.scroll-x}}' enable-flex="{{node.attrs.enable-flex}}" enable-flex="{{node.attrs.enable-flex}}">
+    <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+      <nodeShow node="{{child}}" bind:taptogger="tapTogger"></nodeShow>
+    </block>
+  </scroll-view>
+</block>
+<block wx:elif="{{node.name=='view'}}">
+  <view class="{{node.attrs.class}}" style="{{node.attrs.style||''}}">
+    <block wx:for="{{node.children}}" wx:for-item="child" wx:key="id">
+      <nodeShow node="{{child}}" bind:taptogger="tapTogger"></nodeShow>
+    </block>
+  </view>
+</block>

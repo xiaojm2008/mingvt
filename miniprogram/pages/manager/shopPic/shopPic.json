@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "parameterdlg": "../../../components/parameterdlg/parameterdlg",
+    "enroll": "../../../components/enroll/enroll"
+  },
+  "navigationBarTitleText": "店铺图片维护"
+}

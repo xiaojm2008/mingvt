@@ -1,0 +1,164 @@
+@import "../../style/dialog.wxss";
+
+.horiz-view {
+  display: flex; 
+  background: #fff;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+.horiz-view .view-item{
+  padding: 0 10px 0 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 45px;
+  flex-wrap:wrap;
+}
+.horiz-view .view-item .left{
+  font-size: 14px;
+  color: #333;
+  flex:0 0 95px;
+  padding-right:10px; 
+  /*padding-left:5px; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left; 
+  height: 100%;
+}
+.horiz-view .view-item .subname{
+  color:#333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  width: 95px; 
+}
+/* white-space: nowrap;   text-overflow: ellipsis;  width: 100%;*/
+.horiz-view .view-item .subname .text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+  width: 95px; 
+}
+.horiz-view .view-item .right{
+  flex:2 1 auto;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: inherit;
+  flex-wrap: wrap;
+}
+.horiz-view .right text{
+  color:#ccc;
+}
+
+.horiz-view .view-item .right .text{
+  width:100%;
+  flex:0 0 auto;
+  line-height: 25px;
+}
+.horiz-view .view-item .b-text{
+  border-radius: 5px;
+  border:1px solid #ccc;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  margin-bottom:3px;
+  margin-right: 5px;
+  padding: 0 4px;
+}
+.horiz-view .view-item .row {
+  flex:0 0 auto;
+  display:flex;
+  align-items:center; 
+  line-height: 45px;
+  min-height:45px;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+}
+.horiz-view .view-item .row .content-text{
+   flex:0 1 auto;/*大于自动缩小尺寸*/
+   width:100%;
+   padding-left:25px; 
+   line-height: 25px;
+   color:#999;
+}
+.horiz-view .view-item:last-child > .row {
+  border-bottom: 0;
+}
+
+.horiz-view .view-item .ext-item:last-child {
+  margin-right: 0;
+}
+
+.dialog2 {
+  border:1px solid white!important;
+  bottom: 0;
+  width: 100%;
+  z-index:51 !important;
+  /*max-height: 489px !important;*/
+}
+.dialog2 .dialog-content{
+  overflow-y: yes;
+  height: 498px;
+}
+.dialog2 .dlghead{
+  justify-content: center !important;
+}
+.dialog2 .horiz-view .view-item .row .item-text{
+  display: inline-block;
+  color:#555;
+  height: 25px;
+  line-height: 25px;
+  padding-right: 5px;
+}
+.dialog2 .horiz-view .view-item .flex-item {
+  /*
+  flex: 1 0 30%;*/
+  flex: 1 0 48%;
+  display: flex;
+  min-height: 40px;
+  line-height: 40px;
+  position: relative;
+  margin-right: 0;
+  padding-bottom: 5px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dialog2 .horiz-view .view-item .flex-item image {
+  height: 100px;
+  margin: 5px 5px 5px 5px;
+  width: 100%;
+}
+.dialog2 .horiz-view .view-item .ext-item {
+  background-color: rgba(255, 251, 251, 0.5);
+  position: relative;
+  border-bottom: 0px;
+  box-sizing: border-box;
+}
+.dialog2 .view-item .row .inner-text{
+  flex: 1 0 100%;
+  line-height: 25px;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-ensure:before {
+  content: "\e6ac";
+  color:rgb(235, 109, 109);
+  width:15px;
+  padding-right: 10px; 
+}

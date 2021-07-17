@@ -1,0 +1,2 @@
+<swiperlist id="swiperlist" category="{{category}}" action="{{action}}" manager="{{manager}}" def-params="{{defParams}}" order-by="{{orderBy}}" temptype="{{temptype}}">
+</swiperlist>

@@ -1,0 +1,3 @@
+  <view class="fu-content">
+    <shoptheme1 id="shoptheme1" shopid="{{shopid}}" themaid="{{themaid}}"></shoptheme1>
+  </view>

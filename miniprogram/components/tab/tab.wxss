@@ -1,0 +1,29 @@
+.contain{
+}
+.active{
+    color:#0770EB;
+    height:74rpx;
+    border-bottom:3px solid #0770EB;
+}
+.tab{
+    width:100%;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-around;
+    background-color:#fff;
+    height:80rpx;
+    font-size:14px;
+    z-index:999;
+    text-align:center;
+    line-height:80rpx;
+    box-shadow:4px 4px 10px #f2f2f2;
+}
+.tab-content{
+    overflow:scroll;
+}
+.tab-contents{
+    display:none;
+}
+.on{
+     display:block;
+}

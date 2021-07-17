@@ -1,0 +1,62 @@
+.sideslip {
+  height: 100%;
+}
+.sides-bottom{
+  height: 100%;
+  width: 750rpx;
+  position: fixed; 
+  background-color: rgb(0, 68, 97);
+  z-index: 0;
+}
+
+.sides-content{
+  padding-top: 20px;
+}
+.sides-top{
+  height: 100%;
+  position: fixed;
+  width: 750rpx;
+  background-color: #eee;
+  z-index: 0;
+  transition: All 0.4s ease; 
+  -webkit-transition: All 0.4s ease;
+}
+.sides-top .iconfont{
+  position: absolute;
+  width: 68rpx;
+  height: 38rpx;
+  left: 20rpx;
+  top: 20rpx;
+  font-size:30px;
+  font-weight: 500;
+  color:blank;
+  z-index:60;
+}
+.c-state1{
+  transform: rotate(0deg) scale(1) translate(75%,0%); 
+  -webkit-transform: rotate(0deg) scale(1) translate(75%,0%); 
+}
+.c-state2{
+  transform: rotate(0deg) scale(.8) translate(75%,0%); 
+  -webkit-transform: rotate(0deg) scale(.8) translate(75%,0%); 
+}
+.iconfont {
+  display: inline-block;
+  font-family: 'iconfont' !important;
+}
+.icon-btn{
+  color:white;
+  position: absolute;
+  font-size: 15px;
+  display: block;
+  float:left;
+  padding-top: 8px;
+  padding-left: 8px;
+}
+.icon-list:before {
+  content: "\e684";
+}
+
+.icon-closes:before {
+  content: "\e93c";
+}

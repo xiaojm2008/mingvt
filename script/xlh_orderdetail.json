@@ -1,0 +1,107 @@
+{
+  "order_id": "1",
+  "goods_type": "0",
+  "status": "0",
+  "address_info": {
+    "address_id": "1",
+    "name": "肖锦明",
+    "contact": "13510775624",
+    "province": {
+      "text": "广东省"
+    },
+    "city": {
+      "text": "深圳市"
+    },
+    "district": {
+      "text": "宝安区"
+    },
+    "detailAddress": "裕安一路374号枫林州C栋602"
+  },
+  "goods_info": [
+    {
+      "goodsno": "100000000008",
+      "cover": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/2035%E6%B2%99%E5%8F%91%E4%BA%8C%E4%BD%8D.png?sign=5677a53435bba39ccd14c328d7d1d1a2&t=1558191110",
+      "goods_name": "2022沙发单人位",
+      "model_value": "红色,22x30cm,50kw",
+      "price": 100,
+      "num": 10
+    },
+    {
+      "goodsno": "100000000013",
+      "cover": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E9%93%B6%E7%88%B5%E9%A4%90%E6%A1%8C.png?sign=bd46349a6f1fc061818e51cfd4b19a3b&t=1558191412",
+      "goods_name": "银爵餐桌",
+      "model_value": "",
+      "price": 10,
+      "num": 10
+    },
+    {
+      "goodsno": "100000000001",
+      "cover": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E7%88%B1%E5%BE%B7%E5%8D%8E%E6%B2%99%E5%8F%91%E4%B8%89%E4%BD%8D.png?sign=9f811a5e916bc8b0138d7ff93dfbbfa3&t=1558238912",
+      "goods_name": "爱德华沙发三位",
+      "model_value": "",
+      "price": 1020,
+      "num": 1
+    }
+  ],
+  "additional_info": {
+    "100000000008": [
+      {
+        "type": "mul-text",
+        "name": "100000000008",
+        "value": "你好，我是你的朋友"
+      }
+    ],
+    "100000000001": [
+      {
+        "type": "picture",
+        "name": "100000000001",
+        "value": [
+          "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E7%88%B1%E5%BE%B7%E5%8D%8E%E6%B2%99%E5%8F%91%E4%B8%89%E4%BD%8D.png?sign=9f811a5e916bc8b0138d7ff93dfbbfa3&t=1558238912",
+          "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E9%93%B6%E7%88%B5%E9%A4%90%E6%A1%8C.png?sign=bd46349a6f1fc061818e51cfd4b19a3b&t=1558191412"
+        ]
+      }
+    ],
+    "100000000013": [
+      {
+        "type": "text",
+        "name": "100000000013",
+        "value": "我的世界级"
+      }
+    ]
+  },
+  "location_name":"深圳市元一路",
+  "tostore_data": {
+    "formatted_queue_num": 1234,
+    "format_appointed_time": "2019-1-1",
+    "tostore_order_type": 1,
+    "tostore_buyer_phone": "15361693521",
+    "tostore_appointment_time": "",
+    "tostore_remark": ""
+  },
+  "can_use_benefit": {
+    "data": [
+      {
+        "title": "5折优惠",
+        "discount_type": "1",
+        "coupon_id": 1
+      },
+      {
+        "title": "9折优惠",
+        "discount_type": "1",
+        "coupon_id": 2
+      }
+    ],
+    "selected_index": 1
+  },
+  "discount_cut_price": 10,
+  "original_price": 1289,
+  "totalPay": 1200,
+  "selected_benefit": {
+    "discount_type": null
+  },
+  "paytime":1493110671000,
+  "deliverytime":1493110671000,
+  "dealtime":1493110671000,
+  "settime": 1493110671000,
+  "updatetime": 493110671000
+}

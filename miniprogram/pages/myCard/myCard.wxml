@@ -1,0 +1,52 @@
+<view class="card" style="width:{{cardWidth}}px;height:{{cardHeight}}px">
+  <view class="additional">
+    <view class="user-card" style="width:{{userCardWidth}}px;">
+      <view class="level center">   
+      {{userInfo.username||userInfo.nickname}}
+      </view>
+      <view class="center">
+      <image src="{{userInfo.avatarurl}}"></image>
+      </view>
+      <view class="balance center">
+       余额
+      </view>
+      <view class="points center">
+        <view>5,000,000</view>
+      </view>
+    </view>
+    <view class="more-info" style="width:{{moreInfoWidth}}px;left:{{userCardWidth}}px;">    
+      <view class="coords">
+        <view>{{userInfo.phone||"13714364524"}}</view>
+        <view>{{userInfo.gender||"男-"}}</view>
+      </view>
+      <view class="coords">
+        <view>{{userInfo.birthdate||"1900-01-01"}}</view>
+        <view>{{userInfo.province||"黑龙江"}}.{{userInfo.city||"积极和二市"}}</view>
+      </view>
+      <view class="stats">
+        <view>
+          <view class="title">奖励</view>
+          <label class="fa fa-trophy"></label>
+          <view class="value">200,000,000</view>
+        </view>
+        <view>
+          <view class="title">积分</view>
+          <label class="fa fa-gamepad"></label>
+          <view class="value">270,000,000</view>
+        </view>
+        <!--
+        <view>
+          <view class="title">红包</view>
+          <label class="fa fa-group"></label>
+          <view class="value">123,000,000</view>
+        </view>
+        -->
+      </view>
+    </view>
+  </view>
+  <view class="general" style="width:{{moreInfoWidth}}px;">
+    <view class="username">{{userInfo.username||userInfo.nickname}}</view>
+    <view></view>
+    <view class="more"></view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "modaldialog": "../../../components/modaldialog/modaldialog",
+    "mymenu": "../../../components/mymenu/mymenu"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "用户信息"
+}

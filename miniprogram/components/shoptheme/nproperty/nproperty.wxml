@@ -1,0 +1,70 @@
+<view class="dialog-wrap" wx:if="{{showDlg}}" catchtouchmove="dragMove" bindtouchstart='dragStart' bindtouchend='dragEnd'>
+  <view class="dialog dialog2 bottom-pos" id="{{dlgid}}" animation="{{animationData}}" style="height:{{windowHeight}}px;">
+    <view class="dialog-head {{extClass}}">
+      <view class="subname">
+        <text>[{{compname}}-{{nodename}}]配置</text>
+      </view>
+      <view class="right-btn">
+        <view class="btn" catchtap="delTogger">
+          <text class="iconfont icon-delete"></text>
+          <text>删除</text>
+        </view>
+        <view class="btn" catchtap="okTogger">
+          <text class="iconfont icon-gou"></text>
+          <text>确认</text>
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" enable-flex="true" class="dialog-content" style="height:{{windowHeight-50}}px">
+      <view class="ext-horiz-view" wx:if="{{fieldinfo.dataset}}">
+        <view class="view-item">
+          <view class="row">
+            <view class="left subname">
+              <text>数据设置</text>
+            </view>
+            <view class="right">
+              <label class="iconfont icon-rightarrow"></label>
+            </view>
+          </view>
+        </view>
+        <enroll id="myEnroll0" initcache="" offset="{{offset}}" bind:togger="inputDataSetTogger" data-id="fieldinfo.dataset" style="width:100%;" enrolldata="{{fieldinfo.dataset}}"></enroll>
+      </view>
+
+      <view class="ext-horiz-view">
+        <view class="view-item">
+          <view class="row">
+            <view class="left subname">
+              <text>属性设置</text>
+            </view>
+            <view class="right" catchtap="showParameterDlg" id="fieldinfo.property" data-type="layout_{{fieldinfo.name}}">
+              <text>点击添加属性</text>
+              <label class="iconfont icon-rightarrow"></label>
+            </view>
+          </view>
+        </view>
+        <enroll id="myEnroll1" initcache="" offset="{{offset}}" bind:togger="inputPropertyTogger" data-id="fieldinfo.property" style="width:100%;" enrolldata="{{fieldinfo.property}}"></enroll>
+      </view>
+
+      <view class="ext-horiz-view">
+        <view class="view-item">
+          <view class="row">
+            <view class="left subname">
+              <text>样式设置</text>
+            </view>
+            <view class="right" catchtap="showParameterDlg" id="fieldinfo.style" data-type="css_style">
+              <text>点击添加样式</text>
+              <label class="iconfont icon-rightarrow"></label>
+            </view>
+          </view>
+        </view>
+        <enroll id="myEnroll2" initcache="" offset="{{offset}}" bind:togger="inputStyleTogger" data-id="fieldinfo.style" style="width:100%;" enrolldata="{{fieldinfo.style}}"></enroll>
+      </view>
+
+    </scroll-view>
+    <!-- dialog-content 
+    <view class="dialog-bottom">    
+    </view>-->
+  </view>
+</view>
+<parameterdlg id="parameterDlg" type="{{parameterType}}" cate=""></parameterdlg>
+<mycategory id="myCategory"></mycategory>

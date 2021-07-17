@@ -1,0 +1,6 @@
+@import '../../../style/list.wxss';
+.ext-horiz-view .view-item .left{
+  flex: 0 1 130px;
+  justify-content:flex-start;
+  padding-left:8px; 
+}

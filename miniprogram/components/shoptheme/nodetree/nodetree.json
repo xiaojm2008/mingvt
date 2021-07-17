@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mysearch": "../../mysearch/mysearch",
+    "swiperlist":"../swiperlist/swiperlist",
+    "nodetree": "../nodetree/nodetree"
+  }
+}

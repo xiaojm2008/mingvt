@@ -1,0 +1,499 @@
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<wxs module="cateTrs" src="../../../lib/cateTrs.wxs"></wxs>
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<view class="fu-page">
+  <flowView flows="{{flows}}" itemWidth="{{itemWidth}}" toggerDisabled='{{toggerDisabled}}' activeIndex="{{activeIndex}}">
+  </flowView>
+  <view class="fu-content" wx:if="{{activeIndex == 0}}">
+    <view class="ext-horiz-view">
+      <view class="view-item {{focusSet.picpath?'item-prompt':''}}">
+        <view class="row" style="border-bottom:1px solid #eee" >
+          <view class="left subname">
+            <text class="required">LOGO与海报</text>
+          </view>
+          <view class="right">
+           <text>请按位置选择</text>
+           <label class="iconfont icon-rightarrow"></label>
+          </view>
+        </view>
+        <view class="flex-item ext-item">
+          <image src="{{goodsinfo.picpath[0].fileID||goodsinfo.picpath[0].path}}" mode="aspectFit"></image>
+          <view class="icon-addimg" data-imgindex="0" id="goodsinfo.picpath" data-maxwidth="200" data-maxheight="200" data-maxcount="3" catchtap="chooseImg">
+            <text class="iconfont icon-pic"></text>
+            <text style="font-size:11px;">小|200px</text>
+          </view>
+        </view>
+        <view class="flex-item ext-item">
+          <image src="{{goodsinfo.picpath[1].fileID||goodsinfo.picpath[1].path}}" mode="aspectFit"></image>
+          <view class="icon-addimg" data-imgindex="1" id="goodsinfo.picpath" data-maxwidth="400" data-maxheight="400" data-maxcount="3" catchtap="chooseImg">
+            <text class="iconfont icon-pic"></text>
+            <text style="font-size:11px;">大|400</text>
+          </view>
+        </view>
+        <view class="flex-item ext-item">
+          <image src="{{goodsinfo.picpath[2].fileID||goodsinfo.picpath[2].path}}" mode="aspectFit"></image>
+          <view class="icon-addimg" data-imgindex="2" id="goodsinfo.picpath" data-maxwidth="500" data-maxheight="500" data-maxcount="3" catchtap="chooseImg">
+            <text class="iconfont icon-pic"></text>
+            <text style="font-size:11px;">海报|500px</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="ext-horiz-view">
+      <view class="view-item {{focusSet.goodsname?'item-prompt':''}}">
+        <text class="left subname required">商品名称</text>
+        <view class='right'>
+          <input class="text-input" placeholder="商品名称" id="goodsinfo.goodsname" focus="{{focusSet.goodsname}}" value="{{ goodsinfo.goodsname }}" bindinput="inputTogger"></input>
+        </view>
+      </view>
+       <!--
+      <view class="view-item">
+        <text class="left subname required">商品类型</text>
+        <view class='right'>
+          <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="100002" id="goodsinfo.goods_type" value="{{ dictTrs.idx(dict['100002'],goodsinfo.goods_type) }}" range="{{ dict['100002'] }}" range-key="name">
+            <input class="text-input" disabled placeholder="商品类型" value="{{dictTrs.trs(dict['100002'],goodsinfo.goods_type) }}"></input>
+          </picker>
+        </view>
+      </view>
+    
+      <view class="view-item">
+        <text class="left subname required">商品标志</text>
+        <view class='right'>
+          <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="100001" id="goodsinfo.goods_flag" value="{{ dictTrs.idx(dict['100001'],goodsinfo.goods_flag) }}" range="{{ dict['100001'] }}" range-key="name">
+            <input class="text-input" disabled placeholder="商品标志" value="{{ dictTrs.trs(dict['100001'], goodsinfo.goods_flag) }}"></input>
+          </picker>
+        </view>
+      </view>
+      
+      <view class="view-item {{focusSet.vgno?'item-prompt':''}}">
+        <text class="left subname required">商品分类</text>
+        <view class="right" catchtap="showPickerView">
+          <input class="flex-item ext-item2" disabled placeholder="请选择商品分类" id="goodsinfo.vgno" value="{{vgno_name}}"></input>
+          <input class="flex-item ext-item2" disabled placeholder="商品子类" id="goodsinfo.deptid" value="{{deptid_name}}"></input>
+          <input class="flex-item ext-item2" disabled placeholder="商品子子类" id="goodsinfo.subid" value="{{subid_name}}"></input>
+        </view>
+      </view> -->
+      <view class="view-item {{focusSet.category?'item-prompt':''}}">
+        <view class="row no-line">
+          <text class="left subname required">商品分类</text>
+          <view class='right' catchtap="chooseCategory">
+            <input class="text-input" disabled placeholder="请选择" id="goodsinfo.category" ></input>
+            <text catchtap="chooseCategory" class="iconfont icon-rightarrow"></text>
+          </view>
+        </view>
+        <view class="flex-box no-line" style="padding-left:20px;" wx:if="{{goodsinfo.category.length>0}}">
+          <block wx:for="{{goodsinfo.category}}" wx:key="code" wx:for-item="cate">
+            <view class="flex-item2" >
+              <icon class="icon" type="success_circle" size="20"></icon>
+              <text class="line-clamp text">{{cate.name}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    <!--
+      <view class="view-item">
+        <text class="left subname">商品子类</text>
+        <view class='right'>
+          <input class="text-input" disabled placeholder="商品子类" id="goodsinfo.deptid" value="{{deptid_name}}"></input>
+        </view>
+      </view>
+      -->
+      <!--
+      <view class="view-item">
+        <view class="row no-line">
+          <view class="left subname" catchtap="sortEnrollTap" data-sortenroll='subIdSort'>
+            <text>子分类</text>
+            <text class="iconfont icon-sort" style="margin-left:2px;"></text>
+          </view>
+          <view class='right' catchtap="showParameterDlg" id="goodsinfo.subid" data-type="goods_subid">
+            <text>点击新建商品子分类</text>
+            <label class="iconfont icon-rightarrow"></label>
+          </view>
+        </view>
+      </view>
+      <enroll id="myEnroll3" bind:togger="inputTogger2" screenwidth="{{windowWidth}}" screenheight="{{windowHeight}}" initcache="" moveable='{{subIdSort}}' bind:sort="{{subIdSort?'sortTogger':''}}" data-id="goodsinfo.subid" style="width:100%;" enrolldata="{{goodsinfo.subid}}"></enroll>
+      -->
+      <view class="view-item">
+        <view class="row no-line">
+          <view class="left subname">
+            <text>子分类</text>
+            <text class="iconfont icon-sort" style="margin-left:2px;"></text>
+          </view>
+          <view class='right' catchtap="showSubIdDlg" id="goodsinfo.subid">
+            <text>点击选择商品子分类</text>
+            <label class="iconfont icon-rightarrow"></label>
+          </view>
+        </view>
+         <view class="flex-box no-line" style="padding-left:20px;" wx:if="{{goodsinfo.subid.length>0}}">
+          <block wx:for="{{goodsinfo.subid}}" wx:key="code" wx:for-item="cate">
+            <view class="flex-item2" >
+              <icon class="icon" type="success_circle" size="20"></icon>
+              <text class="line-clamp text">{{cate.code}}-{{cate.name}}</text>
+            </view>
+          </block>
+        </view>
+      </view>      
+      <view class="view-item">
+        <text class="left subname">是否进口</text>
+        <view class='right'>
+          <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="100004" id="goodsinfo.importflag" value="{{ dictTrs.idx(dict['100004'],goodsinfo.importflag) }}" range="{{ dict['100004'] }}" range-key="name">
+            <input class="text-input" disabled placeholder="是否进口" value="{{ dictTrs.trs(dict['100004'],goodsinfo.importflag) }}"></input>
+          </picker>
+        </view>
+      </view>
+      <view class="view-item" wx:if="{{goodsinfo.importflag=='1'}}">
+        <text class="left subname required">进口国</text>
+        <view class='right' catchtap="showIndexListChoose" data-catetype="stateinfo" id="goodsinfo.importstate">
+          <text>{{goodsinfo.importstate.name||'点击选择进口国家'}}</text>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+      <view class="view-item">
+        <text class="left subname">规格(单位)</text>
+        <view class='right'>
+          <input class="text-input" placeholder="规格描述或单位:件,个,0.8-1kg,套等" id="goodsinfo.unit" value="{{ goodsinfo.unit }}" bindinput="inputTogger" />
+        </view>
+      </view>
+      <view class="view-item">
+        <text class="left subname">热销标志</text>
+        <view class='right'>
+          <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="100000" id="goodsinfo.hotsell" value="{{ dictTrs.idx(dict['100000'],goodsinfo.hotsell) }}" range="{{ dict['100000'] }}" range-key="name">
+            <input class="text-input" disabled placeholder="热销标志" value="{{ dictTrs.trs(dict['100000'],goodsinfo.hotsell) }}"></input>
+          </picker>
+        </view>
+      </view>
+      <view class="view-item">
+        <text class="left subname">可积分</text>
+        <view class='right'>
+          <input class="text-input" placeholder="可积分" id="goodsinfo.maxcanuseintegral" value="{{ goodsinfo.maxcanuseintegral }}" bindinput="inputTogger" />
+        </view>
+      </view>
+    </view>
+    <view class="ext-horiz-view" id="goodsinfo.delivery">
+      <view class="view-item ">
+        <text class="left subname ">发货</text>
+        <view class='right'>
+          <picker mode="selector" mode="region" class="inp-selector" bindchange="inputTogger" id="goodsinfo.delivery.areainfo" value="{{ goodsinfo.delivery.areainfo }}">
+            <input class="text-input" disabled placeholder="地区选择" value="{{ goodsinfo.delivery.areainfo[0] || '省'}}-{{ goodsinfo.delivery.areainfo[1] || '市' }}-{{ goodsinfo.delivery.areainfo[2] || '区' }}"></input>
+          </picker>
+        </view>
+      </view>
+      <view class="view-item {{focusSet['delivery.fee']?'item-prompt':''}}">
+        <text class="left subname required">快递费</text>
+        <view class='right'>
+          <input class="text-input" placeholder="快递费" type="digit" id="goodsinfo.delivery.fee" focus="{{focusSet['delivery.fee']}}" value="{{ goodsinfo.delivery.fee }}" bindinput="inputTogger" />
+        </view>
+      </view>
+    </view>
+    <view class="ext-horiz-view">
+      <view class="view-item">
+        <view class="row no-line">
+          <view class="left subname" catchtap="sortEnrollTap" data-sortenroll='ensureSort'>
+            <text class="required">保障资质</text>
+            <text class="iconfont icon-sort" style="margin-left:2px;"></text>
+          </view>
+          <view class="right" catchtap="showParameterDlg" id="goodsinfo.ensure" data-type="goods_ensure">
+            <text>点击选择服务保障</text>
+            <label class="iconfont icon-rightarrow"></label>
+          </view>
+        </view>
+      </view>     
+    </view>
+    <enroll id="myEnroll2" bind:togger="inputTogger2" screenwidth="{{windowWidth}}" screenheight="{{windowHeight}}" initcache="" moveable='{{ensureSort}}' bind:sort="{{ensureSort?'sortTogger':''}}" data-id="goodsinfo.ensure" style="width:100%;" enrolldata="{{goodsinfo.ensure}}"></enroll>
+    <view class="ext-horiz-view" id="goodsinfo.quantity">
+      <view class="view-item">
+        <text class="left subname required">库存标志</text>
+        <view class='right'>
+          <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="100003" id="goodsinfo.stockflag" value="{{ dictTrs.idx(dict['100003'],goodsinfo.stockflag) }}" range="{{ dict['100003'] }}" range-key="name">
+            <input class="text-input" disabled placeholder="库存标志" value="{{ dictTrs.trs(dict['100003'],goodsinfo.stockflag) }}"></input>
+          </picker>
+        </view>
+      </view>
+      <view class="view-item {{(focusSet.quantity||focusSet['quantity.stockqty'])?'item-prompt':''}}">
+        <text class="left subname">库存量</text>
+        <view class='right'>
+          <input class="text-input" placeholder="库存量" type="digit" focus="{{focusSet.quantity||focusSet['quantity.stockqty']}}" id="goodsinfo.quantity.stockqty" value="{{ goodsinfo.quantity.stockqty }}" bindinput="inputTogger" />
+        </view>
+      </view>
+      <view class="view-item">
+        <text class="left subname">总量</text>
+        <view class='right'>
+          <input class="text-input" placeholder="总量" type="digit" id="goodsinfo.quantity.totalqty" value="{{ goodsinfo.quantity.totalqty }}" bindinput="inputTogger" />
+        </view>
+      </view>
+    </view>
+
+    <view class="ext-horiz-view" id="goodsinfo.price">
+      <view class="view-item">
+        <text class="left subname">原价</text>
+        <view class='right'>
+          <input class="text-input" placeholder="原价" type="digit" id="goodsinfo.price.originalprice" value="{{ goodsinfo.price.originalprice }}" bindinput="inputTogger" />
+        </view>
+      </view>
+      <view class="view-item {{focusSet.price||focusSet['price.saleprice']?'item-prompt':''}}">
+        <text class="left subname required">销售价</text>
+        <view class='right'>
+          <input class="text-input" placeholder="销售价" type="digit" focus="{{focusSet.price||focusSet['price.saleprice']}}" id="goodsinfo.price.saleprice" value="{{ goodsinfo.price.saleprice }}" bindinput="inputTogger" />
+        </view>
+      </view>
+      <view class="view-item">
+        <text class="left subname">会员价</text>
+        <view class='right'>
+          <input class="text-input" placeholder="会员价" type="digit" id="goodsinfo.price.memberprice" value="{{ goodsinfo.price.memberprice }}" bindinput="inputTogger" />
+        </view>
+      </view>
+      <view class="view-item" wx:if="{{goodsinfo.goods_type == '2'}}">
+        <text class="left subname">团购价</text>
+        <view class='right'>
+          <input class="text-input" placeholder="您已经设置为团购商品" type="digit" id="goodsinfo.price.groupprice" value="{{ goodsinfo.price.groupprice }}" bindinput="inputTogger" />
+        </view>
+      </view>
+    </view>
+    <view class="ext-horiz-view" id="goodsinfo.parameter">  
+      <view class="view-item">
+        <view class="left" catchtap="sortEnrollTap" data-sortenroll='parameterSort'>
+         <text class="subname required">参数设置</text>
+         <text class="iconfont icon-sort" style="margin-left:2px;"></text>
+        </view>
+        <view class="right" catchtap="showParameterDlg" data-dict="100014" id="goodsinfo.parameter" data-type="goods">         
+          <text>点击维护商品其他参数</text>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+      <enroll id="myEnroll" bind:togger="inputTogger2" screenwidth="{{windowWidth}}" screenheight="{{windowHeight}}" initcache="" moveable='{{parameterSort}}' bind:sort="{{parameterSort?'sortTogger':''}}" data-id="goodsinfo.parameter" style="width:100%;" enrolldata="{{goodsinfo.parameter}}"></enroll>
+      <view class="view-item no-line">
+        <view class="flex-item ext-item">
+          <multitext class="textarea" bind:togger="inputTogger" id="goodsinfo.summary" value="{{goodsinfo.summary}}" placeholder="商品简单介绍"></multitext>
+        </view>
+      </view>
+      <view class="view-item no-line">
+        <view class="flex-item ext-item">
+          <multitext class="textarea" bind:togger="inputTogger" id="goodsinfo.keywords" value="{{goodsinfo.keywords}}" placeholder="检索关键字"></multitext>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="fu-content" wx:if="{{activeIndex == 1}}">
+    <view class="ext-horiz-view">
+      <view class="flex-box subname no-line" style="padding-left:10px;">
+        <view class="view-box" catchtap="addModel">
+          <text class="simple-btn iconfont icon-plus"></text>
+          <text>商品型号</text>
+        </view>
+        <!--
+        <view class="view-box" catchtap="addModelsPic">
+          <text class="simple-btn iconfont icon-pic"></text>
+          <text>指定型号图片</text>
+        </view>
+        -->
+        <view class="view-box" catchtap="showHelper">
+          <text class="simple-btn iconfont icon-helper"></text>
+          <text>帮助</text>
+        </view>
+      </view>
+    </view>
+    <view class="ext-horiz-view"><!-- goods.models  goodsModels -->
+      <block wx:for="{{goodsModels}}" wx:for-index="mkey" wx:for-item="model" wx:key="id" >
+        <view class="view-item {{dictTrs.focus(focusSet,'.name',mkey)?'item-prompt':''}}">
+          <view class="row">
+            <view class="left" catchtap="setImgFlg" data-index="{{mkey}}" style="width:150px;justify-content:flex-start;">
+              <icon class="icon" type="{{model.mainflag?'success_circle':'circle'}}" size="25"></icon>
+              <text style="margin-left:5px;">型号.{{mkey}}</text>
+            </view>
+            <view class='right'>
+              <input class="text-input" placeholder="请输入商品型号" data-pack="goodsModels" id="[{{mkey}}].name" value="{{model.name}}" bindinput="inputTogger" focus="{{dictTrs.focus(focusSet,'.name',mkey)}}"  />     
+              <text class="simple-btn iconfont icon-plus i-block" data-index="{{mkey}}" catchtap="addModelItem"></text>
+            </view>
+          </view>
+        </view>
+        <block wx:for="{{model.submodels}}" wx:for-index="subid" wx:key="subid" wx:for-item="submodel">
+          <view class="view-item {{dictTrs.focus(focusSet,'.subname',subid)?'item-prompt':''}}">
+            <view class="row">
+              <!--<text class="left subname">{{model.submodelid[nameIndex]}}</text> focus="{{dictTrs.focus(focusSet,'subname',mkey)}}" -->
+              <view wx:if="{{model.mainflag}}" class="left">            
+                <text class="link-text" hover-class='link-hover' catchtap="chooseImg" data-index="{{mkey}}" data-subid="{{subid}}" data-pack="goodsModels" id="[{{mkey}}].submodels.{{subid}}.picpath" data-maxcount="1" >上传图片</text>
+              </view>
+              <view class='right'>
+                <input class="text-input" placeholder="规格,譬如尺寸:20CM*10CM*80CM" data-pack="goodsModels" id="[{{mkey}}].submodels.{{subid}}.subname" value="{{submodel.subname}}" bindinput="inputTogger" focus="{{dictTrs.focus(focusSet,'.subname',subid)}}"/>
+                <text class="simple-btn iconfont icon-closes i-block" data-subid="{{subid}}" data-index="{{mkey}}" catchtap="delSubModelItem"></text>
+              </view>
+            </view>
+            <view class="row {{dictTrs.focus(focusSet,'.price',subid)?'item-prompt':''}}" wx:if="{{model.mainflag}}" >
+              <text class="left subname">售价</text>
+              <view class='right'>
+                <input class="text-input" placeholder="售价" type="digit" data-pack="goodsModels" id="[{{mkey}}].submodels.{{subid}}.price" value="{{ submodel.price }}" bindinput="inputTogger" focus="{{dictTrs.focus(focusSet,'.price',subid)}}"/>
+              </view>
+            </view>
+            <view class="row {{dictTrs.focus(focusSet,'.stock',subid)?'item-prompt':''}}" wx:if="{{model.mainflag}}" >
+              <text class="left subname">库存量</text>
+              <view class='right'>
+                <input class="text-input" placeholder="库存量" type="number" data-pack="goodsModels" id="[{{mkey}}].submodels.{{subid}}.stock" value="{{ submodel.stock }}" bindinput="inputTogger" focus="{{dictTrs.focus(focusSet,'.stock',subid)}}"/>
+              </view>
+            </view>
+            <view class="flex-item ext-item" wx:if="{{submodel.picpath}}">
+              <image src="{{ submodel.picpath.fileID||submodel.picpath.path }}" mode="aspectFit"></image>
+              <view class="top-desc" data-pack="goodsModels" id="[{{mkey}}].submodels.{{subid}}.picpath" catchtap="delImg">
+                <text>{{submodel.picpath.width||0}}~{{submodel.picpath.height||0}}</text>
+                <text class="iconfont icon-delete"></text>
+              </view>
+            </view>
+          </view>      
+        </block>
+      </block>
+    </view>
+  </view>
+  <view class="fu-content" wx:if="{{activeIndex == 2}}">
+    <block wx:for="{{goodsinfo.modelitems}}" wx:for-index="index" wx:key="subid" wx:for-item="modelitem">
+      <view class="ext-horiz-view">
+        <view class="flex-box subname" style="padding-left:10px;">
+          <view class="view-box">
+            <text class="simple-btn iconfont icon-closes" data-index="{{index}}" catchtap="delSubModel"></text>
+            <text>{{modelitem.subname||modelitem.modelstr}}</text>
+          </view>
+        </view>  
+        <view class="view-item {{dictTrs.focus(focusSet,'.price',index)?'item-prompt':''}}">
+          <text class="left subname">商品售价</text>
+          <view class='right'>
+            <input class="text-input" placeholder="商品售价" type="digit" data-pack="goodsinfo.modelitems." id="{{index}}.price" value="{{ modelitem.price }}" bindinput="inputTogger" focus="{{dictTrs.focus(focusSet,'.price',index)}}"/>
+          </view>
+        </view>
+        <view class="view-item {{dictTrs.focus(focusSet,'.stock',index)?'item-prompt':''}}">
+          <text class="left subname">库存量</text>
+          <view class='right'>
+            <input class="text-input" placeholder="库存量" type="number" data-pack="goodsinfo.modelitems." id="{{index}}.stock" value="{{ modelitem.stock }}" bindinput="inputTogger" focus="{{dictTrs.focus(focusSet,'.stock',index)}}"/>
+          </view>
+        </view>
+        <view class="view-item">
+          <view class="row">
+            <view class="left subname">
+              <text class="text">图片</text>
+            </view>
+            <view class="right">
+              <button class="btn-icon" data-pack="goodsinfo.modelitems." id="{{index}}.picpath" data-maxcount="1" catchtap="chooseImg">请上传</button>
+            </view>
+          </view>
+          <view class="flex-item ext-item" wx:if="{{modelitem.picpath}}">
+            <image src="{{ modelitem.picpath.fileID||modelitem.picpath.path }}" mode="aspectFit"></image>
+            <!-- <view class="icon-addimg" data-pack="enrollinfo" id="{{index}}"  catchtap="chooseImg">
+                <text class="iconfont icon-pic"></text>
+                <text style="font-size:13px;">图片上传</text>
+              </view>
+              -->
+            <view class="top-desc" data-pack="goodsinfo.modelitems." id="{{index}}.picpath" catchtap="delImg">
+              <text>{{modelitem.picpath.width||0}}~{{modelitem.picpath.height||0}} SIZE{{substr.toFix(modelitem.picpath.size/1024,2)}}KB</text>
+              <text class="iconfont icon-delete"></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="fu-content" wx:if="{{activeIndex == 3}}">
+    <view class='ext-horiz-view'>
+      <view class="view-item">
+        <view class='left'>
+          请添加图片
+        </view>
+        <view class='right' data-initflag="1" id="goodsinfo.imginfo" catchtap="chooseImg">
+          <text>(您的屏幕尺寸{{windowWidth}}:{{windowHeight}})</text>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+      <view class="view-item">
+        <text class="left subname">压缩比率</text>
+        <view class='right'>
+          <input class="text-input" placeholder="压缩比率" id="upCfg.compressrate" type="number" value="{{ upCfg.compressrate }}" bindinput="inputTogger" />
+        </view>
+      </view>
+      <view class="view-item">
+        <text class="left subname">图片宽度</text>
+        <view class='right'>
+          <picker mode="selector" class="inp-selector" bindchange="inputTogger" id="upCfg.maxwidth" data-dict="100010" value="{{dictTrs.idx(dict['100010'], upCfg.maxwidth) }}" range="{{ dict['100010'] }}" range-key="name">
+            <input class="text-input" disabled placeholder="图片宽度" value="{{dictTrs.trs(dict['100010'], upCfg.maxwidth) }}"></input>
+          </picker>
+        </view>
+      </view>
+      <view class="view-item">
+        <text class="left subname">图片高度</text>
+        <view class='right'>
+          <picker mode="selector" class="inp-selector" bindchange="inputTogger" id="upCfg.maxheight" data-dict="100011" value="{{dictTrs.idx(dict['100011'], upCfg.maxheight) }}" range="{{ dict['100011'] }}" range-key="name">
+            <input class="text-input" disabled placeholder="图片高度" value="{{dictTrs.trs(dict['100011'], upCfg.maxheight) }}"></input>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="panel-view">
+      <view class="item-view" style="height:{{upCfg.maxheight}}px">
+        <swiper indicator-dots="true" current="{{current}}" indicator-active-color="rgb(168, 6, 6)" indicator-color="rgb(223, 157, 157)" style="height:100%;">
+          <block wx:for="{{goodsinfo.imginfo}}" wx:for-index="index" wx:for-item="item" data-index="{{index}}">
+            <swiper-item>
+              <image src="{{ item.fileID||item.path }}" data-src="{{item.fileID||item.path}}" style="height:100%;" class="slide-image" catchtap="previewImg"></image>           
+              <view class="top-desc" data-initflag="1" data-imgindex="{{index}}" id="goodsinfo.imginfo" catchtap="delImg">{{item.oriWidth}}~{{item.oriHeight}}->{{item.width}}~{{item.height}},SIZE：{{substr.toFix(item.size/1024,2)}}KB <text class="iconfont icon-delete"></text></view> 
+              <view class="bottom-desc">
+                <text>{{item.errMsg}}</text>
+              </view>           
+            </swiper-item>
+          </block>     
+        </swiper>
+        <view class="icon-addimg" data-initflag="1" id="goodsinfo.imginfo" catchtap="chooseImg">
+          <text class="iconfont icon-pic"></text>
+          <text style="font-size:13px;">点击添加</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="fu-content" style="height:{{windowHeight-108}}px" wx:if="{{activeIndex == 4}}">
+    <myeditor cloudDir="{{upCfg.cloudpath}}" windowHeight="{{windowHeight-108}}" windowWidth="{{windowWidth}}" style="height:{{windowHeight-118}}px" actionid="{{goodsinfo.goodsno}}" id="myEditor"></myeditor>
+  </view>
+  <view class="fu-content preview" wx:if="{{activeIndex == 5}}">
+    <goods goodsno="" goodsinfo="{{goodsinfo}}"></goods>
+  </view>
+  <view class="fu-bottom" wx:if="{{btnShow}}">
+    <text class="btn one" bindtap="nextStep" wx:if="{{activeIndex === 0}}" data-params="">下一步</text>
+    <text class="btn" bindtap="preStep" wx:if="{{activeIndex > 0}}" data-params="">上一步</text>
+    <text class="btn" bindtap="nextStep" wx:if="{{activeIndex >0 && activeIndex < flows.length-1}}" data-params="">下一步</text>
+    <text class="btn" bindtap="save" wx:if="{{activeIndex == flows.length-1}}" data-params="">提交</text>
+  </view>
+</view>
+<!--
+<view class="dialog-wrap" wx:if="{{showPicker}}" catchtap="showPickerView">
+  <view class="dialog center-panel">
+    <view class="dialog-head">
+      <view class="flex-box subname no-line">
+        <view class="view-box" catchtap="hTabTogger" data-tabid="0">
+          <text class="simple-btn iconfont icon-notebook"></text>
+          <text>选择分类</text>
+        </view>
+        <view class="view-box" catchtap="hTabTogger" data-tabid="1">
+          <text class="simple-btn iconfont icon-usercenter"></text>
+          <text>常用分类</text>
+        </view>
+      </view>
+      <text class="close-btn" catchtap="showPickerView">x</text>
+    </view>
+    <view class="dialog-content no-line">
+      <picker-view indicator-class="multi-indicator" mask-class="" class="multi-picker" value="{{selCategory}}" bindchange="bindPickerChange">
+        <picker-view-column>
+          <view style="line-height: 50px;" wx:for="{{vgno}}">{{item.name}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view style="line-height: 50px;" wx:for="{{vgno[selCategory[0]].items}}">{{item.name}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view style="line-height: 50px;" wx:for="{{vgno[selCategory[0]].items[selCategory[1]].items}}">{{item.name}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+    <view class="dialog-bottom">
+    </view>
+  </view>
+</view>
+-->
+<view class="canvas-box">
+  <canvas style="width: 800px;height: 500px;" canvas-id="myCanvas0" />
+</view>
+<modaldialog id="modalDlg2"></modaldialog>
+<parameterdlg id="parameterDlg" type="{{parameterType}}" cate=""></parameterdlg>
+<mycategory id="myCategory"></mycategory>

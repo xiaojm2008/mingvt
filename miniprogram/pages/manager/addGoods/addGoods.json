@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "flowView": "../../../components/flow/flow",
+    "multitext": "../../../components/multitext/multitext",
+    "myeditor": "../../../components/myeditor/myeditor",
+    "modaldialog": "../../../components/modaldialog/modaldialog",
+    "parameterdlg": "../../../components/parameterdlg/parameterdlg",
+    "enroll": "../../../components/enroll/enroll",
+    "goods": "../../../components/goods/goods",
+    "mycategory": "../../../components/shoptheme/mycategory/mycategory"
+  },
+    "navigationBarTitleText": "商品录入"
+}

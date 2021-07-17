@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "scroll": "../../../components/scroll/scroll",
+    "mymenu": "../../../components/mymenu/mymenu",
+    "modaldialog": "../../../components/modaldialog/modaldialog",
+    "mysearch": "../../../components/mysearch/mysearch"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "主题列表"
+}

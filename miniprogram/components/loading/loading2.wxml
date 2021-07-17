@@ -1,0 +1,31 @@
+<template name="loading">
+  <view class="{{loadFinish&&len==0?'':'scroll-bottom'}}">
+    <block wx:if="{{!loadFinish}}">
+      <view class="{{len===-1 && !pull?'loading-center':(pull?'':'scroll-loading')}}"><!-- (pull?'':'scroll-loading') -->
+        <view class="loading">
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+          <view class="loading-item "></view>
+        </view>
+        <view class="loading-text ">{{text||'加载中...'}}</view>
+      </view>
+    </block>
+    <view class="end-line " wx:elif="{{loadFinish && len>0}}">
+      <text>{{finishText||'已经没有记录信息了'}}</text>
+    </view>
+    <view class="loading-center" wx:elif="{{loadFinish&&len===0&&emptyShow}}">
+      <image mode="scaleToFill" src="/images/empty.svg"></image>
+     <!-- cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/assets/imgs/empty.png -->
+      <view style="color:#999;font-size:14px;">没有记录</view>
+    </view>
+  </view>
+</template>

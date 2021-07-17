@@ -1,0 +1,4 @@
+<import src="../../components/loading/loading.wxml" />
+<view class="loading-wrap">
+  <template is="loading" data="{{loadFinish:loadFinish,finishText:'页面加载中...',len:1}}"></template>
+</view>

@@ -1,0 +1,41 @@
+<wxs module="dictTrs" src="../../lib/dictTrs.wxs"></wxs>
+<view class="custom" style="padding-top:{{statusBarHeight}}px;height:{{statusBarHeight+45}}px;">
+	<view class="nav" catchtap="goBack" catchtap="reBack">
+		<text class="iconfont icon-leftarrow reback"></text>
+    <text class="title">我的收藏</text>
+	</view>
+	<view class="nav">
+    <!--<text wx:if="{{!editable}}" class="iconfont icon-edit-circle operBtn" catchtap="onEdit"></text>
+    <text wx:else class="iconfont icon-delete operBtn" catchtap="onDel"></text>-->   
+		<mysearch id="mysearch" placeholder="请在此输入查询内容" bindselectresult="selectResult" search="" offset-y="{{45+statusBarHeight}}" extClass="srh-btn" catetype="favor" type="icon"></mysearch>
+		<text class="iconfont icon-more2 operBtn" id="moreBtn" catchtap="onMore"></text>
+	</view>
+</view>
+<!-- <view style="top:{{statusBarHeight+45}}px" class="content"> -->
+<view class="content">
+	<scroll id="scroll" requesting="{{requesting}}" empty-show="{{true}}" end="{{loadFinish}}" refreshlock="{{refreshlock}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="{{freshBarSize}}" color="{{color}}" bind:refresh="refresh" bind:more="more">
+    
+		<view class="fu-list" wx:if='{{listData.length>0}}'>
+			<view class="list-item" wx:for="{{listData}}" wx:key="_id" wx:for-index="index">
+				<view class="list-item-conts" data-index="{{index}}" style="{{item.left}}">
+					<view class="item-info">
+						<view class="item-check" wx:if="{{editable}}" catchtap="onSelect" data-index="{{index}}">
+							<icon type="{{item.active? 'success_circle':'circle'}}" size="20"></icon>
+						</view>
+						<view class="img-box" catchtap="onGoPage" data-index="{{index}}">
+							<image src="{{item.cover}}" class="img" />
+						</view>
+						<view class="text-box">
+							<view class="item-title">{{item.favor_name}}</view>
+              <view class="item-flag">{{dictTrs.trs(dict[100034],item.favor_tp,1)}}</view>
+							<view class="item-label">{{item.favor_desc}}</view>
+							<view class="item-number" wx:if="{{item.favor_number_desc}}">{{item.favor_number_desc}} {{item.favor_number||''}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll>
+</view>
+
+  <mymenu id="myMenu"></mymenu>

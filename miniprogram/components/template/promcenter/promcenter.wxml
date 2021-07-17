@@ -1,0 +1,85 @@
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<wxs module="calc" src="../../../lib/calc.wxs"></wxs>
+<template name="promcenter">
+  <!-- <view class="fu-content"> -->
+    <view class="ext-horiz-view fu-card" style="" wx:for="{{listData}}" wx:key="_id" wx:for-index="index" wx:for-item="prom">
+      <view class="view-item card-head" hover-class="view-active">
+        <view class="row">
+          <view class='left'>
+            <text class="iconfont icon-tuandui"></text>
+            <text class="t line-clamp">{{dictTrs.trs(dict[100016],baseTemplate.promtype.value,'1')}}</text>
+          </view>
+          <view class='right'>
+            <view class="flex-box">
+              <view class="view-box" data-index="{{index}}" catchtap="goToPage">
+                <text hover-class="icon-hover" class='simple-btn iconfont icon-plus'></text>
+                <text class="text">提醒</text>
+              </view>
+              <view class="view-box" data-index="{{index}}" catchtap="delTogger">
+                <text hover-class="icon-hover" class='simple-btn iconfont icon-closes'></text>
+                <text class="text">详细</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="item-view card-image">
+        <image src="{{ prom.prompic[0].fileID }}" mode="scaleToFill" data-index="{{index}}" catchtap="previewImg"></image>
+        <!--<view class="triangle-tr"><text class="text rot">{{dictTrs.trs(dict[100017],prom.limittimeflag,'1')}}</text></view>-->
+        <text class="band-flag band-left">{{calc.cutDown(prom)}}</text>
+        <view wx:if="{{prom.marqueeshow}}" class="marquee_container" style="--marqueeWidth--:-{{prom.prominfo ? prom.prominfo.length*0.8+15:12}}em">
+          <view class="marquee_text">{{prom.prominfo}} 活动时间： {{prom.limittimeflag=='1'?prom.begtime[0]+" "+prom.begtime[1]+"/":''}}{{prom.limittimeflag=='1'?prom.endtime[0]+" "+prom.endtime[1]:'无限制'}}</view>
+        </view>
+      </view>
+      <view class="view-item card-content">
+        <view class="card-item" bindlongtap="showMenu" wx:for="{{prom.goods}}" wx:key="_id" wx:for-index="goodsindex" wx:for-item="goods" data-goodsindex="{{goodsindex}}" data-index="{{index}}">
+          <view class="subjectarea">
+            <view class="head" wx:if="{{goodsindex==0}}">
+              <view class="price" wx:if="{{prom.promtype=='5'||prom.promtype=='6'||prom.promtype=='9'}}">
+                <text class="symbol">¥</text>
+                <text class="num">{{prom.promamt}}</text>
+                <text class="orginal">原价</text>
+                <text class="orginal del">¥{{goods.price.originalprice||goods.price.saleprice}}</text>
+              </view>
+              <view class="price" wx:elif="{{prom.promtype=='2'}}">
+                <text class="num">{{prom.discount}} 折</text>
+                <text class="orginal">原价</text>
+                <text class="orginal del">¥{{goods.price.originalprice||goods.price.saleprice}}</text>
+              </view>
+              <view class="price" wx:else>
+                <text class="symbol">¥</text>
+                <text class="num" wx:if="{{prom.promtype=='1'}}">{{prom.immediatecutamt}}</text>
+                <text class="num" wx:if="{{prom.promtype=='4'}}">{{prom.fullcutamt}}</text>
+                <text class="orginal">原价</text>
+                <text class="orginal del">¥{{goods.price.originalprice||goods.price.saleprice}}</text>
+              </view>
+              <text class="warning-label">{{dictTrs.trs(dict[100016],prom.promtype,'1')}}</text>
+              <text class="warning-label">{{dictTrs.trs(dict[100017],prom.limittimeflag,'1')}}</text>
+              <text class="warning-label">{{dictTrs.trs(dict[100018],prom.status,'1')}}</text>
+              <text class="line1-clamp">{{goods.goodsname}}</text>
+            </view>
+            <view class="head" wx:else>
+              <view class="price">
+                <text class="orginal">原价</text>
+                <text class="orginal del">¥{{goods.price.originalprice||goods.price.saleprice}}</text>
+              </view>
+              <text class="line1-clamp">{{goods.goodsname}}</text>
+            </view>
+            <view class="body">
+              <view class="row line3-clamp">{{goods.summary}}</view>
+            </view>
+            <view class="bottom"></view>
+          </view>
+          <view class="thumpnail">
+            <image src='{{goods.picpath[0].fileID||goods.picpath[1].fileID}}'></image>
+          </view>
+        </view>
+      </view>
+      <view class="view-item card-bottom" wx:if="{{prom.limittimeflag=='1'}}">
+        <text class="iconfont icon-history"></text>
+        <text style="margin-left:5px;">{{prom.begtime[0]+" "+prom.begtime[1]}}/{{prom.endtime[0]+" "+prom.endtime[1]}}</text>
+      </view>
+    </view>
+  <!-- </view> -->
+</template>

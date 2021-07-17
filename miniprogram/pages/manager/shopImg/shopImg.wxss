@@ -1,0 +1,31 @@
+.custom{
+  position: fixed;
+  height: 45px;
+  width: 100%;  
+  right: 0;
+  left: 0;
+  z-index: 999;
+  background: #fff;
+}
+.custom .nav{
+  float: left;
+}
+.custom .top-btn{
+  margin-left: 22rpx;
+  margin-top: 19rpx;
+  margin-right: 15rpx;
+  display: block;
+  width:61rpx;
+  height:47rpx;
+
+}
+.top-btn .iconfont{
+  font-weight:500;
+  font-size:26px;
+}
+.content{
+  position:fixed;
+  left:0;
+  right:0;
+  z-index:99;
+}

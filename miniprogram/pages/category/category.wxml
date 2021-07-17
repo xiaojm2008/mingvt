@@ -1,0 +1,41 @@
+<!--pages/category/category.wxml-->
+<view class="cate-panel" style="height:{{windowHeight}}px;">
+  <view class="navigate-panel">
+    <view wx:for="{{cate}}" wx:key="code" class="item {{selectdeptid == item.code ? 'select-item':''}}" catchtap="tapDeptHandler" data-deptid="{{item.code}}">
+      <text class="txt">{{item.name}}</text>
+    </view>
+  </view>
+  <scroll-view class="content-panel" scroll-y="yes" style="height:{{windowHeight}}px;">
+  <view class="content-header"></view>
+  <view class="content-list" >
+   <block wx:for="{{goodsMap}}" wx:key="busmodel" wx:for-item="mitem" wx:for-index="mkey">
+     <view class="grid-header">{{mitem.busmodelname}}</view>
+     <view class="grid">
+      <block wx:for="{{mitem}}" wx:key="goodsno" wx:for-item="item">
+        <view class="cell" catchtap="tapToItemHandler" data-goodsno="{{item.goodsno}}">
+          <view class="content">
+            <image class="thumb" src="{{item.mpicpath}}"></image>
+            <view style="padding:0 0 0 5px;">
+              <text style="font-size:12px;color:black;">{{item.goodsname}}</text>
+            </view>
+            <view style="padding:0 0 0 5px;">
+              <text style="font-size:11px;color:red;">¥{{item.price.saleprice}}</text>
+              <text style="font-size:11px;color:#ccc;padding:0 0 0 20px;">库存:</text>
+              <text style="font-size:11px;color:red;">{{item.quantity.stockqty}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <!--
+      <view class="loading" hidden="{{loadFinish}}">
+        <view class="dot" animation="{{!!alpha ? alpha[0]:''}}"></view>
+        <view class="dot" animation="{{!!alpha ? alpha[1]:''}}"></view>
+        <view class="dot" animation="{{alpha ? alpha[2]:''}}"></view>
+      </view>
+      -->
+    </view><!-- end grid -->
+</block>
+  </view>
+  <view class="content-tail"></view>
+  </scroll-view>
+</view>

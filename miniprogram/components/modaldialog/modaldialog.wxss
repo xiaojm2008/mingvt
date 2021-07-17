@@ -1,0 +1,88 @@
+@import "../../style/dialog.wxss";
+
+.dialog enroll horizontal-view .view-item .right {
+  text-align: left;
+}
+.dialog2 {
+  border:1px solid white!important;
+  bottom: 0;
+  width: 100%;
+  z-index:51 !important;
+  /*max-height: 489px !important;*/
+}
+.dialog2 .dialog-content{
+  overflow-y: yes;
+  height: 498px;
+}
+.dialog2 .dlghead{
+  justify-content: center !important;
+}
+.anim-show{
+  transition:200ms linear 0ms;
+  transition-property:transform;
+}
+/*小箭头*/
+
+/*
+.arrow {
+  content: '';
+  display: block;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  position: absolute;
+  left: 90px;
+  top: 0;
+}
+.dialog:before {
+  content: '';
+  display: block;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid white;
+  position: absolute;
+  left: 0px;
+  top: 0;
+}*/
+.panel-view .flex-box .btn-b{
+  background-color: #eee;
+  border-radius: 10px;
+  margin: 3px 0px 3px 0px;
+}
+
+.panel-view .flex-box .btn-b:nth-child(3n-1){
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.panel-view .flex-box .btn-op{
+  background-color: #ccc;
+}
+.panel-view .flex-box .flex-active{
+  background-color: rgb(151, 110, 110);
+}
+
+.panel-view .ext-horiz-view {
+  display: flex;
+  background: #fff;
+  flex-wrap: wrap;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+.panel-view .ext-horiz-view .view-item  {
+  display: flex;
+  flex: 3 0 auto;
+  text-align: right;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0px 10px 10px 10px;
+  padding:0px 5px 0 5px;
+  border-radius: 5px;
+  height: 60px;
+  background-color: #eee;  
+}
+.panel-view .ext-horiz-view .view-item text{
+  display: inline-block;
+}

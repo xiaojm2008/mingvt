@@ -1,0 +1,55 @@
+<wxs module="substr" src="../../lib/substr.wxs"></wxs>
+<view class="ext-horiz-view top-view">
+  <view class="view-item view-ext">
+    <view class="row" style="border-bottom:1px solid #eee;">
+      <view class='left' style="justify-content:flex-start;font-size:16px;padding-left:25px">
+        <text>分类</text>
+      </view>
+      <view class="right">
+        <mysearch style="padding-right:20px;" id="mysearch" placeholder="请在此输入您的希望" bindselectresult="selectResult" search="{{search}}" type="icon" extClass="srh-btn" catetype="goods"></mysearch>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cate-panel" style="height:{{windowHeight-offsetHeight}}px;">
+  <scroll-view class="navigate" scroll-y="yes">
+    <view wx:for="{{category}}" wx:key="code" wx:for-index="index" data-index="{{index}}" hover-class="hover-item" class="item {{selected == index ? 'select-item':''}}" catchtap="tapHandler" data-code="{{item.code}}">
+      <text class="txt">{{item.name}}</text>
+    </view>
+  </scroll-view>
+  <scroll-view class="content" scroll-y="yes">
+    <view class="header">
+      <view class="horiz-view">
+        <view class="view-item">
+          <view class="row">
+            <view class="inner-text" wx:if="{{category[selected].summary}}">{{category[selected].summary}}</view>
+            <view class="flex-item ext-item">
+              <image src="{{ category[selected].img[0].fileID || category[selected].img[0].path }}" mode="scaleToFill" data-imgindex="0"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="body">
+      <view class="ext-horiz-view">
+        <view class="view-item fix-item">
+          <block wx:for="{{category[selected].items}}" wx:key="id" wx:for-item="child" wx:for-index="index">
+            <view class="flex-item" hover-class="flex-active" catchtap="goToPage" data-cindex="{{index}}">
+              <view class="cell-item">
+                <image class="svgimg radius-btn" src="{{child.img[1].fileID}}"></image>
+              </view>
+              <text class='cell-item line-clamp'>{{child.name}}</text>       
+            </view>
+          </block>
+          <block wx:if="{{category[selected].items.length % 3 == 1}}">
+            <view class="flex-item">
+              <text class="cell-item"></text>
+              <text class="cell-item"></text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="tail"></view>
+  </scroll-view>
+</view>

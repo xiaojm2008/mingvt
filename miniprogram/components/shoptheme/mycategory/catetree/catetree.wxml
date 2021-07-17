@@ -1,0 +1,15 @@
+<view class="ul" style="{{myStyle}}">
+  <view class="li-item" hover-class="li-item_h">
+    <view class="left" catchtap='{{ node.items ?"toggle":""}}'>
+      <text class="iconfont {{node.extend?'icon-up':'icon-down'}} icon-btn" wx:if='{{  node.items  }}'></text>
+      <text class="text">{{ node.code }}-{{node.name}}</text>
+    </view>
+    <view class="right" catchtap="tapItem" data-nodeindex="{{nodeindex}}">
+      <icon class="icon" type="{{node.active? 'success_circle':'circle'}}" size="20"></icon>
+      <!-- <text class="iconfont icon-settings icon-btn" catchtap="tapItem" data-nodeindex="{{nodeindex}}"></text>-->
+    </view>
+  </view>
+  <view style="margin-left:8px;" wx:if='{{ node.items }}' hidden='{{ !node.extend }}'>
+    <catetree wx:for='{{ node.items}}' bind:taptogger="toggerDo" wx:key='id' node='{{ item }}' nodeindex="{{nodeindex+'_'+index}}"></catetree>
+  </view>
+</view>

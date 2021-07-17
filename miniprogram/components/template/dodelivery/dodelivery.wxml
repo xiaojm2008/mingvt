@@ -1,0 +1,58 @@
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<template name="dodelivery">
+  <view class="list" wx:for="{{listData}}" wx:key="_id">
+    <view class="head" catchtap="showDetail" data-index="{{index}}">
+      <text class="sr send">{{substr.subs(item.exp_name,1)}}</text>
+      <text class="addrinfo addr_name line-clamp">{{item.exp_name}}</text>
+      <text style="float:right;color:black;">{{pipi.dFormat(item.updatetime)}}</text>
+    </view>
+    <view class="panel-view">
+      <view class="item-view" style="">
+        <view class="left">
+        <text class="text" style="display:inline-block;">{{item.logisticsinfo.Receiver.Name}}</text> 
+        <text class="text" style="margin-left:8px;display:inline-block;">{{item.logisticsinfo.Receiver.Mobile}}</text>
+        <text class="text">{{item.logisticsinfo.Receiver.ProvinceName}}{{item.logisticsinfo.Receiver.CityName}}{{item.logisticsinfo.Receiver.ExpAreaName}}</text>
+        <text class="text">{{item.logisticsinfo.Receiver.Address}}</text>
+        </view>
+      </view>
+      <view class="item-view" wx:if="{{item.status=='0'}}">
+        <block wx:if="{{item.retcode=='0000' && item.cancelflag=='0'}}">
+          <view class="left">
+            <text>预计取件时间</text>
+            <text style="" class="time">{{pipi.dFormat(item.updatetime,2*60*60*1000,1)}}</text>
+          </view>
+          <view class="right">
+            <text catchtap="doCancelLogistics" data-index="{{index}}" data-orderid="{{item.order_id}}" class="btn cancel-btn">取消预约</text>
+            <text catchtap="addBN" data-index="{{index}}" class="btn addbn-btn">录入单号</text>
+           </view>
+        </block>
+        <block wx:elif="{{item.cancelflag=='1'}}">
+          <view class="right">
+            <text class="cancel">{{item.cancel_retmsg}}:{{item.cancel_retcode}}</text>            
+            <text catchtap="doCancelLogistics" style="" data-index="{{index}}" data-orderid="{{item.order_id}}" class="btn gray-btn cancel-btn">已取消</text>
+            <text wx:if="{{options.clientcfg.debug}}" catchtap="addBN" data-index="{{index}}" class="btn addbn-btn">录入单号</text>
+            <text catchtap="reDoLogistics" data-index="{{index}}" class="btn addbn-btn">重新预约</text>
+          </view>
+        </block>     
+         <block wx:else>
+          <text class="right err">{{item.retmsg}}:{{item.retcode}}</text>
+        </block>  
+      </view>
+      <view class="item-view" wx:elif="{{item.status=='1'}}">
+        <!--1快递员已经揽件了，记得录入单号 -->
+        <view class="right">
+          <text class="btn gray-btn cancel-btn" wx:if="{{options.clientcfg.debug}}" catchtap="doCancelLogistics" data-orderid="{{item.order_id}}" data-index="{{index}}" style="background-color:rgb(228, 143, 143);color:white;">已揽件</text>
+          <text catchtap="addBN" data-index="{{index}}" class="btn addbn-btn">录入单号</text>
+        </view>
+      </view>
+      <view class="item-view" wx:elif="{{item.status=='2' || item.status=='3'}}">
+        <!--2已经到达了，3对方已经收件了 -->
+        <view class="right">
+          <text wx:if="{{item.status=='3'}}" class="btn gray-btn cancel-btn" style="width:90px;">已确认收件</text>
+          <text catchtap="lookLogisPath" data-index="{{index}}" class="btn addbn-btn">查看物流</text>
+        </view>
+      </view>
+    </view>
+  </view>  
+</template>

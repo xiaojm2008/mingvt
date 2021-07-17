@@ -1,0 +1,176 @@
+{
+  "goodsinfo": {
+    "shopid": "S0000",
+    "shopname": "XXXX",
+    "delivery": {
+      "areainfo": [
+        "广东省",
+        "深圳市",
+        "宝安区"
+      ],
+      "fee": "1"
+    },
+    "parameter": {
+      "productionprov": {
+        "id": "productionprov",
+        "label": true,
+        "length": 200,
+        "name": "省市区",
+        "required": "O",
+        "type": "p",
+        "tempid": 0,
+        "seq": 0,
+        "active": true,
+        "value": [
+          "河北省",
+          "石家庄市",
+          "长安区"
+        ]
+      }
+    },
+    "vgno": "A11",
+    "deptid": "A1101",
+    "subid": "A110101",
+    "picpath": [
+      {
+        "idx": 0,
+        "digest": "57e7acf96ef9ccc838ac1b77d1e74b11",
+        "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.NoqWCNGkNLrk8cd912a2905ae13079d0b7909b5892ac.jpg",
+        "outType": "jpg",
+        "oriPath": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.w329Q7z2PSNZ6f4dd24940766ff5334ead7310f107de.jpg",
+        "width": 100,
+        "height": 100,
+        "size": 20709,
+        "oriWidth": 850,
+        "oriHeight": 668,
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/57e7acf96ef9ccc838ac1b77d1e74b11.jpg",
+        "status": "2",
+        "errMsg": "cloud.uploadFile:ok"
+      },
+      {
+        "idx": 0,
+        "digest": "7586874c632e98e1869d3cf8f86ee85b",
+        "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.T5xbO44mlCgQebbb5c13751dd6069b3c1cc4e0a18171.jpg",
+        "outType": "jpg",
+        "oriPath": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.LNm62sQQHX5o57ccb7f921652d6f414715fb64c80c8e.jpg",
+        "width": 200,
+        "height": 200,
+        "size": 34368,
+        "oriWidth": 1024,
+        "oriHeight": 768,
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/7586874c632e98e1869d3cf8f86ee85b.jpg",
+        "status": "2",
+        "errMsg": "cloud.uploadFile:ok"
+      }
+    ],
+    "goodsname": "asf",
+    "importflag": "0",
+    "hotsell": "0",
+    "maxcanuseintegral": "1",
+    "stockflag": "0",
+    "quantity": {
+      "stockqty": "1",
+      "totalqty": "1"
+    },
+    "price": {
+      "originalprice": "1",
+      "saleprice": "1"
+    },
+    "models": {
+      "5861": {
+        "id": "5861",
+        "name": "asf",
+        "submodels": {
+          "3252": {
+            "subid": "3252",
+            "subname": "3"
+          },
+          "e52d": {
+            "subid": "e52d",
+            "subname": "3"
+          },
+          "0d7b": {
+            "subid": "0d7b",
+            "subname": "4"
+          }
+        }
+      }
+    },
+    "modelitems": {
+      "3252": {
+        "subid": "3252",
+        "subname": "3",
+        "price": "3"
+      },
+      "e52d": {
+        "subid": "e52d",
+        "subname": "3",
+        "price": "4",
+        "picpath": {
+          "idx": 0,
+          "digest": "293faf750a4d6b6f10a962217c4fbcf4",
+          "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.arqXZpiqX1Kg293faf750a4d6b6f10a962217c4fbcf4.jpg",
+          "outType": "jpg",
+          "oriPath": null,
+          "width": 348,
+          "height": 320,
+          "size": 60487,
+          "oriWidth": null,
+          "oriHeight": null,
+          "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/293faf750a4d6b6f10a962217c4fbcf4.jpg",
+          "status": "2",
+          "errMsg": "cloud.uploadFile:ok"
+        }
+      },
+      "0d7b": {
+        "subid": "0d7b",
+        "subname": "4",
+        "price": "6"
+      }
+    },
+    "imginfo": [
+      {
+        "idx": 0,
+        "digest": "bf99cebd5d8bbcdfe0a879b41eb8081b",
+        "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.3EHxCBjJddJQf828cfa2766d29cd26d7a0b94f3bdfb7.jpg",
+        "outType": "jpg",
+        "oriPath": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.fa3jGdvFXRHsfd6b6ad54cb99c7ea06b015d37170ac0.png",
+        "width": 640,
+        "height": 200,
+        "size": 50007,
+        "oriWidth": 367,
+        "oriHeight": 481,
+        "index": 0,
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/bf99cebd5d8bbcdfe0a879b41eb8081b.jpg",
+        "status": "2",
+        "errMsg": "cloud.uploadFile:ok"
+      },
+      {
+        "idx": 1,
+        "digest": "62df7428f0d88c311a739b3d8f559def",
+        "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.6vwtJEoVbsnh5a4a7c9b9f9c0634aa43db70e961acca.jpg",
+        "outType": "jpg",
+        "oriPath": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.WrDlYcmGkvXy15522aab6d2cc3cc45138cdb9f8affd8.png",
+        "width": 640,
+        "height": 200,
+        "size": 18109,
+        "oriWidth": 367,
+        "oriHeight": 91,
+        "index": 1,
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/62df7428f0d88c311a739b3d8f559def.jpg",
+        "status": "2",
+        "errMsg": "cloud.uploadFile:ok"
+      }
+    ],
+    "description": {
+      "ops": [
+        {
+          "insert": "\n"
+        }
+      ]
+    },
+    "description2": "<p wx:nodeid=\"1088\"><br wx:nodeid=\"1089\"></p>"
+  },
+  "transtype": "goods",
+  "actionname": "addGoods"
+}

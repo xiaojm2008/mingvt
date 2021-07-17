@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "flowView": "../../../components/flow/flow",
+    "enroll": "../../../components/enroll/enroll"
+  },
+  "navigationBarTitleText": "活动维护"
+}

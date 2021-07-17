@@ -1,0 +1,20 @@
+<view class="custom" style="padding-top:{{statusBarHeight}}px;height:{{statusBarHeight+45}}px;">
+	<view class="nav" catchtap="reBack">
+		<text class="iconfont icon-leftarrow reback"></text>
+		<text class="title">通用报表</text>
+	</view>
+	<view class="nav">
+		<text class="iconfont icon-settings operBtn" id="settingBtn" catchtap="{{loadFinish?'onSetting':''}}"></text>
+	</view>
+</view>
+<view wx:if="{{loadFinish}}" class="container" style="min-height:{{windowHeight}}px;overflow:auto;padding-top:{{statusBarHeight+45}}px;">
+  <view class="container-item" wx:if="{{!hidden}}" style="height:{{windowHeight/rate}}px;">
+     <ec-canvas id="stats" canvas-id="ec_stats" ec="{{ ec }}"></ec-canvas> 
+  </view> 
+</view>
+<view wx:else class="center-panel loading-wrap">
+  <import src="../../../components/loading/loading.wxml" />
+  <template is="loading" data="{{loadFinish:loadFinish,len:1,finishText:'加载完成'}}"></template>
+</view>
+
+<modaldialog id="modalDlg" height="{{windowHeight-statusBarHeight-45}}"></modaldialog>

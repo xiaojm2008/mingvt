@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "scroll": "../../../components/scroll/scroll"
+  },
+  "navigationBarTitleText": "月度收入明细"
+}

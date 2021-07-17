@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "scroll": "../../components/scroll/scroll",
+    "mymenu": "../../components/mymenu/mymenu",
+    "enrolldetail": "../../components/enrolldetail/enrolldetail",
+    "modaldialog": "../../components/modaldialog/modaldialog",
+    "mysearch": "../../components/mysearch/mysearch"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "广告列表"
+}

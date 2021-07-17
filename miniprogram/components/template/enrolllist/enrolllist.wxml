@@ -1,0 +1,115 @@
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<import src="../actionlist/actionstatus.wxml" />
+<template name="enrolllist">
+ 	<view class="order-center" style="margin-top:0px;" wx:for="{{listData}}" wx:key="_id" wx:for-index="index">
+    <view class="order-shopinfo" style="font-size:15px;height:45px;border-bottom: 1px solid #eee;" catchtap="goToPage" data-page="/act/actiondetail/actiondetail?dataid={{item.actionid}}">
+      <view class="shop-info line-clamp">
+				<text class="iconfont icon-mark" style="margin-right:5px;"></text>
+        <text class="shop-name">{{item.actionname}}</text>			
+      </view>
+      <view class="right" style="flex:1 1 100px;">
+				<!-- style="text-align: right;flex: 1 1 40px" <text style="color:{{item.actionstatus!='0'?'red':'green'}};">{{dictTrs.trs(options.dict['100039'],item.actionstatus,'1') }}</text>-->
+				<!-- <text>{{dictTrs.trs(options.dict['100040'],item.enrollstatus,1)}}</text> -->
+				<text class="st-flag {{item.statusdesc=='已完成'?'st-gray':''}}">{{item.statusdesc}}</text>
+				<text class="iconfont icon-rightarrow"></text>
+			</view>
+    </view>
+    <view class="order-content">
+      <view class="order-more left">
+        <image lazy-load="{{true}}" class="{{item.actionstatus!='0'?'gray':''}}" src='{{item.cover||"/images/icontab/icon_member.png"}}' catchtap="goEnrollDetail" data-index="{{index}}"></image>
+        <view class="order-desc">
+          <text class="sub">{{item.actionname}}</text>
+					<template is="actionst" data="{{now:options.now,action:item,dict:options.dict}}"></template>
+          <text class="one text">发起人：{{item.launch_name}}</text>
+					<text class="one text">报名：{{substr.subs2(item.enrollbegintime,5)}}/{{substr.subs2(item.enrollendtime,5)}}</text>
+					<text class="one text">活动：{{substr.subs2(item.actbegintime,5)}}/{{substr.subs2(item.actendtime,5)}}</text>
+					<text class="one text" wx:if="{{item.updatetime !=item.settime}}">报名更新：{{item.updatetime}}</text>
+					<text class="one text" wx:if="{{item.apprflag&&item.apprtime}}">审核时间：{{item.apprtime}}</text>
+					<text class="one text" wx:if="{{item.siginflag&&item.sigintime}}">签到时间：{{item.sigintime}}</text>
+					<text class="one text" wx:if="{{item.feetype=='1'&&item.paytime}}">支付时间：{{item.paytime}}</text>
+        </view>
+      </view>
+			<!--
+      <view class="order-price right">
+        <text></text>
+      </view>
+			-->
+    </view>
+		<view class="order-additional" wx:if="{{item.remark}}">
+  		<block>
+        <text class="sub">活动备注</text>
+        <text class="text">{{item.remark}}</text>
+      </block>
+    </view>
+		<view class="order-additional" wx:if="{{item.errmsg}}">
+        <text class="sub">信息提示</text>
+        <text class="text">{{item.errmsg}}</text>
+    </view>
+    <view class="order-sum">
+      <text>我是第<text class="num">{{item.num||0}}</text>个报名 </text>
+    </view>
+		<view class="order-sum" wx:if="{{item.feetype=='1'}}">
+      <view>费用：¥ <text class="num">{{substr.toFix(item.total_pay)||0}}</text></view>
+    </view>
+    <view class="time-show">
+			<text class="iconfont icon-clock"></text>
+      <text>报名时间：{{item.settime}}</text>
+    </view>
+
+		<view class="time-show" wx:if="{{item.apprflag&&item.apprstatus=='1' || !item.apprflag}}">
+			<block wx:if="{{item.apprflag}}">	
+				<text class="st-btn {{item.apprstatus=='1'?'right-green':'right-red'}}" style="border:0;">{{dictTrs.trs(options.dict['100038'],item.apprstatus,1)}}</text>
+			</block>
+			<!-- 需要审批 或者 不需要审批的活动，显示支付状态 -->
+			<block wx:if="{{item.feetype=='1'}}">	
+				<text class="st-btn right-green" style="border:0;" wx:if="{{item.paystatus=='1'}}">{{dictTrs.trs(options.dict['100035'],item.paystatus,1)}}</text>
+				<text class="st-btn right-red" style="border:0;" wx:elif="{{item.paystatus}}">{{dictTrs.trs(options.dict['100035'],item.paystatus||'0',1)}}</text>
+			</block>
+			<!-- 活动签到状态 -->
+			<block wx:if="{{item.siginflag}}">	
+				<text class="st-btn {{item.siginstatus=='1'?'right-green':'right-red'}}" style="border:0;" wx:if="{{item.siginstatus}}">{{dictTrs.trs(options.dict['100036'],item.siginstatus,1)}}</text>
+			</block>
+			<!-- 退款状态 -->
+			<block wx:if="{{item.paystatus=='1' && item.refundstatus}}">
+				<text class="st-btn right-red" style="border:0;">{{dictTrs.trs(options.dict['100037'],item.refundstatus,1)}}</text>
+			</block>
+		</view>
+		<view class="time-show" wx:elif="{{item.apprflag && item.apprstatus}}">	
+			<text class="st-btn {{item.apprstatus=='1'?'right-green':'right-red'}}" style="border:0;">{{dictTrs.trs(options.dict['100038'],item.apprstatus,1)}}</text>
+		</view>
+    <view class="order-bottom">
+			<!--<text class="btn order-btn" catchtap="onMod" data-index="{{index}}">修改</text>
+			<text class="btn order-btn" catchtap="onDetail" data-index="{{index}}">详情</text>
+			<text class="btn order-btn" catchtap="onDel" data-index="{{index}}">删除</text>
+			-->
+			<block wx:if="{{(item.apprflag && item.apprstatus=='1' || !item.apprflag)}}">
+				<!-- 需要审批并且审核通过 或者 不需要审批的活动，显示支付状态 -->
+				<!--  100035 0未支付 1已经支付 2待支付 3支付失败 -->
+				<block wx:if="{{item.feetype=='1' && item.paystatus !='1'}}">
+					<text class="btn order-btn" catchtap="onPay" data-index="{{index}}">支付</text>
+				</block>
+				<!-- 活动签到状态 -->
+				<block wx:if="{{item.statusdesc=='进行中' && item.siginflag && item.siginstatus!='1'}}">
+					<text class="btn order-btn" catchtap="onSigin" data-index="{{index}}">签到</text>
+				</block>
+				<!-- 退款状态 
+				<block wx:if="{{item.paystatus=='1'&&item.refundstatus !='1'&&item.refundstatus !='2'}}">
+					<text class="btn order-btn" catchtap="reFund" data-index="{{index}}">退款</text>
+				</block>
+				-->
+				<block wx:if="{{item.statusdesc!='进行中' && item.siginstatus=='1' && (!item.commentflag|| item.commentflag=='0')}}">
+					<text class="btn order-btn" catchtap="onComment" data-index="{{index}}">评论</text>
+				</block>			
+			</block>
+			<block wx:else>
+			<!-- 需要审核，但是审核不通过 -->
+				<text class="btn order-btn" catchtap="onDetail" data-index="{{index}}">详情</text>
+				<block wx:if="{{item.statusdesc=='进行中'}}">
+					<text class="btn order-btn" catchtap="onMod" data-index="{{index}}">修改</text>
+				</block>	
+			</block>
+			<text class="btn order-btn" catchtap="onMore" data-index="{{index}}">更多操作</text>
+    </view>
+  </view>
+</template>

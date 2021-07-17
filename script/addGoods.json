@@ -1,0 +1,232 @@
+{
+  "shopid": "S0000",
+  "category": {
+    "parentcode": null,
+    "origincode": null,
+    "code": "101",
+    "name": "精选",
+    "level": 1,
+    "url": "d",
+    "params": "s",
+    "status": 1,
+    "img": [
+      {
+        "idx": 0,
+        "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.yfdCmG7zFphw6f4dd24940766ff5334ead7310f107de.jpg",
+        "width": 800,
+        "height": 400,
+        "size": 494561,
+        "digest2": "064f568ffe75b643e04eeda3e253486a",
+        "outType": "jpg",
+        "digest": "6f4dd24940766ff5334ead7310f107de",
+        "oriPath": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.yfdCmG7zFphw6f4dd24940766ff5334ead7310f107de.jpg",
+        "oriSize": 209620,
+        "oriWidth": 850,
+        "oriHeight": 668
+      },
+      {
+        "digest": 2,
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we/assets/imgs/category/美容店.svg",
+        "name": "图标",
+        "width": 200,
+        "height": 200
+      }
+    ],
+    "summary": "精选",
+    "seq": 0,
+    "items": []
+  },
+  "transtype": "shop",
+  "actionname": "addCategory"
+}
+
+{
+  "shopid": "S0000",
+  "category": {
+    "pindex": 0,
+    "index": 0,
+    "parentcode": null,
+    "origincode": "101",
+    "code": "101",
+    "name": "精选",
+    "level": 1,
+    "url": "d",
+    "params": "dddds",
+    "status": "1",
+    "img": [
+      {
+        "digest": "6f4dd24940766ff5334ead7310f107de",
+        "digest2": "064f568ffe75b643e04eeda3e253486a",
+        "height": 400,
+        "idx": 0,
+        "oriHeight": 668,
+        "oriPath": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.yfdCmG7zFphw6f4dd24940766ff5334ead7310f107de.jpg",
+        "oriSize": 209620,
+        "oriWidth": 850,
+        "outType": "jpg",
+        "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.yfdCmG7zFphw6f4dd24940766ff5334ead7310f107de.jpg",
+        "size": 494561,
+        "width": 800,
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/shop/000000/ounQF5gNI1fojHjR6JnyBekJpowQ/S0000/category/6f4dd24940766ff5334ead7310f107de.jpg",
+        "status": "2",
+        "errMsg": "cloud.uploadFile:ok"
+      },
+      {
+        "digest": 2,
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we/assets/imgs/category/美容店.svg",
+        "height": 200,
+        "name": "图标",
+        "status": "2",
+        "width": 200
+      }
+    ],
+    "summary": "精选"
+  },
+  "transtype": "shop",
+  "actionname": "modCategory"
+}
+
+
+{
+  "shopid": "S0000",
+  "category": {
+    "pindex": 0,
+    "index": 0,
+    "parentcode": "101",
+    "origincode": null,
+    "code": "101100",
+    "name": "精选子类",
+    "level": 2,
+    "url": "d",
+    "params": "ds",
+    "status": 1,
+    "img": [
+      {
+        "idx": 0,
+        "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.wQxT61krLwB7719eb9bea2ffb0eaba1d82bb01caecd7.jpg",
+        "width": 800,
+        "height": 400,
+        "size": 198802,
+        "digest2": "ddb9691b57298e5b918333c05da364e6",
+        "outType": "jpg",
+        "digest": "719eb9bea2ffb0eaba1d82bb01caecd7",
+        "oriPath": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.wQxT61krLwB7719eb9bea2ffb0eaba1d82bb01caecd7.jpg",
+        "oriSize": 113185,
+        "oriWidth": 1366,
+        "oriHeight": 768,
+        "name": "LOGO",
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/shop/000000/ounQF5gNI1fojHjR6JnyBekJpowQ/S0000/category/719eb9bea2ffb0eaba1d82bb01caecd7.jpg",
+        "status": "2",
+        "errMsg": "cloud.uploadFile:ok"
+      },
+      {
+        "idx": 0,
+        "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.J7IgHU9fvOYacecedee96f985b6f25dca42d0dee83c8.jpg",
+        "width": 200,
+        "height": 200,
+        "size": 15465,
+        "digest2": "5b313a881b7e035f2d328c224e075324",
+        "outType": "jpg",
+        "digest": "83db53fb75c86ca1b576b376b4556149",
+        "oriPath": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.gAuF4tWkeHb583db53fb75c86ca1b576b376b4556149.jpg",
+        "oriSize": 136158,
+        "oriWidth": 2332,
+        "oriHeight": 1940,
+        "name": "图标",
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/shop/000000/ounQF5gNI1fojHjR6JnyBekJpowQ/S0000/category/83db53fb75c86ca1b576b376b4556149.jpg",
+        "status": "2",
+        "errMsg": "cloud.uploadFile:ok"
+      }
+    ],
+    "summary": "精选子类",
+    "seq": 0
+  },
+  "transtype": "shop",
+  "actionname": "addCategory"
+}
+
+{
+  "shopid": "S0000",
+  "category": {
+    "pindex": 0,
+    "index": 2,
+    "code": "101002",
+    "name": "阿斯顿A",
+    "level": "2",
+    "url": "ASD ",
+    "status": "1",
+    "img": [
+      {
+        "digest": 1,
+        "fileID": null,
+        "name": "LOGO",
+        "width": 800,
+        "height": 400
+      },
+      {
+        "idx": 0,
+        "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.2Ys9t2ZiFCcCd86efe836fd1bf6ee5f0889f966baee8.jpg",
+        "width": 200,
+        "height": 200,
+        "size": 16628,
+        "digest2": "112a081bb1ea8a311e22068940622f3f",
+        "outType": "jpg",
+        "digest": "7e80bdc21c0842dd19d084be0a5f5623",
+        "oriPath": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.5lStsEWVLw0n7e80bdc21c0842dd19d084be0a5f5623.png",
+        "oriSize": 125742,
+        "oriWidth": 1176,
+        "oriHeight": 1024,
+        "name": "图标",
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/shop/000000/ounQF5gNI1fojHjR6JnyBekJpowQ/S0000/category/7e80bdc21c0842dd19d084be0a5f5623.jpg",
+        "status": "2",
+        "errMsg": "cloud.uploadFile:ok"
+      }
+    ]
+  },
+  "transtype": "shop",
+  "actionname": "modCategory"
+}
+
+{
+  "shopid": "S0000",
+  "category": {
+    "pindex": 0,
+    "index": 1,
+    "code": "101101",
+    "name": "里面有人",
+    "level": 2,
+    "url": "哦",
+    "params": "SA哦DFSdsasf",
+    "status": 1,
+    "img": [
+      {
+        "digest": 1,
+        "fileID": null,
+        "height": 400,
+        "name": "LOGO",
+        "width": 800
+      },
+      {
+        "digest": "a349b399781b5a4eb777a7ff9263b2b5",
+        "digest2": "24215e0f66184c93a0e8ea89dd7f09e7",
+        "errMsg": "cloud.uploadFile:ok",
+        "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/shop/000000/ounQF5gNI1fojHjR6JnyBekJpowQ/S0000/category/a349b399781b5a4eb777a7ff9263b2b5.jpg",
+        "height": 200,
+        "idx": 0,
+        "name": "图标",
+        "oriHeight": 960,
+        "oriPath": "wxfile://tmp_25bbe536132cfe74ff8d66c48c5c2496e6a217892b56f5b8.jpg",
+        "oriSize": 92073,
+        "oriWidth": 565,
+        "outType": "jpg",
+        "path": "wxfile://tmp_8fd972b7f9a1fb4ff92272a9375d307a0d925ef9b67a09c3.jpg",
+        "size": 23726,
+        "status": "2",
+        "width": 200
+      }
+    ],
+    "summary": "sd的萨芬"
+  },
+  "transtype": "shop",
+  "actionname": "modCategory"
+}

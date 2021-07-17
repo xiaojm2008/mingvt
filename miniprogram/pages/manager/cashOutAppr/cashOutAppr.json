@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "scroll": "../../../components/scroll/scroll"
+  },
+  "navigationBarTitleText": "提现审批"
+}

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+      "enroll": "../enroll/enroll",
+      "enrollitem": "../enrollitem/enrollitem",
+      "layout": "../shoptheme/layout/layout"
+  }
+}

@@ -1,0 +1,146 @@
+.custom{
+  position: fixed;
+  height: 45px;
+  width: 100%;  
+  right: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  box-sizing: border-box;/*盒子模式，nav.height:100%+custom.padding-top=65px*/
+}
+.custom .nav{
+  flex:1 1 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+}
+.custom .nav .operBtn{
+  width: 25px;
+  font-size: 22px;
+  margin-left: 8px;
+  color: rgb(180, 174, 174);
+}
+.custom .nav .reback{
+  margin-left:17rpx;
+  font-weight:500;
+  font-size:26px;
+}
+.custom .nav .title{
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+}
+.custom .content{
+  position:fixed;
+  left:0;
+  right:0;
+  z-index:99;
+}
+
+
+
+.fu-list {
+  width: 100%;
+  background-color: #fff;
+}
+
+.fu-list .list-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+.fu-list .list-item .list-item-conts {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10rpx;
+  width: 870rpx;
+  box-sizing: border-box;
+  transition: margin-left 0.2s ease-in-out;
+  background-size: 40rpx auto;
+}
+.item-info {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0 30rpx 20rpx;
+  width: 720rpx;
+  box-sizing: border-box;
+}
+
+.fu-list .list-item .list-item-conts .item-info .item-check {
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+  padding-right: 15px;
+}
+
+
+.fu-list .list-item .list-item-conts .item-info .img-box {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  margin: 8px 8px 0px 0px;
+  border-radius:5px;/* 使用margin 少这个image不会有圆角*/
+  background-color: #d8d8d8;
+}
+.fu-list .list-item .list-item-conts .item-info .img-box .img{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.fu-list .list-item .list-item-conts .item-info .text-box {
+  width: 220px;
+  position: relative;
+  flex:1 0 auto;
+}
+
+.fu-list .list-item .list-item-conts .item-info .text-box .item-title2 {
+  font-size: 28rpx;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 10rpx 20rpx 5rpx 0;
+}
+.fu-list .list-item .list-item-conts .item-info .text-box .item-title {
+  width: 100%;
+  font-size: 15px;
+  color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 24px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+} 
+.fu-list .list-item .list-item-conts .item-info .text-box .item-label {
+  width: 100%;
+  font-size: 13px;
+  color: #999;
+  line-height: 19px;
+  margin: 8rpx 0 25rpx 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 24px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.fu-list .list-item .list-item-conts .item-info .text-box .item-number {
+  font-size: 26rpx;
+  color: #e64340;
+}
+.fu-list .list-item .list-item-conts .item-info .text-box .item-flag{
+  color:green;
+  border: 1px solid green;
+  border-radius: 4px;
+  height: 20px;
+  font-size: 15px;
+  text-align: center;
+  padding: 0px 3px;
+  display: inline-block;
+}

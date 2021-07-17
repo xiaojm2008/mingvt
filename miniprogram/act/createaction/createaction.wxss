@@ -1,0 +1,119 @@
+page {
+  background: #eee;
+}
+
+page .flow {
+  margin-top: 5px;
+}
+
+page .fu-content {
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  /*padding-bottom: 80px;*/
+  height: 100%;
+}
+page .preview{
+  margin-top:5px;
+  background: white ;
+  margin-left: 0;
+  margin-right: 0;
+}
+.top-view{
+  margin-top:0;
+}
+.ext-horiz-view .view-item{
+  border-bottom: 1px solid #eee;
+}
+.ext-horiz-view .view-item .textarea{
+  margin-bottom: 5px;
+}
+
+.canvas-box {
+  position: fixed;
+  top: 999999rpx;
+  left: 0;
+  /* margin-bottom: 80px;
+  position: relative;
+  border: 1px solid white;*/
+}
+
+/*panel */
+.panel-view {
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+.panel-view .item-view {
+ /* text-align: right;*/
+  min-height: 40px;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+
+.panel-view .item-view {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid white;
+  position: relative;
+  margin-top: 10px;
+}
+
+.panel-view .item-view:last-child {
+  margin-bottom: 5px;
+}
+
+.panel-view .item-view image {
+  width: 100%;
+}
+
+.panel-view .item-view .add-plus {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 38px;
+  color:rgb(224, 114, 114);
+  text-align: center;
+}
+
+.panel-view .item-view .add-plus text {
+  display: block;
+}
+
+.panel-view .item-view .top-desc {
+  position: absolute;
+  text-align: right;
+  right: 5px;
+  top: -10px;
+  font-size: 13px;
+  color:#999;
+}
+.panel-view .item-view .top-desc .ico-moon{
+  font-size:20px;
+  font-weight:600;
+  color: red;
+}
+
+.panel-view .item-view .bottom-desc {
+  position: absolute;
+  text-align: right;
+  right: 5px;
+  bottom: 0px;
+  font-size: 13px;
+  color:red;
+}
+/* panel-view view-item  */
+.no-line{
+  border-bottom: 0px !important;
+}
+.panel-view .view-item {
+  height: 45px;
+  line-height: 45px;
+  width: 33%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  display: inline-block;
+ 
+}
+/* end of panel-view */

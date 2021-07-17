@@ -1,0 +1,82 @@
+page {
+  background: #eee;
+  font-size: 14px;
+}
+ .ext-horiz-view{
+  /*border-bottom: 1px solid #eee;*/
+  box-sizing: border-box;
+  margin: 0 10px 10px 10px;
+  background-color: white;
+  border-radius: 8px;
+}
+.top-view {
+  margin-top: 10px !important;
+}
+.ext-horiz-view .view-item .left {
+  padding-left:20px; 
+  justify-content: flex-start;
+}
+.view-item{
+  padding: 0px !important;
+}
+.view-item .flex-active{
+  background-color: rgb(255, 251, 251);
+}
+.view-item .flex-item:nth-of-type(3n){
+  border-right:0px !important;
+}
+
+.view-item .flex-item:nth-last-child(3){
+ border-radius:0 0 0 8px !important;
+}
+.view-item .flex-item:last-child{
+ border-radius:0 0 8px 0 !important;
+}
+.view-item .flex-item .cell-item {
+  height: 35px;
+}
+.view-item .flex-item .icon2 {
+  font-size: 30px;
+  color: green;
+}
+
+/*head*/
+.top-view .view-ext {
+  height: 80px !important;
+}
+
+.top-view .view-ext .row .left {
+  flex: 0 1 300px;
+}
+
+.top-view .view-ext .cover-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.top-view .view-ext .cover-text{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  border:1px solid #ccc;
+  font-weight: 800;
+  color:blue;
+  font-size: 30px;
+  text-align: center;
+}
+.top-view .nickname {
+  vertical-align: middle;
+  padding-left: 10px;
+  flex: 1 1 auto;
+  text-align: left;
+}
+.top-view .nickname text {
+  display: block;
+  line-height: 20px;
+  width: 200px;
+}
+
+.top-view .nickname .phone {
+  font-size: 12px;
+}

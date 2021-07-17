@@ -1,0 +1,10 @@
+<view class="container" style="min-height:{{windowHeight}}px;overflow:auto;">
+  <!-- <view class="container-item" style="height:{{windowHeight/2}}px;">
+    <ec-canvas id="income_stats" canvas-id="income_stats" ec="{{ income_stats }}"></ec-canvas>
+  </view> 
+ -->
+  <view class="container-item" style="height:{{windowHeight/1.5}}px;">
+    <ec-canvas id="income_stats" canvas-id="ec_stats" ec="{{ ec }}"></ec-canvas>
+  </view>  
+
+</view>

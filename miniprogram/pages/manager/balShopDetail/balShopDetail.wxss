@@ -1,0 +1,31 @@
+@import '../../../style/list.wxss';
+.list-top {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  align-items: center;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 99;
+}
+.list{
+  margin-top:-1px;
+}
+.list .content .title .sub{
+  font-size:18px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.list .content .title .txt{
+  margin-left:10px;
+}
+.list .item:last-child > .content{
+  border-bottom:0px;
+}

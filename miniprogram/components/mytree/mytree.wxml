@@ -1,0 +1,16 @@
+<view class="ul" style="{{myStyle}}">
+  <view class="li-item" hover-class="li-item_h">
+    <view class="left" catchtap='{{ node.children ?"toggle":""}}' data-itemid='{{ node.id }}'>
+      <text class="iconfont {{extend?'icon-up':'icon-down'}} icon-btn" wx:if='{{  node.children  }}'></text>
+      <text class="text">{{node.desc||node.name}}</text>
+    </view>
+    <view class="right">
+      <text class="iconfont icon-settings icon-btn" catchtap="tapItem" data-nodeindex="{{nodeindex}}" data-ckey="{{node.CKEY}}" id="set_{{node.id}}"></text>
+    </view>
+  </view>
+  <view style="margin-left:8px;" wx:if='{{ node.children }}' hidden='{{ !extend }}'>
+    <block wx:for='{{ node.children}}' wx:key='id'>
+      <mytree bind:togger="toggerDo" node='{{ item }}' nodeindex="{{item.define?0:nodeindex+'_'+index}}"></mytree>
+    </block>
+  </view>
+</view>

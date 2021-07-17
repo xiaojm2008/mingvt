@@ -1,0 +1,8 @@
+{
+  "backgroundColor": "#ffffff",
+  "disableScroll": true,
+  "navigationBarTitleText": "请选择",
+  "usingComponents": {
+    "indexlist": "/components/indexlist/index"
+  }
+}

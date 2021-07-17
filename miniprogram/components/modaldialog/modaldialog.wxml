@@ -1,0 +1,74 @@
+<block wx:if="{{poptype=='snake'}}">  
+  <view class="dialog-wrap" wx:if="{{show}}" catchtouchmove="dragMove" bindtouchstart='dragStart'  bindtouchend='dragEnd'>
+    <view class="dialog dialog2 bottom-pos" animation="{{animationData}}">
+      <view class="dialog-head dlghead">
+        <view class="subname">
+          <text>{{title}}</text>
+        </view>
+      </view>
+      <scroll-view scroll-y="true" class="dialog-content" style="{{height>0?'height:'+(height-40-62)+'px':''}}">
+        <enroll id="myEnroll2" enrolldata="{{inputlist}}"></enroll>
+      </scroll-view>
+        <view class="dialog-bottom">
+          <button type="default" wx:for="{{btntext}}" wx:key="*this" wx:for-item="btn" wx:for-index="btnindex" class="btn {{btntext.length==1?'one':''}}" loading="{{loading}}" plain="false" catchtap="submit" data-index="{{btnindex}}" hover-class="btn-hover">{{btn}}</button>
+        </view>
+    </view>
+  </view>
+</block>  
+<block wx:else>
+  <view class="dialog-wrap" wx:if="{{show}}">
+    <view class="dialog center-panel {{className}}" style="{{posi.top}};{{posi.left}};{{animationShow}}">
+      <view class="dialog-head">
+        <text wx:if="{{title}}" class="left subname" style="width:80%">
+        <text>{{title}}</text>
+        </text>
+        <text class="close-btn" catchtap="hideDlg">x</text>
+      </view>
+      <view scroll-y="true" class="dialog-content" style="{{myStyle}}">
+        <view class="panel-view" wx:if="{{poptype=='input'}}">
+          <enroll id="myEnroll2" enrolldata="{{inputlist}}"></enroll>
+        </view>
+        <view class="panel-view" wx:if="{{poptype=='enrollitem'}}">
+          <enrollitem id="myEnrollItem" fielditem="{{inputlist}}"></enrollitem>
+        </view>
+        <view class="panel-view" wx:if="{{poptype=='layout'}}">
+          <layout id="myLayout" bind:togger="layoutTogger"></layout>
+        </view>
+        <view class="flex-box" wx:if="{{poptype=='multicheck'}}">
+          <block wx:for="{{inputlist}}" wx:for-index="index" wx:for-item="item">
+            <view class="flex-item" data-index="{{index}}" catchtap="multiCheckTap">
+              <icon class="icon" type="{{item.active? 'success_circle':'circle'}}" size="20" data-index="{{index}}"></icon>
+              <text class="">{{item.name}}</text>
+            </view>
+          </block>
+        </view>
+        <view class="panel-view" wx:if="{{poptype=='arithmet'}}">
+          <view class="ext-horiz-view">
+            <view class="view-item">
+            <block wx:for="{{inputlist.expression}}" wx:key="id">
+            {{item.name}}
+            </block>
+            </view>
+          </view>
+          <view class="flex-box" style="justify-content:center;padding-left:0px">
+            <block wx:for="{{inputlist.fields}}" wx:for-index="index" wx:for-item="item" wx:key="name">
+              <view class="flex-item btn-b {{item.op&&'btn-op'}}" hover-class="flex-active" style="justify-content:center;" data-index="{{index}}" catchtap="operItemTap">            
+                <text class="">{{item.name}}</text>
+              </view>
+            </block>
+            <block wx:if="{{inputlist.fields.length % 3 == 1}}">
+              <view class="flex-item btn-b" style="background-color:white;"><text class=""></text></view>
+              <view class="flex-item btn-b" style="background-color:white;"><text class=""></text></view>
+            </block>
+            <block wx:if="{{inputlist.fields.length % 3 == 2}}">
+              <view class="flex-item btn-b" style="background-color:white;"><text class=""></text></view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="dialog-bottom">
+        <button type="default" wx:for="{{btntext}}" wx:key="*this" wx:for-item="btn" wx:for-index="btnindex" class="btn {{btntext.length==1?'one':''}}" loading="{{loading}}" plain="false" catchtap="submit" data-index="{{btnindex}}" hover-class="btn-hover">{{btn}}</button>
+      </view>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,234 @@
+{
+  "transtype": "goods",
+  "actionname": "modGoods",
+  "baseinfo": {
+    "shopid": "S0000",
+    "shopname": "平台自营x",
+    "vgno": "1001",
+    "goodsno": "100000000099",
+    "goodsname": "多规格产品测试x",
+    "supply": {
+      "supplyid": "S9999",
+      "supplyname": "多规格产品供应商x"
+    },
+    "deptid": "10",
+    "busmodel": "2",
+    "spec": "0.5-1kg",
+    "unit": "1",
+    "checksums": "",
+    "productionplace": {
+      "countryid": "0000",
+      "detail": "深圳"
+    },
+    "brandinfo": {
+      "brandid": "",
+      "branddesc": ""
+    },
+    "expressfee": 0,
+    "maxcanuseintegral": 0,
+    "hotsell": "1",
+    "goods_type": "0",
+    "preflag": "0",
+    "quantity": {
+      "minqty": 1,
+      "stockqty": 10,
+      "totalqty": 10,
+      "availableqty": 10,
+      "frozenqty": 0
+    },
+    "price": {
+      "presaleprice": 5,
+      "originalprice": 5,
+      "taxprice": 5,
+      "saleprice": 50000,
+      "stockprice": 5,
+      "memberprice": 4.5,
+      "lowprice": 0,
+      "highprice": 0
+    },
+    "localflag": "",
+    "stockflag": "1",
+    "infopath": "",
+    "packlistpath": "",
+    "specpath": "",
+    "hpicpath": "",
+    "mpicpath": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/2035%E6%B2%99%E5%8F%91%E4%BA%8C%E4%BD%8D.png?sign=5677a53435bba39ccd14c328d7d1d1a2&t=1558191110",
+    "spicpath": ""
+  },
+  "imginfo": [
+    "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/2022%E6%B2%99%E5%8F%91%E5%8D%95%E4%BD%8D.png?sign=c5aa1ac6e48b4b02356e37e3ca441166&t=1558191204",
+    "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/2038%E6%B2%99%E5%8F%91%E5%8D%95%E4%BA%BA%E4%BD%8D.png?sign=989c8babddd5ed6ed8f4ecb416828922&t=1558191236",
+    "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/208%E6%B2%99%E5%8F%91%E4%BA%8C%E4%BD%8D.png?sign=5b53b75db8cf69bdb193fc65e7b974f2&t=1558191264",
+    "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E7%88%B1%E5%BE%B7%E5%8D%8E%E6%B2%99%E5%8F%91%E4%B8%89%E4%BD%8D.png?sign=8765d8c5eaf55cb677caf638d0a1a0f6&t=1558191299"
+  ],
+  "modelitems": {
+    "modelitem_1": {
+      "price": 1.0,
+      "stock": 10,
+      "id": "modelitem_1",
+      "model": "0,m20,m30",
+      "picpath": ""
+    },
+    "modelitem_2": {
+      "price": 1.1,
+      "stock": 11,
+      "id": "modelitem_2",
+      "model": "0,m20,m31",
+      "picpath": ""
+    },
+    "modelitem_3": {
+      "price": 1.2,
+      "stock": 12,
+      "id": "modelitem_3",
+      "model": "0,m21,m30",
+      "picpath": ""
+    },
+    "modelitem_4": {
+      "price": 1.3,
+      "stock": 13,
+      "id": "modelitem_4",
+      "model": "0,m21,m31",
+      "picpath": ""
+    },
+    "modelitem_5": {
+      "price": 1.4,
+      "stock": 14,
+      "id": "modelitem_5",
+      "model": "0,m22,m30",
+      "picpath": ""
+    },
+    "modelitem_6": {
+      "price": 1.5,
+      "stock": 15,
+      "id": "modelitem_6",
+      "model": "0,m22,m31",
+      "picpath": ""
+    },
+    "modelitem_11": {
+      "price": 2.0,
+      "stock": 20,
+      "id": "modelitem_11",
+      "model": "1,m20,m30",
+      "picpath": ""
+    },
+    "modelitem_12": {
+      "price": 2.1,
+      "stock": 21,
+      "id": "modelitem_12",
+      "model": "1,m20,m31",
+      "picpath": ""
+    },
+    "modelitem_13": {
+      "price": 2.2,
+      "stock": 22,
+      "id": "modelitem_13",
+      "model": "1,m21,m30",
+      "picpath": ""
+    },
+    "modelitem_14": {
+      "price": 2.3,
+      "stock": 23,
+      "id": "modelitem_14",
+      "model": "1,m21,m31",
+      "picpath": ""
+    },
+    "modelitem_15": {
+      "price": 2.4,
+      "stock": 24,
+      "id": "modelitem_15",
+      "model": "1,m22,m30",
+      "picpath": ""
+    },
+    "modelitem_16": {
+      "price": 2.5,
+      "stock": 25,
+      "id": "modelitem_16",
+      "model": "1,m22,m31",
+      "picpath": ""
+    },
+    "modelitem_21": {
+      "price": 3.0,
+      "stock": 30,
+      "id": "modelitem_21",
+      "model": "2,m20,m30",
+      "picpath": ""
+    },
+    "modelitem_22": {
+      "price": 3.1,
+      "stock": 31,
+      "id": "modelitem_22",
+      "model": "2,m20,m31",
+      "picpath": ""
+    },
+    "modelitem_23": {
+      "price": 3.2,
+      "stock": 32,
+      "id": "modelitem_23",
+      "model": "2,m21,m30",
+      "picpath": ""
+    },
+    "modelitem_24": {
+      "price": 3.3,
+      "stock": 33,
+      "id": "modelitem_24",
+      "model": "2,m21,m31",
+      "picpath": ""
+    },
+    "modelitem_25": {
+      "price": 3.4,
+      "stock": 34,
+      "id": "modelitem_25",
+      "model": "2,m22,m30",
+      "picpath": ""
+    },
+    "modelitem_26": {
+      "price": 3.5,
+      "stock": 35,
+      "id": "modelitem_26",
+      "model": "2,m22,m31",
+      "picpath": ""
+    }
+  },
+  "models": {
+    "m1": {
+      "id": "m1",
+      "name": "面料颜色",
+      "submodelname": [
+        "红色",
+        "蓝色",
+        "绿色"
+      ],
+      "submodelid": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    "m2": {
+      "id": "m2",
+      "name": "规格(长x宽x高)",
+      "submodelname": [
+        "200x80x60CM",
+        "250x80x50CM",
+        "150x60x60CM"
+      ],
+      "submodelid": [
+        "m20",
+        "m21",
+        "m22"
+      ]
+    },
+    "m3": {
+      "id": "m3",
+      "name": "面料",
+      "submodelname": [
+        "真皮",
+        "布料"
+      ],
+      "submodelid": [
+        "m30",
+        "m31"
+      ]
+    }
+  }
+}

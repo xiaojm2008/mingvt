@@ -1,0 +1,78 @@
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<template name="orderlist">
+  <view class="order-center" wx:for="{{listData}}" wx:key="_id" wx:for-item="orderInfo" wx:for-index="index" data-index="{{index}}" catchtap="goOrderDetail">
+    <view class="order-shopinfo" catchtap="goShop" data-shopid="{{orderInfo.shopid}}">
+      <view class="shop-info line-clamp">
+        <text class="shop-name">{{orderInfo.shopname || "平台自营"}}</text>
+        <text class="iconfont icon-rightarrow"></text>
+      </view>
+      <view class="order-st">{{dictTrs.trs(options.dict['100006'],orderInfo.status,'1') }}</view>
+    </view>
+    <view class="order-content" wx:for="{{orderInfo.goods_info}}" wx:key="goodsno" wx:for-item="goods" wx:for-index="gindex">
+      <view class="order-more left">
+        <image lazy-load="{{true}}" src='{{goods.cover}}' catchtap="goGoodsDetail" data-goodsno="{{goods.goodsno}}"></image>
+        <view class="order-desc">
+          <text class="one sub">{{goods.goodsname}}</text>
+          <text class="one text">{{goods.model_value||''}}</text>
+        </view>
+      </view>
+      <view class="order-price right">
+        <text class="one sub">{{substr.toFix(goods.price)}}</text>
+        <text class="one text" style="line-height: 25px">x{{goods.num}}</text>
+      </view>
+    </view>
+    <view class="order-additional">
+      <block wx:if="{{orderInfo.remark}}">
+        <text class="sub">订单备注</text>
+        <text class="text">{{orderInfo.remark}}</text>
+      </block>
+    </view>
+    <view class="order-sum">
+      <text>共<text class="num">{{orderInfo.goods_info.length}}</text>种商品 </text>
+      <text>合计：¥<text class="num">{{substr.toFix(orderInfo.total_pay)}}</text></text>
+    </view>
+    <view class="time-show">
+      <text>{{pipi.dFormat(orderInfo.updatetime)}}</text>
+    </view>
+    <view class="order-bottom">
+      <block wx:if="{{ orderInfo.status == 0 }}">
+        <view class="btn order-btn" catchtap="cancelOrder" data-index="{{index}}">取消交易</view>
+        <view class="btn order-btn" catchtap="payOrder" data-index="{{index}}">去支付</view>
+      </block>
+      <block wx:if="{{ orderInfo.status == 1 }}">
+        <!-- 待发货 -->
+        <text class="btn order-btn" catchtap="remindDelivery" data-index="{{index}}">提醒发货</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 2 }}">
+        <!-- 待收货 -->
+        <text class="btn order-btn" catchtap="checkLogistics" data-index="{{index}}">查看物流</text>
+        <text class="btn order-btn" wx:if="{{orderInfo.goods_info.length ==1 && !!goods.support_drawback}}" catchtap="applyDrawback" data-index="{{index}}">退款</text>
+        <text class="btn order-btn" catchtap="sureReceipt" data-index="{{index}}">确认收货</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 3 }}">
+        <!-- 待评价 -->
+        <text class="btn order-btn" catchtap="checkLogistics" data-index="{{index}}">查看物流</text>
+        <text class="btn order-btn" wx:if="{{orderInfo.goods_info.length ==1 && !!goods.support_drawback}}" catchtap="applyDrawback" data-index="{{index}}">退款</text>
+        <text class="btn order-btn" catchtap="evaluateOrder" data-index="{{index}}">评价</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 4 }}">
+        <!--  退款审核中 -->        
+        <text class="btn order-btn" data-index="{{index}}">退款审核中</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 5 }}">
+        <!--  退款中 -->
+        <text class="btn order-btn">退款中</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 6 }}">
+        <!-- 已完成 -->
+        <text class="btn order-btn" catchtap="checkLogistics" data-index="{{index}}">查看物流</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 7 }}">
+        <!-- 已关闭 -->
+        <text class="btn order-btn" catchtap="checkLogistics" data-index="{{index}}">查看物流</text>
+      </block>
+    </view>
+  </view>
+</template>

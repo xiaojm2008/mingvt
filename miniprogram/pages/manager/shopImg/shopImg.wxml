@@ -1,0 +1,13 @@
+<view class="custom" style="top:{{statusBarHeight}}px">
+  <view class="nav top-btn" catchtap="goBack">
+    <text class="iconfont icon-leftarrow"></text>
+  </view>
+  <view class="nav">
+    <mysearch id="mysearch" placeholder="请在此输入您的希望" bindselectresult="selectResult" search="" offset-y="{{45+statusBarHeight}}" extClass="srh-btn" catetype="shopimg"></mysearch>
+  </view>
+</view>
+<!-- style="top:{{statusBarHeight+45}}px" class="content" -->
+ <view style="top:{{statusBarHeight+45}}px" class="content">
+  <swiperlist id="swiperlist" category="{{category}}" action="{{action}}" manager="{{manager}}" def-params="{{defParams}}" order-by="{{orderBy}}" temptype="{{temptype}}" my-style="background:#eee" bottom-size="{{bottomSize}}" options="{{options}}">
+  </swiperlist>
+</view>

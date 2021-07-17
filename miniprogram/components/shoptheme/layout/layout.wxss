@@ -1,0 +1,100 @@
+@import "../../../style/horiz.wxss";
+
+.fu-page {
+  background: white;
+  font-size: 14px;
+}
+.fu-content{
+  padding: 0 10px 0 10px;
+  box-sizing: border-box;
+  background-color: white;
+}
+.my-view {
+  padding-top: 10px !important;
+  box-sizing: border-box;
+  margin-top:0; 
+  background-color: white;
+}
+.my-view .fix-item{
+  justify-content: space-between !important;
+}
+.my-view .view-item .flex-item{
+  flex:0 1 20%;
+  border-bottom: 0;
+  border-right: 0;
+}
+.my-view .view-item .flex-active{
+  background-color: rgb(255, 251, 251);
+}
+.my-view .view-item .flex-item .cell-item {
+  height: 40px;
+  width: 100%;
+}
+.my-view .fix-item .flex-item .cell-item .add-btn{
+  font-size: 35px;
+  font-weight: 800;
+  border-radius: 50%;
+  background: green;
+  color:white;
+  position:relative;
+}
+.my-view .fix-item .flex-item .cell-item .radius-btn{
+  border-radius: 50%;
+  position:relative;
+}
+
+.ext-horiz-view .view-item .flex-item .triangle-tr {
+  top: 0;
+  right: 0;
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 20px solid rgba(112, 199, 112, 0.6);
+  border-left: 20px solid transparent;
+  font-size: 13px;
+  color: white;
+}
+
+.ext-horiz-view .view-item .flex-item .triangle-tr .iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  top: -35px;
+  right: 15px;
+  color: red;
+}
+.iconfont{
+  font-family: "iconfont" !important;
+  font-size: 46px;
+  font-style: normal;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-gou:before {
+  content: "\e937";
+}
+.icon-success:before {
+  content: "\e647";
+}
+.icon-closes:before {
+  content: "\e93c";
+}
+.icon-search:before {
+  content: "\e607";
+}
+
+.icon-info:before {
+  content: "\e93e";
+}
+.icon-pic:before {
+  content: "\e643";
+}
+.icon-console:before {
+  content: "\e692";
+}

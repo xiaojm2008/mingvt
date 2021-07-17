@@ -1,0 +1,45 @@
+<view class="dialog-wrap" wx:if="{{showDlg}}" catchtouchmove="dragMove" bindtouchstart='dragStart' bindtouchend='dragEnd'>
+  <view class="dialog dialog2 bottom-pos" id="{{dlgid}}" animation="{{animationData}}" style="height:{{windowHeight}}px;">
+    <view class="dialog-head {{extClass}}">
+      <view class="subname">
+        <text>[{{compname}}]配置</text>
+      </view>
+      <view class="right-btn">
+      <!--
+        <view class="btn" catchtap="delTogger">
+          <text class="iconfont icon-delete"></text>
+          <text>删除</text>
+        </view>
+        -->
+        <view class="btn" catchtap="okTogger">
+          <text class="iconfont icon-gou"></text>
+          <text>确认</text>
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" enable-flex="true" class="dialog-content" style="height:{{windowHeight-50}}px">
+      <view class="ext-horiz-view">
+        <view class="view-item">
+          <view class="row">
+            <view class="left subname">
+              <text>数据与属性设置</text>
+            </view>
+            <view class="right">
+              <text></text>
+              <label class="iconfont icon-rightarrow"></label>
+            </view>
+          </view>
+        </view>   
+      </view>
+       <enroll id="myEnroll0" initcache="" offset="{{offset}}" bind:togger="inputTogger" style="width:100%;" enrolldata="{{fieldinfo}}"></enroll>
+    </scroll-view>
+    <!-- 
+     <enroll id="myEnroll0" initcache="" offset="{{offset}}" bind:togger="inputTogger" style="width:100%;" enrolldata="{{fieldinfo}}"></enroll>
+    dialog-content 
+    <view class="dialog-bottom">    
+    </view>
+    <parameterdlg id="parameterDlg" type="{{parameterType}}" cate=""></parameterdlg>
+    -->
+  </view>
+</view>
+<mycategory id="myCategory"></mycategory>

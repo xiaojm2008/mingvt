@@ -1,0 +1,97 @@
+{
+
+  "longitude": {
+      type: "number",
+      name: "维度",
+      required: "O"
+  },
+  "credentials":{
+      type: "array",
+      name: "资质认证",
+      required: "O"
+  },
+  "picpath": {
+  name: 'LOGO与商标',
+  type: 'array',
+  required: 'O',
+  max_len: 4,
+  item: {
+    name: '图片对象',
+    type: 'object',
+    required: 'R',
+    item: {
+        "fileID": {
+        name: '图片ID',
+        type: 'string',
+        required: 'R'
+        }
+      }
+    }
+  },
+  "shopname": {
+      type: "string",
+      name: "店铺名称",
+      required: "R"
+  },
+  "phone": {
+      type: "string",
+      name: "手机号码",
+      required: "R"
+  },
+  "parameter": {
+      type: "string",
+      name: "其他参数",
+      required: "O"
+  },
+
+  "address": {
+      type: "string",
+      name: "地址详细信息",
+      required: "O"
+  },
+  "instoreflag": {
+      type: "string",
+      name: "实体店标志",
+      required: "R""
+  },
+  "shopid": {
+      type: "string",
+      name: "店铺ID",
+      required: "O"
+  },
+  "userid": "ounQF5gNI1fojHjR6JnyBekJpowQ",
+  "latitude": 22.569324,
+  "maintype": 0.0,
+  "sector": {
+      type: "array",
+      name: "行业领域",
+      required: "O",
+      item:{
+         type: "object",
+         name: "行业领域",
+         required: "O",
+         item:{
+            index: {
+                type: "number",
+      name: "索引",
+      required: "R"
+            },
+           code:{
+                type: "string",
+      name: "店铺ID",
+      required: "R"
+             },
+             name:{
+                type: "string",
+      name: "店铺ID",
+      required: "R"
+               }
+           }
+      }
+  },
+  "basedir": {
+      type: "string",
+      name: "存储地址",
+      required: "O"
+  },
+}

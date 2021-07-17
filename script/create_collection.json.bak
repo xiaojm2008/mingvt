@@ -1,0 +1,53 @@
+﻿sys_area
+sys_city
+sys_prov
+sys_config
+xlh_address
+xlh_carousel
+xlh_cart
+xlh_comment
+xlh_coupon
+xlh_coupontaken
+xlh_dictvalue
+xlh_goods
+xlh_incomelog
+xlh_invitationlog
+xlh_myteam
+xlh_orderdetail
+xlh_toprank
+xlh_userbenefit
+xlh_userinfo
+xlh_wxpayresult
+xlh_wxprepaylog
+xlh_wxsandboxkey
+xlh_shop
+xlh_userright
+xlh_userrole
+xlh_roleright
+xlh_bookingnote:{
+order_id,
+exp_code,
+exp_no,
+express_fee,
+goodslist:[{goodsno,goodsname,num}]
+}
+sys_expcode_kdn:[
+{'name':'顺丰速运',           'code':'SF', summary:'支持（注：通过快递鸟预约取件接口/电子面单接口返回的顺丰单号，发货后方可查询，其他渠道获取的顺丰单号，不支持查询）'}
+{'name':'百世快递',	          'code':'HTKY', summary:''}
+{'name':'中通快递',	          'code':'ZTO', summary:''}
+{'name':'申通快递',	          'code':'STO', summary:''}
+{'name':'圆通速递',	          'code':'YTO', summary:''}
+{'name':'韵达速递',	          'code':'YD', summary:''}
+{'name':'邮政快递包裹',	      'code':'YZPY', summary:''}
+{'name':'EMS',	              'code':'EMS', summary:''}
+{'name':'天天快递',	          'code':'HHTT', summary:''}
+{'name':'京东快递',	          'code':'JD', summary:'支持（注：必须传商家编码（由发货方提供），且快递单号必须是通过该商家编码下单获取的方可查询）'}
+{'name':'优速快递',	          'code':'UC', summary:''}
+{'name':'德邦快递',	          'code':'DBL', summary:''}
+{'name':'宅急送',	            'code':'ZJS', summary:''}
+{'name':'TNT快递',	          'code':'TNT', summary:''}
+{'name':'UPS',	              'code':'UPS', summary:''}
+{'name':'DHL',	              'code':'DHL', summary:''}
+{'name':'FEDEX联邦(国内件）',	'code':'FEDEX', summary:''}
+{'name':'FEDEX联邦(国际件）',	'code':'FEDEX_GJ', summary:''}
+]

@@ -1,0 +1,247 @@
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<wxs module="cateTrs" src="../../../lib/cateTrs.wxs"></wxs>
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<view class="fu-page">
+  <flowView flows="{{flows}}" bind:togger="flowTogger"  itemWidth="{{itemWidth}}" toggerDisabled='{{toggerDisabled}}' activeIndex="{{activeIndex}}">
+  </flowView>
+  <view class="fu-content" wx:if="{{activeIndex == 0}}">
+    <view class="read">
+      <view class="read-head">开店须知</view>
+      <view class="read-body">
+        <view class="row">1.守法遵道</view>
+        <view class="row">2.诚信务实</view>
+        <view class="row">3.嘉言善行</view>
+        <view class="row">4.与邻为善</view>
+        <view class="row">5.荣损与共</view>
+        <view class="row">6.慕名重义</view>
+       <!-- <view class="row">7.免费免费</view>-->
+      </view>
+      <view class="read-bottom">2019-10-1</view>
+    </view>
+  </view>
+  <view class="fu-content" wx:if="{{activeIndex == 1}}">
+    <view class="panel-view">
+      <view class="item-view" style="height:200px">
+        <swiper indicator-dots="true" current="{{current}}" indicator-active-color="rgb(168, 6, 6)" indicator-color="rgb(223, 157, 157)" style="height:100%;">
+          <block wx:for="{{shopinfo.imginfo}}" wx:key="digest" wx:for-index="index" wx:for-item="item" data-index="{{index}}">
+            <swiper-item>
+              <image src="{{ item.fileID||item.path }}" data-src="{{item.fileID||item.path}}" style="height:100%;width:100%;" class="slide-image" catchtap="previewImg"></image>
+              <view class="top-desc" data-initflag="1" data-imgindex="{{index}}" id="shopinfo.imginfo" catchtap="delImg">{{item.oriWidth}}~{{item.oriHeight}}->{{item.width}}~{{item.height}},SIZE：{{substr.toFix(item.size/1024,2)}}KB
+                <text class="iconfont icon-delete"></text>
+              </view>
+              <view class="bottom-desc">
+                <text>{{item.errMsg}}</text>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="icon-addimg" data-initflag="1" id="shopinfo.imginfo" catchtap="chooseImg">
+          <text class="iconfont icon-pic"></text>
+          <text style="font-size:13px;">点击添加海报</text>
+        </view>
+      </view>
+    </view>
+    <view class="ext-horiz-view" style="margin-top:0;">
+      <view class="view-item {{focusSet.picpath?'item-prompt':''}}">
+        <view class="row" style="border-bottom:1px solid #eee" >
+          <view class="left subname">
+            <text class="required">LOGO与商标</text>
+          </view>
+          <view class="right">
+           <text>请按位置上传对应图片</text>
+           <label class="iconfont icon-rightarrow"></label>
+          </view>
+        </view>
+        <view class="flex-item ext-item">
+          <image src="{{shopinfo.picpath[0].fileID||shopinfo.picpath[0].path}}" mode="aspectFit"></image>
+          <view class="icon-addimg" data-imgindex="0" id="shopinfo.picpath" data-maxwidth="50" data-maxheight="50" data-maxcount="3" catchtap="chooseImg">
+            <text class="iconfont icon-pic"></text>
+            <text style="font-size:11px;">LOGO|50px</text>
+          </view>
+        </view>
+        <view class="flex-item ext-item">
+          <image src="{{shopinfo.picpath[1].fileID||shopinfo.picpath[1].path}}" mode="aspectFit"></image>
+          <view class="icon-addimg" data-imgindex="1" id="shopinfo.picpath" data-maxwidth="100" data-maxheight="100" data-maxcount="3" catchtap="chooseImg">
+            <text class="iconfont icon-pic"></text>
+            <text style="font-size:11px;">LOGO|100px</text>
+          </view>
+        </view>
+        <view class="flex-item ext-item">
+          <image src="{{shopinfo.picpath[2].fileID||shopinfo.picpath[2].path}}" mode="aspectFit"></image>
+          <view class="icon-addimg" data-imgindex="2" id="shopinfo.picpath" data-maxwidth="512" data-maxheight="512" data-maxcount="3" catchtap="chooseImg">
+            <text class="iconfont icon-pic"></text>
+            <text style="font-size:11px;">商标|512px</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="ext-horiz-view">
+     <view class="view-item {{focusSet.shopname?'item-prompt':''}}">
+        <view class="row">
+          <text class='left subname required'>店铺名称</text>
+          <view class='right'>
+            <input class="text-input" bindinput="inputTogger" value="{{shopinfo.shopname}}" placeholder="店铺全称" id="shopinfo.shopname"></input>
+          </view>
+        </view>
+      </view>
+      <view class="view-item {{focusSet.shortname?'item-prompt':''}}">
+        <view class="row">
+          <text class='left subname required'>店铺简称</text>
+          <view class='right'>
+            <input class="text-input" bindinput="inputTogger" value="{{shopinfo.shortname}}" placeholder="店铺简称" id="shopinfo.shortname" ></input>
+          </view>
+        </view>
+      </view>
+      <view class="view-item {{focusSet.maintype?'item-prompt':''}}">
+        <view class="row">
+          <text class="left subname required">主体类型</text>
+          <view class='right'>
+            <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="100023" id="shopinfo.maintype" value="{{ dictTrs.idx(dict['100023'],shopinfo.maintype) }}" range="{{ dict['100023'] }}" range-key="name">
+              <input class="text-input" disabled placeholder="主体类型" value="{{ dictTrs.trs(dict['100023'],shopinfo.maintype) }}"></input>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class="view-item {{focusSet.sector?'item-prompt':''}}">
+        <view class="row">
+          <text class="left subname required">行业领域</text>
+          <view class='right' catchtap="chooseSector">
+            <input class="text-input" disabled placeholder="请选择" id="shopinfo.sector" focus="{{focusSet.sector}}"></input>
+            <text catchtap="chooseSector" class="iconfont icon-rightarrow btn"></text>
+          </view>
+        </view>
+      </view>
+      <view class="view-item" wx:if="{{shopinfo.sector.length>0}}">
+        <view class="flex-box" style="padding-left:20px;">
+          <block wx:for="{{shopinfo.sector}}" wx:key="code" wx:for-item="cate">
+            <view class="flex-item2" >
+              <icon class="icon" type="success_circle" size="20"></icon>
+              <text class="line-clamp text">{{cate.name}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="view-item {{focusSet.instoreflag?'item-prompt':''}}">
+        <view class="row">
+          <text class="left subname required">实体店标志</text>
+          <view class='right'>
+            <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="100000" id="shopinfo.instoreflag" value="{{ dictTrs.idx(dict['100000'],shopinfo.instoreflag) }}" range="{{ dict['100000'] }}" range-key="name">
+              <input class="text-input" disabled placeholder="是否有实体店" value="{{ dictTrs.trs(dict['100000'],shopinfo.instoreflag) }}"></input>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class="view-item {{focusSet.address?'item-prompt':''}}">
+        <view class="row">
+          <text class='left subname {{shopinfo.instoreflag=="1"?"required":""}}'>地址</text>
+          <view class='right'>
+            <input class="text-input" bindinput="inputTogger" value="{{shopinfo.address}}" placeholder="地址" id="shopinfo.address"></input>
+            <text bindtap="chooseLocation" class="iconfont icon-location btn"></text>
+          </view>
+        </view>
+      </view>
+      <!--
+      <view class="view-item" wx:if="{{shopinfo.instoreflag=='1'}}">
+        <view class="row">
+          <text class='left subname required'>店铺图片</text>
+          <view class='right' bindtap="goToPage" data-page="shopPic">
+             <text>点击进入店铺图片维护</text>
+            <text class="iconfont icon-rightarrow"></text>
+          </view>
+        </view>
+      </view>
+      -->
+      <view class="view-item {{focusSet.trafficinfo?'item-prompt':''}}">
+        <view class="row">
+          <text class='left subname {{shopinfo.instoreflag=="1"?"required":""}}'>交通或标志建筑</text>
+          <view class='right'>
+            <input class="text-input" bindinput="inputTogger" value="{{shopinfo.trafficinfo}}" placeholder="譬如地铁线路或大型商场" id="shopinfo.trafficinfo"></input>            
+          </view>
+        </view>
+      </view>
+      <view class="view-item">
+        <view class="row">
+          <text class='left subname'>联系电话</text>
+          <view class='right'>
+            <input class="text-input" bindinput="inputTogger" value="{{shopinfo.contact}}" placeholder="联系电话" id="shopinfo.contact"></input>
+          </view>
+        </view>
+      </view>
+      <view class="view-item {{focusSet.phone?'item-prompt':''}}">
+        <view class="row">
+          <text class='left subname required'>手机号码</text>
+          <view class='right'>
+            <input class="text-input" bindinput="inputTogger" value="{{shopinfo.phone}}" placeholder="手机号码" id="shopinfo.phone"></input>
+          </view>
+        </view>
+      </view>
+      <view class="view-item {{(focusSet.opentime || focusSet.closetime)?'item-prompt':''}}">
+        <view class="row">
+          <text class='left subname required'>营业时间</text>
+          <view class='right'>
+            <picker mode="time" start="08:00" end="23:59" class="inp-selector3" bindchange="inputTogger" id="shopinfo.opentime" value="{{shopinfo.opentime}}">
+              <input class="text-input" disabled placeholder="00:00" value="{{shopinfo.opentime}}"></input>
+            </picker>
+            <text> - </text>
+            <picker mode="time" start="08:00" end="23:59" class="inp-selector3" bindchange="inputTogger" id="shopinfo.closetime" value="{{shopinfo.closetime}}">
+              <input class="text-input" disabled placeholder="00:00" value="{{shopinfo.closetime}}"></input>
+            </picker>
+          </view>
+        </view>
+      </view>      
+      <view class="view-item">
+        <view class="row">
+          <view class="left subname">
+            <text catchtap="sortEnrollTap" data-sortenroll='credSort'>资质认证</text>
+            <text class="iconfont icon-sort" style="margin-left:2px;"></text>
+          </view>
+          <view class="right" catchtap="showParameterDlg" id="shopinfo.credentials" data-type="shop_credentials">
+            <text>点击添加资质认证</text>
+            <label class="iconfont icon-rightarrow"></label>
+          </view>
+        </view>
+      </view>
+      <enroll id="myEnroll2" initcache="" bind:togger="inputTogger2" moveable='{{credSort}}' bind:sort="{{credSort?'sortTogger':''}}" data-id="shopinfo.credentials" style="width:100%;" enrolldata="{{shopinfo.credentials}}"></enroll>
+      <view class="view-item">
+        <view class="row">
+         <view class="left subname">
+            <text catchtap="sortEnrollTap" data-sortenroll='paramSort'>其他信息</text>
+            <text class="iconfont icon-sort" style="margin-left:2px;"></text>
+          </view>
+          <view class="right" catchtap="showParameterDlg" id="shopinfo.parameter" data-type="shop_parameter">
+            <text>点击维护其他信息</text>
+            <label class="iconfont icon-rightarrow"></label>
+          </view>
+        </view>
+      </view>
+      <enroll id="myEnroll" initcache="" bind:togger="inputTogger2" moveable='{{paramSort}}' bind:sort="{{paramSort?'sortTogger':''}}" data-id="shopinfo.parameter" style="width:100%;" enrolldata="{{shopinfo.parameter}}"></enroll>
+      <view class="view-item no-line {{focusSet.summary?'item-prompt':''}}">
+        <view class="flex-item ext-item">
+          <multitext class="textarea" bind:togger="inputTogger" id="shopinfo.summary" value="{{shopinfo.summary}}" placeholder="简单介绍"></multitext>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="fu-content" wx:if="{{activeIndex == 2}}">
+    <view class="read">
+      <view class="read-head">谢谢您的支持，暂无需认证</view>
+    </view>
+  </view>
+  <view class="fu-content" wx:if="{{activeIndex == 3}}">
+    <shop id="shopshow" shopinfo="{{shopinfo}}"></shop>
+  </view>
+  <view class="fu-bottom" wx:if="{{btnShow}}">
+    <text class="btn one" catchtap="nextStep" wx:if="{{activeIndex === 0}}" data-params="">下一步</text>
+    <text class="btn" catchtap="preStep" wx:if="{{activeIndex > 0}}" data-params="">上一步</text>
+    <text class="btn" catchtap="nextStep" wx:if="{{activeIndex >0 && activeIndex < flows.length-1}}" data-params="">下一步</text>
+    <text class="btn" catchtap="save" wx:if="{{activeIndex == flows.length-1}}" data-params="">提交</text>
+  </view>
+</view>
+
+<view class="canvas-box">
+  <canvas style="width: 1242px;height: 400px;background:#eee;" canvas-id="myCanvas0" />
+</view>
+<!-- <modaldialog id="modalDlg2"></modaldialog> -->
+<parameterdlg id="parameterDlg" type="{{parameterType}}" cate=""></parameterdlg>
+<!-- <parameterdlg id="credentialsDlg" type="shop_credentials" cate=""></parameterdlg> -->

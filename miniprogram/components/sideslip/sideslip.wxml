@@ -1,0 +1,12 @@
+<view class="sideslip">
+  <scroll-view scroll-y='true' class="sides-bottom">
+    <text class="iconfont icon-closes icon-btn" catchtap="hide"></text>
+    <view class="sides-content">      
+      <slot name="sides"></slot>
+    </view>
+  </scroll-view>
+  <scroll-view scroll-y='true' bindtouchmove="{{slide ? 'tap_drag':''}}" bindtouchend="{{slide ? 'tap_end':''}}" bindtouchstart="{{slide ? 'tap_start':''}}" class="sides-top" style="{{translate}}">
+    <!-- <text wx:if="{{slide}}" bindtap="showSides" class="iconfont icon-list"></text>  style="left:{{windowWidth*scale-30}}px" -->
+    <slot name="body"></slot>
+  </scroll-view>
+</view>

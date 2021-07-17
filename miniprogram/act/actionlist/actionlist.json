@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "swiperlist": "../../components/shoptheme/swiperlist/swiperlist",
+    "mymenu": "../../components/mymenu/mymenu"
+  },
+  "navigationBarTitleText": "报名活动列表"
+}

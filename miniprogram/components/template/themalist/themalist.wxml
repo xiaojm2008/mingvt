@@ -1,0 +1,21 @@
+<template name="themalist">
+  <view class="goods-list">
+    <view class="goods-item" hover-class="hover-item" wx:for="{{listData}}" wx:key="_id" catchtap="goDetail" data-themaid="{{item._id}}">
+      <view class="content">
+        <!-- <template is="promflag" data="{{prom:item.prominfo}}"></template>-->
+        <image class="thumbnail" lazy-load="{{true}}" src="{{item.picpath}}"></image>
+        <view class="inner-row">
+          <text class="subject">{{item.name+"."+index}}</text>
+        </view>
+        <view class="inner-row">
+          <text class="num" wx:if="{{item.feetype=='1'}}">¥{{item.price}}</text>
+          <text wx:else>'免费'</text>
+          <text wx:if="{{item.author}}">
+            <text class="txt" style="padding:0 0 0 20px;">作者:</text>
+            <text class="">{{item.authorname}}</text>
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

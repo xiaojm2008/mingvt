@@ -1,0 +1,47 @@
+.ul {
+  width: 100%;
+}
+.ul .li-item {
+  width: inherit;
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 0 10px 0 5px;
+  font-size:15px;
+  font-weight: 500;
+  color: black;
+  border-bottom: 0.5rpx solid rgba(213, 213, 214, 0.5);
+}
+.ul .li-item_h{
+  /*filter: grayscale(50%);*/
+  background-color: rgba(248, 248, 250, 0.4);
+}
+.ul .li-item .left {
+  text-align: left;
+}
+
+.ul .li-item .right {
+  text-align: center;
+}
+.icon-btn {
+  width: 25px;
+  height: 12px;
+}
+.iconfont {
+  display: inline-block;
+  font-family: 'iconfont' !important;
+}
+
+.icon-up:before {
+  content: "\e956";
+}
+
+.icon-down:before {
+  content: "\e958";
+}
+
+.icon-settings:before {
+  content: "\e64b";
+}

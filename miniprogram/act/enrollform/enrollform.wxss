@@ -1,0 +1,42 @@
+.fu-header image{
+  position: relative;
+  overflow: hidden;
+  border-radius:0 0 5% 5%;
+}
+/*
+.fu-header image::after{
+  content:'';
+  width:140%;
+  height:100px;
+  position:absolute;
+  left:-20%;
+  top:0;
+  z-index: -1;
+ 
+  background:#1496f1;
+}*/
+
+.bottom-opt{
+  opacity: 1;
+  margin: 0 5px 5px 5px;
+  border-radius:4px 4px 4px 4px; 
+  z-index: 10;
+}
+.bottom-opt .btn{
+  background: green;
+  color: white;
+  opacity: 1;
+}
+.fu-panel{
+  position: relative;
+  background: white;
+  margin: -30px 10px 0 10px;
+  border-radius: 6px;  
+}
+.fu-panel .item{
+  font-size:18px;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: center;
+  padding:10px 10px;
+}

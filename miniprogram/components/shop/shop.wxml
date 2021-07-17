@@ -1,0 +1,135 @@
+<wxs module="dictTrs" src="../../lib/dictTrs.wxs"></wxs>
+<wxs module="substr" src="../../lib/substr.wxs"></wxs>
+<wxs module="pipi" src="../../lib/pipi.wxs"></wxs>
+<import src="../loading/loading.wxml" />
+<import src="../template/goodslist/goodslist.wxml" />
+<!--
+  <view class="pic-view" style="height:{{shopinfo.imginfo[0].height||280}}px" id="spicpath">
+    <swiper indicator-dots="true" indicator-active-color="rgb(168, 6, 6)" indicator-color="rgb(223, 157, 157)" style="height:100%;">
+      <swiper-item wx:for="{{ shopinfo.imginfo }}" wx:key="fileID" wx:for-index="index" wx:for-item="item" data-index="{{index}}">
+        <image src="{{item.fileID||item.path}}" mode="scaleToFill" style="height:100%;" class="slide-image"></image>
+        <view class="subinfo" wx:if="{{item.subinfo}}">{{item.subinfo}}</view>
+      </swiper-item>
+    </swiper>
+    <view class="item-group pic-bottom">
+      <view class="item-view">
+        <view class="row">
+          <text class='left item-text'>电话</text>
+          <text class="icon-block iconfont icon-phone" style="padding-right:5px;"></text>
+          <text wx:if="{{shopinfo.phone}}" class='item-text' catchtap="callPhone" data-phone="{{shopinfo.phone}}">{{shopinfo.phone}}</text>
+          <text wx:if="{{shopinfo.contact}}" class='item-text' catchtap="callPhone" data-phone="{{shopinfo.contact}}">{{shopinfo.contact}}</text>
+        </view>
+        <view class="row" wx:if="{{shopinfo.address}}">
+          <text class='left item-text'>地址</text>
+          <view class="item-text" catchtap="openLocation">
+            <text class="icon-block2 iconfont icon-location2" style="padding-right:5px;"></text>
+            <text>{{shopinfo.address}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+-->
+<view wx:if="{{shopinfo}}">
+  <view class="panel-view">
+    <view class='carousel'>
+      <swiper display-multiple-items='1' circular="true" autoplay="true" interval="2000" duration="750" previous-margin='30px' next-margin='30px'>
+        <block wx:for="{{shopinfo.imginfo}}" wx:key="fileID" wx:for-index="index" wx:for-item="item" data-index="{{index}}">
+          <swiper-item catchtap="tapImg">
+            <view class='box'>
+              <image src='{{item.fileID}}'></image>
+              <view class='swiper-text'  wx:if="{{item.name}}">
+                <text>{{item.name}}</text>
+              </view>
+              <view class='swiper-price' wx:if="{{item.price}}">
+                <text style="float:left">现价：¥{{item.price}}</text>
+                <text style="float:right">已售：{{item.buycount}}</text>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>  
+      <view class="right" wx:if="{{shopinfo.countofimg}}" catchtap="shopImgShow"><text class="iconfont icon-pic"></text> {{shopinfo.countofimg}}</view>
+    </view>
+    <view class="item-group" style="padding:10px 0 10px 0;">
+      <view class="item-header">
+        <view class="row">
+          <text class="title" style="">{{shopinfo.shopname}}</text>
+          <button class="share" catchtap="showShare"> <!--  open-type="share" -->
+            <text class="iconfont icon-share_light"></text>分享</button>
+        </view>
+        <view class="row">
+          <text class="icon-block iconfont icon-favor" style="{{shopinfo.star>=1?'color:red;':''}}"></text>
+          <text class="icon-block iconfont icon-favor" style="{{shopinfo.star>=2?'color:red;':''}}"></text>
+          <text class="icon-block iconfont icon-favor" style="{{shopinfo.star>=3?'color:red;':''}}"></text>
+          <text class="icon-block iconfont icon-favor" style="{{shopinfo.star>=4?'color:red;':''}}"></text>
+          <text class="icon-block iconfont icon-favor" style="{{shopinfo.star>=5?'color:red;':''}}"></text>
+        </view>
+        <view class="row">
+          <text style="font-size:12px;width:100%;" class="line-clamp">{{shopinfo.summary}}</text>
+        </view>
+      </view>
+      <view class="item-view" style="padding-top:5px;pading-bottom:5px;">
+        <view class="row" catchtap="showEDlg" data-dlgtype='1'>
+          <text class='left item-text subname'>营业时间</text>
+          <text class="item-text">{{shopinfo.opentime}}</text>
+          <text class="item-text">至</text>
+          <text class="item-text">{{shopinfo.closetime}}</text>
+          <text class='right icon-block iconfont icon-rightarrow gray'></text>
+        </view>
+        <view class="row" wx:if="{{shopinfo.services}}" catchtap="showEDlg" data-dlgtype='1'>
+          <text class="block2" wx:for="{{shopinfo.services.value}}" wx:key="*this" wx:for-index="seq" wx:for-item="code" wx:if="{{seq<4}}">{{dictTrs.trs(dict[shopinfo.services.dictlist],code,1)}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="item-group" wx:if="{{shopinfo.address}}">
+      <view class="item-divider">
+      </view>
+      <view class="item-view">
+        <view class="left left2" catchtap="openLocation">
+          <view class="row" style="border-right:1px solid #ddd;">
+            <text class="icon-block2 iconfont icon-location2" style="padding-right:5px;"></text>
+            <text>{{shopinfo.address}}</text>
+          </view>
+          <view class="row" style="border-right:1px solid #ddd;">
+            <text style="padding-left:25px;font-size:12px;">{{shopinfo.trafficinfo||'点击查看附近交通'}}</text>
+          </view>
+        </view>
+        <view class="right right2" catchtap="callPhone" data-phone="{{shopinfo.phone}}">
+          <text class="icon-block2 iconfont icon-phone" style="font-size:25px;"></text>
+        </view>
+      </view>
+    </view>
+    <view class="item-group" wx:if="{{shopinfo.credentials}}">
+      <view class="item-divider">
+      </view>
+      <view class="item-view" style="padding-top:5px;pading-bottom:5px;" catchtap="showEDlg" data-dlgtype='2'>
+        <view class="row">
+          <text class='left item-text subname'>资质</text>
+          <text class="block2" wx:for="{{shopinfo.credentials}}" wx:key="id" wx:for-index="seq" wx:for-item="cIt" wx:if="{{seq<4}}">{{cIt.name}}</text>
+          <text class='right icon-block iconfont icon-rightarrow gray'></text>
+        </view>
+      </view>
+    </view>
+    <!-- item-group end -->
+    <view class="item-group">
+      <view class="item-divider">
+      </view>
+      <view class="item-view">
+        <text class='left item-text'>商品</text>
+        <view class='right' catchtap="goToMore">
+          <text class="subname">查看更多</text>
+          <text class='icon-block iconfont icon-rightarrow gray'></text>
+        </view>
+      </view>
+    </view>
+    <view class="item-group">
+      <template is="goodslist" data="{{listData:goodsList,options:null}}"></template>
+    </view>
+  </view>
+</view>
+<view wx:else class="center-panel loading-wrap">
+  <template is="loading" data="{{loadFinish:shopinfo,len:1,finishText:'加载完成'}}"></template>
+</view>
+<share id="myShare"></share>
+<enrolldetail id="enrollDetail"></enrolldetail>

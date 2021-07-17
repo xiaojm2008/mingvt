@@ -1,0 +1,20 @@
+<view class="fu-page">
+  <view class="fu-content">
+    <view class="ext-horiz-view" style="margin-top:0;">
+      <view class="view-item">
+        <view class="row">
+          <text class="left subname required">图片上传</text>
+          <view class="right" catchtap="showParameterDlg" id="imginfo" data-type="shop_imginfo">
+            <text>点击选择图片分类</text>
+            <label class="iconfont icon-rightarrow"></label>
+          </view>
+        </view>
+      </view>
+    </view>
+    <parameterdlg id="parameterDlg" type="{{parameterType}}" cate=""></parameterdlg>
+    <enroll id="myEnroll" initcache='false' moveable='' bind:togger="inputTogger2" data-id="imginfo" mystyle="width:100%; border-top: 1px solid #eee;border-bottom: 1px solid #eee;" enrolldata="{{imginfo}}"></enroll>
+  </view>
+  <view class="fu-bottom">
+    <text class="btn one" catchtap="save">上传</text>
+  </view>
+</view>

@@ -1,0 +1,70 @@
+<view class="dialog-wrap" wx:if="{{templateSt.show}}">
+  <view class="dialog center-panel">
+    <view class="dialog-head no-line">
+      <view class="flex-box subname no-line" style="width:90%;padding-left:0;" >
+        <block wx:if="{{!templateSt.edit}}">  
+          <view class="view-box"  catchtap="hTabTogger" data-tabid="0">
+            <text class="{{templateid===0 ? 'temp-active':''}} simple-btn iconfont icon-dict"></text>
+            <text>系统模板</text>
+          </view>
+          <view class="view-box" catchtap="hTabTogger" data-tabid="1">
+            <text class="{{templateid===1 ? 'temp-active':''}} simple-btn iconfont icon-usercenter" ></text>
+            <text>我的模板</text>
+          </view>      
+          <block wx:if="{{templateid==1}}">
+            <view class="view-box" catchtap="showEditTemplate">
+              <text class="simple-btn iconfont icon-edit" ></text><!--.icon-comment55 -->
+              <text>编辑</text>
+            </view>
+          </block>
+        </block>
+        <block wx:else>
+          <view class="view-box" catchtap="showSelectTempFieldDlg">
+            <text class="simple-btn iconfont icon-dict"></text>
+            <text>模板</text>
+          </view>
+          <view class="view-box" wx:if="{{templateSt.add || templateSt.mod}}" catchtap="saveToMyTemplate">
+            <text class="simple-btn iconfont icon-gou"></text>
+            <text>保存</text>
+          </view>
+           <view class="view-box" wx:if="{{!templateSt.mod && !templateSt.add}}" catchtap="addNewFieldToTemplate">
+            <text hover-class="icon-hover" class='simple-btn iconfont icon-plus'></text> 
+            <text>新增</text>
+          </view>
+          <view class="view-box" wx:if="{{!templateSt.mod && !templateSt.add}}" catchtap="modNewFieldToTemplate">
+            <text hover-class="icon-hover" class='simple-btn iconfont icon-edit'></text> 
+            <text>修改</text>
+          </view>
+          <view class="view-box" wx:if="{{!templateSt.add && !templateSt.mod}}" catchtap="delNewFieldToTemplate">
+            <text hover-class="icon-hover" class='simple-btn iconfont icon-closes'></text> 
+            <text>删除</text>
+          </view>
+          <view class="view-box" wx:if="{{templateSt.add || templateSt.mod}}"  catchtap="cancelCurrentEdit">
+            <text hover-class="icon-hover" class='simple-btn iconfont icon-leftarrow'></text> 
+            <text>返回</text>
+          </view>
+        </block>
+      </view>
+      <text class="close-btn" catchtap="showTemplateFieldDlg">x</text>
+    </view>
+    <scroll-view scroll-y="true" class="dialog-content" style="height:{{windowHeight-180}}px;">
+      <view class="flex-box" wx:if="{{!templateSt.add && !templateSt.mod}}">
+        <block wx:for="{{templateField[templateid]}}" wx:key="code" wx:for-index="index" wx:for-item="item">
+          <block wx:if="{{!unexpected_temp_fieldid[index]}}">
+            <view class="flex-item" data-index="{{index}}" catchtap="addFieldFromTemplate">            
+              <icon class="icon" type="{{item.active? 'success_circle':'circle'}}" size="20" data-index="{{index}}"></icon>
+              <text class="line-clamp">{{item.name}}</text>
+            </view>
+          </block>
+        </block>
+      </view>
+      <view class="panel-view" wx:if="{{templateSt.add || templateSt.mod}}">
+        <enrollitem id="myEnrollItem" fielditem="{{fieldItem}}"></enrollitem>
+      </view>
+    </scroll-view>
+    <!-- dialog-content -->
+    <view class="dialog-bottom">
+        <text wx:for="{{btntext}}" wx:key="*this" wx:for-item="btn" wx:for-index="btnindex" class="btn {{btntext.length==1?'one':''}}" loading="{{loading}}" plain="false" catchtap="submit" data-index="{{btnindex}}" hover-class="btn-hover">{{btn}}</text>
+    </view>
+  </view>
+</view>

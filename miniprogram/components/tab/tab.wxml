@@ -1,0 +1,11 @@
+<!--这是tab.wxml-->
+<view class="contain">
+  <view class="tab" style="position:fixed;left:0;top:{{positionTop}};background-color:{{backgroundColor}}">
+    <view wx:for="{{tabTitle}}" wx:key="{{status}}" wx:for-index="index" class="tab-son {{num==index?'active':''}}" catchtap='toggle' data-index="{{index}}">{{item.name}}</view>
+  </view>
+  <view class="tab-content" style="padding-top:{{paddingTop}}">
+    <view wx:for="{{tabTitle}}" wx:key="{{status}}" wx:for-index="index" class="tab-contents {{num==index?'on':''}}">
+      <slot name="{{index}}"></slot>
+    </view>
+  </view>
+</view>

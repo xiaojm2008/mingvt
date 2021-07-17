@@ -1,0 +1,63 @@
+{
+  "_id": "100",
+  "name": "我的订单",
+  "url": "/pages/myOrder/myOrder",
+  "icon": "",
+  "status": "1",
+  "seq": 1,
+  "id": 100
+}
+{
+  "_id": "101",
+  "name": "我的活动",
+  "url": "/pages/myAction/myAction",
+  "icon": "icon-mark",
+  "status": "1",
+  "seq": 2,
+  "id": 101
+}
+{
+  "_id": "102",
+  "name": "收货地址",
+  "url": "/pages/myAddress/myAddress",
+  "icon": "icon-location",
+  "status": "1",
+  "seq": 3,
+  "id": 102
+}
+{
+  "_id": "103",
+  "name": "会员卡",
+  "url": "/pages/myCard/myCard",
+  "icon": "icon-vip-card",
+  "status": "1",
+  "seq": 4,
+  "id": 103
+}
+{
+  "_id": "104",
+  "name": "优惠券",
+  "url": "/pages/myCoupon/myCoupon",
+  "icon": "icon-coupon",
+  "status": "1",
+  "seq": 5,
+  "id": 104
+}
+{
+  "_id": "105",
+  "name": "我要开店",
+  "url": "/pages/manager/listShop/listShop",
+  "icon": "icon-kaidian",
+  "status": "1",
+  "seq": 6,
+  "id": 105
+}
+{
+  "_id": "106",
+  "name": "控制台",
+  "url": "/pages/manager/console/console",
+  "icon": "icon-console",
+  "status": "1",
+  "seq": 7,
+  "id": 106
+}

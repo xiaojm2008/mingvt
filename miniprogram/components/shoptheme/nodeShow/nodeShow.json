@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mysearch": "../../mysearch/mysearch",
+    "nodeShow": "../nodeShow/nodeShow"
+  }
+}

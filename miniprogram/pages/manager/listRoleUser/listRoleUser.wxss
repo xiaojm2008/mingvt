@@ -1,0 +1,30 @@
+@import '../../../style/list.wxss';
+.cover-text{
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  border:1px solid #ccc;
+  font-weight: 400;
+  color:blue;
+  font-size:20px;
+  text-align: center;
+}
+.nickname {
+  vertical-align: middle;
+  padding-left: 10px;
+  flex: 1 1 auto;
+  text-align: left;
+}
+.nickname text {
+  display: block;
+  line-height: 20px;
+}
+icon{
+  width: 40px;
+}
+.view-item .left{
+  padding-left: 10px !important;
+  flex: 0 1 auto !important;
+  width:150px;
+}

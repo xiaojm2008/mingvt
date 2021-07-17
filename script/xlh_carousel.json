@@ -1,0 +1,80 @@
+{
+  "shopid": "G001",
+  "goodsno": "100000000008",
+  "serialid": 1,
+  "orderid": 1,
+  "posid": 1,
+  "name": "2022沙发单人位", 
+  "picpath": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/2035%E6%B2%99%E5%8F%91%E4%BA%8C%E4%BD%8D.png?sign=5677a53435bba39ccd14c328d7d1d1a2&t=1558191110",
+  "promid": 0,
+  "flag": 1,
+  "isnew": "0",
+  "price":6777.32,
+  "buycount":12,
+  "settime": 1493110670000,
+  "updatetime": 1493110670000
+}
+{
+  "shopid": "G001",
+  "goodsno": "100000000013",
+  "serialid": 2,
+  "orderid": 2,
+  "posid": 1,
+  "name": "银爵餐桌",
+  "picpath": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E9%93%B6%E7%88%B5%E9%A4%90%E6%A1%8C.png?sign=bd46349a6f1fc061818e51cfd4b19a3b&t=1558191412",
+  "promid": 0,
+  "flag": 1,
+  "isnew": "1",
+  "price": 1200.00,
+  "buycount": 10,
+  "settime": 1493110671000,
+  "updatetime": 1493110671000
+}
+{
+  "shopid": "G001",
+  "goodsno": "100000000014",
+  "serialid": 3,
+  "orderid": 3,
+  "posid": 1,
+  "name": "铭客LOGO菊花电视柜",
+  "picpath": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E9%93%AD%E5%AE%A2LOGO%E8%8F%8A%E8%8A%B1%E7%94%B5%E8%A7%86%E6%9F%9C.png?sign=dd60b78c9fc8c0541917dd7cac557450&t=1558191504",
+  "promid": 0,
+  "flag": 1,
+  "isnew": "1",
+  "price": 122252.00,
+  "buycount": 10,
+  "settime": 1493110671000,
+  "updatetime": 1493110671000
+}
+{
+  "shopid": "G001",
+  "goodsno": "100000000015",
+  "serialid": 4,
+  "orderid": 4,
+  "posid": 1,
+  "name": "903餐桌拆装",
+  "picpath": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/903%E9%A4%90%E6%A1%8C%E6%8B%86%E8%A3%85.png?sign=49a5e7351915a6dea4558e91ea8c100b&t=1558191708",
+  "promid": 0,
+  "flag": 1,
+  "isnew": "0",
+  "price": 10000.00,
+  "buycount": 1,
+  "settime": 1493110671000,
+  "updatetime": 1493110671000
+}
+{
+  "shopid": "G001",
+  "goodsno": "100000000001",
+  "serialid": 5,
+  "orderid": 1,
+  "posid": 1,
+  "name": "爱德华沙发三位",
+  "picpath": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E7%88%B1%E5%BE%B7%E5%8D%8E%E6%B2%99%E5%8F%91%E4%B8%89%E4%BD%8D.png?sign=9f811a5e916bc8b0138d7ff93dfbbfa3&t=1558238912",
+  "promid": 0,
+  "flag": 1,
+  "isnew":"1",
+  "price": 9090.00,
+  "buycount": 1,
+  "settime": 1493110671000,
+  "updatetime": 1493110671000
+}

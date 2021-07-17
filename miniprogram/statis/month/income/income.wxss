@@ -1,0 +1,30 @@
+.container {
+  padding: 10px;
+  width: 100%;
+  height: 300px;
+  box-sizing: border-box;
+}
+
+.container-item {
+  position: relative;
+  height: 250px;
+}
+
+#mychart-mysize {
+  position: relative;
+  margin-top: 10;
+  left: 0;
+  right: 0;
+}
+
+#mychart-casetype {
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+#mychart-person {
+  position: relative;
+  left: 0;
+  right: 0;
+}

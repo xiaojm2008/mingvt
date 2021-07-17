@@ -1,0 +1,154 @@
+/*dialog */
+.dialog-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index:50;
+  background-color: rgba(201, 201, 201,0.6);
+}
+.center-panel {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.dialog {
+  background-color:white;
+  min-height: 200px;
+  width: 95%;
+  box-sizing: border-box;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 5px 5px 5px 5px;
+  margin: 0 15px 0 auto;
+}
+.bottom-pos{transform:translateY(100%);}
+.dialog .dialog-head {
+  position: relative;
+  box-sizing: border-box;
+  margin: 10px 10px 0 10px;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+}
+.dialog .dialog-head .left {
+  flex: 0 1 150px;
+  /*padding-left: 10px;*/
+}
+.dialog .dialog-head .subname {
+  font-size: 15px;
+}
+.dialog .dialog-head .close-btn {
+  position: absolute;
+  right: 3px;
+  top: 0px;
+  width: 30px;
+  height: 30px;
+  z-index: 50;
+  font-size: 25px;
+  color: #ccc;
+  line-height: 30px;
+  text-align: center;
+}
+.dialog .dialog-content { 
+  position: relative;
+  box-sizing: border-box;
+  /*  background-color: white;
+  padding: 10px 20px 10px 20px;  margin: 0 10px 10px 10px;
+  */
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.dialog .dialog-bottom, .fu-page .fu-bottom {
+  position: relative;
+  /*
+  margin-top: 15px;
+  margin-bottom: 15px;*/
+  padding: 10px 0 10px 0;
+  text-align: center;
+}
+
+.dialog-bottom,.fu-bottom {
+  box-sizing: border-box;
+  opacity: 1;
+  margin: 0 10px 0 10px;
+  border-radius: 4px 4px 4px 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.dialog-bottom .btn,.fu-bottom .btn {
+  flex: 0 1 50%;
+  opacity: 1;
+  min-height: 40px;
+  line-height: 40px;
+}
+
+.dialog-bottom .btn:first-child,.fu-bottom .btn:first-child {
+  background-color: rgb(238, 176, 119);
+  border: 1px solid rgb(238, 176, 119);
+  border-radius: 10px 0 0 10px;
+}
+
+.dialog-bottom .btn:last-child,.fu-bottom .btn:last-child {
+  background-color: rgb(161, 202, 161);
+  border: 1px solid rgb(161, 202, 161);
+  border-radius: 0 10px 10px 0;
+}
+
+.dialog-bottom .one,.fu-bottom .one {
+  flex: 0 1 100%;
+  background-color: white !important;
+  border: 1px solid  rgb(161, 202, 161) !important;
+  border-radius: 10px 10px 10px 10px !important;
+}
+.btn-hover{
+  /*background-color:#ddd;*/
+  filter: grayscale(50%);  
+}
+.no-line{
+  border-bottom:0 !important; 
+}
+/* template-panel flex-box use at dialog-head*/
+.flex-box{
+  padding-left:20px; 
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;/*space-around;*/
+  flex-wrap:wrap;
+}
+.flex-box .flex-item{
+  flex:0 0 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 40px;
+}
+.flex-box .flex-item .icon{
+  flex:0 0 20px;
+  padding-right: 8px;
+}
+.flex-box .flex-item .text{
+  flex:2 0 auto;
+}
+.flex-box .view-box{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center; 
+  height:40px;
+  margin-right:10px;
+}
+/*line-clamp*/
+.flex-box .multitext {
+  height: 30px;
+  line-height: 30px;
+  color: #999;
+  font-size: 12px;
+}
+/*end of flex-box*/

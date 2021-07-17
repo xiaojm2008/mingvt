@@ -1,0 +1,398 @@
+{
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "scopeDataCheck": false,
+    "uglifyFileName": true,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "useMultiFrameRuntime": true,
+    "bundle": false,
+    "useApiHook": true,
+    "useApiHostProcess": false
+  },
+  "appid": "wx59e74c021081f517",
+  "projectname": "mingvt",
+  "libVersion": "2.12.0",
+  "compileType": "miniprogram",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": 1,
+          "name": "scan_qr",
+          "pathName": "pages/myTeam/myTeam",
+          "query": "",
+          "scene": 1012
+        },
+        {
+          "id": 2,
+          "name": "join_team",
+          "pathName": "pages/joinTeam/joinTeam",
+          "query": "",
+          "scene": 1012
+        },
+        {
+          "id": 3,
+          "name": "goodsDetail",
+          "pathName": "pages/goodsDetail/goodsDetail",
+          "query": "goodsno=GOO15953006535835e56bd3b1127e56d",
+          "scene": 1001
+        },
+        {
+          "id": 4,
+          "name": "myOrder",
+          "pathName": "pages/myOrder/myOrder",
+          "query": "status=",
+          "scene": null
+        },
+        {
+          "id": 5,
+          "name": "myCart",
+          "pathName": "pages/myCart/myCart",
+          "query": "status=",
+          "scene": null
+        },
+        {
+          "id": 6,
+          "name": "payResult",
+          "pathName": "pages/payResult/payResult",
+          "query": "order_id=565157754140140126b5eff3de75b53f",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "member",
+          "pathName": "pages/member/member",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "console",
+          "pathName": "pages/manager/console/console",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "addGoods",
+          "pathName": "pages/manager/addGoods/addGoods",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 10,
+          "name": "addGoods_272b",
+          "pathName": "pages/manager/addGoods/addGoods",
+          "query": "goodsno=S0000201909120046316726a87a59e272b",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "addGoodsDesc",
+          "pathName": "pages/manager/addGoodsDesc/addGoodsDesc",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "addGoodsImg",
+          "pathName": "pages/manager/addGoodsImg/addGoodsImg",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 13,
+          "name": "listAction",
+          "pathName": "pages/manager/listAction/listAction",
+          "query": "frompage=listUser&userid=ounQF5gNI1fojHjR6JnyBekJpowQ&shopid=S0000",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "listUser",
+          "pathName": "pages/manager/listUser/listUser",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "listGoods",
+          "pathName": "pages/manager/listGoods/listGoods",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 16,
+          "name": "showGoods",
+          "pathName": "pages/manager/showGoods/showGoods",
+          "query": "goodsno=S0000201909120046316726a87a59e272b",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "addPromotion",
+          "pathName": "pages/manager/addPromotion/addPromotion",
+          "query": "prom_id=",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "listPromotion",
+          "pathName": "pages/manager/listPromotion/listPromotion",
+          "query": "prom_id=",
+          "scene": null
+        },
+        {
+          "id": 19,
+          "name": "pages/home/home",
+          "pathName": "pages/home/home",
+          "query": "shopid=S0000",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "createShop",
+          "pathName": "pages/createShop/createShop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 21,
+          "name": "listShop",
+          "pathName": "pages/manager/listShop/listShop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 22,
+          "name": "shopPic",
+          "pathName": "pages/manager/shopPic/shopPic",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "shopdecor",
+          "pathName": "pages/manager/shopdecor/shopdecor",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "goodsMore",
+          "pathName": "pages/goodsMore/goodsMore",
+          "query": "shopid=S0000",
+          "scene": null
+        },
+        {
+          "id": 25,
+          "name": "orderDetail",
+          "pathName": "pages/orderDetail/orderDetail",
+          "query": "pay_id=7581577634947969fe7515af6f8fb2d1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "addAddress",
+          "pathName": "pages/addAddress/addAddress",
+          "query": "goodsno=GOO15762372308609f90c14c8a580776",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "shopCategory",
+          "pathName": "pages/shopCategory/shopCategory",
+          "query": "_id=rdNtFADsS19blCGcVWfAdUXCmIJi0d3YgLWC0HvYk1e3iKga&order_id=dbff9fc75df51007035859ad049e027c&total_pay=131&transcode=QRY_ORDER",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "shopImg",
+          "pathName": "pages/manager/shopImg/shopImg",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "orderDo",
+          "pathName": "pages/manager/orderDo/orderDo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 31,
+          "name": "doDelivery",
+          "pathName": "pages/manager/doDelivery/doDelivery",
+          "query": "orderid=587157755032301905cf79bb8170e6c9",
+          "scene": null
+        },
+        {
+          "id": 32,
+          "name": "income",
+          "pathName": "statis/month/income/income",
+          "query": "statstype=income_stats",
+          "scene": null
+        },
+        {
+          "id": 33,
+          "name": "income_dealbymonth",
+          "pathName": "statis/month/income/income",
+          "query": "statstype=dealbymonth",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "cashOut_manger",
+          "pathName": "pages/manager/cashOut/cashOut",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "balShopDetail",
+          "pathName": "pages/manager/balShopDetail/balShopDetail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "cashOutAppr",
+          "pathName": "pages/manager/cashOutAppr/cashOutAppr",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "listPayment",
+          "pathName": "pages/manager/listPayment/listPayment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 38,
+          "name": "shareEntry",
+          "pathName": "pages/shareEntry/shareEntry",
+          "query": "scene=SHA1578753133493ae9b378ff835b7a4",
+          "scene": null
+        },
+        {
+          "id": 39,
+          "name": "createaction",
+          "pathName": "act/createaction/createaction",
+          "query": "dataid=ACT1594176035945f16664e1b6c3cb6b",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "actionlist",
+          "pathName": "act/actionlist/actionlist",
+          "query": "shopid=S0000",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "myFavor",
+          "pathName": "pages/myFavor/myFavor",
+          "query": "shopid=S0000",
+          "scene": null
+        },
+        {
+          "id": 42,
+          "name": "enrolllist",
+          "pathName": "act/enrolllist/enrolllist",
+          "query": "actionid=ACT1581180536044697e4cdd430b719b",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "myAction",
+          "pathName": "pages/myAction/myAction",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 44,
+          "name": "actiondetail",
+          "pathName": "act/actiondetail/actiondetail",
+          "query": "dataid=ACT1594176035945f16664e1b6c3cb6b",
+          "scene": null
+        },
+        {
+          "id": 45,
+          "name": "act/siginin/siginin",
+          "pathName": "act/siginin/siginin",
+          "query": "scene=ENR1581397284457477f78e32c19b89e",
+          "scene": null
+        },
+        {
+          "id": 46,
+          "name": "entry",
+          "pathName": "statis/act/entry/entry",
+          "query": "actionid=ACT158233856803730b3ae33c438cbb3",
+          "scene": null
+        },
+        {
+          "id": 47,
+          "name": "home",
+          "pathName": "pages/home/home",
+          "query": "actionid=ACT158233856803730b3ae33c438cbb3",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

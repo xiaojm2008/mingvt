@@ -1,0 +1,74 @@
+@import "../../../style/card.wxss";
+
+page {
+  background-color: rgb(246, 246, 246);
+}
+
+.fu-content {
+  margin: 0 10px 0 10px;
+}
+
+.triangle-tr {
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-bottom: 65px solid rgba(255, 0, 0, 0.3);
+  border-left: 65px solid transparent;
+}
+
+.triangle-tr .text {
+  transform: rotate(-45deg);
+  position: absolute;
+  font-size: 14px;
+  right: 0;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+}
+
+.band-flag {
+  position: absolute; /*绝对定位*/
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  width: 128px;
+  background-color: #ff5722;
+  color: #fff;
+  font-size: 20px;
+}
+
+/*
+.band-left {
+    transform: rotate(-45deg);
+    left: -18px;
+    top: 9px;
+}*/
+
+.band-left {
+  transform: rotate(-45deg);
+  left: -28px;
+  top: 19px;
+}
+
+.band-right {
+  transform: rotate(45deg);
+  right: -18px;
+  top: 9px;
+}
+.marquee_container {
+  position: absolute; /*绝对定位*/
+  background-color: rgba(255, 86, 34, 0.8);
+  height: 38px;
+  line-height: 38px;
+  bottom: 0px;
+}
+.marquee_text {
+  color: white;
+  animation-duration: 20s; /*过渡时间*/
+}

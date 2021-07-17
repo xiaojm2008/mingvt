@@ -1,0 +1,23 @@
+<!--pages/login/login.wxml-->
+
+<view class="page-mask">
+  <view>
+    <text class="btn one" bindtap="getSigninQr"  data-params="">获取签到码</text>
+  </view>
+  <view class="center-panel" >    
+    <view class='img-box'>
+      <image catchtap="previewImg" mode="scaleToFill" src='{{qrcode}}'></image>
+    </view>
+    <view class="panel-bottom">
+      <text>赶紧打开微信扫描签到吧!</text>     
+    </view>
+    <!-->
+    <view class="canvas-box">
+      <canvas style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas" />
+    </view>
+    -->
+  </view>
+  
+</view>
+
+

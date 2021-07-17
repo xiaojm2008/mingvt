@@ -1,0 +1,11 @@
+@import '../../../style/horiz.wxss';
+.ext-horiz-view .ext-view {
+  justify-content: space-between;
+}
+
+.ext-horiz-view .ext-view .ext-flex{
+  flex:0 1 auto;
+  border-radius:10px;
+  border:0;
+  padding-bottom:10px;
+}

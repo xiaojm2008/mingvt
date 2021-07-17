@@ -1,0 +1,40 @@
+
+.hover-movable {
+  background-color: rgb(228, 179, 179);
+}
+
+.icon-moveable {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  flex: 0 0 auto;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  display: inline-block;
+  background-color: gray;
+  margin-left: 10px;
+}
+
+.movable-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+.movable-row {
+  line-height: 46px;
+  box-shadow: #d9d9d9 0px 0px 20px;
+  width: 100%;
+}
+
+.movable-area .text {
+  width: 100%;
+  text-align: center;
+}
+
+.ready-place {
+  background-color: #ccc;
+}

@@ -1,0 +1,166 @@
+<wxs module="dictTrs" src="../../lib/dictTrs.wxs"></wxs>
+<wxs module="substr" src="../../lib/substr.wxs"></wxs>
+<view class="custom" style="padding-top:{{statusBarHeight}}px;height:{{statusBarHeight+45}}px;">
+	<view class="nav" catchtap="reBack">
+		<text class="iconfont icon-leftarrow reback"></text>
+		<text class="title">报名清单</text>
+	</view>
+	<view class="nav">
+		<!--<text wx:if="{{!editable}}" class="iconfont icon-edit-circle operBtn" catchtap="onEdit"></text>
+    <text wx:else class="iconfont icon-delete operBtn" catchtap="onDel"></text>-->
+		<text class="iconfont icon-search operBtn" id="searchBtn" catchtap="onSearch"></text>
+		<text class="iconfont icon-more2 operBtn" id="moreBtn" catchtap="onMore"></text>
+		<!--
+		<mysearch id="mysearch" placeholder="请在此输入查询内容" bindselectresult="selectResult" search="" offset-y="{{45+statusBarHeight}}" extClass="srh-btn" catetype="favor" type="icon"></mysearch>
+		 -->
+	</view>
+</view>
+<!-- <view style="top:{{statusBarHeight+45}}px" class="content"> -->
+<view class="content" style="background-color:#eee;">
+	<scroll id="scroll" requesting="{{requesting}}" empty-show="{{true}}" end="{{loadFinish}}" refreshlock="{{refreshlock}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="{{freshBarSize}}" color="{{color}}" bind:refresh="refresh" bind:more="more">
+		<view class="order-center" style="" wx:for="{{listData}}" wx:key="_id" wx:for-index="index">
+			<view class="order-shopinfo" style="font-size:15px;height:45px;border-bottom: 1px solid #eee;" catchtap="goToPage" data-page="/act/actiondetail/actiondetail?dataid={{item.actionid}}">
+				<view class="shop-info line-clamp">
+					<text class="iconfont icon-mark" style="margin-right:5px;"></text>
+					<text class="shop-name">{{item.actionname}}</text>			
+				</view>
+				<view class="right">
+					<text>{{dictTrs.trs(dict['100040'],item.enrollstatus,1)}}</text>
+					<text class="iconfont icon-rightarrow"></text>
+				</view>
+			</view>
+			<view class="order-content" data-index="{{index}}" catchtap="showMenu">
+				<view class="order-more left">
+					<image lazy-load="{{true}}" class="{{item.apprflag=='2'?'gray':''}}" src='{{item.avatarurl||"/images/icontab/icon_member.png"}}'></image>
+					<view class="order-desc">					
+						<text class="iconfont icon-usercenter" style="margin-right:3px;color:{{item.gender=='1'?'red':'green'}};"></text>
+						<text class="sub">{{item.username||item.x_username}}</text>					
+						<text wx:if="{{item.phone||item.x_phone}}" class="iconfont icon-phone" catchtap="callPhone" data-phone="{{item.phone||item.x_phone}}" style="padding-left:5px;color:#999">{{item.phone||item.x_phone}}</text>												
+						<text class="one text">报名时间：{{item.settime}}</text>
+						<text class="one text" wx:if="{{item.updatetime !=item.settime}}">报名更新：{{item.updatetime}}</text>
+						<text class="one text" wx:if="{{item.apprflag&&item.apprtime}}">审核时间：{{item.apprtime}}</text>
+						<text class="one text" wx:if="{{item.siginflag&&item.sigintime}}">签到时间：{{item.sigintime}}</text>
+						<text class="one text" wx:if="{{item.feetype=='1'&&item.paytime}}">支付时间：{{item.paytime}}</text>
+					</view>
+				</view>
+				<!--
+				<view class="order-price right">
+					<text></text>
+				</view>
+				-->
+			</view>
+			<view class="order-additional" wx:if="{{item.remark}}">
+				<block>
+					<text class="sub">活动备注</text>
+					<text class="text">{{item.remark}}</text>
+				</block>
+			</view>
+			<view class="order-additional" wx:if="{{item.errmsg}}">
+					<text class="sub">信息提示</text>
+					<text class="text">{{item.errmsg}}</text>
+			</view>
+			<view class="order-sum" wx:if="{{item.feetype=='1'}}">
+				<view >合计费用：¥ <text class="num">{{substr.toFix(item.total_pay)||0}}</text></view>
+			</view>
+			<view class="time-show">
+				<block wx:if="{{item.apprflag&&item.apprstatus=='1' || !item.apprflag}}">
+					<block wx:if="{{item.apprflag}}">	
+						<text class="st-btn {{item.apprstatus=='1'?'right-green':'right-red'}}">{{dictTrs.trs(dict['100038'],item.apprstatus,1)}}</text>
+					</block>
+					<!-- 需要审批 或者 不需要审批的活动，显示支付状态 -->
+					<block wx:if="{{item.feetype=='1'}}">
+						<text class="st-btn right-green" wx:if="{{item.paystatus=='1'}}">{{dictTrs.trs(dict['100035'],item.paystatus,1)}}</text>
+						<text class="st-btn right-red" wx:elif="{{item.paystatus}}">{{dictTrs.trs(dict['100035'],item.paystatus||'0',1)}}</text>
+					</block>
+					<!-- 活动签到状态 -->
+					<block wx:if="{{item.siginflag}}">
+						<text class="st-btn {{item.siginstatus=='1'?'right-green':'right-red'}}" >{{dictTrs.trs(dict['100036'],item.siginstatus,1)}}</text>
+					</block>
+					<!-- 退款状态 -->
+					<block wx:if="{{item.paystatus=='1'}}">
+						<text class="st-btn right-red" wx:if="{{item.refundstatus}}">{{dictTrs.trs(dict['100037'],item.refundstatus,1)}}</text>
+					</block>
+				</block>
+				<block wx:elif="{{item.apprflag}}">	
+					<text class="st-btn {{item.apprstatus=='1'?'right-green':'right-red'}}">{{dictTrs.trs(dict['100038'],item.apprstatus,1)}}</text>
+				</block>
+			</view>
+			<view class="order-bottom">
+				<text class="btn order-btn" catchtap="onMod" data-index="{{index}}">修改</text>
+				<text class="btn order-btn" catchtap="onDetail" data-index="{{index}}">详细</text>
+				<block wx:if="{{item.apprflag}}">
+					<text class="btn order-btn" wx:if="{{item.apprstatus!='1'}}" catchtap="onCheck" data-apprstatus="1" data-index="{{index}}">通过</text>
+					<text class="btn order-btn" wx:if="{{item.apprstatus!='2'}}" catchtap="onCheck" data-apprstatus="2" data-index="{{index}}">不通过</text>			
+				</block>
+			</view>
+		</view>
+	</scroll>
+</view>
+
+<mymenu id="myMenu"></mymenu>
+<modaldialog id="modalDlg"></modaldialog>
+<enrolldetail id="enrollDetail" height="{{windowHeight}}"></enrolldetail>
+
+
+		<!--
+			<view class='list' wx:if="{{listtype=='0' && listData.length>0}}">
+			<view class='item' hover-class="item-hover" wx:for="{{listData}}" wx:key="_id">
+				<view class='content'>
+					<view class="thumpnail" catchtap="goToPage" data-page="/act/enrolldetail/enrolldetail?dataid={{item._id}}">
+						<image src='{{item.avatarurl||"/images/icontab/icon_member.png"}}'></image>
+					</view>
+					<view class='text' data-index="{{index}}" catchtap="showMenu">
+						<view class='title'>
+							<text class="iconfont icon-usercenter" style="margin-right:3px;color:{{item.gender=='1'?'red':'green'}}"></text>
+							<text>{{item.username||item.x_username}}</text>
+							<text wx:if="{{item.phone||item.x_phone}}" class="iconfont icon-phone" catchtap="callPhone" data-phone="{{item.phone||item.x_phone}}" style="padding-left:5px;color:#999">{{item.phone||item.x_phone}}</text>						
+						</view>
+						<view>
+							<block wx:if="{{item.apprflag && item.apprstatus=='1' || !item.apprflag}}">
+								<block wx:if="{{item.apprflag}}">	
+									<text class="st-btn {{item.apprstatus=='1'?'right-green':'right-red'}}">{{dictTrs.trs(dict['100038'],item.apprstatus,1)}}</text>
+								</block>
+							
+								<block wx:if="{{item.feetype=='1'}}}">
+									<text class="st-btn right-green" wx:if="{{item.paystatus=='1'}}">{{dictTrs.trs(dict['100035'],item.paystatus,1)}}</text>
+									<text class="st-btn right-red" wx:elif="{{item.paystatus}}">{{dictTrs.trs(dict['100035'],item.paystatus||'0',1)}}</text>
+								</block>
+							
+								<block wx:if="{{item.siginflag}}}">
+									<text class="st-btn {{item.siginstatus=='1'?'right-green':'right-red'}}" wx:if="{{item.siginstatus}}">{{dictTrs.trs(dict['100036'],item.siginstatus,1)}}</text>
+								</block>
+						
+								<block wx:if="{{item.paystatus=='1'}}">
+								  <text class="st-btn right-red" wx:if="{{item.refundstatus}}">{{dictTrs.trs(dict['100037'],item.refundstatus,1)}}</text>
+								</block>
+							</block>				
+						</view>
+						<view class='spec'>
+							报名时间：{{item.settime}}
+						</view>
+						<view class='spec' wx:if="{{item.updatetime !=item.settime}}">
+							报名更新：{{item.updatetime}}						
+						</view>		
+						<text class="spec" wx:if="{{item.apprflag&&item.apprtime}}">审核时间：{{item.apprtime}}</text>
+						<view class='spec' wx:if="{{item.siginflag&&item.sigintime}}">
+							签到时间：{{item.sigintime}}						
+						</view>
+						<view class='spec' wx:if="{{item.feetype=='1'&&item.paytime}}">
+							支付时间：{{item.paytime}}						
+						</view>
+						<view class='price'>
+							<text>
+								<text  style="color: #ff5f19;"  wx:if="{{item.totalnum}}">人数:{{item.totalnum}}</text>
+								<text  style="color: #ff5f19;" wx:if="{{item.familyflag}}">家属:{{item.familynum}}</text>
+								<text  style="color: #ff5f19;" wx:if="{{item.childflag}}">小孩:{{item.childnum}}</text>
+								<text style="float:right;font-size:13px;" wx:if="{{item.mysize}}">{{item.mysize}}</text>
+							</text>
+						</view>
+						<view wx:if="{{item.casetype}}">
+							{{dictTrs.trs(item.casetype.dictlist,item.casetype)}}
+						</view>
+					</view>
+				</view>
+			</view>
+			</view>
+		-->

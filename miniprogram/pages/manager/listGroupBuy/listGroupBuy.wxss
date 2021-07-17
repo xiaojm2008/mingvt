@@ -1,0 +1,28 @@
+
+.center-panel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.center-panel button {
+  background: rgb(158, 238, 158);
+  border-color: white;
+  color: white;
+  width: 80%;
+}
+.center-panel .button-hover{
+  background-color:rgb(243, 242, 242);
+  filter: grayscale(50%);
+}
+
+.ext-horiz-view .flex-item .head,.ext-horiz-view .flex-item .content,.ext-horiz-view .flex-item .bottom{
+  flex:0 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-box{
+  border-bottom:0; 
+}

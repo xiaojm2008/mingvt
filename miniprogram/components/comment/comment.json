@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "modaldialog": "../modaldialog/modaldialog"
+  }
+}

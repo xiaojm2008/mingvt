@@ -1,0 +1,37 @@
+<import src="../../loading/loading.wxml" />
+<import src="../template/tools.wxml" />
+<mymover id="myMover" bind:operCtrl="operCtrlTogger" bind:operNode="operNodeTogger" bind:locatedPNode="locatedPNodeTogger">
+  <sideslip id="mySideslip" scale="0.5">
+    <block wx:for="{{defineNodes}}" wx:key="id" wx:for-item="node">
+      <mytree slot="sides" is="myTree" bind:togger="tapTreeNode" wx:if="{{node}}" myStyle="width:{{windowWidth*0.5}}px;" node="{{node}}"></mytree>
+    </block>
+    <view slot="body" class="body" bindtap="hideMenu">
+      <!--
+    <view class="top_btn" catchtap="showLayoutDlg" data-page='showLayout'>
+      <text>点击开始页面布局</text>
+    </view>
+    -->
+      <view class="panel-view ctrl-area" wx:if="{{!preview}}">
+        <!--
+      <block wx:for="{{unitDefines}}" wx:key="id" wx:for-item="unit" wx:for-index="index">
+        <nodeParse wx:if="{{unit}}" node="{{unit}}" nodeindex="{{index}}" bind:addCtrl="addCtrlTogger" bind:operCtrl="operCtrlTogger" bind:delCtrl="delCtrlTogger" bind:editCtrl="editCtrlTogger" bind:tapNode="tapNodeTogger"></nodeParse>
+      </block>
+      -->
+        <block wx:for="{{unitDefines}}" wx:key="id" wx:for-item="xdefine" wx:for-index="index">
+          <template is="tools" data="{{node:xdefine}}"></template>
+          <block wx:for="{{xdefine.define}}" wx:key="id" wx:for-item="node" wx:for-index="cindex">
+            <nodetree id="nt_{{cindex}}" wx:if="{{node}}" data-definename="{{node.name}}" node="{{node}}" nodeindex="{{cindex}}" bind:addCtrl="addCtrlTogger" bind:operCtrl="operCtrlTogger" bind:delCtrl="delCtrlTogger" bind:editCtrl="editCtrlTogger" bind:tapNode="tapNodeTogger"></nodetree>
+          </block>
+        </block>
+      </view>
+      <block wx:else>
+        <preview nodes="{{preDefineNodes}}" bind:taptogger="previewNodeTogger"></preview>
+      </block>
+    </view>
+  </sideslip>
+  <floatbtn wx:if="{{preview}}" id="myFloatBtn" moveable='true' compid="myFloatBtn" bind:togger="floatBtnTogger"></floatbtn>
+  <nproperty id="nodeProperty" dlgid="nodeProperty"></nproperty>
+  <cproperty id="ctrlProperty" dlgid="ctrlProperty"></cproperty>
+  <modaldialog id="ctrlCenter" height="{{windowHeight}}"></modaldialog>
+  <mymenu id="myMenu"></mymenu>
+</mymover>

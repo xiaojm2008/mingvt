@@ -1,0 +1,203 @@
+@import '../../style/horiz.wxss';
+@import "../../style/dialog.wxss";
+@import "../loading/loading2.wxss";
+.barTitle{
+  position: fixed;
+  height: 45px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: #fff;
+  color:black;
+  font-size:16px;
+  text-align: center;
+}
+.ext-horiz-view {
+  margin-top: 0px;
+}
+
+.search-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 16px;
+  height: 32px !important;
+  line-height: 32px !important;
+  border: 1px solid rgb(180, 174, 174);
+  flex-grow: 1;
+  padding-right:10px;
+  background-color: white;
+}
+
+.search-panel .text-input {
+  flex-grow: 1;
+  border: 0;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  font-size:15px;
+}
+.dialog-head .return-text{
+  padding-left:5px;
+  font-size:16px;
+}
+.srh-title{
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+}
+.icon-input {
+  color: rgb(180, 174, 174);
+  width: 25px;
+  height: 100%;
+  font-size: 24px;
+}
+.bottom-pos {
+  transform: translateY(100%);
+}
+
+.dialog-wrap {
+  background-color: rgba(201, 201, 201, 0);
+}
+
+.dialog2 {
+  border: 1px solid white !important;
+  bottom: 0;
+  width: 100%;
+  z-index: 99 !important;
+  /*max-height: 489px !important;*/
+}
+
+.dialog2 .dialog-head {
+  margin: 0px !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color:#eee; 
+}
+
+.dialog2 .dialog-content {
+  overflow-y: yes;
+  border-bottom: 0;
+}
+
+.dialog2 .dialog-content .ext-horiz-view {
+  /*border-bottom: 1px solid #eee;*/
+  background-color: white;
+  border-bottom:1px  solid #eee;
+}
+.dialog2 .dialog-content .ext-horiz-view .view-item .row{
+  font-size: 14px;
+}
+.dialog2 .dialog-content .ext-horiz-view .view-item .row .left {
+  justify-content: flex-start;
+  padding-left:10px;
+}
+.dialog2 .dialog-content .ext-horiz-view .view-item .row .image{
+  flex:0 0 60px;
+  height: 60px;
+}
+.dialog2 .dialog-content .ext-horiz-view .view-item .row .image .img{
+  height:50px;
+  width:50px;
+  background-color: #eee;
+  border-radius:2px; 
+}
+.dialog2 .dialog-content .ext-horiz-view .view-item .row .image image{
+  width:50px;
+  height: 50px;
+  border-radius:2px; 
+  margin-top:3px;
+}
+
+.dialog2 .dialog-content .ext-horiz-view .view-item .row .right {
+  flex-grow: 1 !important;/*flex-grow: 1 自动扩展宽度;*/
+  color: #ddd;
+  justify-content: flex-start;
+  text-align:left;
+  flex-wrap: wrap;
+  width: 100px;/*限制100px可以随便设置一个非零值,这样下面.txt样式就会在文本超长时候加...显示,类似myFavor.wxss*/
+}
+.dialog2 .dialog-content .ext-horiz-view .view-item .row .right .txt{
+  width: 100%;
+  line-height:25px;
+  color:black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  /*
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  */
+}
+.dialog2 .dialog-content .ext-horiz-view .view-item .row .right .txt1{
+  color:#888;
+  -webkit-line-clamp: 3;
+}
+.dialog2 .dialog-content .ext-horiz-view .view-item .title{
+  height: 30px;
+  line-height: 30px;
+  min-height:30px;
+  background-color: #eee;
+}
+.dialog2 .dialog-content .ext-horiz-view .view-item .title .left{
+  flex-grow:1;
+}
+.dialog2 .dialog-content .ext-horiz-view .view-item .title .right{
+  flex:0 0 90px;
+  background-color: #eee;
+  text-align: right;
+  justify-content: flex-end;
+  padding-right:10px; 
+}
+.horiz-view{
+  font-size:13px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.srh-item{
+  width: 33%;
+  flex: 1 1 auto;
+  font-size:16px;
+  color:rgb(104, 122, 201)!important;
+  text-align:center;
+  line-height:45px;
+  height: 45px;
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  display: inline-block;
+}
+
+.icon-search:before {
+  content: "\e607";
+}
+
+.icon-return {
+  font-size: 25px;
+  font-weight: 600;
+  color: rgb(180, 174, 174);
+  width: 25px;
+  margin-left: 5px;
+}
+
+.icon-clear {
+  font-size: 16px !important;
+}
+
+.icon-return:before {
+  content: "\e954";
+}
+
+.icon-clear:before {
+  content: "\e93b";
+}
+.icon-rightarrow:before {
+  content: "\e94e";
+}

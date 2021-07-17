@@ -1,0 +1,469 @@
+/*horizontal-view  border-bottom: 1px solid #eee;*/
+
+/* ext-horiz-view */
+
+.ext-horiz-view {
+  display: flex;
+  background: #fff;
+  flex-wrap: wrap;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.ext-horiz-view .view-item {
+  /*
+  padding-right: 0;
+  padding-left:0px;*/
+  padding: 0 8px 0 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  /*line-height: 45px;*/
+  min-height: 45px;
+}
+
+.ext-horiz-view .view-grid {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 145px;
+  width: 100%;
+  align-content: space-around;
+  justify-content: space-around;
+  /*background: #ccc;*/
+}
+
+.ext-horiz-view .view-grid .text,.ext-horiz-view .col-grid .text {
+  position: absolute;
+  bottom: 6px;
+  left: 1px;
+  height: 20px;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-color: rgb(34, 34, 34);
+  border-style: none;
+  border-radius: 8px;
+  opacity: 1;
+}
+
+.ext-horiz-view .view-grid .flex-item {
+  /*margin: 0 5px 5px 0;*/
+  background: #aaa;
+  position: relative;
+  width:32%;
+  flex-grow: 0; /* default 0 */
+}
+
+.ext-horiz-view .item-prompt {
+  border-bottom: 0;
+}
+
+.ext-horiz-view .item-prompt::after {
+  content: '';
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(135deg, transparent, transparent 45%, red, transparent 55%, transparent 100%),
+                linear-gradient(45deg, transparent, transparent 45%, red, transparent 55%, transparent 100%);
+  background-size: 8px 8px;
+  background-repeat: repeat-x, repeat-x;
+}
+
+/*panel */
+
+.panel-view {
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.panel-view .item-view {
+  /* text-align: right;*/
+  min-height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  width: 100%;
+  border: 1px solid white;
+  position: relative;
+  margin-top: 10px;
+}
+
+.ext-horiz-view .view-active {
+  background-color: #eee;
+}
+
+.ext-horiz-view .view-item .row {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  line-height: 45px;
+  min-height: 45px;
+  width: 100%;
+  margin-right: 10px;
+  border-bottom: 1px solid #eee;
+}
+/**
+border-bottom: 1px solid #eee;
+width: 100%;
+display: flex;
+justify-content: flex-start;
+flex-wrap: wrap;
+*/
+.ext-horiz-view .view-item:last-child > .row {
+  border-bottom: 0;
+}
+
+/*
+.ext-horiz-view .view-item:last-child{
+   border-bottom: 0;
+}*/
+
+.ext-horiz-view .view-item .left {
+  font-size: 14px;
+  color: #333;
+  flex: 0 1 auto;
+  width: 95px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+  height: 100%;
+}
+
+.ext-horiz-view .view-item .subname {
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 95px;
+}
+
+/* white-space: nowrap;   text-overflow: ellipsis;  width: 100%;*/
+
+.ext-horiz-view .view-item .subname .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 95px;
+}
+
+.line-clamp {
+  /*
+  overflow: hidden; 
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;block-axis horizontal white-space: nowrap;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: inherit;
+}
+.line-clamp2 {
+  overflow: hidden; 
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: nowrap;
+}
+.ext-horiz-view .view-item .right {
+  flex: 3 0 auto;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: inherit;
+}
+
+.ext-horiz-view .right text {
+  color: #888;
+}
+/*clear 按钮*/
+.ext-horiz-view .right .clear{
+  width: 28px;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.view-item .right .text-input {
+  /*width: 100%;
+  flex: 1 0 auto;*/
+  flex:1 1 100%;
+}
+
+.view-item .right .btn-icon {
+  text-align: center;
+  border:1px solid #eee;
+  margin-left: 10px;
+  font-size: 12px;
+  flex: 0 0 auto;
+  width:80px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  background: white;
+  color: rgb(226, 135, 135);
+}
+.view-item .right .suffix {
+  text-align: center;
+  border-left:1px solid #eee;
+  margin-left: 10px;
+  font-size: 15px;
+  flex: 0 0 60px;
+  height: 30px;
+  line-height: 30px;
+  background: white;
+  color: rgb(226, 135, 135);
+}
+.ext-horiz-view .s-text {
+  padding-left: 10px;
+}
+
+.ext-horiz-view .icon-rightarrow {
+  font-size: 16px;
+  color: #888;
+}
+
+.ext-horiz-view multitext {
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+
+.ext-horiz-view .view-item input {
+  /*width: 100%;*/
+  height: 30px;
+  line-height: 30px;
+}
+
+.ext-horiz-view .view-item .inp-selector {
+  width: 100%;
+}
+
+.ext-horiz-view .view-item .inp-selector2 {
+  width: 80px;
+}
+
+.ext-horiz-view .view-item .inp-selector3 {
+  width: 40px;
+}
+
+.ext-horiz-view .icon {
+  text-align: center;
+  line-height:0;
+}
+
+.ext-horiz-view .view-area {
+  width: 100%;
+}
+
+/* inherit from ext-horiz-view .view-item*/
+
+/*space-around;*/
+
+.view-item {
+  width: 100%;
+  flex-wrap: wrap;
+  /*display: flex;
+  justify-content: flex-start;
+  */
+}
+
+.view-item .textarea {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.view-item .flex-item {
+  /*
+  flex: 1 0 30%;*/
+  flex: 1 0 25%;
+  display: flex;
+  min-height: 40px;
+  line-height: 40px;
+  position: relative;
+  margin-right: 0;
+  padding-bottom: 5px;
+  background-color: white;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.view-item .flex-item image {
+  height: 100px;
+  margin: 5px 5px 5px 5px;
+  width: 100%;
+}
+
+.view-item .flex-item .cell-item {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  display: block;
+}
+
+.view-item .flex-item:last-child {
+  border-right: 0px !important;
+}
+
+/* 多项选择 */
+
+.view-item .flex-item2 {
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 40px;
+}
+
+.view-item .flex-item2 .icon {
+  flex: 0 0 20px;
+  padding-right: 8px;
+}
+
+.view-item .flex-item2 .text {
+  flex: 2 0 auto;
+}
+
+/*user by horizontal view-item flex-item ext-item img upload*/
+
+.view-item .ext-item {
+  background-color: rgba(255, 251, 251, 0.5);
+  position: relative;
+  border-bottom: 0px;
+  box-sizing: border-box;
+}
+
+.view-item .ext-item:last-child {
+  margin-right: 0;
+}
+
+.view-item .ext-item .icon-addimg, .panel-view .item-view .icon-addimg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 38px;
+  color: white;
+  text-align: center;
+}
+
+.view-item .ext-item .icon-addimg text, .panel-view .item-view .icon-addimg text {
+  color: rgb(224, 114, 114);
+  font-size: 30px;
+  display: block;
+}
+
+.view-item .ext-item .top-desc, .panel-view .item-view .top-desc {
+  position: absolute;
+  text-align: right;
+  right: 5px;
+  top: -10px;
+  font-size: 13px;
+  color: #999;
+}
+
+/*ext-item end*/
+
+.panel-view .item-view .bottom-desc {
+  position: absolute;
+  text-align: right;
+  right: 5px;
+  bottom: 0px;
+  font-size: 13px;
+  color: red;
+}
+
+/* template-panel flex-box use at dialog-head*/
+
+.flex-box {
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /*space-around;*/
+  flex-wrap: wrap;
+}
+
+.flex-box .flex-item {
+  flex: 0 0 30%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 40px;
+}
+
+.flex-box .flex-item .icon {
+  flex: 0 0 20px;
+  padding-right: 8px;
+}
+
+.flex-box .flex-item .text {
+  flex: 2 0 auto;
+}
+
+.flex-box .view-box, .view-box {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-right: 10px;
+}
+/* 20200209 add for enroll 组件*/
+.ext-horiz-view .view-item .flex-box .checkbox-item{
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 40px;
+  /*width: 100%; 加上这个样式，那么一行一个选项*/ 
+}
+
+.flex-box .checkbox-item .multi-line{
+  flex: 1 1 100px;/* 可伸缩 */
+}
+/*line-clamp*/
+
+.flex-box .multitext {
+  height: 30px;
+  line-height: 30px;
+  color: #999;
+  font-size: 12px;
+}
+
+/*end of flex-box*/
+
+.required ::before {
+  content: '*';
+  color: red;
+}
+
+.oper-icon {
+  font-size: 25px;
+  font-weight: 500;
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+  display: inline-block;
+  color: white;
+  background: rgb(10, 126, 10);
+  border: 1px solid rgb(10, 126, 10);
+  border-radius: 50%;
+  text-align: center;
+  position: relative !important;
+  margin-right: 5px;
+}
+
+.minshow {
+  font-size: 18px;
+  font-weight: 200;
+  height: 14px;
+  line-height: 14px;
+  width: 14px;
+}

@@ -1,0 +1,86 @@
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<import src="../../../components/loading/loading.wxml" />
+<view class="top_btn" catchtap="goToPage" data-page='createShop'>
+  <text>点击新增店铺</text>
+</view>
+<view class='list' wx:if="{{inList.length>0}}" style="margin-top:0">
+  <block wx:for="{{inList}}" wx:key="_id">
+    <view class="ext-horiz-view" style="margin-top:0">
+      <view class="view-item">
+        <view class="row">
+          <view class='left' style="text-align:left;flex: 0 1 80px;">
+            <text class="iconfont {{userid==item.userid?'icon-kaidian':'icon-usercenter'}} " style="{{currshopid==item.shopid?'color:green;':''}}"></text>
+            <text class="t"></text>
+          </view>
+          <view class='right'>
+            <view class="flex-box" style="border-bottom:0px;">
+              <view class="view-box" hover-class="box-hover" data-index="{{index}}" catchtap="goToPage" data-page='createShop' data-params="shopid={{item.shopid}}">
+                <text class='simple-btn iconfont icon-edit'></text>
+                <text class="text">修改</text>
+              </view>
+              <view class="view-box" hover-class="box-hover" data-index="{{index}}" catchtap="goToPage" data-page="/pages/shopDetail/shopDetail" data-params="shopid={{item.shopid}}">
+                <text class="simple-btn iconfont icon-search"></text>
+                <text class="text">预览</text>
+              </view>
+              <view class="view-box" hover-class="box-hover" data-index="{{index}}" catchtap="goToPage" data-page="shopPic" data-params="shopid={{item.shopid}}&_id={{item._id}}&basedir={{item.basedir}}">
+                <text class='simple-btn iconfont icon-pic'></text>
+                <text class="text">上传</text>
+              </view>
+               <view class="view-box" hover-class="box-hover" data-index="{{index}}" catchtap="goToPage" data-page="shopCategory" data-params="shopid={{item.shopid}}&_id={{item._id}}">
+                <text  class='simple-btn iconfont icon-list'></text>
+                <text class="text">分类</text>
+              </view>
+              <view class="view-box" hover-class="box-hover" data-index="{{index}}" catchtap="delTogger">
+                <text class='simple-btn iconfont icon-closes'></text>
+                <text class="text">删除</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='item' hover-class="item-hover">
+      <view class='content'>
+        <view wx:if="{{frompage=='console'}}" class="oper-btn" bindtap="shopSelectTap" data-index="{{index}}">
+          <icon type="{{currshopid==item.shopid? 'success_circle':'circle'}}" size="30" data-index="{{index}}"></icon>
+        </view>
+        <view class="thumpnail">
+          <image src='{{item.picpath[0].fileID||item.picpath[1].fileID}}'></image>
+        </view>
+        <view class='text' data-index="{{index}}">
+          <view class='title'>
+            <text class="line-text">{{item.shopname}}</text>
+            <block wx:for="{{item.funclist}}" wx:key="code" wx:for-item="func">
+              <text class="flag {{func.code}}">{{func.name}}</text>
+            </block>
+          </view>
+          <view class='title2' wx:if="{{item.averagecost}}">
+            <text class="" wx:if="{{item.highopinion}}">{{item.highopinion}}条好评</text>
+            <text class="" wx:if="{{item.averagecost}}">消费:{{item.averagecost}}</text>
+          </view>
+          <view class='title2' wx:if="{{item.parameter.services}}">
+            <text class="block2" wx:for="{{item.parameter.services.value}}" wx:key="*this" wx:for-index="seq" wx:for-item="code" wx:if="{{seq<3}}">{{dictTrs.trs(dict[item.parameter.services.dictlist],code,1)}}</text>
+          </view>
+          <view class='spec' catchtap="openLocation" data-index="{{index}}">
+            <text class="iconfont icon-location2" style="padding-right:5px;"></text>
+            <text>{{item.address}}</text>
+          </view>
+          <view class='spec'>
+            {{item.summary}}
+          </view>
+          <view class='price'>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="loading-wrap">
+  <template is="loading" data="{{loadFinish:loadFinish,len:inList.length}}"></template>
+</view>
+
+<view class="">
+  <modaldialog id="modalDlg"></modaldialog> 
+</view>

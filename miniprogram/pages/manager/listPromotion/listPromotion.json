@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "modaldialog": "../../../components/modaldialog/modaldialog"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "活动维护"
+}

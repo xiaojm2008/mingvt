@@ -1,0 +1,62 @@
+<wxs module="substr" src="../../lib/substr.wxs"></wxs>
+<view class="list-top" wx:if="{{hasTop}}">
+  <view class="label">我的选购</view>
+  <view class="edit-btn" hidden="{{!saveHidden}}" bindtap="editCart">编辑</view>
+  <view class="edit-btn" hidden="{{saveHidden}}" bindtap="editCart">完成</view>
+</view>
+<scroll id="scroll" requesting="{{requesting}}" empty-show="{{false}}" end="{{loadFinish}}" refreshlock="{{refreshlock}}" list-count="{{listData.length}}" has-top="{{hasTop}}" refresh-size="88" bottom-size="100" color="{{color}}" bind:refresh="refresh" bind:more="more">
+  <view class="goodsList" wx:if='{{listData.length>0}}'>
+    <view class="a-gooods" wx:for="{{listData}}" wx:key="_id" wx:for-index="index">
+      <view class="a-goods-conts" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" style="{{item.left}}">
+        <view class="goods-info">
+          <view class="goods-check" bindtap="oneSelectTap" data-index="{{index}}">
+            <icon type="{{item.active? 'success_circle':'circle'}}" size="20" data-index="{{index}}"></icon>
+          </view>
+          <view class="img-box" catchtap="goGoods" data-goodsno="{{item.goodsno}}">
+            <image src="{{item.cover}}" class="img" />
+          </view>
+          <view class="text-box">
+            <view class="goods-title">{{item.goodsname}}</view>
+            <view class="goods-label">{{item.model_value||''}}</view>
+            <view class="goods-price">¥ {{item.price}}</view>
+            <block wx:if="{{!saveHidden}}">
+              <view class="buy-num">
+                <view class="jian-btn {{item.num==1? 'disabled' : ''}}" catchtap="decreaseBtnTap" data-index="{{index}}">-</view>
+                <input type="number" value="{{item.num}}" disabled/>
+                <view class="jia-btn {{item.num==99? 'disabled' : ''}}" catchtap="increaseBtnTap" data-index="{{index}}">+</view>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="buy-num">
+                <text style="font-size:13px;color:red">x{{item.num}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class="delete-btn" data-index="{{index}}" catchtap="delItem">
+          删除
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="no-goods" wx:elif="{{loadFinish}}">
+    <image style="width:108px;height:108px;" src="../../images/icon_cart.png"> </image>
+    <view class="title-box">
+      您的购物车空了～赶快去逛逛吧
+    </view>
+    <view class="to-index-btn" catchtap="goShoping">
+      去逛逛
+    </view>
+  </view>
+</scroll>
+<view class="bottom-box" wx:if='{{listData.length>0}}'>
+  <view class="left-price">
+    <view class="all-selected" catchtap="allSelectTap">
+      <icon type="{{allSelect ? 'success_circle':'circle'}}"></icon>
+      <text style="padding-left:5px;">全选</text>
+    </view>
+    <view class="total">合计：¥ {{substr.toFix(totalPrice)||0}}</view>
+  </view>
+  <view class="to-pay-btn {{noSelect?'no-select':''}}" hidden="{{!saveHidden}}" catchtap="toPayOrder">去结算</view>
+  <view class="to-pay-btn {{noSelect?'no-select':''}}" hidden="{{saveHidden}}" catchtap="deleteSelected">删除</view>
+</view>

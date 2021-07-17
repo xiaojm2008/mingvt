@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "modaldialog": "../modaldialog/modaldialog",
+    "share": "../share/share",
+    "comment": "../comment/comment"
+  }
+}

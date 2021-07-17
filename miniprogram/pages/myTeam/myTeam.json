@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "scroll": "../../components/scroll/scroll"
+  },
+  "navigationBarTitleText": "我的团队",
+  "backgroundColor": "#ccc"
+}

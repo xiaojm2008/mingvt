@@ -1,0 +1,33 @@
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<view class="list-top">
+  <view class="label">月度收入明细({{listData.length}})</view>
+  <view class="oper" catchtap="goRpt">
+    <text></text>
+    <text class="iconfont icon-rightarrow"></text>
+  </view>
+</view>
+<scroll requesting="{{requesting}}" end="{{loadFinish}}" scrolllock="{{false}}" refreshlock="{{false}}" empty-show="{{true}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="88" bind:refresh="refresh" bind:more="more">
+  <view class='list' wx:if="{{listData.length>0}}">
+    <view class="list-content">
+      <view class='item' wx:for="{{listData}}" wx:key="_id">
+        <view class='content'>
+           <view class='text'>
+            <view class='title'>
+              <text class="sub">{{item.statismonth}}</text> 
+              <text>商品数量:</text>
+              <text>{{item.goods_num}}</text>        
+              <text class="txt">订单数量:</text>
+              <text>{{item.order_num}}</text>                
+            </view>           
+            <view class='price'>
+              <text style="font-size:18px;">¥{{item.amt||0}}</text>
+            </view>        
+              <text>累计：</text>       
+              <text style="font-size:16px;">¥{{item.settleamt||0}}</text>               
+              <view class='spec' style="float:right;">{{ pipi.dFormat(item.settime) }}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll>

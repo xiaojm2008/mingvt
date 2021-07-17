@@ -1,0 +1,82 @@
+<import src="../loading/loading2.wxml" />
+<view wx:if="{{type=='icon'}}" class="{{extClass}}">
+  <text class="iconfont icon-search icon-input icon-input2" catchtap="showSrhDlg"></text>
+</view>
+<view wx:else class="ext-horiz-view {{extClass}}">
+  <view class="view-item" catchtap="showSrhDlg">
+    <view class="search-panel">
+      <input class="text-input" disabled type="text" placeholder="{{placeholder}}" />
+      <text class="iconfont icon-search icon-input"></text>
+    </view>
+  </view>
+</view>
+<view class="dialog-wrap" wx:if="{{showSrhDlg}}" catchtouchmove="dragMove" bindtouchstart='dragStart' bindtouchend='dragEnd'>
+  <view wx:if="{{offsetY>0}}" class="barTitle" style="height:{{offsetY-statusBarHeight+1}}px;line-height:{{offsetY-statusBarHeight+1}}px;padding-top:{{statusBarHeight}}px">
+    <text>查询</text>
+  </view>
+  <view class="dialog dialog2 bottom-pos" animation="{{animationData}}" style="height:{{windowHeight}}px;">
+    <view class="dialog-head {{extClass}}">
+      <view class="search-panel">
+        <input class="text-input" adjust-position="{{false}}" type="text" placeholder="{{placeholder}}" value="{{value}}" focus="{{focus}}"  bindinput="inputChange" /><!-- bindblur="inputBlur" bindfocus="inputFocus" -->
+        <text wx:if="{{value.length > 0}}" class="iconfont icon-clear icon-input" catchtap="clearInput"></text>
+        <text wx:else class="iconfont icon-search icon-input"></text>
+      </view>
+      <text class="return-text" catchtap="showSrhDlg">取消</text>
+    </view>
+    <scroll-view scroll-y="{{true}}" class="dialog-content" style="height:{{windowHeight-45}}px" lower-threshold="10" bindscrolltolower="{{catetype?'more':''}}" >
+      <view class="ext-horiz-view">
+        <block wx:for="{{result}}" wx:for-index="key" wx:for-item="item" wx:key="key">
+          <block wx:if="{{item.length>0 && (key==catetype||!catetype)}}">
+            <view class="view-item" data-key="{{key}}" catchtap="searchMore">
+              <view class="row title">
+                <text class="left">{{item[0].title}}</text>
+                <view class="right">
+                  <text wx:if="{{item[0].totalNum>0}}" class="txt1">更多内容({{item[0].totalNum}})</text>
+                  <text wx:else class="txt1">刷新</text>
+                  <text class="iconfont icon-rightarrow"></text>
+                </view>
+              </view>
+            </view>
+            <block wx:for="{{item}}" wx:for-index="index" wx:for-item="item2" wx:key="value">
+              <view class="view-item" data-key="{{key}}" data-index="{{index}}" catchtap="selectResult" hover-class="view-active">
+                <view class="row" style="align-items:flex-start">
+                  <view class="left image">
+                    <view class="img"><image wx:if="{{item2.img}}" src="{{item2.img}}"></image></view>
+                  </view>
+                  <view class="right">
+                    <text class="txt">{{item2.text}}</text>
+                    <text class="txt txt1">{{item2.ext}}</text>
+                  </view>
+                </view>
+              </view>
+            </block>         
+          </block>
+        </block>
+      </view>
+      <view wx:if="{{value}}">
+        <template is="loading" data="{{emptyShow:true,loadFinish:loadFinish,len:totalNum,finishText:'查询已完成'}}"></template>
+      </view>
+      <view wx:else>
+        <block wx:if="{{!catetype}}">
+          <view class="horiz-view">
+            <text class="srh-title">您可以搜索的内容</text>
+          </view>
+          <view class="horiz-view">     
+            <text class="srh-item" wx:for="{{cate}}" wx:key="*this" catchtap="{{item?'setSrhType':''}}" data-catetype="{{index}}">{{item}}</text>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="horiz-view">
+            <text class="srh-title">请输入您需要搜索的{{cate[catetype]}}</text>
+          </view>
+          <view class="horiz-view">
+            <text class="srh-item" catchtap="setSrhType" data-catetype="">点击搜索其他内容</text>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+    <!-- dialog-content 
+    <view class="dialog-bottom">    
+    </view>-->
+  </view>
+</view>

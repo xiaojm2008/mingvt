@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "scroll": "../../components/scroll/scroll"
+  },
+  "navigationBarBackgroundColor": "#FFC63C",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的购物车",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#ccc"
+}

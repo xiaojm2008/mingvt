@@ -1,0 +1,48 @@
+<wxs module="pipi" src="../../lib/pipi.wxs"></wxs>
+<wxs module="substr" src="../../lib/substr.wxs"></wxs>
+<view class="list-top">
+  <view class="label">成员信息({{listData.length}})</view>
+  <view class="oper" catchtap="refleshQR">
+    <text>扫码入团</text>
+    <text class="iconfont icon-rightarrow"></text>
+  </view>
+</view>
+<scroll requesting="{{requesting}}" end="{{loadFinish}}" scrolllock="{{false}}" refreshlock="{{false}}" empty-show="{{true}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="88" bind:refresh="refresh" bind:more="more">
+  <view class='list' wx:if="{{listData.length>0}}">
+    <view class="list-content">
+      <view class='item' wx:for="{{listData}}" wx:key="_id">
+        <navigator class='content' hover-class="none" url="/pages/joinTeam/joinTeam?scene={{item.invitation_code}}&show=1">
+          <image src='{{item.avatarurl}}'></image>
+          <view class='text'>
+            <view class='title'>
+              <text>{{item.username||item.nickname}}</text>
+              <text class="iconfont icon-phone" catchtap="callPhone" data-phone="{{item.phone}}" style="padding-left:5px;color:#999">{{item.phone}}</text>
+            </view>
+            <view class='spec'>{{ pipi.dFormat(item.settime) }}</view>
+            <view class='price'>
+              <text>¥{{item.total_amt||0}}</text>
+              <view style="float:right;font-size:13px;">{{item.level}}级</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</scroll>
+
+<view class="page-mask" hidden='{{qrHidden}}' catchtap="hiddenQR">
+  <view class="center-panel">
+    <view class='img-box'>
+      <image catchtap="previewImg" mode="scaleToFill" src='{{qrcode}}'></image>
+    </view>
+    <view class="panel-bottom">
+      <text>赶紧邀请会员扫描加入吧!</text>
+      <text bindtap='refleshQR' wx:if="{{userBenefit.invitation_expired}}">[{{pipi.dFormat(userBenefit.invitation_expired)}}]后过期</text>
+    </view>
+    <!-->
+    <view class="canvas-box">
+      <canvas style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas" />
+    </view>
+    -->
+  </view>
+</view>

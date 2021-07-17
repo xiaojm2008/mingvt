@@ -1,0 +1,289 @@
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+ <import src="../../../components/template/dodelivery/dodelivery.wxml" />
+<template name="subject">
+  <view class="subject-view">
+    <block wx:for="{{orderDetail.goods_info}}" wx:key="model_id">
+      <view class="row" wx:if="{{index<max}}" style="{{max==999?'height:78px;':''}}">
+        <view class='left'>
+          <image class="cover-thumb" style="{{max==999?'width:78px;height:78px;':''}}" wx:if="{{item.cover}}" src="{{item.cover}}"></image>
+          <view class="cover-text" wx:else>{{substr.subs(item.goodsname,1)}}</view>
+          <view class="subject-text">
+            <text class="text {{max==999?'':'line-clamp'}}">{{item.goodsname}}{{item.model_value?':'+item.model_value:''}}</text>
+            <text class="line-num text" style="">¥ {{item.price}}</text>
+            <view class="line-num text">
+              <text style="color:red;font-size:16px;font-weight:800;">{{item.num}}</text> 件</view>
+          </view>
+        </view>
+        <view class="right" catchtap="setGoodsActive" data-index="{{index}}" data-type="{{type}}">
+          <text class="iconfont {{item.active?'icon-ok':'icon-ok1'}}"></text>
+        </view>
+      </view>
+    </block>
+    <view class="row more" style="" catchtap="showDlg" data-type="goodsdetail" wx:if="{{orderDetail.goods_info.length > max}}" >
+      <view>
+        <text>更多</text><text style="color:red;font-size:17px;font-weight:800;">({{total_num}})</text>
+        <text class="iconfont icon-rightarrow"></text>
+        <text class="iconfont icon-rightarrow"></text>
+      </view>
+    </view>
+    <view class="row" wx:else>
+      <view class='left'>
+        <view class="sum">合计</view>
+        <view class="subject-text">     
+          <view class="line-num text">        
+            <text style="color:red;font-size:17px;font-weight:800;">{{total_num}}</text><text>(件)</text>
+          </view>
+        </view>
+      </view>
+      <view class="right">
+        <text class="iconfont {{gdsselected==orderDetail.goods_info.length?'icon-ok':'icon-ok1'}}"></text>
+      </view>
+    </view>
+    <view class="row" style="font-size:15px;color:red;text-align:left;" wx:if="{{orderDetail.remark}}">
+      <text>{{orderDetail.remark}}</text>
+    </view>
+  </view> 
+</template>
+
+<view class="fu-page">
+  <view class="top-btn">
+    <flowView flows="{{flows}}" id="myFlow" linear='true' bind:togger="switchFlow" itemWidth="{{itemWidth}}" toggerDisabled='{{false}}' activeIndex="{{activeIndex}}">
+    </flowView>
+  </view>
+  <view class="fu-content" wx:if="{{activeIndex == 0}}">
+    <view class="ext-horiz-view" style="margin-top:{{offsetTop}}rpx;margin-bottom:10px;">
+      <view class="view-item view-active" catchtap="chooseExpInfo">
+        <view class='left'>
+          <text class="sr send" style="background-color:{{expcompy.color}};">{{substr.subs(expcompy.name,1)}}</text>
+          <text class="subname">快递公司信息</text>
+          <text class="addrinfo addr_name">{{expcompy.name}}</text>
+          <text class="addrinfo">{{expcompy.shippercode}}</text>
+        </view>
+        <label class="right iconfont icon-rightarrow"></label>
+      </view>
+    </view>
+    <view class="ext-horiz-view">
+      <view class="view-item view-active" catchtap="chooseAddress">
+        <view class='left'>
+          <text class="sr send">寄</text>
+          <text class="subname">寄件人信息</text>
+          <text class="addrinfo addr_name">{{sender.address_info.name}}</text>
+          <text class="addrinfo">{{sender.address_info.contact}}</text>
+        </view>
+        <label class="right iconfont icon-rightarrow"></label>
+      </view>
+    </view>
+    <view class="panel-view" style="border-bottom:0;">
+      <view class="item-view" style="border-top:0;">
+        <text class="text line">{{sender.address_info.province.text}}{{sender.address_info.city.text}}{{sender.address_info.district.text}}</text>
+        <text class="text line">{{sender.address_info.detailaddress}}</text>
+      </view>
+    </view>
+    <view class="ext-horiz-view">
+      <view class="view-item view-active">
+        <view class='left'>
+          <text class="sr recv">收</text>
+          <text class="subname">收件人信息</text>
+          <text class="addrinfo addr_name">{{orderDetail.address_info.name}}</text>
+          <text class="addrinfo">{{orderDetail.address_info.contact}}</text>
+        </view>
+        <label class="right"></label>
+      </view>
+    </view>
+    <view class="panel-view" style="border-bottom:0;">
+      <view class="item-view" style="border-top:0;">
+        <text class="text line">{{orderDetail.address_info.province.text}}{{orderDetail.address_info.city.text}}{{orderDetail.address_info.district.text}}</text>
+        <text class="text line">{{orderDetail.address_info.detailaddress}}</text>
+      </view>
+    </view>
+    <view class="ext-horiz-view">
+      <view catchtap="showDlg" data-type="goodsdetail" class="view-item view-active">
+        <view class='left'>
+          <text class="subname">物品信息</text>
+        </view>
+        <view class="right">
+          <text>共</text><text style="font-size:17px;font-weight:800;"> {{total_num}} </text><text>件</text>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+    </view>
+    <view class="panel-view" style="border-bottom:0;">
+      <template is="subject" data="{{orderDetail:orderDetail,total_num:total_num,max:4,gdsselected:gdsselected,type:'goodsdetail'}}"></template>
+    </view>
+    <!--
+    <view class="panel-view">
+      <view class="item-view">
+        <block wx:for="{{orderDetail.goods_info}}" wx:key="goodsno" wx:if="{{index<6}}">
+          <view class="row">
+            <image src="{{item.cover}}" class="img"></image>
+            <text class="multitext" style="color:black;">{{item.goodsname}}{{item.model_value?':'+item.model_value:''}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    -->
+
+    <view class="ext-horiz-view">
+      <view class="view-item view-active" catchtap="showDlg" data-type="paramset">
+        <view class='left ext-left'>
+          <text class="item subname">物品重量(g)</text>
+          <text class="item">{{orderDetail.weight}}</text>
+          <text class="item subname">保价金额(元)</text>
+          <text class="item">{{orderDetail.insuredamt}}</text>
+        </view>
+        <view class="right">
+          <text>设置</text>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+    </view>
+    <!--
+    <view class="add-text">
+      <textarea bindinput="inputTogger" id="addService.name" value="{{ addService.name }}" cols='3' rows='4' placeholder="可以捎句话给快递小哥，例如：贵重物品，请带包装"></textarea>
+    </view>
+    -->
+    <view class="panel-view" style="margin-top:20px;border-bottom:0;">      
+      <multitext my-style="background-color: white; border-radius: 8px;margin: 8px;border: 1px solid #eee;padding:8px;" bind:togger="inputTogger" id="addService.name" value="{{addService.name}}" placeholder="可以捎句话给快递小哥，例如：贵重物品，请带包装"></multitext>       
+    </view>
+    <view class='summary'>
+      <text> 取件服务时间：9:00-17:00(超时次日服务) </text>
+    </view>
+  </view>
+  <view class="fu-content" wx:elif="{{activeIndex==1}}">   
+    <scroll id="scroll" requesting="{{requesting}}" empty-show="{{true}}" end="{{loadFinish}}" refreshlock="{{fasle}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="{{offsetTop}}" color="{{color}}" bind:refresh="refresh" bind:more="more">
+        <template is="dodelivery" data="{{listData:listData,options:options||''}}"></template>
+    </scroll>
+  </view>
+  <view class="fu-content" wx:elif="{{activeIndex == 2}}">
+  <!-- fresh-size:73px  bottom-size="{{}}" offset-top="{{offsetTop}}" 
+    <swiperlist refreshlock="{{true}}" lockflag="{{true}}" id="swiperlist" category="{{category}}" action="{{action}}" manager="manager" def-params="{{defParams}}" order-by="{{orderBy}}" temptype="dodelivery">
+    </swiperlist>-->
+    <scroll id="scroll" requesting="{{requesting}}" empty-show="{{true}}" end="{{loadFinish}}" refreshlock="{{fasle}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="{{offsetTop}}" color="{{color}}" bind:refresh="refresh" bind:more="more">
+        <template is="dodelivery" data="{{listData:listData,options:options||''}}"></template>
+    </scroll>
+  </view>
+   <view class="fu-content" wx:elif="{{activeIndex==3}}">   
+    <scroll id="scroll" requesting="{{requesting}}" empty-show="{{true}}" end="{{loadFinish}}" refreshlock="{{fasle}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="{{offsetTop}}" color="{{color}}" bind:refresh="refresh" bind:more="more">
+        <template is="dodelivery" data="{{listData:listData,options:options||''}}"></template>
+    </scroll>
+  </view>
+  <view class="fu-content" wx:elif="{{activeIndex==4}}">   
+    <scroll id="scroll" requesting="{{requesting}}" empty-show="{{true}}" end="{{loadFinish}}" refreshlock="{{fasle}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="{{offsetTop}}" color="{{color}}" bind:refresh="refresh" bind:more="more">
+        <template is="dodelivery" data="{{listData:listData,options:options||''}}"></template>
+    </scroll>
+  </view>
+  <view class="fu-bottom" wx:if="{{activeIndex<1}}">
+    <text class="btn one" bindtap="createLogistics">提交</text>
+    <!-- <text class="btn" bindtap="nextStep" data-page="waitPackage" data-params="">下一步</text>-->
+  </view>
+</view>
+
+<view class="dialog-wrap" wx:if="{{goodsdetail}}" data-type="goodsdetail" catchtouchmove="dragMove" bindtouchstart='dragStart' bindtouchend='dragEnd'>
+  <view class="dialog dialog2 bottom-pos" animation="{{animationData}}">
+    <view class="dialog-head dlghead">
+      <view class="subname">
+        <text>商品详细列表</text>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" class="dialog-content" style="height:{{logisinfoDlgHgh}}px;">
+      <view class="panel-view">
+        <template is="subject" data="{{orderDetail:orderDetail,total_num:total_num,max:999,gdsselected:gdsselected,type:'goodsdetail'}}"></template>
+      </view>
+    </scroll-view>
+    <!-- dialog-content -->
+    <view class="dialog-bottom">
+      <text class="btn one" catchtap="showDlg" data-type="goodsdetail" hover-class="btn-hover">确定</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="dialog-wrap" wx:if="{{paramset}}" data-type="paramset" catchtouchmove="dragMove" bindtouchstart='dragStart' bindtouchend='dragEnd'>
+  <view class="dialog dialog2 bottom-pos" animation="{{animationData}}">
+    <view class="dialog-head dlghead">
+      <view class="subname">
+        <text>保价设置</text>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" class="dialog-content" style="height:300px;">
+      <view class="ext-horiz-view">
+        <view class="view-item">
+          <text class="left subname">物品重量(Kg)</text>
+          <view class='right'>
+            <input class="text-input" type="digit" placeholder="请输入物品重量" id="orderDetail.weight" value="{{orderDetail.weight}}" bindinput="inputTogger"></input>
+          </view>
+        </view>
+        <view class="view-item">
+          <text class="left subname required">保价金额(元)</text>
+          <view class='right'>
+            <input class="text-input" type="digit" placeholder="请输入保价金额" id="orderDetail.insuredamt" value="{{orderDetail.insuredamt}}" bindinput="inputTogger"></input>
+          </view>
+        </view>
+           <view class="view-item">
+          <text class="left subname">包裹数量</text>
+          <view class='right'>
+            <input class="text-input" type="number" placeholder="请输入包裹数量" id="orderDetail.pack_num" value="{{orderDetail.pack_num}}" bindinput="inputTogger"></input>
+          </view>
+        </view>
+           <view class="view-item">
+          <text class="left subname">包裹体积(m³)</text>
+          <view class='right'>
+            <input class="text-input" type="digit" placeholder="请输入物品总体积" id="orderDetail.volumn" value="{{orderDetail.volumn}}" bindinput="inputTogger"></input>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <!-- dialog-content -->
+    <view class="dialog-bottom">
+      <text class="btn one" catchtap="showDlg" data-type="paramset" hover-class="btn-hover">确定</text>
+    </view>
+  </view>
+</view>
+
+<view class="dialog-wrap" wx:if="{{logisinfo}}" data-type="logisinfo" catchtouchmove="dragMove" bindtouchstart='dragStart' bindtouchend='dragEnd'>
+  <view class="dialog dialog2 bottom-pos" animation="{{animationData}}">
+    <view class="dialog-head" style="padding:0px;">
+      <text class="sr send" style="float:left">{{substr.subs(logisInfo[0].exp_name,1)}}</text>
+      <text class="addrinfo addr_name line-clamp" style="float:left;font-size:16px;margin-left:0px;">{{logisInfo[0].exp_name}}</text>
+      <block wx:if="{{logisInfo[0].status=='0'}}">
+        <block wx:if="{{logisInfo[0].retcode=='0000' && logisInfo[0].cancelflag=='0'}}">
+          <text>揽件等待中...</text>
+          <!-- pipi.diff(logisInfo[0].updatetime,2*60*60*1000,null,1) -->
+          <text style="color:red;font-size:25px;font-weight:800;margin:0 8px;">{{supetime}}</text>      
+          <text catchtap="cancelLogistics" data-orderid="{{logisInfo[0].order_id}}" class="cancel-text">取消预约</text>
+        </block>
+      </block>
+    </view>
+    <scroll-view scroll-y="true" class="dialog-content" style="height:{{logisinfoDlgHgh}}px;">
+      <view class="panel-view" style="border-bottom:0;">
+        <view class="item-view">
+          <view class="line">
+            <text class="sr send">寄</text>    
+            <text class="text" style="display:inline-block;">{{logisInfo[0].logisticsinfo.Sender.Name}}</text>
+             <text class="text" style="display:inline-block;margin-left:8px;">{{logisInfo[0].logisticsinfo.Sender.ProvinceName}}{{logisInfo[0].logisticsinfo.Sender.CityName}}{{logisInfo[0].logisticsinfo.Sender.ExpAreaName}}</text>
+          </view>         
+          <text class="text">{{logisInfo[0].logisticsinfo.Sender.Address}}</text>
+        </view>
+        <view class="item-view">
+          <view class="line">
+            <text class="sr recv">收</text>          
+            <text class="text" style="display:inline-block;">{{logisInfo[0].logisticsinfo.Receiver.Name}}</text>
+            <text class="text" style="margin-left:8px;display:inline-block;">{{logisInfo[0].logisticsinfo.Receiver.Mobile}}</text>
+          </view>
+          <text class="text line">{{logisInfo[0].logisticsinfo.Receiver.ProvinceName}}{{logisInfo[0].logisticsinfo.Receiver.CityName}}{{logisInfo[0].logisticsinfo.Receiver.ExpAreaName}}</text>
+          <text class="text line">{{logisInfo[0].logisticsinfo.Receiver.Address}}</text>
+        </view>
+        <view class="item-view">
+         <template is="subject" data="{{orderDetail:logisInfo[1],total_num:total_num,max:999,gdsselected:gdsselected,type:'logisinfo'}}"></template>
+        </view>
+      </view>
+    </scroll-view>
+    <!-- dialog-content -->
+    <view class="dialog-bottom">
+      <text class="btn one" catchtap="showDlg" data-type="logisinfo" hover-class="btn-hover">确定</text>
+    </view>
+  </view>
+</view>
+
+<modaldialog id="modalDlg"></modaldialog> 

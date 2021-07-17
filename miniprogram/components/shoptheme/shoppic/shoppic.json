@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabView": "../../tab/tab"
+  },
+  "navigationBarTitleText": "图片信息",
+  "backgroundColor": "#ccc",
+  "enablePullDownRefresh": true
+}

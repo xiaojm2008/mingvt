@@ -1,0 +1,60 @@
+//<wxs module="filter" src = "./numberToFixed.wxs" > </wxs>
+/*
+var orderStatus = {
+  '0': '待付款',
+  '1': '待发货',
+  '2': '待收货',
+  '3': '待评价',
+  '4': '退款审核中',
+  '5': '退款中',
+  '6': '已完成',
+  '7': '已关闭',
+  'c': '已取消'
+}*/
+var substr = {
+  subs: function (str, l, prefix) {
+    return str && str.length > l ? (str.slice(0, l) + (prefix ? "..." : '')) : str;
+  },
+  subs2: function (str,start,end) {
+    return str && str.length > start ? str.slice(start,end):str;
+  },
+  /*
+  subs3: function (str, s, l) {
+    var s = str;
+    if (!!str && str.length > l) {
+      s = l>0 ? str.slice(s, l):str.slice(s);
+    }
+    return s;
+  },*/
+  toFix: function (num, radio) {
+    if (num) {
+      return radio ? num.toFixed(radio) : num.toFixed(2);
+    }
+    return num;
+  },
+  /*
+  toDictName: function (dictList, key, code) {
+    return dictList[key][code] || "未知";
+  },
+  toOrderName: function (status) {
+    return orderStatus[status] || "未知";
+  },
+  toString: function (obj) {
+    return JSON.stringify(obj);
+  },
+  indexOf:function(s,t){
+    //console.log("*******"+s+"::"+t+"::" + (s && s.indexOf(t)>=0 ? true:false));
+    return s&&s.indexOf(t) >=0 ?true:false;
+  }*/
+};
+
+module.exports = {
+  /*
+  toString: toString,
+  indexOf: substr.indexOf,
+  toDictName: substr.toDictName,
+  toOrderName: substr.toOrderName,*/
+  subs2: substr.subs2,
+  subs: substr.subs,
+  toFix: substr.toFix
+}

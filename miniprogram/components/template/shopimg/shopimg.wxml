@@ -1,0 +1,8 @@
+<template name="shopimg">
+  <view class="shopcontent">
+    <view class="top_btn" bindtap="goShopPic" wx:if="{{options.upshow}}">
+      <text>点击上传</text>
+    </view>
+    <image wx:for="{{listData}}" wx:key="fileID" class="thumbnail" lazy-load="{{true}}" src="{{item.fileID}}" catchtap="oneSelectTap" data-index="{{index}}"></image>
+  </view>
+</template>

@@ -1,0 +1,42 @@
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<view class="item-header fixed-header" style="height:{{refreshsize}}rpx">
+  <view class="row pad5">
+    <text class="comment-label" catchtap="load" data-commenttype="4">有图 ({{ commentNums[4] || 0 }})</text>
+    <text class="comment-label" catchtap="load" data-commenttype="1">好评 ({{ commentNums[1] || 0 }})</text>
+    <text class="comment-label" catchtap="load" data-commenttype="3">中评 ({{ commentNums[3] || 0 }})</text>
+    <text class="comment-label" catchtap="load" data-commenttype="2">差评 ({{ commentNums[2] || 0 }})</text>
+  </view>
+</view>
+<scroll requesting="{{requesting}}" end="{{loadFinish}}" scrolllock="{{false}}" refreshlock="{{false}}" empty-show="{{true}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="{{refreshsize}}" bind:refresh="refresh" bind:more="more">
+  <view class="item-view">
+    <view class="row comment-item" wx:for="{{listData}}" wx:key="_id">
+      <view>
+        <image class="comment-user-photo" src="{{ item.user_img || commentUserImg }}"></image>
+        <text>{{ item.nickname }}</text>
+        <view class="comment-date pull-right">
+          {{ pipi.dFormat(item.settime)}}
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+      <view class="comment-goods">{{ item.goodsname||goodsInfo.goodsname}} {{item.model_value }}</view>
+      <view class="comment-content">{{ item.content||'此用户未填写评论' }}</view>
+      <view wx:if="{{  item.imgs && item.imgs.length>0 }}" class="comment-pics">
+        <image wx:for="{{ item.imgs }}" wx:for-item="img" src="{{ img }}" wx:for-index="imgidx" data-index="{{index}}" data-imgidx="{{imgidx}}" catchtap="showImages"></image>
+      </view>
+      <view class="comment-reply pull-right">
+        <view catchtap="showCommentDlg">
+          <label class="iconfont icon-comment_light"></label>
+          <text>评论</text>
+        </view>
+        <view catchtap="giveHumbsup">
+          <label class="iconfont icon-like"></label>
+          <text>{{item.humbsup||0}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{commentList.length==0}}">
+      <view class="comment-no">此商品未有评论</view>
+    </view>
+  </view>
+</scroll>
+<modaldialog id="modalDlg2"></modaldialog>

@@ -1,0 +1,78 @@
+
+.ctrl-area {
+  margin: 0;
+ /* border: 1px dashed #aaa;*/
+  box-sizing: border-box;
+  height: auto;
+  position: relative;
+  /*width: 100%; height:100%;margin:5px 0px 5px 0px;*/
+}
+
+.ctrl-area .tools-area {
+  display: flex;
+  flex:0 1 80px;
+  justify-content: flex-start;
+  align-items: center;
+  height: 28px;
+  background-color: rgba(0, 0, 0,0.3);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
+
+.ctrl-area .tools-area .tools-item {
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-right: 5px;
+}
+.ctrl-area .tools-area .tools-item .btn-title {
+  margin-left: 2px;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-closes:before {
+  content: "\e93c";
+}
+
+.icon-edit:before {
+  content: "\e622";
+}
+
+.icon-list:before {
+  content: "\e684";
+}
+
+.icon-app-xx:before {
+  content: "\e8b8";
+}
+.icon-downward2:before {
+  content: "\e951";
+}
+.icon-more:before {
+  content: "\e8f7";
+}
+.icon-more2:before {
+  content: "\e64c";
+}
+.icon-share:before {
+  content: "\e7e0";
+}
+.icon-up:before {
+  content: "\e956";
+}

@@ -1,0 +1,24 @@
+{
+  "type": "text",
+  "style": "background-color:rgba(0, 0, 0, 0);border-color:rgb(34, 34, 34);border-style:none;border-width:4.6875rpx;color:rgb(51, 51, 51);font-size:25.78125rpx;height:44.53125rpx;line-height:44.53125rpx;margin-left:auto;margin-top:0;opacity:1;text-align:left;position:absolute;left:65.625rpx;top:150rpx;margin-right:0;",
+  "content": "时尚购物",
+  "customFeature": {
+    "boxColor": "rgb(0, 0, 0)",
+    "boxR": "5",
+    "boxStyle": false,
+    "boxX": "0",
+    "boxY": "0",
+    "action": "inner-link",
+    "inner-page-link": "page10020"
+  },
+  "animations": [],
+  "compId": "data.content[4]",
+  "parentCompid": "free_vessel3",
+  "markColor": "",
+  "mode": 0,
+  "itemType": "text",
+  "itemParentType": "free-vessel",
+  "itemIndex": 4,
+  "eventParams": "{\"inner_page_link\":\"\\\/pages\\\/page10020\\\/page10020\",\"is_redirect\":0}",
+  "eventHandler": "tapInnerLinkHandler"
+}

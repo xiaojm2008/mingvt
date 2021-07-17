@@ -1,0 +1,183 @@
+{"_id":"0XEBwaH2XU2vbmr9ma4qO1iCyWJSLYeKbLErT8AtZLiRRPDk","ename":"Cyprus                  ","name":"塞浦路斯              ","code":"CY","no":357,"timezone":-6}
+{"_id":"0XmgOyrhlEKAVS0UaXMhsGTCV9XoxSpPcymtWJxQagZ43TDU","ename":"Suriname                ","name":"苏里南                ","code":"SR","no":597,"timezone":-11.3}
+{"_id":"19GtSBOVuJVbjQqWeR4QsH77XbUuUHcf8auAyeEcOKqMZfa8","ename":"Russia                  ","name":"俄罗斯                ","code":"RU","no":7,"timezone":5}
+{"_id":"1IEzm2IWX8iK7WNjZrev6IbvS3bRyvmQP2Na1WuBtIj12ZTq","ename":"Madagascar              ","name":"马达加斯加            ","code":"MG","no":261,"timezone":-5}
+{"_id":"1OlqzOkV5Jw4wctwDq169a8YYhSjJ17PukG0w4VNt6kiswl2","ename":"Hungary                 ","name":"匈牙利                ","code":"HU","no":36,"timezone":-7}
+{"_id":"1SFXMZH8zHt7HBfgeeE0dCm1KiaHfXt1hfVTCQdygNZC3QRb","ename":"Ghana                   ","name":"加纳                  ","code":"GH","no":233,"timezone":-8}
+{"_id":"1ohHoO6AMfjWFxR2TscEPVSmlk8UP5RRt8IuFGU9xGX1jsJJ","ename":"Burundi                 ","name":"布隆迪                ","code":"BI","no":257,"timezone":-6}
+{"_id":"1r74V1LAB6z6XfpL7kD9eM5LbA1p4pirm6pqdST2EazSrVQs","ename":"Namibia                 ","name":"纳米比亚              ","code":"NA","no":264,"timezone":-7}
+{"_id":"1vNd66VNvOoUNdjYwZhhXjjVeS07IbOGJylHI6i96y3LO89x","ename":"Greece                  ","name":"希腊                  ","code":"GR","no":30,"timezone":-6}
+{"_id":"22ZbV7uxoj4f88O6s3AQ8bzm9m8FSOuRjzPZKzqWTO59INTD","ename":"Fiji                    ","name":"斐济                  ","code":"FJ","no":679,"timezone":4}
+{"_id":"2RhWuqjj5maaEsSxVr03T15hnlACvkkfgaXF1OsFEI3VsykM","ename":"Slovenia                ","name":"斯洛文尼亚            ","code":"SI","no":386,"timezone":-7}
+{"_id":"2hHLfnwmFPPl14pVQyvG0WOvID3Hc80wuO9Nu78wz89OeICu","ename":"Maldives                ","name":"马尔代夫              ","code":"MV","no":960,"timezone":-7}
+{"_id":"38na165tzKZeQSbPK3WhdKv3MZRKWpYOc1kl3DnMFFZ80NjS","ename":"Australia               ","name":"澳大利亚              ","code":"AU","no":61,"timezone":2}
+{"_id":"3cLuQgjdrPBEO43f7c0QlcLBS8lX11SbIFIwM0M1FMuuDSlZ","ename":"Grenada                 ","name":"格林纳达              ","code":"GD","no":1809,"timezone":-14}
+{"_id":"44oQNLE6pWYee3eDBxn7VrFpFc3qQ0K12aQqzE7oy2cnSwqN","ename":"Poland                  ","name":"波兰                  ","code":"PL","no":48,"timezone":-7}
+{"_id":"4egmCwEFC48Z2uAHk4HeqsCXlBKC31KnKQPKqROnVQB3uqzM","ename":"Guatemala               ","name":"危地马拉              ","code":"GT","no":502,"timezone":-14}
+{"_id":"545HdJ9xECOvUHC521kho6WulroYvAK44jNUfDUKMpZR4iVH","ename":"Uruguay                 ","name":"乌拉圭                ","code":"UY","no":598,"timezone":-10.3}
+{"_id":"5FsnFiq2B0v4CsWft6VJvazGGJHDSUpOeWi5ruof5bEcS3ku","ename":"France                  ","name":"法国                  ","code":"FR","no":33,"timezone":-8}
+{"_id":"5Gerc8YZgPccKJ3VUZoMl4gYMyBTxeK93DZXnzNB7H3Vuw0V","ename":"Monaco                  ","name":"摩纳哥                ","code":"MC","no":377,"timezone":-7}
+{"_id":"6NgIGw5atQnvDglnRglZQ3SXiawokjJ9EXNmVOsMfSu773zi","ename":"St.Lucia                ","name":"圣卢西亚              ","code":"LC","no":1758,"timezone":-12}
+{"_id":"6SiFOZlFEPD6C82AqXeFMVEpreWV5wpbkdLRxoDi0eqgAxti","ename":"Guyana                  ","name":"圭亚那                ","code":"GY","no":592,"timezone":-11}
+{"_id":"6YEuWsDB6B6rr9llqCOsQLaeTAio9QeCmP8DxxgL4fguCy2u","ename":"Bermuda Is.             ","name":"百慕大群岛            ","code":"BM","no":1441,"timezone":-12}
+{"_id":"6tqvIJEogKEgqLbnuovJnOlv1I4i2fDsve06fzeI6oKl9MAJ","ename":"United Arab Emirates    ","name":"阿拉伯联合酋长国      ","code":"AE","no":971,"timezone":-4}
+{"_id":"7ahCuzF1CVB7brMnbXugZBc9SQH63tQEkRPn2LRdxobojeri","ename":"Uganda                  ","name":"乌干达                ","code":"UG","no":256,"timezone":-5}
+{"_id":"7vcCxFXtk1RS1M481BkLKHYMwOgNI7JkrelQ8uLaqLSgrEUg","ename":"Moldova, Republic of    ","name":"摩尔多瓦              ","code":"MD","no":373,"timezone":-5}
+{"_id":"81sIKPD8tXGQEK08QOcR8E7OvtcapGIiWoNkXJQ2FpQew75m","ename":"Iraq                    ","name":"伊拉克                ","code":"IQ","no":964,"timezone":-5}
+{"_id":"8O9xjkf0lIUs62Acw9PZlGGqar0dS0Ad169uRVSeso7vHSYw","ename":"French Polynesia        ","name":"法属玻利尼西亚        ","code":"PF","no":689,"timezone":3}
+{"_id":"8W5wrVAnOYbAbh4a5hv6T2YK29wNuFqtdNioEEOaMu1JDgVw","ename":"Zambia                  ","name":"赞比亚                ","code":"ZM","no":260,"timezone":-6}
+{"_id":"8zx6TbiulI805gSVXnsaoEd7sQW1b1snFnhnZYdapORMJxhj","ename":"Morocco                 ","name":"摩洛哥                ","code":"MA","no":212,"timezone":-6}
+{"_id":"9NMO5JTPYHK50DInrHHaYB6N6RjYkJVLUMWvSXO89trSDIuV","ename":"Japan                   ","name":"日本                  ","code":"JP","no":81,"timezone":1}
+{"_id":"9Q1ibXZn3szbPW3sI3HhqaAIlwGy61r2K5lbEydLC51p35lJ","ename":"Haiti                   ","name":"海地                  ","code":"HT","no":509,"timezone":-13}
+{"_id":"9eSGsiMlQTgYABMMPgPdWJ7LKLxRAzwqGIyRMnNp8M80gIc9","ename":"Central African Republic","name":"中非共和国            ","code":"CF","no":236,"timezone":-7}
+{"_id":"9oFCIZzN5eL5XkrYNJliRJ46OXdXPESB3DcoOCmwBNTX0MXU","ename":"Taiwan                  ","name":"台湾省                ","code":"TW","no":886,"timezone":0}
+{"_id":"ADUsQYUCUoqXthTuL5WVND9ZZKYQrmQw2ygjC38j8jDtBMZU","ename":"EI Salvador             ","name":"萨尔瓦多              ","code":"SV","no":503,"timezone":-14}
+{"_id":"AXq3UwZd5IBzyK2ueN2F3WUGEY2L9grhAEiPZ5EyAIGelq4v","ename":"Solomon Is              ","name":"所罗门群岛            ","code":"SB","no":677,"timezone":3}
+{"_id":"AaiT09PCO3FbRsBgfwc1qrJTm4uAW95TS1iv4NeiQcgfnetw","ename":"Sierra Leone            ","name":"塞拉利昂              ","code":"SL","no":232,"timezone":-8}
+{"_id":"ApIrmiz2mpKQuAhO2H43bJNNgfFJdz4fcUEDxHHdKyVK3jir","ename":"Philippines             ","name":"菲律宾                ","code":"PH","no":63,"timezone":0}
+{"_id":"AqWGISKMhZgFi8kf1E5zI9xaAXBqijfe4Vl0UzyqyuKLKDrY","ename":"Sao Tome and Principe   ","name":"圣多美和普林西比      ","code":"ST","no":239,"timezone":-8}
+{"_id":"BPsaZnKBp4XWBNnW56IPG6nC0GTPSKwzOVI4WVDwo6k5EMyR","ename":"Anguilla                ","name":"安圭拉岛              ","code":"AI","no":1264,"timezone":-12}
+{"_id":"BRGg2uneLs2BOXxBQdJfgQU9DGF7FsPH3v5ScJJSRjp0cTRJ","ename":"Burma                   ","name":"缅甸                  ","code":"MM","no":95,"timezone":-1.3}
+{"_id":"Bf5NFAB0SB6wyhaQaEpnGPsu0PzSwLcWWbBNxetZZNxZ2wbl","ename":"Argentina               ","name":"阿根廷                ","code":"AR","no":54,"timezone":-11}
+{"_id":"Bjq9J8X4cKPRgeArA0GMl1k5RRbNrm026ZHW44RtQWgcgmFx","ename":"Dominica Rep.           ","name":"多米尼加共和国        ","code":"DO","no":1890,"timezone":-13}
+{"_id":"BnUbOZhn9Y4aLUIXDvlkyHXCPDVE3yC34SCLwQ0Dw1u2iOCm","ename":"Mali                    ","name":"马里                  ","code":"ML","no":223,"timezone":-8}
+{"_id":"BqQurllghtqU5qdZP1qzZwBoW5DGgTuQ17WpJramAGKhRxok","ename":"Mauritius               ","name":"毛里求斯              ","code":"MU","no":230,"timezone":-4}
+{"_id":"CW0xr8kns4VkcjXdOdj7TPnBxz2Vzk1eJErdtueeJmy94T3q","ename":"Iran                    ","name":"伊朗                  ","code":"IR","no":98,"timezone":-4.3}
+{"_id":"DInV7YGqIHm93Vodo6BfwWRCJDtU21ccXurcp8IJYCQ4bxXv","ename":"Switzerland             ","name":"瑞士                  ","code":"CH","no":41,"timezone":-7}
+{"_id":"DwyaA9rmdBqfGHqqSJNROGRegVwJs9mevCmGC03cBnAS0Udd","ename":"Seychelles              ","name":"塞舌尔                ","code":"SC","no":248,"timezone":-4}
+{"_id":"EJCCGczJ4oZ1MwffUHlQi9rwe61z60N8REDnISG1UFHrVXEE","ename":"Malta                   ","name":"马耳他                ","code":"MT","no":356,"timezone":-7}
+{"_id":"EfyNmt4lGewPpo6O9UK1vHTY8HXW7CraXIiPrHVSRD5P1y4P","ename":"Panama                  ","name":"巴拿马                ","code":"PA","no":507,"timezone":-13}
+{"_id":"EkRVelVG80EHUudvgfnMkczbKOlKs3GUDc0LjUjN3rEAUAKR","ename":"Portugal                ","name":"葡萄牙                ","code":"PT","no":351,"timezone":-8}
+{"_id":"Evz26t9KC4A6nwYhoMVIwbogHVribw5AkXrjyC8of1nglw2u","ename":"Kuwait                  ","name":"科威特                ","code":"KW","no":965,"timezone":-5}
+{"_id":"F5zRCxZCJ2Xuzkk2qiJ9NRvAtOmfrg1gogbWbsw9djJ0d37S","ename":"Ecuador                 ","name":"厄瓜多尔              ","code":"EC","no":593,"timezone":-13}
+{"_id":"GM8EK6JSAMOgJty6aptQ2898PcLeAhOWyQJjlLE7JiC5VBZz","ename":"Thailand                ","name":"泰国                  ","code":"TH","no":66,"timezone":-1}
+{"_id":"GxUu4rJIuOO29UHJ0tJ5SgnSpB83Xdmtv9w0sM4mWQfJm9pI","ename":"Bahamas                 ","name":"巴哈马                ","code":"BS","no":1242,"timezone":-13}
+{"_id":"HFNJeZZQFR4Ww0x414rVSpWUAGURW148MpYs2VyC95c0ShnV","ename":"Albania                 ","name":"阿尔巴尼亚            ","code":"AL","no":355,"timezone":-7}
+{"_id":"HbKCmSsbD4MCpePhbjRwJ3sF9qn639aW18N36VRQjusioOeA","ename":"Luxembourg              ","name":"卢森堡                ","code":"LU","no":352,"timezone":-7}
+{"_id":"Hshq1Q39eIHKpCxdgvMc8EMcrdSLIFOWxPg6tOHxIFvFBreO","ename":"Afghanistan             ","name":"阿富汗                ","code":"AF","no":93,"timezone":0}
+{"_id":"I3wHM0EyClPvO6Hbhu65UlzmWbb8ieyGqLKXYNk1RdE8qKv4","ename":"Mexico                  ","name":"墨西哥                ","code":"MX","no":52,"timezone":-15}
+{"_id":"I6Vyq52JKVMfKHbCapoX6amvRPWYYkzxL1k9OrMXwN7pAHft","ename":"Finland                 ","name":"芬兰                  ","code":"FI","no":358,"timezone":-6}
+{"_id":"IDPdwWWkGeXThHSS5EJioeijs7M3O8L9JLr4Z6HEL75jAI0A","ename":"Norway                  ","name":"挪威                  ","code":"NO","no":47,"timezone":-7}
+{"_id":"IbPIRPZ4ImvgcSJIjjLPVM6YLurQDcSg6xgTPYwdo58EKH29","ename":"Djibouti                ","name":"吉布提                ","code":"DJ","no":253,"timezone":-5}
+{"_id":"JEAKeX7rMPprvHQvaNxX8vRRnXYR22LjhGTz9rdpxbjBCdLt","ename":"Lithuania               ","name":"立陶宛                ","code":"LT","no":370,"timezone":-5}
+{"_id":"JVBr83VVIYYp0N8ESN9dHrVgL3PS60WWlFWKLdJXppmXQCX7","ename":"Liechtenstein           ","name":"列支敦士登            ","code":"LI","no":423,"timezone":-7}
+{"_id":"JitycnJS0dyYCc0Qcq5BzuXXqMBF6qPTIqB10ABKV4IjXtHW","ename":"Andorra                 ","name":"安道尔共和国          ","code":"AD","no":376,"timezone":-8}
+{"_id":"JrLOMeOkZ1zemHQ2ao4FwT8JZqCEZVaa5eINKk3BogLFLZyM","ename":"Romania                 ","name":"罗马尼亚              ","code":"RO","no":40,"timezone":-6}
+{"_id":"Jxjxgi5Hu01EhWpX56JDUj38CeX7UkUGXiUN2V3vjN0EaLpE","ename":"Brazil                  ","name":"巴西                  ","code":"BR","no":55,"timezone":-11}
+{"_id":"KMUoM0NY44nGqvJPL6ZZRP0JpQ8yAJH4SXkaLe1e3y7DgWRs","ename":"Libya                   ","name":"利比亚                ","code":"LY","no":218,"timezone":-6}
+{"_id":"KMrkd2nApXh5YthMnrwlxVwVdIBvccmhjkmAeL3GMlrZNzv1","ename":"Belarus                 ","name":"白俄罗斯              ","code":"BY","no":375,"timezone":-6}
+{"_id":"KUjCoVeiFbKEuPYGTBp7MrF0Suyab4VLoedoYyKv9yvxiUAc","ename":"Chad                    ","name":"乍得                  ","code":"TD","no":235,"timezone":-7}
+{"_id":"KhEwUFQ5ZxBj42OCt3gJpvMnsOpuOln0KMq2DoxuNrw0Xfwd","ename":"Senegal                 ","name":"塞内加尔              ","code":"SN","no":221,"timezone":-8}
+{"_id":"Ko0C2vUnl89TXoqECJZUIqh5HKkuWGF42No3S76TdRTUykuf","ename":"Trinidad and Tobago     ","name":"特立尼达和多巴哥      ","code":"TT","no":1809,"timezone":-12}
+{"_id":"L6F6TLEGjEw50t45ulQR7IlfJ8ZGy7H6uv59A1As7uMTRq4T","ename":"Brunei                  ","name":"文莱                  ","code":"BN","no":673,"timezone":0}
+{"_id":"LYW9F6xFCzCYNH2BDAH08uxlQkMoW70yZNm2rQ2NtpZC1tA7","ename":"Yugoslavia              ","name":"南斯拉夫              ","code":"YU","no":381,"timezone":-7}
+{"_id":"LjKc4kr2S1fiqnuCBlUimbn6gwkWONFlrkd5C9XrYqFo3L8R","ename":"Lebanon                 ","name":"黎巴嫩                ","code":"LB","no":961,"timezone":-6}
+{"_id":"LjSNrXH82M4UiJYfVF332RU5uFvecPAEVNHUJYj32ki08ZiA","ename":"Nigeria                 ","name":"尼日利亚              ","code":"NG","no":234,"timezone":-7}
+{"_id":"LyyZGGoXHAevqjSz5aLXP9y8xg124kgoKdSAT8dvRVf8PCx8","ename":"Cameroon                ","name":"喀麦隆                ","code":"CM","no":237,"timezone":-7}
+{"_id":"N0Md9zBwxFF1iQ6pi4BROwBMxV2kX7pSXPHAgnhvAOHsH1T4","ename":"Gabon                   ","name":"加蓬                  ","code":"GA","no":241,"timezone":-7}
+{"_id":"N6nQSUQlPn8tQ5tl7i8mOrgCNZh1QjKaXrixi3G1qjcITc6v","ename":"Mongolia                ","name":"蒙古                  ","code":"MN","no":976,"timezone":0}
+{"_id":"Ndr0PwdV5nArFaE8SNcCFDLXSqkf9Q8QS97FQOcVhMHd6QKo","ename":"Costa Rica              ","name":"哥斯达黎加            ","code":"CR","no":506,"timezone":-14}
+{"_id":"NfXDgOi07k4ALO1C0UKASBxlFGgXcKquoQimcare2vLNqdFZ","ename":"Antigua and Barbuda     ","name":"安提瓜和巴布达        ","code":"AG","no":1268,"timezone":-12}
+{"_id":"OKcbmAGpmonyl3a6Ampxjwfh08Ikg5srMIWS5IQqsqzU7TNa","ename":"Denmark                 ","name":"丹麦                  ","code":"DK","no":45,"timezone":-7}
+{"_id":"OZ2aEXH9qC5tmJysQpXG2L3LeD6leAz6GpcAI52DeWo3ZO8B","ename":"Israel                  ","name":"以色列                ","code":"IL","no":972,"timezone":-6}
+{"_id":"ObuEwG33IzTFgWjStsamQlwdZ0v0BOlcwJODvP5e3B3fR1jq","ename":"Sudan                   ","name":"苏丹                  ","code":"SD","no":249,"timezone":-6}
+{"_id":"Odb35eriCZsy2RSqeSNZBcaJru50NFUdhmhi5CGVTwRIES7y","ename":"Swaziland               ","name":"斯威士兰              ","code":"SZ","no":268,"timezone":-6}
+{"_id":"Opiw6OUyHHV4eIfheMrL2HmRFmt0c7lZ9rfT7t7DwpW6Il8Q","ename":"Syria                   ","name":"叙利亚                ","code":"SY","no":963,"timezone":-6}
+{"_id":"Oz02WnWtF6nGMKT34JkoXUFaxa3UOxzIsBjpxdYjzVZa7BHd","ename":"United Kiongdom         ","name":"英国                  ","code":"GB","no":44,"timezone":-8}
+{"_id":"P3ZBLvdwbd97ML1ja12H3HVdd0Co5eWBreCxBH8ZOTzVbu6g","ename":"Saint Vincent           ","name":"圣文森特岛            ","code":"VC","no":1784,"timezone":-12}
+{"_id":"PXkpOR24kTpdBj5eQSlnSqzn21SnnETde2DAlAgyIWAGgV0s","ename":"Egypt                   ","name":"埃及                  ","code":"EG","no":20,"timezone":-6}
+{"_id":"PsBPQ0DJFdHXPslXBVX0cLcOGcW0aNuI6yxWD25z7m3Vm1oQ","ename":"Algeria                 ","name":"阿尔及利亚            ","code":"DZ","no":213,"timezone":-8}
+{"_id":"QMqpEt3oyar8cgdiElVPzcB25PwnmtXVx3J0Vd81yn5KkvvR","ename":"Guam                    ","name":"关岛                  ","code":"GU","no":1671,"timezone":2}
+{"_id":"QNUmxBWOc4i7HprQjeCmJk1gIAYLJX3MJxSCJBK56d3mBpqA","ename":"Laos                    ","name":"老挝                  ","code":"LA","no":856,"timezone":-1}
+{"_id":"Qu1qJh4jFQloUWVxofXy09J2dwwDgHxCgvzjyvLlodQO6zYo","ename":"Turkmenistan            ","name":"土库曼斯坦            ","code":"TM","no":993,"timezone":-5}
+{"_id":"RJKYFSPijiPB6DtFZhlgFSw9cRFRdUVEzwajpMgISe6DtdgR","ename":"Cook Is.                ","name":"库克群岛              ","code":"CK","no":682,"timezone":-18.3}
+{"_id":"S2hEGMXpNtMAdpWVpatj2JffWizSpC9Sfh1aXxP7QTmHWjua","ename":"Nepal                   ","name":"尼泊尔                ","code":"NP","no":977,"timezone":-2.3}
+{"_id":"SU1BpgLr2rbyEhqsJwh6ufM1Oj3ts9CSBlhX3Z5x76JOnM3e","ename":"Latvia                  ","name":"拉脱维亚              ","code":"LV","no":371,"timezone":-5}
+{"_id":"SXvAUxykdV2LmAyfhjy2YEmW6lqDmlQGQodDKyOCVjNzD7uY","ename":"Congo                   ","name":"刚果                  ","code":"CG","no":242,"timezone":-7}
+{"_id":"Sgg7bYV74q9ry18Eosecw0EUVcmLUFERELhhVxfYXs1LCNKJ","ename":"Venezuela               ","name":"委内瑞拉              ","code":"VE","no":58,"timezone":-12.3}
+{"_id":"Srh7bJifr1pNE00W8p5JtMFEMghvfi4nmMCgDhzsmU8x2Mbn","ename":"Iceland                 ","name":"冰岛                  ","code":"IS","no":354,"timezone":-9}
+{"_id":"TVamLoou0cage093PdYOWKXLWY85Ehq3euzl2pGG1Pvu35dG","ename":"Bahrain                 ","name":"巴林                  ","code":"BH","no":973,"timezone":-5}
+{"_id":"UwMxGBhEHkjERyf0PBC6Eb8cdzc16aNXYxlIuaQm6nbyhRkn","ename":"Estonia                 ","name":"爱沙尼亚              ","code":"EE","no":372,"timezone":-5}
+{"_id":"Uz37BzeM0pW1IaF3Jr3Y3uw0yBU8RcVLKqsh4hPKtZPFDi9E","ename":"Chile                   ","name":"智利                  ","code":"CL","no":56,"timezone":-13}
+{"_id":"V3AeKPdpRKBPGmCo3QroMF3zUTWMPAmSSnBI7n2Pdz6vchgN","ename":"Paraguay                ","name":"巴拉圭                ","code":"PY","no":595,"timezone":-12}
+{"_id":"VTEJEVqyq8YWsncKPnF05YYJoIMScB4LmiQVuBdEx57spZkk","ename":"Kyrgyzstan              ","name":"吉尔吉斯坦            ","code":"KG","no":331,"timezone":-5}
+{"_id":"VWkl82ryZOhgy83V9iORI6aDh0EE3NEHXJ6BohZQbYVohYe7","ename":"Bangladesh              ","name":"孟加拉国              ","code":"BD","no":880,"timezone":-2}
+{"_id":"Vg9bQMTViUghvd8VmTzxlXnhKspNjfXa3tnydb7nrgQFmPUI","ename":"Papua New Cuinea        ","name":"巴布亚新几内亚        ","code":"PG","no":675,"timezone":2}
+{"_id":"VhwsIrCT18Y0dXqzNh8yY1xcQQGPzzyJT0BNt1CJpnqUfP8A","ename":"Slovakia                ","name":"斯洛伐克              ","code":"SK","no":421,"timezone":-7}
+{"_id":"WPYl5N3yxJqm9U4yX287ztk95HYli0hfbXZcW3W9PAMun08j","ename":"Canada                  ","name":"加拿大                ","code":"CA","no":1,"timezone":13}
+{"_id":"Wo5wD8BMDlGiOy65X7aY5ka7JcVGmYkjlFz8kJ7eV5GLx4eJ","ename":"Turkey                  ","name":"土耳其                ","code":"TR","no":90,"timezone":-6}
+{"_id":"XGlAsn04ZtYmlqRPkkFtcyV5HB0oz4hEieUpUWBh3nV8Ix8O","ename":"Bulgaria                ","name":"保加利亚              ","code":"BG","no":359,"timezone":-6}
+{"_id":"Yj9kukWylJT5uDIrdEdfZTjSV9BFdTDwiwWtykep69WBWnsh","ename":"French Guiana           ","name":"法属圭亚那            ","code":"GF","no":594,"timezone":-12}
+{"_id":"Yu2wmxD77lfzYAZTwcKisjcHU19BnczyybzxlBZGYxEQ9fX9","ename":"North Korea             ","name":"朝鲜                  ","code":"KP","no":850,"timezone":1}
+{"_id":"Z6PrMgjNZBGOOQP79Bzzjzk4BSGlNtANWL3UL2Jd7RbhiyQC","ename":"Tunisia                 ","name":"突尼斯                ","code":"TN","no":216,"timezone":-7}
+{"_id":"ZF8SYUZEdn7sHMjNlivW33M1fmpgRNH9UG0Miz5fsgGA3S6y","ename":"Malaysia                ","name":"马来西亚              ","code":"MY","no":60,"timezone":-0.5}
+{"_id":"ZGvubfTxHE1xeGu1XTv4f50pmxJw9D6y77DtJpJgDmG3pUnq","ename":"Georgia                 ","name":"格鲁吉亚              ","code":"GE","no":995,"timezone":0}
+{"_id":"ZLs94qmBmoE9OTsWHIpDzyx54uRALr3glK5GikRYKPJI2G6M","ename":"New Zealand             ","name":"新西兰                ","code":"NZ","no":64,"timezone":4}
+{"_id":"adqC0wX5r83WCMs1n2pDRe8iKdfcbjcuF1YEcUTS5XLIZiwR","ename":"Oman                    ","name":"阿曼                  ","code":"OM","no":968,"timezone":-4}
+{"_id":"b2ve6s9kQYEYE4AYUY8umbRCREzwoqXBI0wi2dzTzcivp3mY","ename":"Bolivia                 ","name":"玻利维亚              ","code":"BO","no":591,"timezone":-12}
+{"_id":"bD9RqpXNAOjbEofd971cn6oGq6Loyv2uOpOTjUFo3lUpllVi","ename":"Azerbaijan              ","name":"阿塞拜疆              ","code":"AZ","no":994,"timezone":-5}
+{"_id":"bXngG7q3wmscRxpggPMJ75d9kjzMuyp9wsxLNot85qFIe4xC","ename":"St.Vincent              ","name":"圣文森特              ","code":"VC","no":1784,"timezone":-12}
+{"_id":"boLFEwLYzTky51abH9u47uqyiCZzyRwLxrjFQUXvmxcRf6Yr","ename":"Lesotho                 ","name":"莱索托                ","code":"LS","no":266,"timezone":-6}
+{"_id":"cK7oJdWS06eT8hz3gbFtE24WIXC5J46EcPOFQ5CS6TQd0roK","ename":"Guinea                  ","name":"几内亚                ","code":"GN","no":224,"timezone":-8}
+{"_id":"cOMnuGXeKlZIyHDhi7fVLqOszsSDGP94MPlj6VhlQwr4JZTe","ename":"Czech Republic          ","name":"捷克                  ","code":"CZ","no":420,"timezone":-7}
+{"_id":"cUpdb3X8CufU6jMxbbtpbiX80QNA5RIldVXHek6WjHIwnbnz","ename":"Macao                   ","name":"澳门                  ","code":"MO","no":853,"timezone":0}
+{"_id":"ceDU06P2pVxkn8fLO7rkXktEo122EHa0MRTQXpdn6xnkZlDd","ename":"Burkina-faso            ","name":"布基纳法索            ","code":"BF","no":226,"timezone":-8}
+{"_id":"cliseHR5wm2UFbIHCHmgb9jgZ9N9L5dU0GU2pNrBlsWkalzY","ename":"Benin                   ","name":"贝宁                  ","code":"BJ","no":229,"timezone":-7}
+{"_id":"czvfwrXWLuoJlJI8ajMf4bMsL5nyTAmVlHIMI2joz1QzRQ2v","ename":"Somali                  ","name":"索马里                ","code":"SO","no":252,"timezone":-5}
+{"_id":"d0EpMqeYXxupNRyTiaJcZ0ejvNXnfqMpfW0PPE2STDNQjIHB","ename":"Jamaica                 ","name":"牙买加                ","code":"JM","no":1876,"timezone":-12}
+{"_id":"db0iTj1GsRNE04w1bwhO1NLzuF1cJLGFZOPwzd5zfGVDCb2A","ename":"Puerto Rico             ","name":"波多黎各              ","code":"PR","no":1787,"timezone":-12}
+{"_id":"deW2MZXZuZ2flejImJCtd0Z42YMVOHRHChrNxOgcIgEbbgFo","ename":"Pakistan                ","name":"巴基斯坦              ","code":"PK","no":92,"timezone":-2.3}
+{"_id":"dsQCEwnUAJSq8ZHawdDd0XQ9aZaKl4nOuMNetUj5YjdXWDa1","ename":"Niger                   ","name":"尼日尔                ","code":"NE","no":227,"timezone":-8}
+{"_id":"eP6gSqBYkU4ZgCqF1y6NDHG9sYYS09SutCUyamoP3459NYM8","ename":"Ireland                 ","name":"爱尔兰                ","code":"IE","no":353,"timezone":-4.3}
+{"_id":"ePDEZoqGn033n0vAm6q0NPexMZ3YUDLHnLN5UYizlgHBX0xV","ename":"Korea                   ","name":"韩国                  ","code":"KR","no":82,"timezone":1}
+{"_id":"emRe8ld4vFU5V2s3D5SgqKIaGv7JUulcP0DGYjSn0eNpIRys","ename":"Armenia                 ","name":"亚美尼亚              ","code":"AM","no":374,"timezone":-6}
+{"_id":"enhPqDbHlooZb7wuv3Aop8JKFEyZV4UpwEQDwj9xL8p9px6L","ename":"China                   ","name":"中国                  ","code":"CN","no":86,"timezone":0}
+{"_id":"eqRrYdcOgvbD09vbsyysxIfbiFgRMtUZytNUbtAOtYDIVnw4","ename":"Hongkong                ","name":"香港                  ","code":"HK","no":852,"timezone":0}
+{"_id":"f5RhSuWpUspBUS6pHMB5uCMre4I1WKfDpXZBMp6friqeusBY","ename":"Tajikstan               ","name":"塔吉克斯坦            ","code":"TJ","no":992,"timezone":-5}
+{"_id":"f7EU7Dg2a7YBpD5YcPsxQzvTw4i6Nh6PWnrfOFqLRVjaZaZ1","ename":"Kenya                   ","name":"肯尼亚                ","code":"KE","no":254,"timezone":-5}
+{"_id":"fSzlTmYwwEogmhDHghIeTCoE4slBRRiBRP8rRmwanNXIwvnm","ename":"San Marino              ","name":"圣马力诺              ","code":"SM","no":378,"timezone":-7}
+{"_id":"gQ10agX166qIZRHFway8Tssk9b5PTANpPnV98wIlTh4hbgXl","ename":"Honduras                ","name":"洪都拉斯              ","code":"HN","no":504,"timezone":-14}
+{"_id":"gTDaC9LZ3aZUAWxB8b6jOidK55HaiYiSWm91D7JjyJ1WJrI1","ename":"Nauru                   ","name":"瑙鲁                  ","code":"NR","no":674,"timezone":4}
+{"_id":"hCrHmXklSsC78s8pTmDT04cb9VQJUTwAy4NIp3h4zsTARq0q","ename":"India                   ","name":"印度                  ","code":"IN","no":91,"timezone":-2.3}
+{"_id":"hXhqZfWATzUDiUFkzf01u9WsiFWTP0W6vQ5EuNrsMfB6HT3A","ename":"Qatar                   ","name":"卡塔尔                ","code":"QA","no":974,"timezone":-5}
+{"_id":"hpARE5eaw2KPmaxxsqr1ZukNqRe9Xe7XkVDQyPipESpSydTD","ename":"Netherlands             ","name":"荷兰                  ","code":"NL","no":31,"timezone":-7}
+{"_id":"iQHws7gxP5WnBgtaXtq9amcycs0Qtda8f6Wt05kpaLIv6MXP","ename":"Zimbabwe                ","name":"津巴布韦              ","code":"ZW","no":263,"timezone":-6}
+{"_id":"iS0fgu5MdrrbLCHZJUDlwtfM59s6qJ2YO9CIxLkIPpfrXq2j","ename":"Indonesia               ","name":"印度尼西亚            ","code":"ID","no":62,"timezone":-0.3}
+{"_id":"iS9yphtLJxERcAFGSpGf0uY8uPbJwz5U05avgYiqu0uMqqOm","ename":"Ethiopia                ","name":"埃塞俄比亚            ","code":"ET","no":251,"timezone":-5}
+{"_id":"jAc7dWl4JsCDbDVEb21yXMBCWxVVOriIfVZfPZUB4XgsFlbB","ename":"Italy                   ","name":"意大利                ","code":"IT","no":39,"timezone":-7}
+{"_id":"jMhrFlB8utSPoCZHTkypovbcdSVfxuwAlVv5CXL7emDnRcVZ","ename":"Gambia                  ","name":"冈比亚                ","code":"GM","no":220,"timezone":-8}
+{"_id":"jzG1gceo91BGiT7GvFTdBhTv6T159pHdCeJPWzdXaFo9VY5O","ename":"Kampuchea (Cambodia )   ","name":"柬埔寨                ","code":"KH","no":855,"timezone":-1}
+{"_id":"kbY5G6ttNfVgi6m8R644SXdGVEPcq9mRJiYV0isacHpQgVbB","ename":"Singapore               ","name":"新加坡                ","code":"SG","no":65,"timezone":0.3}
+{"_id":"kmm4sGaI9UzE6WSuikqaSgn2XKJ9CtdGqweeY4LLD4yc2rmN","ename":"Germany                 ","name":"德国                  ","code":"DE","no":49,"timezone":-7}
+{"_id":"m1xQa8nyWtzs6CHyFfRU6IYk5QwWJMC2ive20bE1stWXltuf","ename":"Sweden                  ","name":"瑞典                  ","code":"SE","no":46,"timezone":-7}
+{"_id":"mv9HY9fj3Y1gsgaHUc12SPpZtGdCARWn7URl8xCWYYSPb1V0","ename":"Liberia                 ","name":"利比里亚              ","code":"LR","no":231,"timezone":-8}
+{"_id":"nY1XRTfVgzkwKxqQcJl89eL4y4y1SVMWU1d7mUtV7SnPutPc","ename":"Tanzania                ","name":"坦桑尼亚              ","code":"TZ","no":255,"timezone":-5}
+{"_id":"nZM53SN2gWjs1FyNY49z3kOizilbnAiRRsoZhJYSqOKphKvO","ename":"United States of America","name":"  美国                ","code":"US","no":1,"timezone":13}
+{"_id":"of4UlRl0LMW4ehtGkAJ2E9x5tsTHCwRRWkJCIyyabpaFXxqE","ename":"Saudi Arabia            ","name":"沙特阿拉伯            ","code":"SA","no":966,"timezone":-5}
+{"_id":"ojITZ39cecxPe9EIOSg1GBLNe6rZhi4rxbHS1U9S154D3xR7","ename":"Mozambique              ","name":"莫桑比克              ","code":"MZ","no":258,"timezone":-6}
+{"_id":"olhvIWWhgVLN1mNK7cnMBZmBeRLvwQ2CbxfICnxn4Z60fjJF","ename":"Montserrat Is           ","name":"蒙特塞拉特岛          ","code":"MS","no":1664,"timezone":-12}
+{"_id":"pWx2XYFy8WKsmFIYRJrI8P068c25ZB0gE6Q0lN1JW7OjurK1","ename":"South Africa            ","name":"南非                  ","code":"ZA","no":27,"timezone":-6}
+{"_id":"pwWjTBYgbUD7tNG65TQgALo1SAzbZYH0cfYC2FlAW00AYeu0","ename":"Malawi                  ","name":"马拉维                ","code":"MW","no":265,"timezone":-6}
+{"_id":"q8Iel7lRzcBE7VjSRTiiOh7TfqnFBSXG4dQ6VOxGGt331zmr","ename":"Botswana                ","name":"博茨瓦纳              ","code":"BW","no":267,"timezone":-6}
+{"_id":"qSr9Ki0I4AHwI7yZDpg342QqWz2wpHtH7M8D4Jf5GPVmyUB9","ename":"Kazakstan               ","name":"哈萨克斯坦            ","code":"KZ","no":327,"timezone":-5}
+{"_id":"r0J49Gai1nRbkBkwgAkDGEqSemPHbSk3ALhiukiU1aSI8HCI","ename":"Zaire                   ","name":"扎伊尔                ","code":"ZR","no":243,"timezone":-7}
+{"_id":"rYKbMBygP7b3t53iYuQhZ4CqGS9CGIi5LdqM7BTUk5haNunU","ename":"Cuba                    ","name":"古巴                  ","code":"CU","no":53,"timezone":-13}
+{"_id":"rqOD0NEjEh1tMOiRY9MDKx5oxQjSgKgjsFX50MCIOvUc2URp","ename":"Tonga                   ","name":"汤加                  ","code":"TO","no":676,"timezone":4}
+{"_id":"s3LWxCNMI6PauWqJzJMduk0Q0FAUPvcycd1yazynuQTn6MpS","ename":"Togo                    ","name":"多哥                  ","code":"TG","no":228,"timezone":-8}
+{"_id":"sIAfuKDXmoAOlGnQiT1qmtr4o583aM1p0epwhLy2lQ3iSqVX","ename":"Jordan                  ","name":"约旦                  ","code":"JO","no":962,"timezone":-6}
+{"_id":"srSuC7rur6GY1npCpxLwQZCM3GV2fzdpx2D2ApDouyBuSPgw","ename":"Saint Lueia             ","name":"圣卢西亚              ","code":"LC","no":1758,"timezone":-12}
+{"_id":"swD4KG9r28zbFAfOvUeIFsHLA1AJKmzeTF7LGyUJhMOGU9uZ","ename":"Ukraine                 ","name":"乌克兰                ","code":"UA","no":380,"timezone":-5}
+{"_id":"trdgdY353Ic05PbQ7w1sPxMMJWbGGwauVKaGEvDotqPmtdKE","ename":"Vietnam                 ","name":"越南                  ","code":"VN","no":84,"timezone":-1}
+{"_id":"u4SUva1KjslMlovToCmHODTnssbsm8RtoKEWIg3M6x14JI6d","ename":"Barbados                ","name":"巴巴多斯              ","code":"BB","no":1246,"timezone":-12}
+{"_id":"uDqW1yXf3Fw7MsEo4xM5Geyt3fyM2aGjWfglwbrwWUwCLY2r","ename":"Spain                   ","name":"西班牙                ","code":"ES","no":34,"timezone":-8}
+{"_id":"uWsRNhHZdWkdFKIrbdfxcBSDcXqVCVqc8TtjZiE0EQVuNpJC","ename":"Austria                 ","name":"奥地利                ","code":"AT","no":43,"timezone":-7}
+{"_id":"uxvdkES59E6EIYvHFDfNspN3zfqj5Fk7HxkhzXbkL3dY7IJd","ename":"Uzbekistan              ","name":"乌兹别克斯坦          ","code":"UZ","no":233,"timezone":-5}
+{"_id":"uyJCt9qVbdgtUxiHfhZsoF5zklSoTKH8U7BRAyyHJrCQ3M82","ename":"Yemen                   ","name":"也门                  ","code":"YE","no":967,"timezone":-5}
+{"_id":"vVLBZlO2cLdWuVGM1lwKpcuMoknMQuE4lszR5cm5iM5xSshz","ename":"Angola                  ","name":"安哥拉                ","code":"AO","no":244,"timezone":-7}
+{"_id":"vYQtlMYWaowrO6GEsZpcpDyN3P7lcNBsEIa3Z0gJUMsapOWW","ename":"Nicaragua               ","name":"尼加拉瓜              ","code":"NI","no":505,"timezone":-14}
+{"_id":"w0bpLPsGgh5fqrfcqrufZqC8rf9JKFlGt283NCIJWzKccJiP","ename":"Colombia                ","name":"哥伦比亚              ","code":"CO","no":57,"timezone":0}
+{"_id":"wbJc7Jb08AbG7dAa04HDH75OZarvo8Gpy6FOHgnajBe60SgW","ename":"Belize                  ","name":"伯利兹                ","code":"BZ","no":501,"timezone":-14}
+{"_id":"xfCpGoOj6RVFo4pI2QaQ47BfNw8VgGnGWjMsLF13bZSQ2wgp","ename":"Sri Lanka               ","name":"斯里兰卡              ","code":"LK","no":94,"timezone":0}
+{"_id":"yDGhxoHxLhC7smjM2sctbcXWOgCzFJmep7mz2CI4SaSGz1f1","ename":"Gibraltar               ","name":"直布罗陀              ","code":"GI","no":350,"timezone":-8}
+{"_id":"zB2iuvxuigwg9yil3KAUw1qce1aD2xn5gx9lJqhye3ZitzNO","ename":"Peru                    ","name":"秘鲁                  ","code":"PE","no":51,"timezone":-13}
+{"_id":"ztnMl5Yr1usEgmkgQ6RgPmN2hlMX2u5iyowIdXGKL3L0nje0","ename":"Belgium                 ","name":"比利时                ","code":"BE","no":32,"timezone":-7}

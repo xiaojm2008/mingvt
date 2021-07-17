@@ -1,0 +1,131 @@
+
+.item-header{
+  box-sizing: border-box;
+  padding: 0 10px 0 10px;
+  font-size: 16px;
+}
+.item-view{
+  box-sizing: border-box;
+  padding: 0 10px 0 10px;
+  font-size: 13px; 
+  width: 100%;
+  line-height: 40px;
+  min-height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; 
+  flex-wrap:wrap;
+}
+
+.comment-label {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #f5ece7;
+  color: #7c7877;
+  margin-right: 5px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+.pad5{
+    padding: 5px 0 5px 0;
+}
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+.item-view .comment-item:last-child{
+  border-bottom: 0;
+}
+.comment-item {
+  padding: 10px 0 5px;
+  width:100%;
+  border-bottom: 1px solid #eee;
+}
+
+
+.comment-user-photo {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+.comment-goods{
+  color: #ccc;
+  font-size:13px;
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  height:25px;
+  line-height:25px;
+  width:100%;
+}
+.comment-content {
+  margin: 5px 0 5px;
+  font-size: 13px;
+  line-height: 16px;
+}
+.comment-no{
+  color: #7c7877;
+}
+.comment-date, .comment-goods-model {
+  color: #999;
+  font-size: 12px;
+}
+.comment-pics {
+  margin: 10px 0 0;
+  display: flex;
+  flex:1 0 50%;
+  box-sizing:border-box;
+}
+.comment-pics image {
+  width: 33.33%;
+  height: 80px;
+  padding-right: 3px;
+  border-radius:8px; 
+}
+.comment-reply {
+  margin-top:10px; 
+  margin-right:5px; 
+  font-size: 13px;
+  color:#7c7877;
+}
+.comment-reply .ico-moon{
+  margin-right: 10px;
+}
+.comment-reply view{
+  display: inline-block;
+}
+.comment-reply view:first-child{
+  margin-right:40px; 
+}
+.warning-text{
+  color:#f15a0c;
+  font-size:13px;
+}
+.btn-ext{
+  color:#f15a0c;
+  border-color:#f15a0c;
+  margin-top:5px; 
+  width: 80%;
+  background: white;
+}
+.iconfont {
+  display: inline-block;
+  font-family: 'iconfont' !important;
+}
+.icon-fesadress:before {
+  content: "\e938";
+}
+.icon-rightarrow:before {
+  content: "\e94e";
+}
+.icon-like:before {
+  content: "\e629";
+}
+.icon-comment_light:before {
+  content: "\e7e1";
+}

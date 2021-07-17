@@ -1,0 +1,63 @@
+<view class="makeCom-wrap page" id="makeComment">
+  <view class="makeCom-item makeCom-goods-comment" wx:for="{{ commentInfo.goods_info }}" wx:for-index="index" wx:key="goodskey">
+    <view class="makeCom-goods-title">
+     <text class="makeCom-goods-name">{{item.goodsname}}</text>
+     <text class="makeCom-goods-model">{{item.model_value}}</text>
+    </view>
+    <view>
+      <image class="makeCom-goods-cover" src="{{ item.cover }}"></image>
+      <textarea data-index="{{ index }}" bindinput="commentInput" class="makeCom-textarea" placeholder="评价商品给小伙伴们参考，10字以上" ></textarea>
+    </view>
+    <view class="makeCom-pic-container">
+      <block wx:for="{{ item.info.img_arr }}" wx:for-item="img" wx:key="digest" wx:for-index="imgidx" class="makeCom-pic-wrap">
+        <!-- <label class="makeCom-remove-pic" bindtap="removePic" data-index="{{ index }}" data-pic-index="{{ index }}">×</label>-->
+        <view class="makeCom-upload-pic" data-imgindex="{{imgidx}}" data-pack="commentInfo.goods_info" id="[{{index}}].info.img_arr" data-maxwidth="{{img.width}}" data-maxheight="{{img.height}}" data-maxcount="3" catchtap="chooseImg">
+          <image src="{{ img.fileID||img.path }}" mode="aspectFit"></image>
+          <view class="center" wx:if="{{!img.fileID&&!img.path}}">
+            <text class="txt" style="font-size:28px;">＋</text>
+            <text class="txt">添加图片</text>
+          </view>          
+        </view>
+      </block>
+    </view>
+    <view class="makeCom-level-container">
+      <label class="makeCom-level-span {{ item.info.level == 1 ? 'active' : '' }}" data-level="1" data-index="{{ index }}" bindtap="clickLevelSpan">
+        <label class="iconfont icon-manyi"></label>
+        <label></label>好评</label>
+      <label class="makeCom-level-span {{ item.info.level == 2 ? 'active' : '' }}" data-level="2" data-index="{{ index }}" bindtap="clickLevelSpan">
+        <label class="iconfont icon-yiban"></label>
+        <label></label>中评</label>
+      <label class="makeCom-level-span {{ item.info.level == 3 ? 'active' : '' }}" data-level="3" data-index="{{ index }}" bindtap="clickLevelSpan">
+        <label class="iconfont icon-bumanyi"></label>
+        <label></label>差评</label>
+    </view>
+  </view>
+  <view class="makeCom-item" style="padding:10px; line-height:30px;">
+    <view style="font-size:16px;">店铺评分</view>
+    <view>描述相符：
+      <view class="makeCom-mark-container makeCom-fit-score">
+        <label class="iconfont icon-favor {{ commentInfo.desc_score >= 1 ? 'full' : '-empty' }}" data-score="1" bindtap="setDescScore"></label>
+        <label class="iconfont icon-favor {{ commentInfo.desc_score >= 2 ? 'full' : '-empty' }}" data-score="2" bindtap="setDescScore"></label>
+        <label class="iconfont icon-favor {{ commentInfo.desc_score >= 3 ? 'full' : '-empty' }}" data-score="3" bindtap="setDescScore"></label>
+        <label class="iconfont icon-favor {{ commentInfo.desc_score >= 4 ? 'full' : '-empty' }}" data-score="4" bindtap="setDescScore"></label>
+        <label class="iconfont icon-favor {{ commentInfo.desc_score >= 5 ? 'full' : '-empty' }}" data-score="5" bindtap="setDescScore"></label>
+      </view>
+    </view>
+    <view>物流服务：
+      <view class="makeCom-mark-container makeCom-logistics-score">
+        <label class="iconfont icon-favor {{ commentInfo.logistics_score >= 1 ? 'full' : '-empty' }}" data-score="1" bindtap="setLogisticsScore"></label>
+        <label class="iconfont icon-favor {{ commentInfo.logistics_score >= 2 ? 'full' : '-empty' }}" data-score="2" bindtap="setLogisticsScore"></label>
+        <label class="iconfont icon-favor {{ commentInfo.logistics_score >= 3 ? 'full' : '-empty' }}" data-score="3" bindtap="setLogisticsScore"></label>
+        <label class="iconfont icon-favor {{ commentInfo.logistics_score >= 4 ? 'full' : '-empty' }}" data-score="4" bindtap="setLogisticsScore"></label>
+        <label class="iconfont icon-favor {{ commentInfo.logistics_score >= 5 ? 'full' : '-empty' }}" data-score="5" bindtap="setLogisticsScore"></label>
+      </view>
+    </view>
+  </view>
+  <view class="makeCom-bottom-nav" bindtap="makeComment">
+    <label class="makeCom-make-comment btn btn-orange">发表评价</label>
+  </view>
+</view>
+
+<view class="canvas-box">
+  <canvas style="width: 800px;height: 500px;" canvas-id="myCanvas0" />
+</view>

@@ -1,0 +1,59 @@
+<!--
+100027: 商品按活动区域子分类
+0 主题活动
+1 直减区   
+2 折扣区   
+3 限时抢购区,
+4 满减区,
+5 秒杀区
+6 量贩团区
+7 品牌团区,
+8 砍价区
+9 特价区
+-->
+<template name="promflag">
+  <block wx:if="{{prom.promtype=='0'}}">
+    <text class="iconprom icon-zhutihuodong promflag"></text>
+  </block>
+  <block wx:elif="{{prom.promtype=='1'}}">
+    <text class="iconprom icon-zhijian promflag"></text>
+    <text class="promtxt">{{prom.immediatecutamt}}</text>
+  </block>
+  <block wx:elif="{{prom.promtype=='2'}}">
+    <text class="promtxt">{{prom.discount}}</text>
+    <text class="iconprom icon-zhekou1 promflag"></text>
+  </block>
+  <block wx:elif="{{prom.promtype=='3'}}">
+    <text class="iconprom icon-xianshiqianggou3 promflag"></text>
+  </block>
+  <block wx:elif="{{prom.promtype=='4'}}">
+    <text class="promtxt">{{prom.fullcutamt}}</text>
+    <text class="iconprom icon-manjian1 promflag" style="font-size:20px"></text>
+  </block>
+  <block wx:elif="{{prom.promtype=='5'}}">
+    <block wx:if="{{prom.today}}">
+      <text class="iconprom icon-jinrimiaosha promflag"></text>
+    </block>
+    <block wx:elif="{{prom.limittimeflag=='1'}}">
+      <text class="iconprom icon-xianshimiaosha3 promflag"></text>
+    </block>
+    <block wx:elif="{{prom.limitqtyflag=='1'}}">
+      <text class="iconprom icon-xianliangmiaosha promflag"></text>
+    </block>
+    <block wx:else>
+      <text class="iconprom icon-miaosha promflag"></text>
+    </block>
+  </block>
+  <block wx:elif="{{prom.promtype=='6'}}">
+    <text class="iconprom icon-tuangou1 promflag" style="font-size:26px;"></text>
+  </block>
+  <block wx:elif="{{prom.promtype=='7'}}">
+    <text class="iconprom icon-pinpaituan promflag"></text>
+  </block>
+  <block wx:elif="{{prom.promtype=='8'}}">
+    <text class="iconprom icon-kanjia2 promflag" style="width:80px;"></text>
+  </block>
+  <block wx:elif="{{prom.promtype=='9'}}">
+    <text class="iconprom tejia2 promflag"></text>
+  </block>
+</template>

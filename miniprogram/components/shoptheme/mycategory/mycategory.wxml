@@ -1,0 +1,23 @@
+<view class="dialog-wrap" wx:if="{{show}}">
+  <view class="dialog center-panel" id="{{dlgid}}" style="height:{{windowHeight}}px;">
+    <view class="dialog-head">
+      <view class="subname">
+        <text>分类选择器</text>
+      </view>      
+      <view class="right-btn" catchtap="okTogger">
+        <text class="iconfont icon-gou"></text>
+        <text>确认</text>
+      </view>      
+      <!-- <text class="close-btn" catchtap="hide">x</text> -->
+    </view>
+    <scroll-view scroll-y="true" class="dialog-content" style="height:{{windowHeight-50}}px;padding:0 10px 10px 10px">
+      <block wx:for="{{category}}" wx:key="id" wx:for-index="index"> 
+        <catetree is="myTree" bind:taptogger="tapTreeNode" wx:if="{{item}}" node="{{item}}" nodeindex="{{index}}"></catetree>
+      </block>
+    </scroll-view>
+    <!-- dialog-content 
+    <view class="dialog-bottom">    
+    </view>-->
+  </view>
+</view>
+

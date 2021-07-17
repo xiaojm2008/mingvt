@@ -1,0 +1,133 @@
+<wxs module="dictTrs" src="../../lib/dictTrs.wxs"></wxs>
+<wxs module="substr" src="../../lib/substr.wxs"></wxs>
+<wxs module="pipi" src="../../lib/pipi.wxs"></wxs>
+<import src="../template/actionlist/actionstatus.wxml" />
+<import src="../../components/loading/loading.wxml" />
+<view wx:if="{{action}}">
+  <view class="panel-view">
+    <view class="" style="height:{{action.imginfo[0].height}}px">
+      <swiper indicator-dots="true" indicator-active-color="rgb(220,192,203)" indicator-color="" style="height:100%;">
+        <swiper-item wx:for="{{ action.imginfo }}" wx:key="digest" wx:for-index="index" wx:for-item="item" data-index="{{index}}">
+          <image src="{{item.fileID||item.path}}" mode="scaleToFill" style="height:100%;" class="slide-image"></image>
+          <view class="subinfo" wx:if="{{item.subinfo}}">{{item.subinfo}}</view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="item-group" style="padding-top:10px;">
+      <view class="item-header">
+        <text class="item-text" style="display:inline;">{{action.actionname}}</text>
+        <template is="actionst" data="{{now:now,action:action,dict:dict}}"></template>
+        <!--
+        <text class="item-flag">{{dictTrs.trs(dict['100032'],action.feetype,'1') }}</text>
+        <view>
+          <text class="item-flag">{{dictTrs.trs(dict[100033],action.actiontype,'1') }}</text>   
+          <text class="stflag red" wx:if="{{action.apprflag}}">需审核</text>
+          <text class="stflag {{action.status!='0'?'gray':''}}">{{dictTrs.trs(dict['100039'],action.status,'1') }}</text>
+          <text class="stflag gray" wx:if="{{now < action.enrollbegintime}}">待报名</text>
+          <text class="stflag" wx:elif="{{now >= action.enrollbegintime && now <= action.enrollendtime}}">报名中</text>
+          <text class="stflag" wx:elif="{{now >= action.enrollendtime && now < action.actbegintime}}">待活动</text>
+          <text class="stflag" wx:elif="{{now >= action.actbegintime && now <= action.actendtime}}">活动中</text>
+          <text class="stflag gray" wx:elif="{{now >= action.actendtime}}">已完成</text>
+        </view>
+        -->
+      </view>
+      <view class="item-view">  
+        <view class="row">
+          <text class="row-text">报名</text>
+          <text class="row-text" wx:if="{{action.enrollbegintime}}">：{{action.enrollbegintime}} </text>
+          <text class="row-text" wx:if="{{action.enrollendtime}}">截止：{{action.enrollendtime}}</text>
+        </view>
+        <view class="row">
+          <text class="row-text">活动</text>
+          <text class="row-text" wx:if="{{action.actbegintime}}">：{{action.actbegintime}} </text>
+          <text class="row-text" wx:if="{{action.actendtime}}">截止：{{action.actendtime}}</text>
+        </view>
+        <view class="row" wx:if="{{action.actaddress}}" catchtap="openLocation">
+          <text class="row-text">地点：</text>
+          <text class="iconfont icon-fesadress"></text>
+          <text class="row-text">{{action.actaddress}}</text>  
+        </view>
+      </view>
+      <view class="item-view">
+        <view class="row">
+          <text class="row-text">{{action.intro}}</text>
+        </view>
+      </view>
+      <view class="item-divider">
+      </view>
+      <view class="item-view">
+        <view class="left">
+          <text class='item-text subname'>人数</text>
+          <text class='item-text'>
+              <text class='item-text'>成立最低人数：<text>{{action.minperson}}</text></text>
+          <text class='item-text' wx:if="{{action.maxperson}}">上限人数：<text>{{action.maxperson}}</text></text>
+          </text>
+        </view>
+      </view>
+      <view class="item-view" wx:if="{{action.actiontype!='4'}}"> <!-- 非团购活动 -->
+        <view class="left">
+          <text class='item-text subname'>费用</text>
+          <text class='item-text' wx:if="{{action.feetype=='1'}}">
+            <text class='item-text'>成人（¥）：<text>{{action.fee}}</text></text>
+            <text class='item-text' wx:if="{{action.feechild}}">小孩（¥）：<text>{{action.feechild}}</text></text>
+          </text>
+          <text class='item-text' wx:else>免费</text>
+        </view>
+      </view>
+      <view class="item-divider">
+      </view>
+      <view class="item-view item-padd" catchtap="showLanunch">
+        <view class="left">
+          <text class='item-text subname'>发起人</text>
+          <image src="{{action.create_avatarurl}}" mode="scaleToFill" class="circle-image" catchtap="callPhone" data-phone=""></image>
+          <text class='item-text'>{{action.create_username}}</text>
+        </view>
+      </view>
+      <view class="item-view item-padd" catchtap="showEnrollPerson" wx:if="{{enrollperson&&enrollperson.length>0}}">
+        <view class="left">
+          <text class='item-text subname'>参入人</text>
+          <image wx:for="{{enrollperson}}" wx:key="*this" src="{{item||'/images/icontab/icon_member.png'}}" mode="scaleToFill" class="min-circle-image"></image>
+          <text  class="iconfont icon-more" style="font-size:18px;font-weight:600"></text>
+        </view>
+      </view>
+    </view>
+      <!-- item-group end -->
+    <view class="item-group">
+      <view class="item-divider">
+      </view>
+      <comment id="commentPanel" projectid="{{dataid}}"></comment>
+    </view>
+    <!-- item-group end -->
+    <view class="item-group">
+      <view class="item-divider">
+      </view>
+      <view class="ql-container" style="height:100%;">
+        <view class="ql-editor" style="height:100%;">
+          <rich-text class="my-rich" nodes="{{action.description2}}"></rich-text>
+        </view>
+      </view>
+    </view>
+    <!-- item-group end -->
+  </view>
+  <view class="proj-bottom-opt" wx:if="{{dataid}}">
+    <view class="additional-item">
+      <view class="nav-item iconfont icon-phone" catchtap="callPhone" data-phone=""></view>
+      <view class="nav-item iconfont {{additionalinfo.isfavor==1?'icon-favor2':'icon-favor'}}" catchtap="{{additionalinfo.isfavor==1?'goFavor':'addFavor'}}">
+        <view class="badge-flag" wx:if="{{ additionalinfo && additionalinfo.favor > 0 }}">{{ additionalinfo.favor>99?'99+':additionalinfo.favor }}</view>
+      </view>
+      <view class="nav-item iconfont icon-tuandui" catchtap="goToEnrollList">
+        <view class="badge-flag" wx:if="{{ additionalinfo && additionalinfo.num > 0 }}">{{ additionalinfo.num>99?'99+':additionalinfo.num }}</view>
+      </view>
+    </view>   
+    <view class="btn-item addcart-item"  catchtap="showShare"><text class="ib2 iconfont icon-share_light"></text>分享</view>
+    <view class="btn-item tobuy-item" catchtap="goToEnrollForm">
+      <block wx:if="{{additionalinfo.isenroll}}"><text class="ib2 iconfont icon-usercenter"></text>报名修改</block>
+      <block wx:else><text class="ib2 iconfont icon-edit-circle"></text>我要报名</block>
+    </view>
+  </view>
+</view>
+<view wx:else class="center-panel loading-wrap">
+  <template is="loading" data="{{loadFinish:action,len:1,finishText:'加载完成'}}"></template>
+</view>
+<modaldialog id="modalDlg2"></modaldialog>
+<share id="myShare"></share>

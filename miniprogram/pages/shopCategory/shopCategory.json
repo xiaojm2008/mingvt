@@ -1,0 +1,6 @@
+{
+ "usingComponents": {
+  "mysearch": "../../components/mysearch/mysearch"
+},
+"navigationBarTitleText": "产品分类"
+}

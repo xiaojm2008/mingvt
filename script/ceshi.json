@@ -1,0 +1,62 @@
+{
+  "actionid": "ACT1581180536044697e4cdd430b719b",
+  "funcid": "general",
+  "params": {
+    "begindate": {
+      "value": "2020-03-13",
+      "name": "开始日期"
+    },
+    "enddate": {
+      "value": "2020-03-14",
+      "name": "结束日期"
+    },
+    "groupby": [{
+      "value": "gender",
+      "options": [{
+        "code": "0",
+        "desc": "性别",
+        "name": "男"
+      }, {
+        "code": "1",
+        "name": "女"
+      }]
+    }, {
+      "value": "960ed3cb09df0df7",
+      "options": [{
+        "code": 0,
+        "desc": "多选输入",
+        "name": "选一s"
+      }, {
+        "code": 1,
+        "desc": "多选输入",
+        "name": "选二（测试a's'f'l）案说法了两年"
+      }, {
+        "code": 2,
+        "desc": "多选输入",
+        "name": "选三"
+      }, {
+        "code": 3,
+        "desc": "多选输入",
+        "name": "选择四"
+      }, {
+        "code": 4,
+        "desc": "多选输入",
+        "name": "选择五"
+      }, {
+        "code": 5,
+        "desc": "多选输入",
+        "name": "选择六"
+      }, {
+        "code": 6,
+        "desc": "多选输入",
+        "name": "测试很多的代码咩咩咩咩"
+      }, {
+        "code": 7,
+        "desc": "多选输入",
+        "name": "我堕落了堕落了登陆的劳动力的劳动力登陆的登陆kdkk "
+      }]
+    }]
+  },
+  "transtype": "action",
+  "actionname": "general"
+}

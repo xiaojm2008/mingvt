@@ -1,0 +1,23 @@
+{
+  "type": "picture",
+  "style": "opacity:1;background-color:transparent;border-color:rgb(34, 34, 34);border-style:none;height:58.59375rpx;width:656.25rpx;margin-left:auto;margin-right:auto;margin-top:-492.1875rpx;",
+  "content": "http:\/\/img.weiye.me\/zcimgdir\/album\/file_5909ad933aa80.png",
+  "customFeature": {
+    "boxShadow": "5",
+    "boxColor": "#000",
+    "boxX": "0",
+    "boxY": "0",
+    "boxR": "5",
+    "action": "inner-link",
+    "inner-page-link": "page10005"
+  },
+  "animations": [],
+  "page_form": "",
+  "compId": "picture2",
+  "parentCompid": "picture2",
+  "itemType": "picture",
+  "itemParentType": null,
+  "itemIndex": "picture2",
+  "eventParams": "{\"inner_page_link\":\"\\\/pages\\\/page10005\\\/page10005\",\"is_redirect\":0}",
+  "eventHandler": "tapInnerLinkHandler"
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "modaldialog": "../../../components/modaldialog/modaldialog"
+},
+"navigationStyle": "custom",
+"navigationBarTitleText": "通用报表"
+}

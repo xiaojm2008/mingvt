@@ -1,0 +1,78 @@
+<view class="fu-content">
+  <view class="top-info">
+    <image class="cover-thumb center-panel" src="{{ userInfo.avatarurl }}"></image>
+  </view>
+  <view class="ext-horiz-view view-begin">
+    <view class="view-item {{focusSet.nickname?'item-prompt':''}}">
+      <text class="left subname required">昵称</text>
+      <view class='right'>
+        <input class="text-input" placeholder="昵称" id="nickname" value="{{ userInfo.nickname }}" bindinput="inputTogger" />
+      </view>
+    </view>
+    <view class="view-item {{focusSet.gender?'item-prompt':''}}">
+      <text class="left subname required">性别</text>
+      <view class='right'>
+        <picker mode="selector" class="inp-selector" bindchange="inputTogger" id="gender" value="{{ userInfo.gender }}" range="{{ dict.gender }}">
+          <input class="text-input" disabled placeholder="性别" value="{{ dict.gender[userInfo.gender] }}"></input>
+        </picker>
+      </view>
+    </view>
+    <view class="view-item">
+      <text class="left subname">真实姓名</text>
+      <view class='right'>
+        <input class="text-input" placeholder="真实姓名" id="username" value="{{ userInfo.username }}" bindinput="inputTogger" />
+      </view>
+    </view>
+    <view class="view-item">
+        <text class='left subname'>出生年月</text>
+        <view class='right'>
+          <picker mode="date" start="1949-10-01" end="2099-01-01" class="inp-selector2" bindchange="inputTogger" id="birthdate" value="{{userInfo.birthdate}}" >
+            <input class="text-input" disabled placeholder="请选择" value="{{userInfo.birthdate}}"></input>
+          </picker>         
+        </view>
+    </view>
+
+    <view class="view-item {{focusSet.phone?'item-prompt':''}}" style="flex-wrap:nowrap">
+      <text class="left subname required">手机号码</text>
+      <view class='right'>
+        <input class="text-input" disabled placeholder="点击按钮获取手机号码" id="phone" value="{{ userInfo.phone }}" bindinput="inputTogger" />
+        <button class="btn-icon" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取号码</button>
+      </view>
+    </view>
+    <view class="view-item {{focusSet.prov?'item-prompt':''}}">
+      <text class="left subname required">省份</text>
+      <view class='right' catchtap="showIndexListChoose" data-catetype="provcode" id="prov">
+        <text style="color:black;">{{userInfo.prov.name||'点击选择省份'}}</text>
+        <label class="iconfont icon-rightarrow"></label>
+      </view>
+    </view>
+    <view class="view-item {{focusSet.city?'item-prompt':''}}">
+      <text class="left subname required">城市</text>
+      <view class='right' catchtap="showIndexListChoose" data-catetype="citycode" id="city">
+        <text style="color:black;">{{userInfo.city.name||'点击选择城市'}}</text>
+        <label class="iconfont icon-rightarrow"></label>
+      </view>
+    </view>
+    <!--
+    <view class="view-item {{focusSet.region?'item-prompt':''}}">
+      <text class="left subname required">地区选择</text>
+      <view class='right'>
+        <picker mode="selector" mode="region" class="inp-selector" bindchange="inputTogger" id="region" value="{{ userInfo.region }}">
+          <input class="text-input" disabled placeholder="地区选择" value="{{userInfo.region[0]}} - {{userInfo.region[1]}} - {{userInfo.region[2]}}"></input>
+        </picker>
+        <text class='iconfont icon-rightarrow'></text>
+      </view>
+    </view>  
+    -->
+    <view class="view-item">
+      <text class='left subname'>详细地址</text>
+      <view class='right'>
+        <input class="text-input" style="margin-right:10px;" value="{{userInfo.detail}}" placeholder="活动地点"></input>
+        <text class="iconfont icon-location" bindtap="chooseLocation"></text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="fu-bottom">
+  <text class="btn one" bindtap="saveUserInfo">{{userInfo.phone?'保存':'注册'}}</text>
+</view>

@@ -1,0 +1,19 @@
+<template name="loading">
+  <view class="loading {{!len && !pull?'loading-center':''}}" wx:if="{{!loadFinish}}">
+    <view class="dot dot1"></view>
+    <view class="dot dot2"></view>
+    <view class="dot dot3"></view>
+  </view> 
+  <!--
+  <view class="loading {{!len?'loading-center':''}} " wx:if="{{!loadFinish}}">
+    <view class="loading-circle"></view>
+  </view>
+   -->
+  <view class="end-line" wx:if="{{loadFinish && len>0}}">
+      <text>{{finishText||'这已经是底线了'}}</text>
+  </view>
+  <view class="loading-center" wx:if="{{loadFinish&&len===0}}">
+    <image mode="scaleToFill"  src="/images/empty.svg"></image>
+    <view style="color:#999;font-size:14px;">您还没有记录信息</view>
+  </view>
+</template>

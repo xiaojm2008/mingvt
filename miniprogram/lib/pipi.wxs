@@ -1,0 +1,126 @@
+//<wxs module="filter" src = "./numberToFixed.wxs" > </wxs>
+var pipi = {
+  dFormat: function (milli, offset, fmt) {
+    var time = null;
+    if (!milli) {
+      return "-";
+    }
+    if (isNaN(milli)) {
+      time = getDate(milli);
+      if (offset && offset > 0) {
+        time = time.getTime();
+        time = getDate(time + offset);
+      }
+    } else {
+      time = getDate(milli + (offset || 0));
+    }
+    var y = time.getFullYear();
+    var m = time.getMonth() + 1;
+    var d = time.getDate();
+    var h = time.getHours();
+    var mm = time.getMinutes();
+    var s = time.getSeconds();
+    if (fmt) {
+      return (h < 10 ? '0' + h : h) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (s < 10 ? '0' + s : s);
+    } else {
+      return y + '-' + (m < 10 ? '0' + m : m) + '-' + (d < 10 ? '0' + d : d) + ' ' + (h < 10 ? '0' + h : h) + ':' + (mm < 10 ? '0' + mm : mm) + ':' + (s < 10 ? '0' + s : s);
+    }
+  },
+  dFormat2: function (str) {
+    if (str) {
+      return str.length == 14 ? str.slice(0, 4) + '-' + str.slice(4, 6) + '-' + str.slice(6, 8) + ' ' + str.slice(8, 10) + ':' + str.slice(10, 12) + ':' + str.slice(12, 14) :
+        str.slice(0, 4) + '-' + str.slice(4, 6) + '-' + str.slice(6, 8);
+    } else {
+      return "-";
+    }
+  },
+  dFormat3: function (milli, offset) {
+    var time = null;
+    if (!milli) {
+      return "-";
+    }
+    if (isNaN(milli)) {
+      time = getDate(milli);
+      if (offset && offset > 0) {
+        time = time.getTime();
+        time = getDate(time + offset);
+      }
+    } else {
+      time = getDate(milli + (offset || 0));
+    }
+    var y = time.getFullYear();
+    var m = time.getMonth() + 1;
+    var d = time.getDate();
+    var h = time.getHours();
+    var mm = time.getMinutes();
+    var s = time.getSeconds(); 
+    return y + '-' + (m < 10 ? '0' + m : m) + '-' + (d < 10 ? '0' + d : d) + ' ' + (h < 10 ? '0' + h : h) + ':' + (mm < 10 ? '0' + mm : mm);
+  },
+  dFormat4: function (milli, offset) {
+    var time = null;
+    if (!milli) {
+      return "-";
+    }
+    if (isNaN(milli)) {
+      time = getDate(milli);
+      if (offset && offset > 0) {
+        time = time.getTime();
+        time = getDate(time + offset);
+      }
+    } else {
+      time = getDate(milli + (offset || 0));
+    }
+    var y = time.getFullYear();
+    var m = time.getMonth() + 1;
+    var d = time.getDate();
+    var h = time.getHours();
+    var mm = time.getMinutes();
+    var s = time.getSeconds(); 
+    return (m < 10 ? '0' + m : m) + '-' + (d < 10 ? '0' + d : d) + ' ' + (h < 10 ? '0' + h : h) + ':' + (mm < 10 ? '0' + mm : mm);
+  },
+  nowStr: function () {
+    var time = getDate();
+    var y = time.getFullYear();
+    var m = time.getMonth() + 1;
+    var d = time.getDate();
+    var h = time.getHours();
+    var mm = time.getMinutes();
+    var s = time.getSeconds();
+    return y + '-' + (m < 10 ? '0' + m : m) + '-' + (d < 10 ? '0' + d : d);
+  },
+  diff: function (milli, offset, src, fmt) {
+    var time = 0;
+    if (isNaN(milli)) {
+      time = getDate(milli);
+      if (offset && offset > 0) {
+        time = time.getTime();
+        time = getDate(time + offset);
+      }
+    } else {
+      time = getDate(milli + (offset || 0));
+    }
+    time = time - (src||getDate());
+    var h = time/1000/60/60,
+    h1 = parseInt(h),
+    m = (h - h1)*60,
+    m1 = parseInt(m),
+    s = parseInt((m-m1)*60);
+    if (!fmt) {
+      return (h < 10 ? '0' + h : h) + ':' + (mm < 10 ? '0' + mm : mm);
+    } else {
+      return (h1 < 10 ? '0' + h1 : h1) + ':' + (m1 < 10 ? '0' + m1 : m1) + ':' + (s < 10 ? '0' + s : s);
+    }
+  },
+  eq:function(l,r){
+    
+  }
+};
+
+module.exports = {
+  nowStr: pipi.nowStr,  
+  diff:pipi.diff,
+  dFormat4:pipi.dFormat4,
+  dFormat3:pipi.dFormat3,
+  dFormat2: pipi.dFormat2,
+  dFormat: pipi.dFormat
+}

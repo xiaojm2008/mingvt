@@ -1,0 +1,74 @@
+<block wx:if="{{ctype=='cover'}}">
+  <block wx:if="{{mask=='none'}}">
+    <cover-view class="dialog {{className}}" style="top:{{posi.top}}px;left:{{posi.left}}px;{{myStyle&&myStyle+';'}}{{maxWidth&&'max-width:'+maxWidth+'px;'}}" wx:if="{{show}}" animation="{{animationData}}">
+      <cover-view class="dialog-head" wx:if="{{title}}">
+        <cover-view class="left subname" style="width:80%;padding-left:0;" catchtap="hide">
+          <cover-view style="font-weight:1000;">{{title}}</cover-view>
+        </cover-view>
+      </cover-view>
+      <cover-view class="menu-content">
+        <cover-view class="menu">
+          <cover-view wx:for="{{inputlist}}" wx:key="id" wx:for-index="index" wx:for-item="item" data-index="{{index}}" class="menu-item" hover-class="menu-hover" catchtap="menutogger">
+            {{item.text}}
+          </cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+  </block>
+  <block wx:else>
+    <cover-view class="dialog-wrap" wx:if="{{show}}" catchtap="hide">
+      <cover-view class="arrow" style="{{posi.top}};{{posi.left}}"></cover-view>
+      <cover-view class="dialog  {{className}}" style="top:{{posi.top}}px;left:{{posi.left}}px" wx:if="{{show}}" animation="{{animationData}}">
+        <cover-view class="dialog-head" wx:if="{{title}}">
+          <cover-view class="left subname" style="width:80%;padding-left:0;" catchtap="hide">
+            <cover-view style="font-weight:1000;">{{title}}</cover-view>
+          </cover-view>
+        </cover-view>
+        <cover-view class="menu-content">
+          <cover-view class="menu">
+            <cover-view wx:for="{{inputlist}}" wx:key="id" wx:for-index="index" wx:for-item="item" data-index="{{index}}" class="menu-item" hover-class="menu-hover" catchtap="menutogger">
+              {{item.text}}
+            </cover-view>
+          </cover-view>
+        </cover-view>
+      </cover-view>
+    </cover-view>
+  </block>
+</block>
+<block wx:else="{{ctype=='view'}}">
+  <block wx:if="{{mask=='none'}}">
+    <view class="dialog {{className}}" style="top:{{posi.top}}px;left:{{posi.left}}px;{{myStyle&&myStyle+';'}}{{maxWidth&&'max-width:'+maxWidth+'px;'}}" wx:if="{{show}}" animation="{{animationData}}">
+      <view class="dialog-head" wx:if="{{title}}">
+        <view class="left subname" style="width:80%;padding-left:0;" catchtap="hide">
+          <view style="font-weight:1000;">{{title}}</view>
+        </view>
+      </view>
+      <view class="menu-content">
+        <view class="menu">
+          <view wx:for="{{inputlist}}" wx:key="id" wx:for-index="index" wx:for-item="item" data-index="{{index}}" class="menu-item" hover-class="menu-hover" catchtap="menutogger">
+            {{item.text}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="dialog-wrap" wx:if="{{show}}" catchtap="hide">
+      <view class="arrow" style="{{posi.top}};{{posi.left}}"></view>
+      <view class="dialog  {{className}}" style="top:{{posi.top}}px;left:{{posi.left}}px" wx:if="{{show}}" animation="{{animationData}}">
+        <view class="dialog-head" wx:if="{{title}}">
+          <view class="left subname" style="width:80%;padding-left:0;" catchtap="hide">
+            <view style="font-weight:1000;">{{title}}</view>
+          </view>
+        </view>
+        <view class="menu-content">
+          <view class="menu">
+            <view wx:for="{{inputlist}}" wx:key="id" wx:for-index="index" wx:for-item="item" data-index="{{index}}" class="menu-item" hover-class="menu-hover" catchtap="menutogger">
+              {{item.text}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</block>

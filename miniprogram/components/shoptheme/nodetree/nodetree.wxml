@@ -1,0 +1,104 @@
+<template name="swiperlist">
+  <swiperlist id="nid_{{nodeindex}}" data-node="{{node.attrs.action}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}" category="{{node.attrs.datasource.value||['选项1','选项2','选项3']}}" action="{{node.attrs.action}}" manager="{{node.attrs.manager}}" refreshlock="{{refreshlock||true}}" lockflag="{{lockflag||true}}">
+  </swiperlist>
+</template>
+<template name="icon">
+  <icon id="nid_{nodeindex}}" type="{{node.attrs.type}}" size="{{node.attrs.size}}" style="{{node.attrs.style}}" color="{{node.attrs.color}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}" catchtap="tapNode"></icon>
+</template>
+<template name="text">
+  <text id="nid_{{nodeindex}}" class="{{node.attrs.class}}" style="{{node.attrs.style}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}" catchtap="tapNode">{{node.attrs.title||node.value||'文'+nodeindex}}</text>
+</template>
+
+<template name="image">
+  <image id="nid_{{nodeindex}}" class="{{node.attrs.class}}" mode="{{node.attrs.mode||'scaleToFill'}}" style="{{node.attrs.style}}" src="{{node.attrs.src||node.value||'/images/pic.png'}}" data-ckey="{{node.CKEY}}" data-url="{{node.url}}" data-nodeindex="{{nodeindex}}"
+    catchtap="tapNode"></image>
+</template>
+
+<template name="search">
+  <mysearch id="nid_{{nodeindex}}" placeholder="请在此输入您的希望" bindselectresult="selectResult" search="{{search}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}"></mysearch>
+</template>
+
+<!-- grid布局必须定义 -->
+<template name="xgrid">
+  <view class="{{node.attrs.class}}" id="nid_{{nodeindex}}" style="{{node.attrs.style}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}" catchtap="tapNode">
+    <view wx:for="{{ node.children }}" wx:key="id" wx:for-item="child" wx:for-index="index" data-index="{{index}}" class="{{child.attrs.class}}" style="{{child.attrs.style}}" data-url="{{child.attrs.url||child.value}}" data-ckey="{{child.CKEY}}" data-nodeindex="{{nodeindex+'_'+index}}" id="nid_{{nodeindex+'_'+index}}">
+      <!-- 注意这里 体现 nodeindex 规则要从define开始（与children区分）： nodeindex="{{cindex}}"  -->
+      <block wx:if="{{child.define||child.children}}">
+        <block wx:for="{{child.define||child.children}}" wx:key="id" wx:for-item="cnode" wx:for-index="cindex">
+          <nodetree id="nt_{{child.define?cindex:nodeindex+'_'+index+'_'+cindex}}" node="{{cnode}}" nodeindex="{{child.define?cindex:nodeindex+'_'+index+'_'+cindex}}" bind:addCtrl="addCtrlTogger" bind:operCtrl="operCtrlTogger" bind:delCtrl="delCtrlTogger" bind:editCtrl="editCtrlTogger" bind:tapNode="tapNodeTogger"></nodetree>
+        </block>
+      </block>
+      <block wx:else>
+        <nodetree id="nt_{{nodeindex+'_'+index}}" node="{{child}}" nodeindex="{{nodeindex+'_'+index}}" bind:addCtrl="addCtrlTogger" bind:operCtrl="operCtrlTogger" bind:delCtrl="delCtrlTogger" bind:editCtrl="editCtrlTogger" bind:tapNode="tapNodeTogger"></nodetree>
+      </block>
+    </view>
+  </view>
+</template>
+
+<!-- swiper布局必须定义 -->
+<template name="swiperchildren">
+  <swiper-item wx:for="{{ node.children }}" wx:key="id" wx:for-index="index" wx:for-item="child" data-ckey="{{child.CKEY}}" data-nodeindex="{{nodeindex+'_'+index}}" id="nid_{{nodeindex+'_'+index}}" data-url="{{child.attrs.url||child.value}}" >
+    <!-- 注意这里 体现 nodeindex 规则要从define开始： nodeindex="{{cindex}}"  -->
+    <block wx:if="{{child.define || child.children}}">
+      <block wx:for="{{child.define|| child.children}}" wx:key="id" wx:for-item="cnode" wx:for-index="cindex">
+        <nodetree id="nt_{{child.define?cindex:nodeindex+'_'+index+'_'+cindex}}" node="{{cnode}}" nodeindex="{{child.define?cindex:nodeindex+'_'+index+'_'+cindex}}" bind:addCtrl="addCtrlTogger" bind:operCtrl="operCtrlTogger" bind:delCtrl="delCtrlTogger" bind:editCtrl="editCtrlTogger" bind:tapNode="tapNodeTogger"></nodetree>
+      </block>
+    </block>
+    <block wx:else>
+      <nodetree id="nt_{{nodeindex+'_'+index}}" node="{{child}}" nodeindex="{{nodeindex+'_'+index}}" bind:addCtrl="addCtrlTogger" bind:operCtrl="operCtrlTogger" bind:delCtrl="delCtrlTogger" bind:editCtrl="editCtrlTogger" bind:tapNode="tapNodeTogger"></nodetree>
+    </block>
+  </swiper-item>
+</template>
+
+<template name="children">
+  <block wx:for='{{ node.children}}' wx:key='id' wx:for-item="child" wx:for-index="index">
+    <!-- 注意这里 体现 nodeindex 规则要从define开始： nodeindex="{{cindex}}"  -->
+    <block wx:if="{{child.define}}">
+      <block wx:for="{{child.define}}" wx:key="id" wx:for-item="cnode" wx:for-index="cindex">
+        <nodetree id="nt_{{cindex}}"  node="{{cnode}}" nodeindex="{{cindex}}" bind:addCtrl="addCtrlTogger" bind:operCtrl="operCtrlTogger" bind:delCtrl="delCtrlTogger" bind:editCtrl="editCtrlTogger" bind:tapNode="tapNodeTogger"></nodetree>
+      </block>
+    </block>
+    <block wx:else>
+      <nodetree id="nt_{{nodeindex+'_'+index}}"  node="{{child}}" nodeindex="{{nodeindex+'_'+index}}" bind:addCtrl="addCtrlTogger" bind:operCtrl="operCtrlTogger" bind:delCtrl="delCtrlTogger" bind:editCtrl="editCtrlTogger" bind:tapNode="tapNodeTogger"></nodetree>
+    </block>
+  </block>
+</template>
+
+<!-- {{node.name=='text'||node.name=='icon'|| -->
+<block wx:if="{{node.attrs.class=='x-grid' || node.attrs.class=='fu-grid'}}">
+  <template is="xgrid" data="{{node:node,nodeindex:nodeindex}}" />
+</block>
+<block wx:elif="{{node.name=='text'||node.name=='icon'||node.name=='image'}}">
+  <!-- nodeindex不能从0，续前节点 nodeindex，跟上面的要区分下 -->
+  <template is="{{node.name}}" data="{{node:node,nodeindex:nodeindex}}" />
+</block>
+<block wx:elif="{{node.name=='swiper'}}">
+  <swiper id="nid_{{nodeindex}}" class="{{node.attrs.class}}" style="{{node.attrs.style}}" current="0" indicator-dots="{{node.attrs.indicatordots||''}}" autoplay="{{node.attrs.autoplay||''}}" interval="{{node.attrs.interval||''}}" previous-margin="{{node.attrs['previous-margin']||''}}" next-margin="{{node.attrs['next-margin']||''}}" indicator-active-color="{{node.attrs['indicator-active-color']||''}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}" catchtap="tapNode">
+    <block wx:if="{{node.children.length>0}}">
+      <template is="swiperchildren" data="{{node:node,nodeindex:nodeindex}}"></template>
+    </block>
+  </swiper>
+</block>
+<block wx:elif="{{node.name=='scroll-view'}}">
+  <scroll-view id="nid_{{nodeindex}}" data-ckey="{{node.CKEY}}" class="loc-v {{node.attrs.class}}" style="{{node.attrs.style}}" scroll-y="{{node.attrs['scroll-y']}}" scroll-x="{{node.attrs['scroll-x']}}" enable-flex="{{node.attrs['enable-flex']}}" enable-flex="{{node.attrs['enable-flex']}}"
+    data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}" catchtap="tapNode">
+    <block wx:if="{{node.children.length>0}}">
+      <template is="children" data="{{node:node,nodeindex:nodeindex}}"></template>
+    </block>
+  </scroll-view>
+</block>
+<block wx:elif="{{node.name=='view'}}">
+  <view id="nid_{{nodeindex}}" data-ckey="{{node.CKEY}}" class="{{node.attrs.class}}" style="{{node.attrs.style||''}}" data-ckey="{{node.CKEY}}" data-nodeindex="{{nodeindex}}" catchtap="tapNode">
+    <block wx:if="{{node.children.length>0}}">
+      <template is="children" data="{{node:node,nodeindex:nodeindex}}"></template>
+    </block>
+  </view>
+</block>
+<block wx:elif="{{node.name}}">
+  <template is="{{node.name}}" data="{{node:node,nodeindex:nodeindex}}" />
+</block>
+<!--
+<block wx:elif="{{node.children.length>0}}">
+  <template is="children" data="{{node:node,nodeindex:nodeindex}}"></template>
+</block>
+-->

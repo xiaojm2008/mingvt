@@ -1,0 +1,3 @@
+  <view class="fu-content">
+    <shop id="shopshow" shopid="{{shopid}}"></shop>
+  </view>

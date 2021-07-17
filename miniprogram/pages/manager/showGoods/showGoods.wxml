@@ -1,0 +1,3 @@
+  <view class="fu-content preview">
+    <goods goodsno="{{goodsno}}" goodsinfo=""></goods>
+  </view>

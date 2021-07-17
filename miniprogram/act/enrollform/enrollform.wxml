@@ -1,0 +1,24 @@
+<import src="../../components/loading/loading.wxml" />
+<block wx:if="{{enrollform}}">
+  <view class="fu-header" style="height:200px">
+    <!-- <swiper indicator-dots="true" indicator-active-color="rgb(168, 6, 6)" indicator-color="rgb(223, 157, 157)" style="height:100%;">
+      <swiper-item wx:for="{{ imginfo }}" wx:key="fileID" wx:for-index="index" wx:for-item="item" data-index="{{index}}">-->
+        <image src="{{imginfo}}" mode="scaleToFill" style="height:100%;width:100%;" class="slide-image"></image>
+    <!--  </swiper-item>
+    </swiper>-->
+  </view>
+  <view class="fu-panel">
+    <view class="item">
+      <text class="item-text">{{actionname}}</text>
+    </view>
+    <enroll id="myEnroll" screenwidth="{{windowWidth}}" screenheight="{{windowHeight}}" initcache="" moveable='{{false}}' data-id="enrollform" style="width:100%;" enrolldata="{{enrollform}}"></enroll>
+  </view>
+  <view class="fu-bottom" style="margin-top:10px;">
+    <text class="btn one" bindtap="save">提交</text>
+  </view>
+</block>    
+<block wx:else>
+  <view class="center-panel loading-wrap">
+    <template is="loading" data="{{loadFinish:enrollform,len:1,finishText:'加载完成'}}"></template>
+  </view>
+</block>

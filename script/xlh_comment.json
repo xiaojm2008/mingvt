@@ -1,0 +1,140 @@
+{
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "goodsno": "100000000099",
+  "user_img": "",
+  "nickname": "肖锦？",
+  "commenttype": "1",
+  "content": "数据库的增删改查获取显示数据:在代码中首先声明要操作哪一个云环境下的数据...微信小程序云数据库关于单条记录数组字段头部追加数据问题——unshi...",
+  "has_img":true,
+  "imgs": [
+    "cloud://mingvt-f8c412dd.6d69-mingvt-f8c412dd/pic/2022沙发单人位.png",
+    "cloud://mingvt-f8c412dd.6d69-mingvt-f8c412dd/pic/2035沙发二位.png",
+    "cloud://mingvt-f8c412dd.6d69-mingvt-f8c412dd/pic/302小方几.png",
+    "cloud://mingvt-f8c412dd.6d69-mingvt-f8c412dd/pic/815沙发单位.png",
+    "cloud://mingvt-f8c412dd.6d69-mingvt-f8c412dd/pic/D154餐桌.png"
+  ],
+  "evaluate": [
+    {
+      "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+      "user_img": "",
+      "nickname": "肖锦？",
+      "commenttype": "0",
+      "content": "对该评论的评论1",
+      "imgs": []
+    },
+    {
+      "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+      "user_img": "",
+      "nickname": "肖锦？",
+      "commenttype": "0",
+      "content": "对该评论的评论2",
+      "imgs": []
+    }
+  ],
+  "status": "0",
+  "settime": 0
+}
+{
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "goodsno": "100000000099",
+  "user_img": "",
+  "nickname": "肖锦？",
+  "commenttype": "1",
+  "content": "peof运算符用于判断对象的类型，但是对于一些创建的对象，它们都会返回'object'，有时我们需要判断该实例是否为某个对象的实例，那么这个时候需要用到instanceof运算符，后续记录instanceof运算符的相关用法",
+  "has_img": true,
+  "imgs": [
+    "cloud://mingvt-f8c412dd.6d69-mingvt-f8c412dd/pic/2022沙发单人位.png"
+  ],
+  "evaluate": [
+    {
+      "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+      "user_img": "",
+      "nickname": "肖锦？",
+      "commenttype": "0",
+      "content": "对该评论的评论1",
+      "imgs": []
+    },
+    {
+      "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+      "user_img": "",
+      "nickname": "肖锦？",
+      "commenttype": "0",
+      "content": "对该评论的评论2",
+      "imgs": []
+    }
+  ],
+  "status": "0",
+  "settime": 0
+}
+{
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "goodsno": "100000000099",
+  "user_img": "",
+  "nickname": "肖锦？",
+  "commenttype": "1",
+  "content": "Typeof我们可能使用的多，都知道是用来返回一个数据类型的字符串。在某些情况下很有用，返回对应的数据类型，有undefined、null、Boolean、number、string、function、object，这些是常用的，还有两个symbol和Implementation-dependent我觉得可以忽略。",
+  "imgs": [],
+  "evaluate": null,
+  "status": "0",
+  "settime": 0
+}
+{
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "goodsno": "100000000099",
+  "user_img": "",
+  "nickname": "肖锦？",
+  "commenttype": "1",
+  "content": "Implementation-dependent我觉得可以忽略。",
+  "imgs": null,
+  "evaluate": null,
+  "status": "0",
+  "settime": 0
+}
+{
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "goodsno": "100000000099",
+  "user_img": "",
+  "nickname": "肖锦？",
+  "commenttype": "1",
+  "content": "我觉得可以忽略。",
+  "imgs": null,
+  "evaluate": null,
+  "status": "0",
+  "settime": 0
+}
+{
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "goodsno": "100000000099",
+  "user_img": "",
+  "nickname": "肖锦？",
+  "commenttype": "2",
+  "content": "我觉得。",
+  "imgs": null,
+  "evaluate": null,
+  "status": "0",
+  "settime": 0
+}
+{
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "goodsno": "100000000099",
+  "user_img": "",
+  "nickname": "肖锦？",
+  "commenttype": "3",
+  "content": "Number类型有数字和Math函数生成的，NAN也会返回numbe",
+  "imgs": null,
+  "evaluate": null,
+  "status": "0",
+  "settime": 0
+}
+{
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "goodsno": "100000000099",
+  "user_img": "",
+  "nickname": "肖锦？",
+  "commenttype": "3",
+  "content": "Function类型就是方法，只要是方法都会返回function，比如Math.rand",
+  "imgs": null,
+  "evaluate": null,
+  "status": "0",
+  "settime": 0
+}

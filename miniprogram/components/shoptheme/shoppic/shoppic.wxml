@@ -1,0 +1,11 @@
+<tabView tabTitle="{{tabTitle}}" initTabIndex='0' backgroundColor="" positionTop="" paddingTop="80rpx" bind:togger="tapTabHandler">
+  <view wx:for="{{imginfo}}" wx:key="id" wx:for-item="item" wx:for-index="index" slot="{{index}}">
+    <view class="ext-horiz-view">
+      <view class="view-item ext-view">
+        <view hover-class="flex-active" catchtap="oneSelectTap" wx:for="{{item.value}}" wx:key="digest"  wx:for-item="child" wx:for-index="cindex" style="width:{{imgWidth}}px;height:200px;" data-index="{{index}}" data-cindex="{{cindex}}" class="flex-item ext-flex {{child.style}}">
+          <image class="flex-image" style="width:100%;height:100%;border-radius:10px;margin:0;" src="{{child.fileID}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</tabView>

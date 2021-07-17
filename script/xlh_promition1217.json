@@ -1,0 +1,55 @@
+{
+  "create_userid": "ounQF5gNI1fojHjR6JnyBekJpowQ",
+  "promtype":{
+    "type": "string",
+    "name": "活动类型",
+    "required": "R"
+  },
+    "shopname": {
+      //店铺名称
+      type: "string",
+      name: '店铺名称',
+      required: 'R'
+    },
+  "prominfo": "天学习了DOM基础方面的知识，可谓是收获颇丰。在重新认真学习JavaScript的过程，对比第一次学习而言，体会就是不一样。虽然整体感觉轻松了许多，但书中还是有很多细小琐碎的知识点值得思索和推敲。在我看来，有一本优秀",
+  "endtime": [
+    "2019-09-29",
+    "00:00"
+  ],
+  "shopid": "S0000",
+  "begtime": [
+    "2019-09-28",
+    "00:00"
+  ],
+  "promno": "201909280208239990059fc712979",
+  "status": "1",
+  "limittimeflag": "1",
+  "prompic": [
+    {
+      "digest": "decd54e4dc1147d7eb5fb6617c98ccfc",
+      "width": 780.0,
+      "path": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.dRhhAlVmlViS85eb79a561a63e7d0e2a783d84bef9cd.jpg",
+      "fileID": "cloud://xiaovt-818we.7869-xiaovt-818we-1259627454/undefineddecd54e4dc1147d7eb5fb6617c98ccfc.jpg",
+      "idx": 0.0,
+      "oriWidth": 800.0,
+      "status": "2",
+      "outType": "jpg",
+      "oriPath": "http://tmp/wx59e74c021081f517.o6zAJs5TYSsYMcGewj5pYwEHx_c4.9USS8tGxguSn343108eae9669787270c5cef363c2aa6.jpg",
+      "errMsg": "cloud.uploadFile:ok",
+      "height": 280.0,
+      "oriHeight": 500.0,
+      "index": 0.0,
+      "size": 320641.0
+    }
+  ],
+  "promfullname": "sdf",
+  "promname": "sfsf",
+  "mod_userid": "ounQF5ogi-eIXJjrYG1zKHVuKN0w",
+  "preparebegtime": [
+    "2019-09-28",
+    "00:00"
+  ],
+  "promamt": "20000",
+  "promqty": "2",
+  "marqueeshow": true
+}

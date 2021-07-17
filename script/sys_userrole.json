@@ -1,0 +1,100 @@
+{
+  "_id": "3c4c6d855d68a5050d3c94527363e409",
+  "shopid": "S0000",
+  "roles": {
+    "5f0b7ad0": {
+      "status": "1",
+      "roleid": "5f0b7ad0",
+      "rolename": "用户管理"
+    },
+    "a3fe0c81": {
+      "roleid": "a3fe0c81",
+      "rolename": "商品管理",
+      "status": "1"
+    },
+    "09e6454e": {
+      "roleid": "09e6454e",
+      "rolename": "订单管理",
+      "status": "1"
+    }
+  },
+  "create_userid": "ounQF5gNI1fojHjR6JnyBekJpowQ",
+  "updatetime": {
+    "$date": "2019-08-31T11:54:54.858Z"
+  },
+  "settime": {
+    "$date": "2019-08-30T04:24:37.495Z"
+  },
+  "userid": "ounQF5tRpBxK1gFBYvE5rlQ7A7oI",
+  "mod_userid": "ounQF5gNI1fojHjR6JnyBekJpowQ"
+}
+{
+  "_id": "3c4c6d855d68ed4b0d801955655afd66",
+  "updatetime": {
+    "$date": "2019-09-22T14:06:40.539Z"
+  },
+  "settime": {
+    "$date": "2019-08-30T09:32:59.095Z"
+  },
+  "userid": "ounQF5ogi-eIXJjrYG1zKHVuKN0w",
+  "shopid": "S0000",
+  "roles": {
+    "a3fe0c81": {
+      "roleid": "a3fe0c81",
+      "rolename": "商品管理",
+      "status": "1"
+    },
+    "ba2eeeed": {
+      "status": "1",
+      "roleid": "ba2eeeed",
+      "rolename": "活动管理"
+    },
+    "ccdab4be": {
+      "roleid": "ccdab4be",
+      "rolename": "物流信息",
+      "status": "1"
+    },
+    "5f0b7ad0": {
+      "status": "1",
+      "roleid": "5f0b7ad0",
+      "rolename": "用户管理"
+    }
+  },
+  "create_userid": "ounQF5gNI1fojHjR6JnyBekJpowQ",
+  "mod_userid": "ounQF5gNI1fojHjR6JnyBekJpowQ"
+}
+{
+  "_id": "efdeb2615d663b120bb6c010670b3c26",
+  "settime": {
+    "$date": "2019-08-28T08:28:02.886Z"
+  },
+  "userid": "ounQF5gNI1fojHjR6JnyBekJpowQ",
+  "shopid": "S0000",
+  "roles": {
+    "a3fe0c81": {
+      "status": "1",
+      "roleid": "a3fe0c81",
+      "rolename": "商品管理"
+    },
+    "ccdab4be": {
+      "status": "1",
+      "roleid": "ccdab4be",
+      "rolename": "物流信息"
+    },
+    "09e6454e": {
+      "rolename": "订单管理",
+      "status": "1",
+      "roleid": "09e6454e"
+    },
+    "5f0b7ad0": {
+      "status": "1",
+      "roleid": "5f0b7ad0",
+      "rolename": "用户管理"
+    }
+  },
+  "create_userid": "ounQF5gNI1fojHjR6JnyBekJpowQ",
+  "updatetime": {
+    "$date": "2019-10-19T14:57:14.506Z"
+  },
+  "mod_userid": "ounQF5gNI1fojHjR6JnyBekJpowQ"
+}

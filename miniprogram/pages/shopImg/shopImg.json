@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "swiperlist": "../../../components/shoptheme/swiperlist/swiperlist",
+    "mysearch": "../../../components/mysearch/mysearch"
+  },
+  "navigationBarTitleText": "店铺图片"
+}

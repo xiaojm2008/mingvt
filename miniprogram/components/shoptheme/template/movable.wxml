@@ -1,0 +1,9 @@
+<template name="movable">
+  <movable-area wx:if="{{moveable}}" class="movable-area" style='display:{{movableViewInfo.showClass}}; height:{{pageInfo.scrollHeight}};'>
+    <movable-view class=" movable-row" out-of-bounds='true' damping='999' style='height:{{pageInfo.rowHeight}}px;' direction="vertical" y="{{movableViewInfo.y}}">
+      <view class="text">
+        {{movableViewInfo.data}}
+      </view>
+    </movable-view>
+  </movable-area>
+</template>

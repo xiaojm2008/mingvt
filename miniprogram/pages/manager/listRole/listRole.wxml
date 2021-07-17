@@ -1,0 +1,100 @@
+<import src="../../../components/loading/loading.wxml" />
+<view class="ext-horiz-view top-view">
+  <view class="view-item" hover-class="view-active" wx:if="{{currtab==1}}">
+    <view class="row" style="border-bottom: 1px solid #eee;">
+      <view class='left'>
+        <image class="cover-thumb" src="{{avatarurl || '../../../images/ic_user.png'}}"></image>
+        <view class="nickname">
+          <text>{{ username }}</text>
+          <text class="phone">{{ phone }}</text>
+        </view>
+      </view>
+      <view class='right'>
+        <view class="flex-box">
+          <view class="view-box" catchtap="saveTogger">
+            <text class="simple-btn iconfont icon-gou"></text>
+            <text>保存</text>
+          </view>
+          <view class="view-box" catchtap="tabTogger" data-tabid="0">
+            <text class="simple-btn iconfont icon-tuandui" ></text><!--.icon-comment55 -->
+            <text>角色维护</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="view-item" hover-class="view-active" wx:else>
+    <view class="row" style="border-bottom: 1px solid #eee;">
+      <view class='left'>
+        <text class="iconfont icon-tuandui"></text>
+        <text class="t">角色</text>
+      </view>
+      <view class='right'>
+        <view class="flex-box">
+          <view class="view-box" catchtap="addTogger">
+            <text hover-class="icon-hover" class='simple-btn iconfont icon-plus'></text>
+            <text>新增</text>
+          </view>
+          <view class="view-box" catchtap="modTogger">
+            <text class="simple-btn iconfont icon-edit"></text>
+            <text>修改</text>
+          </view>          
+          <view class="view-box" catchtap="delTogger">
+            <text hover-class="icon-hover" class='simple-btn iconfont icon-closes'></text>
+            <text>删除</text>
+          </view>          
+          <view class="view-box" wx:if="{{frompage=='listUser'}}" catchtap="tabTogger" data-tabid="1">
+            <text hover-class="icon-hover" class='simple-btn iconfont icon-leftarrow'></text>
+            <text>返回</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="view-item">
+    <block wx:for="{{role[currtab]}}" wx:key="id" wx:for-item="item" wx:for-index="index">
+      <view class="flex-item" hover-class="flex-active" catchtap="{{item.disabled ? '':'selectAction'}}" style="{{item.style?item.style:''}}" data-index="{{index}}">
+        <text class="cell-item icon2 iconfont {{item.icon?item.icon:'icon-settings'}}"></text>
+        <text class='cell-item line-clamp'>{{item.rolename}}</text>
+        <text wx:if="{{item.active||item.status=='0'}}" class="triangle-tr"><text wx:if="{{item.status}}" class="iconfont {{item.status=='1'?'icon-gou':'icon-closes'}}"></text></text>
+      </view>
+    </block> 
+    <block wx:if="{{role[currtab].length % 4 == 1}}">
+      <view class="flex-item">
+        <text class="cell-item"></text>
+        <text class="cell-item"></text>
+      </view>
+      <view class="flex-item">
+        <text class="cell-item"></text>
+        <text class="cell-item"></text>
+      </view>
+      <view class="flex-item">
+        <text class="cell-item"></text>
+        <text class="cell-item"></text>
+      </view>
+    </block>
+    <block wx:if="{{role[currtab].length % 4 == 2}}">
+      <view class="flex-item">
+        <text class="cell-item"></text>
+        <text class="cell-item"></text>
+      </view>
+      <view class="flex-item">
+        <text class="cell-item"></text>
+        <text class="cell-item"></text>
+      </view>
+    </block>
+    <block wx:if="{{role[currtab].length % 4 == 3}}">
+      <view class="flex-item">
+        <text class="cell-item"></text>
+        <text class="cell-item"></text>
+      </view>
+    </block>
+  </view>
+</view>
+<view class="loading-wrap">
+  <template is="loading" data="{{loadFinish:loadFinish,len:role.length}}"></template>
+</view>
+
+<view class="">
+  <modaldialog id="modalDlg"></modaldialog>
+</view>

@@ -1,0 +1,41 @@
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<view class="custom" style="padding-top:{{statusBarHeight}}px;height:{{statusBarHeight+45}}px;">
+	<view class="nav" catchtap="goBack" catchtap="reBack">
+		<text class="iconfont icon-leftarrow reback"></text>
+		<text class="title">主题列表</text>
+	</view>
+	<view class="nav">
+		<!--<text wx:if="{{!editable}}" class="iconfont icon-edit-circle operBtn" catchtap="onEdit"></text>
+    <text wx:else class="iconfont icon-delete operBtn" catchtap="onDel"></text>-->
+		<text class="iconfont icon-search operBtn" id="searchBtn" catchtap="onSearch"></text>
+		<text class="iconfont icon-more2 operBtn" id="moreBtn" catchtap="onMore"></text>
+		<!--
+		<mysearch id="mysearch" placeholder="请在此输入查询内容" bindselectresult="selectResult" search="" offset-y="{{45+statusBarHeight}}" extClass="srh-btn" catetype="favor" type="icon"></mysearch>
+		 -->
+	</view>
+</view>
+
+<view class="content" style="background-color:#eee;">
+	<scroll id="scroll" requesting="{{requesting}}" empty-show="{{true}}" end="{{loadFinish}}" refreshlock="{{refreshlock}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="{{freshBarSize}}" color="{{color}}" bind:refresh="refresh" bind:more="more">
+    <view class="goods-list">
+      <view class="goods-item" hover-class="hover-item" wx:for="{{listData}}" wx:key="_id" catchtap="goDetail" data-themaid="{{item._id}}">
+        <view class="content">
+          <!-- <template is="promflag" data="{{prom:item.prominfo}}"></template>-->
+          <image class="thumbnail" lazy-load="{{true}}" src="{{item.picpath}}"></image>
+          <view class="inner-row">
+            <text class="subject">{{item.name}}</text>
+          </view>
+          <view class="inner-row">
+            <text class="num" wx:if="{{item.feetype=='1'}}">¥{{item.price}}</text>
+            <text wx:else>'免费'</text>
+            <text wx:if="{{item.authorname}}">
+              <text class="txt" style="padding:0 0 0 20px;">作者:</text>
+              <text class="">{{item.authorname}}</text>
+            </text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll>
+</view>

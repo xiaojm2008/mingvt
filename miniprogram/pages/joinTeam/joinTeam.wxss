@@ -1,0 +1,67 @@
+/* miniprogram/pages/joinTeam/joinTeam.wxss */
+.page-mask{
+   background-color:white;
+}
+.img-box {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.img-box .img-p{
+  display: block;
+  width: 120px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  position: relative;
+}
+.cover-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  z-index: 0;
+  float: left;
+}
+.cover-thumb2{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  margin-left:-50px; 
+}
+.panel-bottom {
+  font-size: 15px;
+  color: black;
+  display: block;
+}
+
+.center-panel .username text {
+  display: block;
+}
+
+.center-panel .other .level {
+  text-align: center;
+  font-size: 16px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+  color: red;
+}
+
+.prompt{
+  font-size: 15px;
+  color: red;
+}
+.time{
+  display: block;
+  position:fixed;
+  bottom: 15px;
+  color:#999;
+  font-size:13px;
+  right:20px;
+}

@@ -1,0 +1,59 @@
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<view class="ext-horiz-view top-view">
+  <view class="view-item view-ext">
+    <view class="row">
+      <view class='left'>
+        <image class="cover-thumb" wx:if="{{avatarurl}}" src="{{avatarurl}}"></image>
+        <view class="cover-text" wx:else>{{substr.subs(username,1)}}</view>
+        <view class="nickname">
+          <text>{{ username }}</text>
+          <text class="phone">{{ phone||''}}</text>
+        </view>
+      </view>
+      <view class="right" wx:if="{{phone}}" catchtap="showAddMenuDlg">
+        <text>新增菜单</text>
+        <label class="iconfont icon-rightarrow"></label>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="ext-horiz-view" wx:for="{{menu}}" wx:key="id" wx:for-item="item" wx:for-index="index">
+  <view class="view-item" hover-class="view-active">
+    <view class="row" style="border-bottom: 1px solid #eee;">
+      <view class='left'>
+        <text wx:if="{{item.icon}}" style="padding-right:5px;" class="iconfont {{item.icon}}"></text>
+        <text>{{item.name}}</text>
+      </view>
+      <view class='right' wx:if="{{!phone}}">
+        <button catchtap="selectAll" data-index="{{index}}" class="btn-icon">{{item.active?'反选':'全选'}}</button>
+        <button catchtap="saveSelect" data-index="{{index}}" class="btn-icon">保存</button>      
+      </view>
+      <view class='right' wx:else>
+        <button catchtap="showModDlg" data-index="{{index}}" class="btn-icon">修改菜单</button>
+        <button catchtap="showAddCMenuDlg" data-index="{{index}}" class="btn-icon">新增子菜单</button>
+      </view>
+    </view>
+  </view>
+  <view class="view-item" >
+    <block wx:for="{{item.children}}" wx:key="id" wx:for-item="child" wx:for-index="cindex">      
+      <view class="flex-item" hover-class="flex-active" catchtap="{{phone?'showModDlg':'selectAction'}}" data-index="{{index}}" data-cindex="{{cindex}}">
+        <text class="cell-item icon2 iconfont {{child?child.icon:'icon-checkdevice'}}"></text>
+        <text class='cell-item'>{{child.name}}</text>
+         <text wx:if="{{child.active}}" class="triangle-tr {{child.roleid?'role-flag':''}}"><text wx:if="{{child.status}}" class="iconfont {{child.status=='1'?'icon-gou':'icon-closes'}}"></text></text>
+      </view>      
+    </block>  
+    <block wx:if="{{item.children.length % 3 == 1}}">
+       <view class="flex-item"><text class="cell-item"></text><text class="cell-item"></text></view>
+       <view class="flex-item"><text class="cell-item"></text><text class="cell-item"></text></view>
+    </block>
+    <block wx:if="{{item.children.length % 3 == 2}}">
+       <view class="flex-item"><text class="cell-item"></text><text class="cell-item"></text></view>
+    </block>
+  </view>
+</view>
+
+<view class="">
+  <modaldialog id="modalDlg"></modaldialog>
+  <modaldialog id="menuDlg"></modaldialog>
+</view>

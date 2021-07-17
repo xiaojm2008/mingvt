@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "modaldialog": "../modaldialog/modaldialog",
+    "enrolldetail": "../enrolldetail/enrolldetail",
+    "share": "../share/share",
+    "comment": "../comment/comment"
+  }
+}

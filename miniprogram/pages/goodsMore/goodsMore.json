@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mysearch": "../../components/mysearch/mysearch",
+    "condilist": "../../components/condilist/condilist"
+  },
+  "navigationBarTitleText": "商品列表"
+}

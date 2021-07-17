@@ -1,0 +1,61 @@
+.read {
+  padding: 38px 38px 10px 38px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.read .read-head {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  height: 48px;
+  line-height: 48px;
+  color: black;
+}
+
+.read .read-body {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 800;
+  color: black;
+}
+
+.read .read-body .row {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  height: 40px;
+  line-height: 40px;
+}
+
+.read .read-bottom {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: right;
+  color: #ccc;
+}
+
+.canvas-box {
+  position: fixed;
+  top: 999999rpx;
+  left: 0;
+  /* margin-bottom: 80px;
+  position: relative;
+  border: 1px solid white;*/
+}
+
+.view-item .row .right .btn {
+  color: green;
+  flex: 1 0 30px;
+  text-align: right;
+  border: 0;
+}

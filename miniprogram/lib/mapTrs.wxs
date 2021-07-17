@@ -1,0 +1,12 @@
+var mapTrs = function (type,id, map) {
+  //console.log('code=' + code);
+  if (!type || !id) { return '_' }
+  return map[type+"_"+id];
+}
+var keyValue = function(key,obj){
+  return obj[k];
+}
+module.exports = {
+  trs: mapTrs,
+  keyValue: keyValue
+};

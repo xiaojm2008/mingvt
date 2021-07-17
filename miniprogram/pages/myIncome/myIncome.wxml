@@ -1,0 +1,11 @@
+<view class="list">
+  <view class="row" catchtap="goToPage" data-page="joinTeam" data-params="scene={{userBenefit.invitation_code}}&show=1">
+    <label class="begin"></label>
+    <image class="thumbnail " src="{{userInfo.avatarurl || '../../images/ic_user.png'}}"></image>
+    <view class="content">
+      <text>{{ userInfo.nickname}}</text>
+      <text class="phone">{{ userInfo.phone }}</text>
+    </view>
+    <label class="end ico-moon icon-rightarrow " catchtap="goToPage" data-page="myCenter"></label>
+  </view>
+</view>

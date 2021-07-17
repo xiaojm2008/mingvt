@@ -1,0 +1,22 @@
+page .content-panel{
+  padding-bottom:80px;
+  height: 100%;
+ /*
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1; 
+  position: absolute;
+  will-change: scroll-position;
+  contain: size style layout;*/
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "swiperlist": "../../../components/shoptheme/swiperlist/swiperlist",
+    "scroll": "../../../components/scroll/scroll",
+    "multitext": "../../../components/multitext/multitext",
+    "modaldialog": "../../../components/modaldialog/modaldialog",
+    "flowView": "../../../components/flow/flow"
+  },
+  "navigationBarTitleText": "预约寄件"
+}

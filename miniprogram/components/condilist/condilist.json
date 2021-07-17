@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "conditab": "../components/conditab/conditab",
+    "scroll": "../components/scroll/scroll"
+  }
+}

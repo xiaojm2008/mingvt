@@ -1,0 +1,141 @@
+<view class="user-center">
+  <view class="ext-horiz-view" style="margin-top:0;">
+    <view class="view-item view-ext">
+      <view class="row">
+        <view class='left'>
+          <image class="cover-thumb" catchtap="goToPage" data-page="joinTeam" data-params="scene={{userBenefit.invitation_code}}&show=1" src="{{userInfo.avatarurl || '../../images/ic_user.png'}}"></image>
+          <view class="nickname">
+            <text >{{ userInfo.nickname || '请登录' }}</text>
+            <text class="phone">{{ userInfo.phone||'未提供' }}</text>
+          </view>
+        </view>
+        <label class="right iconfont icon-rightarrow " catchtap="goToPage" data-page="myCenter"></label>
+      </view>
+    </view>
+  </view>
+  <view class="ext-horiz-view" style="border-bottom: 1px solid #eee;" wx:if="{{userBenefit}}">
+    <view class="view-item">
+      <view class="flex-item" catchtap="goToPage" data-page="myIncome">
+        <view class="cell-item">累计收入(元)</view>
+        <view class="cell-item">¥{{userBenefit.income||0.0}}</view>
+      </view>
+      <view class="flex-item" catchtap="goToPage" data-page="myTotalCashOut">
+        <view class="cell-item">累计提现(元)</view>
+        <view class="cell-item">¥{{userBenefit.cashout||99999999999999.0}}</view>
+      </view>
+    </view>
+    <view class="view-item">
+      <view class="flex-item" catchtap="goToPage" data-page="myCommission">
+        <view class="cell-item">交易佣金(元)</view>
+        <view class="cell-item">¥{{userBenefit.commission||0.0}}</view>
+      </view>
+      <view class="flex-item" catchtap="goToPage" data-page="myRewards">
+        <view class="cell-item">办卡奖励(元)</view>
+        <view class="cell-item">¥{{userBenefit.rewards||0.0}}</view>
+      </view>
+    </view>
+    <view wx:if="{{userBenefit.can_cashout}}" class="view-item" hover-class="view-active" catchtap="goToPage" data-page="myCashOut" data-params="cashout={{userBenefit.can_cashout}}">
+      <view class="row">
+        <view class='left'>
+          申请提现
+        </view>
+        <view class='right'>
+          <text wx:if="{{userBenefit.can_cashout==0}}">未有收入</text>
+          <text wx:else>可提现¥{{userBenefit.can_cashout}}</text>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+    </view>
+    <view class="view-item" hover-class="view-active" catchtap="goToPage" data-page="myTeam">
+      <view class="row">
+        <view class='left'>
+          我的团队
+        </view>
+        <view class='right'>
+          <text></text>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='ext-horiz-view' style="border-bottom: 1px solid #eee;" wx:if="{{ordermenu}}">
+    <view class="view-item" catchtap="goToOrder">
+      <view class="row" style="border-bottom: 1px solid #eee;" hover-class="view-active">
+        <view class='left'>
+          我的订单
+        </view>
+        <view class='right'>
+          <text>查看全部订单</text>
+          <label class="iconfont icon-rightarrow"></label>
+        </view>
+      </view>
+      <view catchtap="goToOrder" class="flex-item item4" hover-class="fitem-active" data-status="0">
+        <image src="../../images/pen_payment.png" />
+        <text class="t">待付款</text>
+      </view>
+      <view catchtap="goToOrder" class="flex-item item4" hover-class="fitem-active" data-status="1">
+        <image src="../../images/pen_delivery.png" />
+        <text class="t">待发货</text>
+      </view>
+      <view catchtap="goToOrder" class="flex-item item4" hover-class="fitem-active" data-status="2">
+        <image src="../../images/delivery.png" />
+        <text class="t">待收货</text>
+      </view>
+      <view catchtap="goToOrder" class="flex-item item4" hover-class="fitem-active" data-status="3">
+        <image src="../../images/completed.png" />
+        <text class="t">待评价</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="ext-horiz-view">
+    <view wx:for="{{memmenu}}" wx:key="_id"  catchtap="goToPage" data-page="{{item.url}}" class="view-item" hover-class="view-active">
+      <view class="row">
+        <view class='left'>
+          <label class="iconfont {{item.icon}}"></label>
+          <text class="s-text">{{item.name}}</text>
+        </view>
+        <label class="right iconfont icon-rightarrow "></label>
+      </view>
+    </view>
+  </view>
+</view>
+
+ <!-- 
+    <view catchtap="goToPage" data-page="myCard" class="view-item" hover-class="view-active">
+      <view class="row">
+        <view class='left'>
+          <label class="iconfont icon-vip-card"></label>
+          <text class="s-text">会员卡</text>
+        </view>
+        <label class="right iconfont icon-rightarrow"></label>
+      </view>
+    </view>
+    <view catchtap="goToPage" data-page="myCoupon" class="view-item" hover-class="view-active">
+      <view class="row">
+        <view class='left'>
+          <label class="iconfont icon-coupon"></label>
+          <text class="s-text">优惠券</text>
+        </view>
+        <label class="right iconfont icon-rightarrow"></label>
+      </view>
+    </view>
+    <view catchtap="goToPage" data-page="/pages/manager/listShop/listShop" class="view-item" hover-class="view-active">
+      <view class="row">
+        <view class='left'>
+          <label class="iconfont icon-kaidian"></label>
+          <text class="s-text">我要开店</text>
+        </view>
+        <label class="right iconfont icon-rightarrow"></label>
+      </view>
+    </view>
+    <view catchtap="goToConsole" class="view-item" hover-class="view-active">
+      <view class="row">
+        <view class='left'>
+          <label class="iconfont icon-console"></label>
+          <text class="s-text">控制台</text>
+        </view>
+        <label class="right iconfont icon-rightarrow" data-page="myNotify"></label>
+      </view>
+    </view>
+    -->

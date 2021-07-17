@@ -1,0 +1,185 @@
+<wxs module="dictTrs" src="../../lib/dictTrs.wxs"></wxs>
+<!--
+<wxs module="substr" src="../../lib/substr.wxs"></wxs>
+<wxs module="pipi" src="../../lib/pipi.wxs"></wxs>
+-->
+
+
+<block wx:if="{{options.type=='1'}}">
+  <view class="dialog-wrap" wx:if="{{showDlg}}" catchtouchmove="dragMove" bindtouchstart='dragStart'  bindtouchend='dragEnd'>
+    <view class="dialog dialog2 bottom-pos" animation="{{animationData}}">
+      <view class="dialog-head dlghead">
+        <view class="subname">
+          <text>{{options.title}}</text>
+        </view>
+      </view>
+      <scroll-view scroll-y="true" class="dialog-content" style="{{height>0?'height:'+(height-40-62)+'px':''}}">
+        <view class="horiz-view">
+          <block wx:if="{{options.basicfacts&&options.basicfacts.length>0}}">
+            <view class="view-item">
+              <view class="row no-line">
+                <view class="left" style="flex:0 0 auto;{{options.style.subStyle||''}}">
+                  <text class="iconfont icon-ensure"></text>
+                  <text>概况</text>
+                </view>
+                <view class='right'></view>
+              </view>
+              <view class="row">            
+                <text class="item-text" wx:for="{{options.basicfacts}}" wx:key="id">{{item.name}} {{item.value}}</text>
+              </view>
+            </view>
+          </block>
+          <block wx:for="{{options.enrollinfo}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+            <view class="view-item">
+              <view class="row no-line">
+                <view class="left" style="flex:0 0 auto;{{options.style.subStyle||''}}">
+                  <text class="iconfont icon-ensure"></text>
+                  <text>{{item.name}}</text>
+                </view>
+                <view class='right'></view>
+              </view>
+              <view class="row">
+                <block wx:if="{{item.type=='m'}}">
+                  <text class="b-text" style="{{options.style.blockStyle||''}}" wx:for="{{item.value}}" wx:key="*this" wx:for-index="seq" wx:for-item="code">
+                    <block wx:if="{{item.dictlist[0].name}}">{{dictTrs.trs(item.dictlist,code,1)}}</block>
+                    <block wx:else>{{dictTrs.trs(dict[item.dictlist],code,1)}}</block>
+                  </text>
+                </block>
+                <block wx:elif="{{item.type=='3'}}">
+                  <text class="content-text" style="{{options.style.textStyle||''}}" wx:if="{{item.dictlist[0].name}}">{{dictTrs.trs(item.dictlist,item.value,'1')}}</text>
+                  <text class="content-text" style="{{options.style.textStyle||''}}" wx:else>{{dictTrs.trs(dict[item.dictlist],item.value,'1')}}</text>
+                </block>
+                <block wx:elif="{{item.type=='a'||item.type=='b'||item.type=='5'}}">
+                  <view class="inner-text" wx:if="{{item.type=='a'}}">{{item.value[0].text}}</view>
+                  <view class="flex-item ext-item" wx:for="{{item.value}}" wx:for-index="imgindex" wx:key="id" wx:for-item="img">
+                    <image src="{{ img.fileID }}" catchtap="previewImg" data-index="{{imgindex}}" data-id="{{index}}" mode="scaleToFill"></image>
+                  </view>
+                </block>
+                <block wx:else>
+                  <text class="content-text" style="{{options.style.textStyle||''}}" >{{item.value}}</text>
+                </block>
+              </view>
+            </view>  
+          </block>
+        </view>
+      </scroll-view>
+      <!-- dialog-content -->
+      <view class="dialog-bottom">
+        <text class="btn one" catchtap="confirm" hover-class="btn-hover">{{options.btntext||'确定'}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="dialog-wrap" wx:if="{{showDlg}}" catchtouchmove="dragMove" bindtouchstart='dragStart'  bindtouchend='dragEnd'>
+    <view class="dialog dialog2 bottom-pos" animation="{{animationData}}">
+      <view class="dialog-head dlghead">
+        <view class="subname">
+          <text>{{options.title}}</text>
+        </view>
+      </view>
+      <scroll-view scroll-y="true" class="dialog-content" style="{{height>0?'height:'+(height-40-62)+'px':''}}">
+        <view class="horiz-view">
+          <block wx:for="{{options.enrollinfo}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+            <view class="view-item">
+              <view class="row">
+                <view class="left subname">
+                  <text class="text">{{item.name}}</text>
+                </view>
+                <view class='right'>               
+                  <block wx:if="{{item.type=='3'}}">
+                    <text class="text" wx:if="{{item.dictlist[0].name}}">{{dictTrs.trs(item.dictlist,item.value,'1')}}</text>
+                    <text class="text" wx:else>{{dictTrs.trs(dict[item.dictlist],item.value,'1')}}</text>
+                  </block>
+                  <block wx:elif="{{item.type=='m'}}">
+                    <text class="b-text" wx:for="{{item.value}}" wx:key="*this" wx:for-index="seq" wx:for-item="code">
+                      <block wx:if="{{item.dictlist[0].name}}">{{dictTrs.trs(item.dictlist,code,1)}}</block>
+                      <block wx:else>{{dictTrs.trs(dict[item.dictlist],code,1)}}</block>
+                    </text>
+                  </block>
+                  <block wx:else>
+                    <text class="text">{{item.value}}</text>
+                  </block>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+      <view class="dialog-bottom">
+        <text class="btn one" catchtap="confirm" hover-class="btn-hover">{{options.btntext||'确定'}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+<!--
+<block wx:elif="{{options.type=='2'}}">
+  <view class="dialog-wrap" wx:if="{{showDlg}}" catchtouchmove="dragMove" bindtouchstart='dragStart' bindtouchend='dragEnd'>
+    <view class="dialog dialog2 bottom-pos" animation="{{animationData}}">
+      <view class="dialog-head dlghead">
+        <view class="subname">
+           <text>{{options.title}}</text>
+        </view>
+      </view>
+      <scroll-view scroll-y="true" class="dialog-content">
+        <view class="horiz-view">
+          <block wx:if="{{options.basicfacts.length>0}}">
+            <view class="view-item">
+              <view class="row no-line">
+                <view class="left" style="flex:0 0 auto;font-size:16px;font-weight:700;">
+                  <text class="iconfont icon-ensure"></text>
+                  <text>概况</text>
+                </view>
+                <view class='right'></view>
+              </view>
+              <view class="row" style="min-height:25px;">            
+                <text class="item-text" wx:for="{{options.basicfacts}}" wx:key="id">{{item.name}} {{item.value}}</text>
+              </view>
+            </view>
+          </block>
+          <block wx:for="{{options.enrollinfo}}" wx:key="id" wx:for-index="index" wx:for-item="item">
+            <view class="view-item">
+              <view class="row no-line">
+                <view class="left" style="flex:0 0 auto;font-size:16px;font-weight:700;">
+                  <text class="iconfont icon-ensure"></text>
+                  <text>{{item.name}}</text>
+                </view>
+                <view class='right'></view>
+              </view>
+              <view class="row">
+                <block wx:if="{{item.type=='m'}}">
+                  <text class="item-text" wx:for="{{item.value}}" wx:key="*this" wx:for-index="seq" wx:for-item="code">
+                    <block wx:if="{{item.dictlist[0].name}}">
+                      {{dictTrs.trs(item.dictlist,code,1)}}
+                    </block>
+                    <block wx:else>
+                      {{dictTrs.trs(dict[item.dictlist],code,1)}}
+                      {{dictTrs.trs(dict[item.dictlist],code,1)}}
+                    </block>
+                  </text>
+                </block>
+                <block wx:elif="{{item.type=='3'}}">
+                  <text class="content-text" wx:if="{{item.dictlist[0].name}}">{{dictTrs.trs(item.dictlist,item.value,'1')}}</text>
+                  <text class="content-text" wx:else>{{dictTrs.trs(dict[item.dictlist],item.value,'1')}}</text>
+                </block>
+                <block wx:elif="{{item.type=='a'||item.type=='b'||item.type=='5'}}">
+                  <view class="inner-text" wx:if="{{item.text}}">{{item.text}}</view>
+                  <view class="flex-item ext-item" wx:for="{{item.value}}" wx:for-index="imgindex" wx:key="id" wx:for-item="img">
+                    <image src="{{ img.fileID }}" catchtap="previewImg" data-index="{{imgindex}}" data-id="{{index}}" mode="scaleToFill"></image>
+                  </view>
+                </block>
+                <block wx:else>
+                  <text class="content-text">{{item.value}}</text>
+                </block>
+              </view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+      <view class="dialog-bottom">
+        <text class="btn one" catchtap="hide" hover-class="btn-hover">确定</text>
+      </view>
+    </view>
+  </view>
+</block>
+ -->

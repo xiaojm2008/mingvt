@@ -1,0 +1,17 @@
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<template name="actionst">
+  <text class="dict-flag">{{dictTrs.trs(dict['100032'],action.feetype,'1') }}</text>
+  <view>
+    <text class="dict-flag">{{dictTrs.trs(dict[100033],action.actiontype,'1') }}</text>   
+    <text class="st-flag st-red" wx:if="{{action.apprflag}}">需审核</text>
+    <text wx:if="{{action.actionstatus!='0'}}" class="st-flag st-gray">{{dictTrs.trs(dict['100039'],action.actionstatus,'1') }}</text>
+    <block wx:if="{{noshow != 3}}">
+      <text class="st-flag st-gray" wx:if="{{now < action.enrollbegintime}}">待报名</text>
+      <text class="st-flag" wx:elif="{{now >= action.enrollbegintime && now <= action.enrollendtime}}">报名中</text>
+      <text class="st-flag" wx:elif="{{now >= action.enrollendtime && now < action.actbegintime}}">待活动</text>
+      <text class="st-flag" wx:elif="{{now >= action.actbegintime && now <= action.actendtime}}">活动中</text>
+      <text class="st-flag st-gray" wx:elif="{{now >= action.actendtime}}">结束</text>
+    </block>
+  </view>
+</template>

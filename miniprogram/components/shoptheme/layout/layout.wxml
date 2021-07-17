@@ -1,0 +1,27 @@
+<view class="fu-page">
+  <flowView flows="{{flows}}" bind:togger="flowTogger" linear='true' itemWidth="80" toggerDisabled='{{toggerDisabled}}' activeIndex="{{activeIndex}}" myStyle="background-color:white;">
+  </flowView>
+  <view class="fu-content">
+    <view class="ext-horiz-view my-view">
+      <view class="view-item fix-item">
+        <block wx:for="{{subUnits[activeIndex].children}}" wx:key="id" wx:for-item="child" wx:for-index="cindex">
+          <block wx:if="{{child}}">
+            <view class="flex-item" hover-class="flex-active" catchtap="selectAction" data-index="{{activeIndex}}" data-cindex="{{cindex}}">
+              <image wx:if="{{child.img}}" class="cell-item" mode="aspectFit" src="{{child.img}}"></image>
+              <view wx:elif="{{child.icon}}" class="cell-item" style="height:50px;line-height:50px;">
+                <text class="iconfont {{child.icon}}"></text>
+              </view>
+              <view class='cell-item line-clamp'>{{child.name}}</view>
+              <text wx:if="{{child.active && child.name}}" class="triangle-tr"><text class="iconfont icon-gou"></text></text>
+            </view>
+          </block>
+          <block wx:else>
+            <view class="view-item center">
+              <text>无数据</text>
+            </view>
+          </block>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,30 @@
+<view class="top_btn" bindtap="chooseWxAddress">
+<text>点击可获取用户微信收货地址信息</text>
+</view>
+<view class="myAddress-wrap page" id="myAddress">
+  <view class="myAddress-content-container">
+    <view class="myAddress-address-list">
+      <block wx:if="{{ !addressList || addressList.length == 0 }}">
+        <view style="color:#a8a8a8; padding:20px;">暂无地址</view>
+      </block>
+      <block wx:else>
+        <block wx:for="{{ addressList }}" wx:for-key="_id" wx:for-index="addressindex">
+          <view class="myAddress-address">
+            <label class="check-box-container" bindtap="selectAddress"  data-index="{{addressindex}}" data-id="{{ item._id }}">
+              <label class="check-box {{ item._id == selectAddressId ? 'checked' : '' }}">
+                <image src="../../images/app_fontschecked.png"></image>
+              </label>
+            </label>
+            <view class="myAddress-address-top" bindlongtap="showOperatedDlg" data-id="{{ item._id }}">
+              <text>{{ item.name }}</text>
+              <text>{{ item.contact }} {{item.is_default&&'【默认】'}}</text>
+              <view>{{ item.province.text + item.city.text + item.district.text + item.detailaddress }}</view>
+            </view>
+            <!--<text class="myAddress-delete" bindtap="deleteAddress" data-id="{{ item._id }}">删除</text>-->
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+  <view class="myAddress-bottom-nav" bindtap="addAddress">添加新地址</view>
+</view>

@@ -1,0 +1,57 @@
+<view class="contain" wx:if="{{tabs && tabs.length>0}}">
+  <view class="tab" style="height:{{size}}rpx;{{myStyle}}">
+    <view wx:for="{{tabs}}" wx:key="{{name}}" wx:for-index="index" class="line-clamp tab-item {{curtab==index?'active':''}}" catchtap='toggle' data-index="{{index}}">
+      <text class="">{{item.name}}</text>
+      <text class="iconfont icon-downward2"></text>
+    </view>
+  </view>
+  <view class="panel-wrap" wx:if="{{winHeight>0&&category.length>0}}" catchtap="hide">
+  </view>
+  <view class="cate-panel" style="height:{{winHeight}}px;top:{{size}}rpx;{{anima?'transition:height 0.3s linear':''}};">
+    <scroll-view class="navigate" scroll-y="yes">
+      <view wx:for="{{category}}" wx:key="code" wx:for-index="index" data-index="{{index}}" hover-class="hover-item" class="item {{item.active ? (item.items.length>0?'select-item':'select-item2'):''}}" catchtap="naviTap" data-code="{{item.code}}">
+        <text class="txt">{{item.name}}</text>
+      </view>
+    </scroll-view>
+    <scroll-view class="content" scroll-y="yes" wx:if="{{category[selected].items.length>0}}">
+      <view class="ext-horiz-view">
+        <view class="view-item fix-item">
+          <block wx:for="{{category[selected].items}}" wx:key="id" wx:for-item="child" wx:for-index="index">
+            <block wx:if="{{child.itemtype=='image'}}">
+              <view class="flex-item" hover-class="flex-active" catchtap="contentTap" data-index="{{index}}">
+                <view class="cell-item">
+                  <image class="svgimg radius-btn" src="{{child.img[1].fileID}}"></image>
+                </view>
+                <text class='cell-item line-clamp'>{{child.name}}</text>
+              </view>
+            </block>
+            <block wx:elif="{{child.itemtype=='block'}}">
+              <view class="flex-item" hover-class="flex-active" catchtap="contentTap" data-index="{{index}}">
+                <view class="cell-item">
+                  <text class='cell-item line-clamp'>{{child.name}}</text>
+                </view>
+                <text class='cell-item line-clamp'>{{child.summary}}</text>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="flex-row line-clamp {{child.active?'flex-row-sel':''}}" catchtap="contentTap" data-index="{{index}}">
+                {{child.name}}
+              </view>
+            </block>
+          </block>
+          <!--
+            <block wx:if="{{category[selected].items.length % 3 == 1}}">
+              <view class="flex-item">
+                <text class="cell-item"></text>
+                <text class="cell-item"></text>
+              </view>
+            </block>
+            -->
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view wx:else class="contain">
+  <view class="tab" style="height:{{size}}rpx;{{myStyle}}"><text style="margin-left:10px">查询列表</text></view>
+</view>

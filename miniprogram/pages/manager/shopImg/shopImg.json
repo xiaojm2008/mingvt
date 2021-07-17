@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "swiperlist": "../../../components/shoptheme/swiperlist/swiperlist",
+    "mysearch": "../../../components/mysearch/mysearch"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "图片中心"
+}

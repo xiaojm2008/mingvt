@@ -1,0 +1,13 @@
+<view class="panel">
+  <view class="title">提现到微信零钱</view>
+  <view class="subject">提现金额</view>
+  <view class="input-amt">
+    <text class="icon-amt">¥</text>
+    <input class="cashout_amt" value="{{ willCashOut }}" bindinput="inputCashOutAmt" type="number"/>
+  </view>
+  <view class="additional" wx:if="{{!showPrompt}}">当前可提现{{cashOut}}元，<text style="color:blue" catchtap="setCashOutAmt">全部提现</text></view>
+  <view class="additional {{exceed}}" wx:else>{{promptInfo}}</view>  
+  <view class="panel-bottom">
+    <text class="btn" bindtap="cashOutTap">提现</text>
+  </view>
+</view>

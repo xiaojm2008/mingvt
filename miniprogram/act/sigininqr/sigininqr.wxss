@@ -1,0 +1,28 @@
+.center-panel text {
+  font-size: 15px;
+  color: #999;
+  display: block;
+}
+
+.center-panel .img-box {
+  padding: 32rpx;
+  background-color: #fff;
+  position: relative;
+}
+
+.center-panel .img-box image {
+  width: 686rpx;
+  height: 686rpx;
+  background-color: #f9f9f9;
+}
+.center-panel .panel-bottom{
+  height: 50px;
+}
+.page-mask .one{
+  margin-top: 10px;
+  margin-left: 30px ;
+  margin-right: 30px;
+  left: 0;
+  right:0;   
+  position:absolute;
+}

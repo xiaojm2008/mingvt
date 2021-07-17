@@ -1,0 +1,42 @@
+<wxs module="pipi" src="../../lib/pipi.wxs"></wxs>
+<view class="pannel" wx:for="{{paymentList}}" wx:key="pay_id">
+  <view class="head">
+    <text class="iconfont {{item.status=='1' ? 'icon-gou':'icon-closes'}}"></text>
+  </view>
+  <view class="errMsg {{item.status=='1' ? 'success':''}}">{{item.errmsg}}</view>
+  <view class="content">
+    <view class="item" wx:if="{{item.coupon_fee}}">
+      <text class="title">代金券金额：</text>
+      <text class="num">¥ {{item.coupon_fee*0.01}}</text>
+    </view>
+    <view class="item" wx:if="{{item.settlement_total_fee}}">
+      <text class="title">应结订单金额：</text>
+      <text class="num">¥ {{item.settlement_total_fee*0.01}}</text>
+    </view>
+    <view class="item" wx:if="{{item.cash_fee}}">
+      <text class="title">现金支付金额：</text>
+      <text class="num">¥ {{item.cash_fee*0.01}}</text>
+    </view>
+    <view class="item" wx:if="{{item.order_num}}">
+      <text class="title">订单数量：</text>
+      <text class="num">¥ {{item.order_num}}</text>
+    </view>
+    <view class="item" wx:if="{{item.goods_num}}">
+      <text class="title">商品数量：</text>
+      <text class="num">¥ {{item.goods_num}}</text>
+    </view>
+    <view class="item" wx:if="{{item.total_pay}}">
+      <text class="title">订单总金额：</text>
+      <text class="num">¥ {{item.total_pay*0.01}}</text>
+    </view>
+    <view class="item">
+      <text class="btn" bindtap="goToDetail" data-index="{{index}}" wx:if="{{item.status=='1'}}">返回订单详情</text>
+      <text class="btn" bindtap="goToBack" wx:else>返回</text>
+    </view>
+  </view>
+<view class="bottom" wx:if="{{index==itemList.length-1}}">
+  <text>{{pipi.dFormat2(item.time_end)}}</text>
+  <text>现金支付金额=订单金额-[代金券]金额</text>
+  <text>应结订单金额=订单金额-免充值优惠券金额</text>
+</view>
+</view>

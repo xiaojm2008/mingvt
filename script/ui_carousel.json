@@ -1,0 +1,45 @@
+{
+  "type": "carousel",
+  "style": "height:375rpx;margin-left:auto;margin-right:auto;margin-top:0;opacity:1;",
+  "content": [
+    {
+      "customFeature": {
+        "action": "to-franchisee",
+        "franchisee-id": "b33boyUE8P",
+        "franchisee-name": "美味餐厅"
+      },
+      "pic": "http:\/\/img.weiye.me\/zcimgdir\/album\/file_591558e0042bb.png",
+      "content": "",
+      "parentCompid": "carousel1",
+      "style": "",
+      "itemType": null,
+      "itemParentType": "carousel",
+      "itemIndex": 0,
+      "eventParams": "{\"franchisee_id\":\"b33boyUE8P\"}",
+      "eventHandler": "tapToFranchiseeHandler"
+    },
+    {
+      "customFeature": {
+        "action": "to-franchisee",
+        "franchisee-id": "1H9fN1Fe49",
+        "franchisee-name": "食客"
+      },
+      "pic": "http:\/\/img.weiye.me\/zcimgdir\/album\/file_5919646682231.png",
+      "content": "",
+      "parentCompid": "carousel1",
+      "style": "",
+      "itemType": null,
+      "itemParentType": "carousel",
+      "itemIndex": 1,
+      "eventParams": "{\"franchisee_id\":\"1H9fN1Fe49\"}",
+      "eventHandler": "tapToFranchiseeHandler"
+    }
+  ],
+  "customFeature": {
+    "autoplay": true,
+    "interval": 2
+  },
+  "animations": [],
+  "page_form": "",
+  "compId": "carousel1"
+}

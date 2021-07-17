@@ -1,0 +1,48 @@
+
+.list {
+  width: 100% !important;
+  height: auto !important;
+}
+.row {
+  box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+}
+
+.row .thumbnail {
+  width:  85px;
+  height: 85px;
+}
+
+.row .empty-span {
+  display: inline-block;
+  height: 100%;
+  width: 20px;
+}
+
+.row .content {
+  vertical-align: middle;
+  padding-left: 20px;
+  flex:1 1 auto;
+  text-align: left;
+}
+.row .content text{
+  display: block;
+}
+.row .content .phone{
+  font-size:12px;
+}
+.row .icon-rightarrow {
+  width: 40px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 25px;
+  color: #eee;
+  text-align: right;
+}

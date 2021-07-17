@@ -1,0 +1,110 @@
+<wxs module="dictTrs" src="../../lib/dictTrs.wxs"></wxs>
+<view class="ext-horiz-view">
+  <view class="view-item">
+    <view class="row">
+      <view class="left subname" data-index="{{index}}" catchtap="delField">
+        <text wx:if="{{index}}" hover-class="icon-hover" class='oper-icon'></text>
+        <text class="required">要素名称</text>
+      </view>
+      <view class='right'>
+        <input class="text-input" placeholder="譬如：报名人手机号码" data-id="field.name" value="{{ field.name }}" bindinput="inputTogger" />
+      </view>
+    </view>
+  </view>
+  <view class="view-item">
+    <view class="row">
+      <view class="left subname">
+        <text class="required">要素类型</text>
+      </view>
+      <view class='right'>
+        <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="200002" data-id="field.type" value="{{ dictTrs.idx(dict['200002'],field.type) }}" range="{{ dict['200002'] }}" range-key="name">
+          <input class="text-input" disabled placeholder="要素类型" value="{{dictTrs.trs(dict['200002'],field.type) }}"></input>
+        </picker>
+        <text class='iconfont icon-rightarrow'></text>
+      </view>
+    </view>
+  </view>
+  <view class="flex-box" wx:if="{{field.type=='3'||field.type=='m'}}" bindtap="showOptionsView">
+    <view class="linetext view-box">
+      <text>点击录入选择项</text>
+      <text class="">+</text>
+    </view>
+    <view class="multitext flex-item no-line" style='min-height:20px;line-height:20px;' wx:for="{{field['dictlist']}}" wx:key="code" wx:for-index="dictindex" wx:for-item="dict">
+      <text class="line-clamp">{{dict.code}}-{{dict.name}}</text>
+    </view>
+  </view>
+  <view class="view-item">
+    <view class="row">
+      <view class="left subname">
+        <text class="required">是否必填</text>
+      </view>
+      <view class='right'>
+        <picker mode="selector" class="inp-selector" bindchange="inputTogger" data-dict="200003" data-id="field.required" value="{{ dictTrs.idx(dict['200003'],field.required) }}" range="{{ dict['200003'] }}" range-key="name">
+          <input class="text-input" disabled placeholder="是否必输" value="{{dictTrs.trs(dict['200003'],field.required) }}"></input>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="view-item" wx:if="{{field.type=='5'||field.type=='a'||field.type=='b'}}">
+    <view class="row">
+      <view class="left subname">
+        <text class="required">图片数量</text>
+      </view>
+      <view class='right'>
+        <input class="text-input" type="digit" placeholder="最多上传允许图片" data-id="field.maxcount" value="{{ field.maxcount }}" bindinput="inputTogger" />
+      </view>
+    </view>
+  </view>
+  <block wx:elif="{{field.type=='m'}}">
+    <view class="view-item">
+      <view class="row">
+        <view class="left subname">
+          <text class="required">单项单行显示</text>
+        </view>
+        <view class='right'>
+          <switch class="text-input" checked="{{field.style}}" placeholder="按一个选择项一行显示" data-id="field.style" value="{{ field.style }}" bindchange="inputTogger" />
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="view-item">
+    <view class="row">
+      <view class="left subname">
+        <text class="required">填写说明</text>
+      </view>
+      <view class='right'>
+        <input class="text-input" placeholder="若有特别，说明字段填写要求" data-id="field.placeholder" value="{{ field.placeholder }}" bindinput="inputTogger" />
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="dialog-wrap" wx:if="{{showDlg}}">
+  <view class="dialog center-panel dialog2">
+    <view class="dialog-head">
+      <view class="left subname" style="width:95%" catchtap="addOptions">
+        <text class="btn btn2"><text class="iconfont icon-plus icon-btn"></text>新增</text>
+      </view>
+      <text class="close-btn" catchtap="showOptionsView">x</text>
+    </view>
+    <view class="dialog-content">
+      <view class="ext-horiz-view">       
+          <block wx:for="{{field['dictlist']}}" wx:for-index="index" wx:for-item="item">          
+            <view class="view-item">
+             <view class="row">
+              <view class="left subname" data-index="{{index}}" catchtap="delOptions">
+                <!-- <text class='minus-icon'>-</text>-->
+                <text hover-class="icon-hover" class='oper-icon minshow'>-</text>
+                <text class="text">选项.{{index+1}}.{{item.code}}</text>
+              </view>
+              <view class='right'>
+                <input class="text-input" placeholder="譬如上车地点：科技园" data-index="{{index}}" data-code="field.dictlist[{{index}}].code" id="field.dictlist[{{index}}].name" value="{{item.name}}" bindinput="inputOptionsTogger" />
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- dialog-content -->
+  </view>
+</view>

@@ -1,0 +1,137 @@
+/* pages/category/category.wxss */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cate-panel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cate-panel .navigate {
+  flex: 0 1 95px;
+  height: 100%;
+  background-color: #eee;
+}
+
+.cate-panel .content {
+  flex: 2 1 auto;
+  height: 100%;
+}
+
+.cate-panel .navigate .item {
+  display: block;
+  height: 30px;
+  font-size: 14px;
+  color: black;
+  text-align: center;
+  line-height: 30px;
+  padding: 10px 0 10px 0;
+  border-right: 1px solid #eee;
+  background-color: #eee;
+}
+/* 
+ transition:all 1s ease-in-out;
+   transform: scale(1.5); 
+.cate-panel .navigate .hover-item {
+ font-size: 16px;
+  background-color: white;
+  border-right: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.cate-panel .navigate .hover-item .txt{
+  width: 100%;
+  color: red;
+  border-left: 3px solid rgb(121, 6, 6);
+}*/
+.cate-panel .navigate .select-item:first-child {
+  border-top: 0;
+}
+.cate-panel .navigate .select-item:last-child {
+  border-top: 0;
+}
+.cate-panel .navigate .select-item {
+  /*
+  color: red;
+  border-left: 3px solid rgb(121, 6, 6);
+  */
+  font-size: 16px;
+  background-color: white;
+  border-right: 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.cate-panel .navigate .select-item .txt{
+  width: 100%;
+  color: red;
+  border-left: 3px solid rgb(121, 6, 6);
+  display: block;
+}
+.ext-horiz-view .view-item {
+  padding: 0px !important;
+  min-height:40px;
+}
+.ext-horiz-view .view-item .iconshow{
+  color:rgb(223, 75, 75);
+  padding-right: 10px;
+}
+.ext-horiz-view .center{
+  justify-content: center;
+}
+.ext-horiz-view .fix-item {
+  justify-content:space-between !important;
+}
+.ext-horiz-view .view-item .flex-item {
+  flex: 0 1 32%;
+  border-bottom: 0;
+  border-right: 0;
+}
+
+.ext-horiz-view .view-item .flex-active {
+  background-color: rgb(255, 251, 251);
+}
+
+.ext-horiz-view .view-item .flex-item .cell-item {
+  height: 35px;
+  width: 88px;
+}
+
+.ext-horiz-view .view-item .flex-item .cell-item .svgimg {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.ext-horiz-view .view-item .flex-item .triangle-tr {
+  top: 0;
+  right: 0;
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 20px solid rgba(112, 199, 112, 0.6);
+  border-left: 20px solid transparent;
+  font-size: 13px;
+  color: white;
+}
+
+.ext-horiz-view .view-item .flex-item .triangle-tr .iconfont {
+  position: relative;
+  top: -35px;
+  right: 15px;
+  color: red;
+}

@@ -1,0 +1,16 @@
+
+<view class="ext-horiz-view" wx:if="{{funclist}}">
+	<view wx:for="{{funclist}}" wx:key="id" catchtap="goToPage" data-index="{{index}}" class="view-item" hover-class="view-active">
+		<view class="row">
+			<view class='left'>
+				<label class="iconfont {{item.style.icon}}"></label>
+				<text class="s-text">{{item.name}}</text>
+			</view>
+			<label class="right iconfont icon-rightarrow "></label>
+		</view>
+	</view>
+</view>
+<view wx:else class="center-panel loading-wrap">
+	<import src="../../../components/loading/loading.wxml" />
+	<template is="loading" data="{{loadFinish:funclist,len:1,finishText:'加载完成'}}"></template>
+</view>

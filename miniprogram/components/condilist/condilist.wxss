@@ -1,0 +1,3 @@
+@import "../template/goodslist/goodslist.wxss";
+@import "../template/orderlist/orderlist.wxss";
+@import "../template/rows/rows.wxss";

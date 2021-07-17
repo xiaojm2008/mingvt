@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "flowView": "../../../components/flow/flow",
+    "multitext": "../../../components/multitext/multitext",
+    "modaldialog": "../../../components/modaldialog/modaldialog",
+    "parameterdlg": "../../../components/parameterdlg/parameterdlg",
+    "enroll": "../../components/enroll/enroll",
+    "shop": "../../../components/shop/shop"
+  },
+  "navigationBarTitleText": "我要开店"
+}

@@ -1,0 +1,63 @@
+/* miniprogram/pages/payResult/payResult.wxss */
+
+.pannel{
+  margin: 30px 10px 0 10px;
+  padding: 20px 10px 10px 10px;
+}
+.pannel .head{
+  text-align: center;
+  padding-bottom: 10px;
+}
+.pannel .icon-gou{
+  
+  font-size: 50px;
+  color: rgb(46, 126, 46);
+}
+.pannel .icon-closes{
+  font-size: 50px;
+  color: red;
+}
+.pannel .errMsg{
+  text-align: center;
+  color: red;
+  font-size: 14px;
+}
+.pannel .success{
+   color:green;
+}
+.pannel .content{
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+}
+.pannel .content .item{
+  padding: 5px 0 5px 0;
+  display: flex;
+  justify-content: center;
+}
+.pannel .content .title{
+  flex:1 1 50%;
+  text-align: left;
+  color: #999;
+  font-size:14px;
+}
+.pannel .content .num {
+  flex:1 1 50%;
+  text-align: right;
+  font-size: 15px;
+}
+.pannel .bottom{
+  padding-top:20px; 
+  font-size: 12px;
+  color: #ccc;
+  text-align: right;
+}
+.pannel .bottom text{
+  display: block;
+}
+.btn{
+  color:white;
+  text-align: center;
+  background:   rgb(46, 126, 46);
+  border: 0px;
+  width: 80%;
+}

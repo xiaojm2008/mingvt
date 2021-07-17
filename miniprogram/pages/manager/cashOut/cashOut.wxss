@@ -1,0 +1,69 @@
+page {
+  background: #eee;
+}
+
+.panel {
+  background: white;
+  padding: 20px 20px 20px 20px;
+  margin: 30px 20px 20px 20px;
+}
+
+.panel view {
+  margin-bottom: 20px;
+}
+
+.panel .title {
+  font-size: 18px;
+}
+
+.panel .subject {
+  font-size: 15px;
+}
+
+.panel .input-amt {
+  height: 50px;
+  line-height: 50px;
+  font-size: 28px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.panel .input-amt .icon-amt {
+  margin-right: 10px;
+}
+
+.panel .input-amt .cashout_amt {
+  height: 50px;
+  font-size: 35px;
+  border-bottom: 1px solid black;
+}
+
+.panel .additional {
+  font-size: 14px;
+  color: #999;
+}
+
+.panel .panel-bottom {
+  margin-top: 20px;
+}
+
+.panel .panel-bottom .btn {
+  width: 100%;
+  color: white;
+  background: rgb(7, 153, 19);
+  border-color: white;
+}
+.bottom{
+  padding: 0px 0px 20px 20px;
+  margin: 10px 20px 20px 20px;
+}
+.bottom .txt{
+  text-align:right;
+  display: block;
+  font-size:14px;
+  color:rgb(136, 132, 132);
+}
+.panel .exceed{
+  color:red;
+}

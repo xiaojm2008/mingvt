@@ -1,0 +1,9 @@
+<import src="../template/goodslist/goodslist.wxml" />
+<import src="../template/rows/rows.wxml" />
+<import src="../template/orderlist/orderlist.wxml" />
+
+<conditab my-style="line-height: {{refreshsize}}rpx" size="{{refreshsize}}" tabs="{{condi}}" bindtogger="tabTogger"></conditab>
+
+<scroll requesting="{{requesting}}" end="{{loadFinish}}" scrolllock="{{false}}" refreshlock="{{false}}" empty-show="{{true}}" list-count="{{listData.length}}" has-top="{{true}}" refresh-size="{{refreshsize}}" bind:refresh="refresh" bind:more="more">
+  <template wx:if="{{temptype}}" is="{{temptype}}" data="{{listData:listData}}"></template>
+</scroll>

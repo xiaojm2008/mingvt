@@ -1,0 +1,5 @@
+<view class="panel-view">
+  <block wx:for="{{nodes}}" wx:key="id" wx:for-item="node" wx:for-index="index">
+    <nodeShow wx:if="{{node}}" node="{{node}}" bind:taptogger="previewNodeTogger"></nodeShow>
+  </block>
+</view>

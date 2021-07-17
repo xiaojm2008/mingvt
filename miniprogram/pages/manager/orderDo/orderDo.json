@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "swiperlist": "../../../components/shoptheme/swiperlist/swiperlist"
+  },
+  "navigationBarTitleText": "订单处理"
+}

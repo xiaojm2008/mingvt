@@ -1,0 +1,1 @@
+<text id="{{compid}}" class="iconfont icon-plus icon-btn" catchtap="tapTogger" catchtouchmove="{{moveable?'buttonMove':''}}" bindtouchstart="{{moveable?'buttonStart':''}}" catchtouchend="{{moveable?'buttonEnd':''}}" style="top:{{buttonTop}}px;left:{{buttonLeft}}px;"></text>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "swiperlist": "../../../components/shoptheme/swiperlist/swiperlist"
+  },
+  "navigationBarTitleText": "支付流水"
+}

@@ -1,0 +1,49 @@
+现支持两种节点，通过type来区分，分别是元素节点和文本节点，
+默认是元素节点，在富文本区域里显示的HTML节点 元素节点：type = node*
+
+属性
+说明
+类型
+必填
+备注
+name
+标签名
+string
+是
+支持部分受信任的 HTML 节点
+attrs
+属性
+object
+否
+支持部分受信任的属性，遵循 Pascal 命名法
+children
+子节点列表
+array
+否
+结构和 nodes 一致
+
+
+文本节点：type = text*
+属性
+说明
+类型
+必填
+备注
+text
+文本
+string
+是
+支持entities
+受信任的HTML节点及属性
+
+[{
+      name: 'div',
+      attrs: {
+        class: 'div_class',
+        style: 'line-height: 60px; color: red;'
+      },
+      children: [{
+        type: 'text',
+        text: 'Hello&nbsp;World!'
+      }]
+    }]

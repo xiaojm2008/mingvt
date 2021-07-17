@@ -1,0 +1,57 @@
+@import '../../../style/list.wxss';
+.ext-horiz-view .view-item .left{
+  flex: 0 1 130px;
+  justify-content:flex-start;
+  padding-left:8px; 
+}
+.list .content .title{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.list .content .title .line-text{
+  flex:2 0 auto;
+  font-size:16px;
+  font-weight: 800;
+  overflow: hidden; 
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: 80%;
+}
+.list .content .title .flag{
+  text-align: center;
+  flex:0 1 auto;
+  width: 20px;
+  height: 20px;
+  color:white;
+  font-size:13px;
+  background-color:green; 
+  margin-left:2px; 
+}
+.list .content .title .tuan{
+   background-color:lightcoral;
+}
+.list .content .title .miao{
+   background-color:darkorange;
+}
+.list .content  .title2{
+  overflow: hidden;
+  min-height: 30px;
+  line-height: 30px;
+}
+.list .content .block2{
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 13px;
+  height: 20px;
+  line-height: 20px;
+  min-width: 45px;
+  border: 1px solid #ccc;
+  color:black;
+  margin-right:5px;
+  padding:0 2px 0 2px;
+}
+ext-horiz-view .view-item .flex-box .box-hover{
+  background-color: rgb(243, 219, 219);
+}

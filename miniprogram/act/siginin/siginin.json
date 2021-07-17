@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "enrolldetail":"../../components/enrolldetail/enrolldetail"
+  },
+  "navigationBarTitleText": "签到"
+}

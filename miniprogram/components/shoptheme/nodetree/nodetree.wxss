@@ -1,0 +1,183 @@
+@import "../../../style/horiz.wxss";
+
+.loc-v {
+  border: 1px dashed #ccc;
+}
+.slisttop{
+  width: 100%;
+  height: 2px;
+  position: relative;
+  top:0;
+  left:0;
+}
+.x-grid {
+  display: grid;
+  grid-gap: 5px;
+  justify-items: center;
+  align-content: center;
+  /*justify-items:space-around;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;*/
+}
+
+.x-grid  .x-item .x-cell {
+  height: 40px;
+  display: block;
+  font: black;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 40px;
+}
+
+.x-grid  .x-item .x-cell-f {
+  position: relative;
+  top: -30px;
+  height: 20px;
+  color: rgb(68, 68, 68);
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+  border-style: none;
+  display: block;
+  color:#fff;
+}
+
+.x-grid .x-item .x-radius-btn {
+  border-radius: 50%;
+  position: relative;
+}
+
+.x-grid .x-item .x-svgimg {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  /*
+  width: 40px;
+  height: 40px;*/
+}
+
+.x-grid .x-item .x-image {
+  width: 100%;
+  height: 100%;
+}
+
+swiper .subinfo {
+  font-size: 15px;
+  color: black;
+  font-weight: 500;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.ext-horiz-view {
+  margin-top: 0px;
+}
+
+.ext-horiz-view .center {
+  justify-content: center;
+  min-height: 40px;
+}
+
+.ext-horiz-view .center .iconshow {
+  color: rgb(223, 75, 75);
+  padding-right: 10px;
+}
+
+.ext-horiz-view .col-grid {
+  column-count: 3;
+  column-gap: 2px; /*设置或检索对象的列与列之间的间隙为2px*/
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ext-horiz-view .col-grid .item {
+  width: 96%;
+  background: #fefefe;
+  margin: 2px 2px 2px 2px;
+  padding: 1px;
+  /*
+  margin:1px 1px 1px 1px
+  border: 2px solid #fcfcfc;
+  box-shadow: 0px 2px 2px rgba(34, 25, 25, 0.4); 
+  transition: opacity 0.4s ease-in-out; 
+  */
+  display: inline-block;
+  position: relative;
+}
+
+.ext-horiz-view .col-grid .item .img {
+  width: 100% !important;
+  display: block;
+  border-radius: 8px;
+}
+
+.fu-grid {
+  display: grid;
+}
+
+.fu-grid .item .text {
+  height: 60px;
+  display: block;
+  font: black;
+  font-size: 15px;
+  font-weight: 500;
+  padding:0 5px 0px 5px;
+  box-sizing: border-box;
+  /* background-color: rgba(0, 0, 0, 0.4);
+  border-color: rgb(34, 34, 34);
+  opacity: 1; border-radius: 8px;  */
+}
+
+.fu-grid .item .image {
+  width: 100%;
+  height: 220px;
+}
+
+.x-row {
+  width: 100%;
+  display: flex;
+  /*justify-content: space-between;*/
+  align-items: center;
+  padding-top:5px;
+}
+
+.x-row .x-subject {
+  font-size: 15px;
+  color: black;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.x-row .x-txt {
+  font-size: 13px;
+  color: #ccc;
+  margin-left:10px;
+  margin-right:10px; 
+}
+
+.x-row .x-num {
+  font-size: 16px;
+  color: red;
+}
+
+.icon-sort:before {
+  content: "\e638";
+}
+
+.icon-phone:before {
+  content: "\e60a";
+}
+
+.icon-huo:before {
+  content: "\e664";
+}
+
+.icon-share_light:before {
+  content: "\e7e0";
+}

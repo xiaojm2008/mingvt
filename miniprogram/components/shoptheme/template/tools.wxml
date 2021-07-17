@@ -1,0 +1,37 @@
+<template name="tools">
+  <view class="tools-area" data-name="{{node.name}}" data-posi="{{node.posi}}" style="{{node.compflag=='999'?'right:0;justify-content:flex-end;':''}}">
+    <block wx:if="{{node.compflag=='999'}}">
+      <view id="add_{{node.id}}_{{node.CKEY}}" class="tools-item" hover-class="tools-hover" data-ckey="{{node.CKEY}}" catchtap="addCtrl">
+        <text class='iconfont icon-app-xx'></text>
+        <text class="btn-title">添加控件</text>
+      </view>     
+      <view id="node_{{node.id}}_{{node.CKEY}}" class="tools-item" hover-class="tools-hover" data-ckey="{{node.CKEY}}" catchtap="editCtrl">
+        <text class='iconfont icon-edit'></text>
+        <text class="btn-title">节点树</text>
+      </view>
+       <view id="menu_{{node.id}}_{{node.CKEY}}" class="tools-item" hover-class="tools-hover" data-ckey="{{node.CKEY}}" data-nodeindex="{{node.nodeindex}}" catchtap="operCtrl">
+        <text class='iconfont icon-more2'></text>
+        <text class="btn-title">菜单</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view id="node_{{node.id}}_{{node.CKEY}}" class="tools-item" hover-class="tools-hover" data-ckey="{{node.CKEY}}" data-nodeindex="{{node.nodeindex}}" catchtap="operNode">
+        <text class='iconfont icon-share'></text>
+        <text class="btn-title">节点</text>
+      </view>
+       <view id="node_{{node.id}}_{{node.CKEY}}" class="tools-item" hover-class="tools-hover" data-ckey="{{node.CKEY}}" data-nodeindex="{{node.nodeindex}}" catchtap="operCtrl">
+        <text class='iconfont icon-list'></text>
+        <text class="btn-title">控件</text>
+      </view>
+      <view id="parent_{{node.id}}_{{node.CKEY}}" class="tools-item" hover-class="tools-hover" data-ckey="{{node.CKEY}}" data-nodeindex="{{node.nodeindex}}" catchtap="locatedPNode">
+        <text class='iconfont icon-up'></text>
+        <text class="btn-title">父节点</text>
+      </view>
+      <!--
+      <view id="close_{{node.id}}_{{node.CKEY}}" class="tools-item" hover-class="tools-hover" data-ckey="{{node.CKEY}}" catchtap="addCtrl" style="padding-left:20px;" data-nodeindex="{{node.nodeindex}}" catchtap="closeCtrlTools">
+        <text class='iconfont icon-closes'></text>
+      </view>
+      -->
+    </block>
+  </view>
+</template>

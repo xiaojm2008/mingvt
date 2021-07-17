@@ -1,0 +1,385 @@
+{
+  "vgno": "1000",
+  "goodsno": "100000000039",
+  "goodsname": "特惠商品41",
+  "supply": {
+    "supplyid": "S0001",
+    "supplyname": "一号供应商"
+  },
+  "deptid": "12",
+  "busmodel": "2",
+  "spec": "0.5-1kg",
+  "unit": "1",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "0000",
+    "detail": "深圳"
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "expressfee": 0,
+  "maxcanuseintegral": 0,
+  "modelitems": [
+    {
+      "price": 1.0,
+      "stock": 10,
+      "id": "modelitem_1",
+      "model": "0,m20,m30",
+      "picpath": ""
+    },
+    {
+      "price": 1.1,
+      "stock": 11,
+      "id": "modelitem_2",
+      "model": "0,m20,m31",
+      "picpath": ""
+    },
+    {
+      "price": 1.2,
+      "stock": 12,
+      "id": "modelitem_3",
+      "model": "0,m21,m30",
+      "picpath": ""
+    },
+    {
+      "price": 1.3,
+      "stock": 13,
+      "id": "modelitem_4",
+      "model": "0,m21,m31",
+      "picpath": ""
+    },
+    {
+      "price": 1.4,
+      "stock": 14,
+      "id": "modelitem_5",
+      "model": "0,m22,m30",
+      "picpath": ""
+    },
+    {
+      "price": 1.5,
+      "stock": 15,
+      "id": "modelitem_6",
+      "model": "0,m22,m31",
+      "picpath": ""
+    },
+    {
+      "price": 2.0,
+      "stock": 20,
+      "id": "modelitem_11",
+      "model": "1,m20,m30",
+      "picpath": ""
+    },
+    {
+      "price": 2.1,
+      "stock": 21,
+      "id": "modelitem_12",
+      "model": "1,m20,m31",
+      "picpath": ""
+    },
+    {
+      "price": 2.2,
+      "stock": 22,
+      "id": "modelitem_13",
+      "model": "1,m21,m30",
+      "picpath": ""
+    },
+    {
+      "price": 2.3,
+      "stock": 23,
+      "id": "modelitem_14",
+      "model": "1,m21,m31",
+      "picpath": ""
+    },
+    {
+      "price": 2.4,
+      "stock": 24,
+      "id": "modelitem_15",
+      "model": "1,m22,m30",
+      "picpath": ""
+    },
+    {
+      "price": 2.5,
+      "stock": 25,
+      "id": "modelitem_16",
+      "model": "1,m22,m31",
+      "picpath": ""
+    },
+    {
+      "price": 3.0,
+      "stock": 30,
+      "id": "modelitem_21",
+      "model": "2,m20,m30",
+      "picpath": ""
+    },
+    {
+      "price": 3.1,
+      "stock": 31,
+      "id": "modelitem_22",
+      "model": "2,m20,m31",
+      "picpath": ""
+    },
+    {
+      "price": 3.2,
+      "stock": 32,
+      "id": "modelitem_23",
+      "model": "2,m21,m30",
+      "picpath": ""
+    },
+    {
+      "price": 3.3,
+      "stock": 33,
+      "id": "modelitem_24",
+      "model": "2,m21,m31",
+      "picpath": ""
+    },
+    {
+      "price": 3.4,
+      "stock": 34,
+      "id": "modelitem_25",
+      "model": "2,m22,m30",
+      "picpath": ""
+    },
+    {
+      "price": 3.5,
+      "stock": 35,
+      "id": "modelitem_26",
+      "model": "2,m22,m31",
+      "picpath": ""
+    }
+  ],
+  "model": {
+    "m1": {
+      "id": "m1",
+      "name": "颜色",
+      "submodelname": [
+        "红色",
+        "蓝色",
+        "绿色"
+      ],
+      "submodelid": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    "m2": {
+      "id": "m2",
+      "name": "尺寸",
+      "submodelname": [
+        "20x30cm",
+        "20x50cm",
+        "22x30cm"
+      ],
+      "submodelid": [
+        "m20",
+        "m21",
+        "m22"
+      ]
+    },
+    "m3": {
+      "id": "m3",
+      "name": "功率",
+      "submodelname": [
+        "50kw",
+        "58kw"
+      ],
+      "submodelid": [
+        "m30",
+        "m31"
+      ]
+    }
+  },
+  "hotsell": "1",
+  "preflag": "0",
+  "quantity": {
+    "minqty": 1,
+    "stockqty": 10,
+    "totalqty": 10,
+    "availableqty": 10,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 5,
+    "originalprice": 5,
+    "taxprice": 5,
+    "saleprice": 5,
+    "stockprice": 5,
+    "memberprice": 4.5,
+    "lowprice": 0,
+    "highprice": 0
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [
+    "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/2022%E6%B2%99%E5%8F%91%E5%8D%95%E4%BD%8D.png?sign=c5aa1ac6e48b4b02356e37e3ca441166&t=1558191204",
+    "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/2038%E6%B2%99%E5%8F%91%E5%8D%95%E4%BA%BA%E4%BD%8D.png?sign=989c8babddd5ed6ed8f4ecb416828922&t=1558191236",
+    "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/208%E6%B2%99%E5%8F%91%E4%BA%8C%E4%BD%8D.png?sign=5b53b75db8cf69bdb193fc65e7b974f2&t=1558191264",
+    "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E7%88%B1%E5%BE%B7%E5%8D%8E%E6%B2%99%E5%8F%91%E4%B8%89%E4%BD%8D.png?sign=8765d8c5eaf55cb677caf638d0a1a0f6&t=1558191299"
+  ],
+  "hpicpath": "",
+  "mpicpath": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/2035%E6%B2%99%E5%8F%91%E4%BA%8C%E4%BD%8D.png?sign=5677a53435bba39ccd14c328d7d1d1a2&t=1558191110",
+  "spicpath": "",
+  "settime": "",
+  "updatetime": ""
+}
+{
+  "vgno": "1000",
+  "goodsno": "100000000040",
+  "goodsname": "巴洛克小方几42",
+  "supply": {
+    "supplyid": "S0001",
+    "supplyname": "一号供应商"
+  },
+  "deptid": "12",
+  "busmodel": "2",
+  "spec": "1000毫升/瓶",
+  "unit": "2",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "0000",
+    "detail": "深圳"
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "hotsell": "1",
+  "goods_type": "0",
+  "quantity": {
+    "minqty": 1,
+    "stockqty": 10,
+    "totalqty": 10,
+    "availableqty": 10,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 5,
+    "originalprice": 5,
+    "taxprice": 5,
+    "saleprice": 5,
+    "stockprice": 5,
+    "memberprice": 4.5,
+    "lowprice": 2.5,
+    "highprice": 5.0
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [],
+  "hpicpath": "",
+  "mpicpath": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E5%B7%B4%E6%B4%9B%E5%85%8B%E5%B0%8F%E6%96%B9%E5%87%A0.png?sign=6e7f2335c1376d00243e8b5903645a16&t=1559617430",
+  "spicpath": "",
+  "settime": 1,
+  "updatetime": 22
+}
+{
+  "vgno": "1000",
+  "goodsno": "100000000042",
+  "goodsname": "巴洛克小方几44",
+  "supply": {
+    "supplyid": "S0001",
+    "supplyname": "一号供应商"
+  },
+  "deptid": "12",
+  "busmodel": "2",
+  "spec": "1000毫升/瓶",
+  "unit": "2",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "0000",
+    "detail": "深圳"
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "hotsell": "1",
+  "goods_type": "0",
+  "quantity": {
+    "minqty": 1,
+    "stockqty": 10,
+    "totalqty": 10,
+    "availableqty": 10,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 5,
+    "originalprice": 5,
+    "taxprice": 5,
+    "saleprice": 5,
+    "stockprice": 5,
+    "memberprice": 4.5,
+    "lowprice": 2.5,
+    "highprice": 5.0
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [],
+  "hpicpath": "",
+  "mpicpath": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E5%B7%B4%E6%B4%9B%E5%85%8B%E5%B0%8F%E6%96%B9%E5%87%A0.png?sign=6e7f2335c1376d00243e8b5903645a16&t=1559617430",
+  "spicpath": "",
+  "settime": 1,
+  "updatetime": 22
+}
+{
+  "vgno": "1000",
+  "goodsno": "100000000044",
+  "goodsname": "巴洛克小方几46",
+  "supply": {
+    "supplyid": "S0001",
+    "supplyname": "一号供应商"
+  },
+  "deptid": "12",
+  "busmodel": "2",
+  "spec": "1000毫升/瓶",
+  "unit": "2",
+  "checksums": "",
+  "productionplace": {
+    "countryid": "0000",
+    "detail": "深圳"
+  },
+  "brandinfo": {
+    "brandid": "",
+    "branddesc": ""
+  },
+  "hotsell": "1",
+  "goods_type": "0",
+  "quantity": {
+    "minqty": 1,
+    "stockqty": 10,
+    "totalqty": 10,
+    "availableqty": 10,
+    "frozenqty": 0
+  },
+  "price": {
+    "presaleprice": 5,
+    "originalprice": 5,
+    "taxprice": 5,
+    "saleprice": 5,
+    "stockprice": 5,
+    "memberprice": 4.5,
+    "lowprice": 2.5,
+    "highprice": 5.0
+  },
+  "localflag": "",
+  "stockflag": "",
+  "infopath": "",
+  "packlistpath": "",
+  "specpath": "",
+  "imginfo": [],
+  "hpicpath": "",
+  "mpicpath": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E5%B7%B4%E6%B4%9B%E5%85%8B%E5%B0%8F%E6%96%B9%E5%87%A0.png?sign=6e7f2335c1376d00243e8b5903645a16&t=1559617430",
+  "spicpath": "",
+  "settime": 1,
+  "updatetime": 22
+}

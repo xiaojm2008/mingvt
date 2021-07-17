@@ -1,0 +1,129 @@
+.list .head {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  background-color:#eee;
+  font-size:18px;
+}
+
+.sr {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.send {
+  background-color: #03ccba;
+}
+
+.recv {
+  background-color: #ffae0c;
+}
+
+.addrinfo {
+  margin-left: 10px;
+  color: black;
+}
+
+.addr_name {
+  width: 80px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.time{
+  color:red;
+  font-size:25px;
+  font-weight:800;
+  margin:0 8px;
+}
+ /*
+  overflow: hidden; 
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;block-axis horizontal white-space: nowrap;*/
+  /*
+promcenter.wxss 中包含了 horiz.wxss 里面包含line-clamp
+.line-clamp { 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: inherit;
+}*/
+.btn{
+  width:70px;
+  font-size:15px;
+  margin-left:5px;
+  text-align: center;
+  border-color: green;
+  border-radius: 5px;
+  display:inline-block;
+  height: 25px;
+  line-height: 25px;
+}
+.gray-btn{
+  margin-left:0px;
+  width:60px;
+  color:black;
+  background-color:#eee;
+  border-color:#eee;
+}
+.cancel-btn{
+  color:green;
+}
+.addbn-btn{
+  color:rgb(119, 142, 218);
+}
+.cancel{
+  float:right;
+  color:rgb(218, 119, 196);
+  font-size:16px;
+}
+.err{
+   float:right;
+   color:red;
+   font-size:16px;
+}
+.panel-view {
+  padding: 0 10px;
+  box-sizing:border-box;
+}
+
+.panel-view .item-view {
+  text-align: left;
+  min-height: 40px;
+  line-height: 40px;
+  border-top:1px solid #eee;
+  margin-top:0px;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
+.panel-view .item-view .text {
+  display: block;
+  font-size: 15px;
+  height: 25px;
+  line-height: 25px;
+  color: #999;
+}
+.panel-view .item-view:first-child {
+  border-top:0px;
+}
+.panel-view .item-view .left{
+  flex:1 0 auto;
+}
+.panel-view .item-view .right .btn:first-child{
+  margin-left: 0px;
+}
+.panel-view .item-view .right{
+  flex:1 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

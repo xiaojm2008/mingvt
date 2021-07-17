@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "parameterdlg": "../../../components/parameterdlg/parameterdlg",
+    "mycategory": "../mycategory/mycategory",
+    "enroll": "../../../components/enroll/enroll"
+  }
+}

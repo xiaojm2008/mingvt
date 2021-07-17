@@ -1,0 +1,16 @@
+<view class="dialog-wrap" wx:if="{{show}}" catchtap="hide" catchtouchmove="preventTouchMove">
+  <view class="flex dialog bottom-pos bottom-panel anim-show" style="{{animation?'transform: translate(-50%,-50%)':''}}">
+      <view class="flex title">
+        <view class="text" style="{{options.title.style||''}}">{{options.title.name}}</view>
+      </view>
+      <view class="flex type">
+        <view class="item flex" wx:for="{{options.data}}" wx:key="id" data-index="{{index}}" catchtap="tapEvent">
+          <view class="share">
+            <label class="iconfont {{item.icon.name}}" style="{{item.icon.style||''}}"></label>
+            <text class="txt" style="font-size:16px;{{item.text.style||''}}">{{item.text.name}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="btn btnx" catchtap="hide">取消</view>
+  </view>
+</view>

@@ -1,0 +1,111 @@
+page {
+  background: #eee;
+  font-size: 14px;
+}
+ .ext-horiz-view{
+  /*border-bottom: 1px solid #eee;*/
+  box-sizing: border-box;
+  margin: 0 10px 10px 10px;
+  background-color: white;
+  border-radius: 8px;
+}
+.top-view {
+  margin-top: 10px !important;
+}
+.ext-horiz-view .view-item .left {
+  padding-left:20px; 
+  justify-content: flex-start;
+}
+.ext-horiz-view .view-item .right {
+  padding-right:10px; 
+}
+.view-item{
+  padding: 0px !important;
+}
+.view-item .flex-item{
+  flex:1 1 20%;
+}
+.view-item .flex-active{
+  background-color: rgb(255, 251, 251);
+}
+.view-item .flex-item:nth-of-type(4n){
+  border-right:0px !important;
+}
+
+.view-item .flex-item:nth-last-child(4){
+ border-radius:0 0 0 8px !important;
+}
+.view-item .flex-item:last-child{
+ border-radius:0 0 8px 0 !important;
+}
+.view-item .flex-item .cell-item {
+  height: 35px;
+  width: 88px;
+}
+.view-item .flex-item .icon2 {
+  font-size: 30px;
+  color: green;
+}
+.view-item .flex-item .triangle-tr {
+  top:0;
+  right: 0;
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 40px solid rgba(112, 199, 112,0.6);
+  border-left: 40px solid transparent; 
+  font-size:15px;
+  color:white;
+}
+.view-item .flex-item .role-flag{
+  border-top: 40px solid rgba(190, 140, 0, 0.6);
+}
+.view-item .flex-item .triangle-tr .iconfont{
+  position: relative;
+  top:-50px;
+  right: 20px;
+}
+.view-item .flex-item .triangle-tr .icon-closes{
+  color:red;
+}
+/*head*/
+.view-ext {
+  height: 80px !important;
+}
+
+.view-ext .row .left {
+  flex: 0 1 180px;
+}
+
+.view-ext .cover-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.view-ext .cover-text{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  border:1px solid #ccc;
+  font-weight: 800;
+  color:blue;
+  font-size: 30px;
+  text-align: center;
+}
+.nickname {
+  vertical-align: middle;
+  padding-left: 10px;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.nickname text {
+  display: block;
+  line-height: 20px;
+}
+
+.nickname .phone {
+  font-size: 12px;
+}

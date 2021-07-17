@@ -1,0 +1,6 @@
+/* miniprogram/statis/act/entry/entry.wxss */
+.ext-horiz-view {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-top:0;
+}

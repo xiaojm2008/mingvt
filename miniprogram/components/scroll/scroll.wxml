@@ -1,0 +1,23 @@
+<import src="../loading/loading2.wxml" />
+<view style="{{myStyle}}"><!--style="pointer-events:{{scrolllock&&pf!='ios'?'none':'auto'}}"-->
+  <view id="success" class="success {{successShow ? 'success-show' : ''}} {{successTran ? 'success-tran' : ''}}" style="top: {{hasTop ? refreshSize : 0}}rpx;color: {{color}}">
+    <view class="info">刷新成功</view>
+  </view>
+  <movable-area class="movable-area">
+  <!-- style="height: calc(100vh + 40rpx + {{refreshSize}}rpx);" 20200207 把 40rpx 删除 -->
+    <movable-view class="scroll" style="height: calc(100vh + {{refreshSize}}rpx);" bind:change="change" bind:touchend="touchend" direction="vertical" disabled="{{refreshStatus >= 3 || refreshlock}}" y='{{move}}'>
+      <scroll-view class="scroll-v" style="padding-bottom: {{bottomSize}}rpx;padding-top: {{ hasTop ? refreshSize : 0}}rpx;" scroll-y="{{!scrolllock}}" bindscroll="scroll" scroll-top="{{scrollTop}}" lower-threshold="{{10}}" upper-threshold="{{3}}" bindscrolltolower="more" scroll-anchoring="{{true}}">
+        <view id="refresh" class="scroll-refresh {{successShow ? 'scroll-refresh-hidden' : ''}}" style="height: {{refreshSize}}rpx;padding: 20rpx 0;box-sizing:border-box;">
+          <view class="scroll-loading" wx:if="{{!refreshlock}}">
+            <view wx:if="{{refreshStatus == 1 || refreshStatus == 2}}" class="{{refreshStatus == 2 ? 'rotate' : ''}} arrow"></view>
+            <template is="loading" wx:if="{{refreshStatus == 3}}" data="{{loadFinish:false,pull:true}}"></template>
+            <view class="loading-text" wx:if="{{refreshStatus == 1}}">下拉刷新</view>
+            <view class="loading-text" wx:elif="{{refreshStatus == 2}}">松开更新</view>
+          </view>
+        </view>
+        <slot></slot>
+        <template is="loading" wx:if="{{mode=='more'||end&&listCount===0}}" data="{{emptyShow:emptyShow,loadFinish:end,len:listCount,text:'加载中...'}}"></template>
+      </scroll-view>
+    </movable-view>
+  </movable-area>
+</view>

@@ -1,0 +1,7 @@
+<!--components/mutitext/multitext.wxml-->
+<view  wx:if="{{inputstatus}}" class="multitext {{className}}"  style="{{value?'':'color:#999;'}} {{myStyle}}">
+<textarea focus="{{inputstatus}}" fixed='{{true}}' maxlength="{{maxlength}}" bindblur="onBindBlur" bindinput="inputTogger" value="{{value}}"></textarea>
+</view>
+<view wx:else class="multitext {{className}}" catchtap="onBindFocus" style="{{value?'':'color:#999;'}} {{myStyle}}">
+  <view class="content">{{value||placeholder||'请在此输入'}}</view>
+</view>

@@ -1,0 +1,96 @@
+/* menu css */
+
+.dialog-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index:50;
+  background-color: rgba(201, 201, 201,0.6);
+}
+.dialog {
+  color:black;
+  background-color:white;
+  max-width: 120px;
+  min-height: 120px;
+  width: 95%;
+  box-sizing: border-box;
+  position: fixed;
+  border: 1px solid #eee;
+  border-radius: 5px 5px 5px 5px;
+  margin:0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: nowrap;
+  white-space: nowrap;
+}
+.dialog .dialog-head {
+  position: relative;
+  box-sizing: border-box;
+  margin: 10px 10px 0 10px;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+}
+.dialog .dialog-head .left {
+  flex: 0 1 150px;
+  /*padding-left: 10px;*/
+}
+.dialog .dialog-head .subname {
+  font-size: 15px;
+}
+.menu-dialog {
+  background-color:rgba(0, 0, 0,0.7);
+  color:white;
+}
+.dialog .menu {
+  width: 100%;
+  min-height: 60px;
+  font-size: 14px;
+}
+/*
+.dialog .menu cover-view {
+  min-height: 40px;
+  line-height: 40px !important;
+}*/
+.dialog .menu-item:first-child {
+ margin-top:0;
+}
+.dialog .menu-item {
+  padding-left:20px; 
+  text-align: left;
+  width: 100%;
+  /*margin-bottom: 1px;background-color:rgba(0, 0, 0, 0.7);
+  border-top: 1px solid #eee;*/
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  margin-top:-1px;
+  height: 40px;
+  line-height: 40px !important;
+}
+.dialog .menu-hover{
+  background: #eee;
+}
+.menu-dialog .menu-hover {
+  background: #ccc;
+}
+/*border-bottom: 0;transparent ;margin-bottom: 0;*/
+
+.dialog .menu-item:last-child {
+  border-bottom: 1px solid #eee;
+}
+.menu-dialog .menu-item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4) ;
+}
+.arrow {
+  content: '';
+  display: block;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  position: absolute;
+  left: 90px;
+  top: 0;
+}

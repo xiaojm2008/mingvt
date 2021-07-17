@@ -1,0 +1,73 @@
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<view class="ext-horiz-view top-view">
+  <view class="view-item view-ext">
+    <view class="row" style="border-bottom:1px solid #eee;">
+      <view class='left'>
+      </view>
+      <view class="right" catchtap="">
+        <view class="flex-box no-line">
+          <view class="view-box" hover-class="box-hover" catchtap="showModPDlg">
+            <text class='simple-btn iconfont icon-edit'></text>
+            <text class="text">修改分类</text>
+          </view>
+          <view class="view-box" hover-class="box-hover" catchtap="showAddPDlg">
+            <text class='simple-btn iconfont icon-plus'></text>
+            <text class="text">新增分类</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cate-panel">
+  <scroll-view class="navigate" scroll-y="yes" style="height:{{windowHeight-offsetHeight}}px;">
+    <view wx:for="{{category}}" wx:key="code" wx:for-index="index" data-index="{{index}}" hover-class="hover-item" class="item {{selected == index ? 'select-item':''}}" catchtap="tapHandler" data-code="{{item.code}}">
+      <text class="txt">{{item.name}}</text>
+    </view>
+  </scroll-view>
+  <scroll-view class="content" scroll-y="yes" style="height:{{windowHeight-offsetHeight}}px;">
+    <view class="header">
+      <view class="horiz-view">
+        <view class="view-item">
+          <view class="row">
+            <view class="inner-text" wx:if="{{category[selected].summary}}">{{category[selected].summary}}</view>
+            <view class="flex-item ext-item">
+              <image src="{{ category[selected].img[0].fileID || category[selected].img[0].path }}" mode="scaleToFill" catchtap="previewImg" data-imgindex="0"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="body">
+      <view class="ext-horiz-view">
+        <view class="view-item fix-item">
+          <block wx:for="{{category[selected].items}}" wx:key="id" wx:for-item="child" wx:for-index="index">
+            <view class="flex-item" hover-class="flex-active" catchtap="showModCDlg" data-cindex="{{index}}">
+              <view class="cell-item">
+                <image class="svgimg radius-btn" src="{{child.img[1].fileID}}"></image>
+              </view>
+              <text class='cell-item line-clamp'>{{child.name}}</text>
+              <text wx:if="{{child.active!==undefined}}" class="triangle-tr"><text class="iconfont {{child.active?'icon-gou':'icon-closes'}}"></text></text>
+            </view>
+          </block>
+          <view class="flex-item" catchtap="showAddCDlg">
+            <text class="cell-item">
+              <text class="iconfont icon-plus svgimg add-btn"></text>
+            </text>
+            <text class="cell-item">新增子类</text>
+          </view>
+          <block wx:if="{{category[selected].items.length % 3 == 1}}">
+            <view class="flex-item">
+              <text class="cell-item"></text>
+              <text class="cell-item"></text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="tail"></view>
+  </scroll-view>
+</view>
+<view class="">
+  <modaldialog id="modalDlg"></modaldialog>
+</view>

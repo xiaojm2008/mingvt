@@ -1,0 +1,145 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/category/category",
+    "pages/myCart/myCart",
+    "pages/myOrder/myOrder",
+    "pages/myCard/myCard",
+    "pages/myCoupon/myCoupon",
+    "pages/myNotify/myNotify",
+    "pages/myCenter/myCenter",
+    "pages/member/member",
+    "pages/login/login",
+    "pages/goodsDetail/goodsDetail",
+    "pages/orderDetail/orderDetail",
+    "pages/myAddress/myAddress",
+    "pages/addAddress/addAddress",
+    "pages/addComment/addComment",
+    "pages/logisticsPath/logisticsPath",
+    "pages/myTeam/myTeam",
+    "pages/joinTeam/joinTeam",
+    "pages/myCashOut/myCashOut",
+    "pages/myIncome/myIncome",
+    "pages/myTotalCashOut/myTotalCashOut",
+    "pages/myCommission/myCommission",
+    "pages/myRewards/myRewards",
+    "pages/payResult/payResult",
+    "pages/manager/console/console",
+    "pages/manager/orderDo/orderDo",
+    "pages/manager/doDelivery/doDelivery",
+    "pages/manager/addGoods/addGoods",
+    "pages/manager/genGQr/genGQr",
+    "pages/manager/listMenu/listMenu",
+    "pages/manager/listUser/listUser",
+    "pages/manager/listAction/listAction",
+    "pages/manager/listRole/listRole",
+    "pages/manager/listRoleUser/listRoleUser",
+    "pages/manager/listGoods/listGoods",
+    "pages/manager/showGoods/showGoods",
+    "pages/manager/shopPic/shopPic",
+    "pages/manager/listGroupBuy/listGroupBuy",
+    "pages/manager/listPromotion/listPromotion",
+    "pages/manager/listPromGoods/listPromGoods",
+    "pages/manager/addPromotion/addPromotion",
+    "pages/promCenter/promCenter",
+    "pages/manager/listCategory/listCategory",
+    "pages/shopDetail/shopDetail",
+    "pages/shopCategory/shopCategory",
+    "pages/manager/shopdecor/shopdecor",
+    "components/shoptheme/goodssel/goodssel",
+    "components/shoptheme/myshop/myshop",
+    "pages/manager/shopCategory/shopCategory",
+    "pages/manager/createShop/createShop",
+    "pages/manager/listShop/listShop",
+    "pages/manager/categorysel/categorysel",
+    "components/shoptheme/shoppic/shoppic",
+    "pages/goodsList/goodsList",
+    "pages/goodsMore/goodsMore",
+    "components/enroll/xwebview/xwebview",
+    "components/comment/commentList/commentList",
+    "pages/manager/shopImg/shopImg",
+    "pages/indexlist/indexlist",
+    "pages/manager/cashOut/cashOut",
+    "pages/manager/balShopDetail/balShopDetail",
+    "pages/manager/cashOutAppr/cashOutAppr",
+    "pages/manager/listPayment/listPayment",
+    "pages/shopImg/shopImg",
+    "pages/shareEntry/shareEntry",
+    "pages/myFavor/myFavor",
+    "pages/myAction/myAction"
+  ],
+  "subpackages": [
+    {
+      "root": "statis",
+      "pages": [
+        "month/income/income",
+        "day/income/income",
+        "deal/deal",
+        "act/entry/entry",
+        "act/general/general"
+      ]
+    },
+    {
+      "root": "act",
+      "pages": [
+        "createaction/createaction",
+        "actionlist/actionlist",
+        "actiondetail/actiondetail",
+        "enrollform/enrollform",
+        "enrolllist/enrolllist",
+        "siginin/siginin",
+        "sigininqr/sigininqr"
+      ]
+    },
+    {
+      "root": "sub",
+      "pages": [
+        "advert/advert",
+        "thema/listThema/listThema"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "VVOOG",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#3cc51f",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icontab/icon_home.png",
+        "selectedIconPath": "images/icontab/icon_home_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shopCategory/shopCategory",
+        "iconPath": "images/icontab/icon_cate.png",
+        "selectedIconPath": "images/icontab/icon_cate_selected.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/myCart/myCart",
+        "iconPath": "images/icontab/icon_cart.png",
+        "selectedIconPath": "images/icontab/icon_cart_selected.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/member/member",
+        "iconPath": "images/icontab/icon_member.png",
+        "selectedIconPath": "images/icontab/icon_member_selected.png",
+        "text": "我"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "方便安排您的活动出行计划"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

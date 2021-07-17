@@ -1,0 +1,17 @@
+/* pages/login/login.wxss */
+
+.login-panel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.login-panel button {
+  background: rgb(7, 153, 19);
+  border-color: white;
+  color: white;
+  width: 80%;
+}
+.login-panel .login-hover{
+  background-color: #eee;
+}

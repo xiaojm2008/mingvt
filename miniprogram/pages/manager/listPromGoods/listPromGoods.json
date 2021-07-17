@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "modaldialog": "../../../components/modaldialog/modaldialog"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "商品活动维护"
+}

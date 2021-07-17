@@ -1,0 +1,3 @@
+<!-- style="top:{{statusBarHeight+45}}px" class="content" -->
+<swiperlist id="swiperlist" category="{{category}}" action="{{action}}" manager="{{manager}}" def-params="{{defParams}}" order-by="{{orderBy}}" temptype="{{temptype}}" my-style="background:#eee" bottom-size="{{bottomSize}}" options="{{options}}">
+</swiperlist>

@@ -1,0 +1,22 @@
+<import src="../promflag/promflag.wxml" />
+<template name="goodslist">
+  <view class="goods-list">
+    <view class="goods-item" hover-class="hover-item" wx:for="{{listData}}" wx:key="goodsno" catchtap="goToGoods" data-goodsno="{{item.goodsno}}">
+      <view class="content">
+        <template is="promflag" data="{{prom:item.prominfo}}"></template>
+        <image class="thumbnail" lazy-load="{{true}}" src="{{item.picpath}}"></image>
+        <view class="inner-row">
+          <text class="subject">{{item.goodsname}}</text>
+        </view>
+        <view class="inner-row">
+          <text class="num" wx:if="{{item.lowprice==item.highprice}}">¥{{item.lowprice}}</text>
+           <text class="num" wx:else>¥{{item.lowprice}}~{{item.highprice}}</text>
+          <text wx:if="{{item.quantity.stockqty}}">
+            <text class="txt" style="padding:0 0 0 20px;">库存:</text>
+            <text class="num">{{item.quantity.stockqty}}</text>
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

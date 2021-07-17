@@ -1,0 +1,75 @@
+{
+  "active": "",
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "cover": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/2035%E6%B2%99%E5%8F%91%E4%BA%8C%E4%BD%8D.png?sign=5677a53435bba39ccd14c328d7d1d1a2&t=1558191110",
+  "goodsno": "100000000001",
+  "goodsname": "爱德华沙发三位",
+  "model_id": "",
+  "model_value": "欧式",
+  "num": 2,
+  "original_pay": 16,
+  "price": 12,
+  "status":"0",
+  "settime": 10,
+  "updatetime": 12
+}
+{
+  "active": "",
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "cover": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/2035%E6%B2%99%E5%8F%91%E4%BA%8C%E4%BD%8D.png?sign=5677a53435bba39ccd14c328d7d1d1a2&t=1558191110",
+  "goodsno": "100000000008",
+  "goodsname": "2022沙发单人位",
+  "model_id": "modelitem_1",
+  "model_value": "红色,20x30cm,50kw",
+  "num": 1,
+  "original_pay": 66,
+  "price": 32,
+  "status": "0",
+  "settime": 12,
+  "updatetime": 13
+}
+{
+  "active": "",
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "cover": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E9%93%AD%E5%AE%A2LOGO%E8%8F%8A%E8%8A%B1%E7%94%B5%E8%A7%86%E6%9F%9C.png?sign=dd60b78c9fc8c0541917dd7cac557450&t=1558191504",
+  "goodsno": "100000000014",
+  "goodsname": "银爵餐桌",
+  "model_id": "modelitem_1",
+  "model_value": "红色,20x30cm,50kw",
+  "num": 7,
+  "original_pay": 76,
+  "price": 62,
+  "status": "0",
+  "settime": 15,
+  "updatetime": 16
+}
+{
+  "active": "",
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "cover": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E9%93%AD%E5%AE%A2LOGO%E8%8F%8A%E8%8A%B1%E7%94%B5%E8%A7%86%E6%9F%9C.png?sign=dd60b78c9fc8c0541917dd7cac557450&t=1558191504",
+  "goodsno": "100000000099",
+  "goodsname": "欧式电视柜",
+  "model_id": "",
+  "model_value": "红色,20x30cm,50kw",
+  "num": 7,
+  "original_pay": 76,
+  "price": 62,
+  "status": "0",
+  "settime": 15,
+  "updatetime": 16
+}
+{
+  "active": "",
+  "openid": "o8ffM4itT94-VrMcXVTZIFHsU8_A",
+  "cover": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E9%93%AD%E5%AE%A2LOGO%E8%8F%8A%E8%8A%B1%E7%94%B5%E8%A7%86%E6%9F%9C.png?sign=dd60b78c9fc8c0541917dd7cac557450&t=1558191504",
+  "goodsno": "100000000016",
+  "goodsname": "特惠商品16",
+  "model_id": "",
+  "model_value": "红色,120x230cm,90kg",
+  "num": 1,
+  "original_pay": 76,
+  "price": 62,
+  "status": "0",
+  "settime": 15,
+  "updatetime": 16
+}

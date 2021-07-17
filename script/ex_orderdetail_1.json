@@ -1,0 +1,106 @@
+{
+  "order_id": "sandboxstr101",
+  "selected_benefit": {
+    "discount_type": null
+  },
+  "original_pay": 5.0,
+  "updatetime": 1.560526775521e+12,
+  "openid": "ounQF5gNI1fojHjR6JnyBekJpowQ",
+  "status": "0",
+  "address_info": {
+    "_id": "f4b905395ce6632e03f5eef35e44bbb8",
+    "contact": "13542121212",
+    "postcode": "190091",
+    "province": {
+      "code": "210000",
+      "text": "辽宁省"
+    },
+    "updatetime": 1.558764205267e+12,
+    "city": {
+      "code": "210300",
+      "text": "鞍山市"
+    },
+    "detailaddress": "阿斯蒂芬",
+    "is_default": 1.0,
+    "name": "李航",
+    "district": {
+      "code": "210304",
+      "text": "立山区"
+    },
+    "openid": "ounQF5gNI1fojHjR6JnyBekJpowQ"
+  },
+  "goods_info": [
+    {
+      "goods_type": "0",
+      "price": 5.0,
+      "original_pay": 5.0,
+      "model_value": "",
+      "model_id": "",
+      "cover": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E7%88%B1%E5%BE%B7%E5%8D%8E%E6%B2%99%E5%8F%91%E4%B8%89%E4%BD%8D.png?sign=9f811a5e916bc8b0138d7ff93dfbbfa3\u0026t=1558238912",
+      "goodsname": "爱德华沙发三位",
+      "goodsno": "100000000001",
+      "num": 2.0
+    }
+  ],
+  "additional_info": null,
+  "settime": 1.560526775521e+12,
+  "tostore_data": {},
+  "can_use_benefit": null,
+  "goods_type": "0",
+  "total_pay": 1.01,
+  "discount_cut_price": 0.0
+}
+{
+  "order_id": "sandboxstr102",
+  "selected_benefit": {
+    "discount_type": '01',
+    "discount_name":'满100减1元',
+    "discount_tag":'test_goods_tag_show'
+  },
+  "original_pay": 1.02,
+  "updatetime": 1.560526775521e+12,
+  "openid": "ounQF5gNI1fojHjR6JnyBekJpowQ",
+  "status": "0",
+  "address_info": {
+    "_id": "f4b905395ce6632e03f5eef35e44bbb8",
+    "contact": "13542121212",
+    "postcode": "190091",
+    "province": {
+      "code": "210000",
+      "text": "辽宁省"
+    },
+    "updatetime": 1.558764205267e+12,
+    "city": {
+      "code": "210300",
+      "text": "鞍山市"
+    },
+    "detailaddress": "阿斯蒂芬",
+    "is_default": 1.0,
+    "name": "李航",
+    "district": {
+      "code": "210304",
+      "text": "立山区"
+    },
+    "openid": "ounQF5gNI1fojHjR6JnyBekJpowQ"
+  },
+  "goods_info": [
+    {
+      "goods_type": "0",
+      "price": 1.02,
+      "original_pay": 1.02,
+      "model_value": "",
+      "model_id": "",
+      "cover": "https://6d69-mingvt-f8c412dd-1258088923.tcb.qcloud.la/pic/%E7%88%B1%E5%BE%B7%E5%8D%8E%E6%B2%99%E5%8F%91%E4%B8%89%E4%BD%8D.png?sign=9f811a5e916bc8b0138d7ff93dfbbfa3\u0026t=1558238912",
+      "goodsname": "爱德华沙发三位",
+      "goodsno": "100000000001",
+      "num": 2.0
+    }
+  ],
+  "additional_info": null,
+  "settime": 1.560526775521e+12,
+  "tostore_data": {},
+  "can_use_benefit": null,
+  "goods_type": "0",
+  "total_pay": 1.02,
+  "discount_cut_price": 0.0
+}

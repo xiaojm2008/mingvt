@@ -1,0 +1,35 @@
+.shopcontent{
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-between;
+  align-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+}
+.shopcontent .thumbnail{
+  box-sizing: border-box;
+  padding-top: 10px;
+  flex:0 1 49%;
+  width: 100%;
+  height: 238px;
+  border-radius: 5px;
+}
+/**
+swiperlist 全局
+**/
+.top_btn {
+  background-color: #fff0e3;
+  height: 40px;
+  line-height: 40px;
+  position: relative;/*sticky*/
+  width: 100%;
+  margin-top: 0;
+  text-align: center;
+}
+.top_btn text {
+  color: #a0a0a0;
+  font-size: 14px;
+  display: inline-block;
+  white-space: nowrap;
+}

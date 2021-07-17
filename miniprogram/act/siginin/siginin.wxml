@@ -1,0 +1,1 @@
+<enrolldetail id="enrollDetail" height="{{windowHeight}}" bind:togger="sigin"></enrolldetail>

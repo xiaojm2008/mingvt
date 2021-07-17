@@ -1,0 +1,26 @@
+<template name="coupon">
+  <view class="one-pg" catchtap="tapToCouponHandler" wx:for="{{coupons}}" wx:key="_id" wx:for-index="index" data-id="{{item._id}}" data-index="{{index}}">
+    <view class="wrapper">
+      <view class="tip">
+        <view class="money">
+          ¥{{item.cutamt}}元
+        </view>
+        <view class="pay-line">
+          {{item.promname}}
+        </view>
+      </view>
+      <view class="split-line"></view>
+      <view class="content">
+        <view class="title">
+          {{item.promname}}
+        </view>
+        <view class="limit">
+          全场通用
+        </view>
+        <view class="time">
+          有效期至: {{item.endtime}}
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

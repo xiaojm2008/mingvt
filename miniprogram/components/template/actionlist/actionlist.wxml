@@ -1,0 +1,112 @@
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<wxs module="substr" src="../../../lib/substr.wxs"></wxs>
+<!-- <wxs module="pipi" src="../../../lib/pipi.wxs"></wxs> -->
+<import src="./actionstatus.wxml" />
+<template name="actionlist">
+  <view class="top_btn" catchtap="goToPage" data-page="/act/createaction/createaction">
+    <text>点击新建</text>
+  </view>
+	<block wx:if="{{options.listtype=='0'}}">
+		<view class='list' wx:if="{{listData.length>0}}">	
+			<view class='item' hover-class="item-hover" wx:for="{{listData}}" wx:key="_id">
+				<view class='content'>
+					<view class="thumpnail" catchtap="goToPage" data-page="/act/actiondetail/actiondetail?dataid={{item.actionid}}">
+						<image src='{{item.picpath[0].fileID||"/images/icontab/icon_member.png"}}'></image>
+						<!--<view>
+							<text class="item-flag">{{dictTrs.trs(options.dict['100033'],item.actiontype,'1') }}</text> 
+							<text class="item-flag">{{dictTrs.trs(options.dict['100032'],item.feetype,'1') }}</text>
+						</view>-->
+					</view>
+					<view class='text' data-id="{{item.actionid}}" data-index="{{index}}" catchtap="showMenu">
+						<view class='title'>
+							<text wx:if="{{item.ldflag=='1'}}" class="iconfont icon-positive-active" style="color:red"></text>
+							<text class="" style="font-size:15px;font-weight:600;">{{item.actionname}}</text>
+							<template is="actionst" data="{{now:options.now,action:item,dict:options.dict}}"> </template>
+							<!--<text class="iconfont icon-phone" catchtap="callPhone" data-phone="{{item.create_phone}}" style="padding-left:5px;color:#999">{{item.create_phone}}</text>-->
+							<!--<text class="right-ok" wx:if="{{item.enrollstatus=='1'}}">{{dictTrs.trs(dict['100003'],item.enrollstatus)}}</text>
+							<text class="right-no" wx:else>{{dictTrs.trs(dict['100003'],item.enrollstatus||'0')}}</text>-->
+						</view>
+						<!-- <view>	
+							<text class="item-flag">{{dictTrs.trs(options.dict['100033'],item.actiontype,'1') }}</text> 
+							<text class="item-flag" wx:if="{{item.feetype=='1'}}">{{dictTrs.trs(options.dict['100032'],item.feetype,'1') }}</text>
+							<text class="st-btn {{item.status=='0'?'right-green':'right-red'}}">{{dictTrs.trs(options.dict['100039'],item.status,'1') }}</text>
+						</view>-->
+						<view>
+							<text class='spec'>报名：{{item.enrollendtime}}(截至)</text>
+						</view>				
+						<view>
+							<text class='spec'>活动：{{item.actbegintime}}/{{item.actendtime}}</text>
+						</view>
+						<view class='price'>
+							<view style="color: #ff5f19;font-size:15px;">人数:<text>{{item.minperson}}</text><text>/{{item.maxperson}}</text></view>
+						</view>
+						<view class='spec'>
+							{{item.intro}}
+						</view>
+						<view class='spec' style="float:right;">
+							{{item.updatetime}}				
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</block>
+<block wx:else>
+ 	<view class="order-center" style="margin-top:0px;" wx:for="{{listData}}" wx:key="_id" wx:for-index="index">
+    <view class="order-shopinfo" style="font-size:15px;height:45px;border-bottom: 1px solid #eee;" catchtap="goToPage" data-page="/act/actiondetail/actiondetail?dataid={{item.actionid}}">
+      <view class="shop-info line-clamp">
+				<text class="iconfont icon-mark" style="margin-right:5px;"></text>
+        <text class="shop-name">{{item.actionname}}</text>			
+      </view>
+      <view class="right" style="flex:1 1 100px;">
+				<!-- style="text-align: right;flex: 1 1 40px" <text style="color:{{item.actionstatus!='0'?'red':'green'}};">{{dictTrs.trs(options.dict['100039'],item.actionstatus,'1') }}</text>-->
+			 	<text class="st-flag {{item.statusdesc=='结束'?'st-gray':''}}">{{item.statusdesc}}</text>
+				<text class="iconfont icon-rightarrow"></text>
+			</view>
+    </view>
+    <view class="order-content" data-index="{{index}}" catchtap="showMenu">
+      <view class="order-more left">
+        <image lazy-load="{{true}}" class="{{item.actionstatus!='0'?'gray':''}}" src='{{item.picpath[0].fileID||"/images/icontab/icon_member.png"}}'></image>
+        <view class="order-desc">
+          <text class="sub">{{item.actionname}}</text>
+					<template is="actionst" data="{{now:options.now,action:item,dict:options.dict,noshow:3}}"></template>
+          <text class="one text">发起人 {{item.create_username}}</text>
+					<text class="one text">报名 {{item.enrollbegintime}}/{{substr.subs2(item.enrollendtime,5)}}</text>
+					<text class="one text">活动 {{item.actbegintime}}/{{substr.subs2(item.actendtime,5)}}</text>
+					<view class="text" wx:if="{{item.feetype=='1'}}">费用 
+						<text class=''>（¥）<text>{{item.fee}}</text></text>
+            <text class='' wx:if="{{item.feechild}}">小孩（¥）<text>{{item.feechild}}</text></text>
+					</view>
+					<block wx:if="{{item.minperson>0||item.maxperson>0}}">
+						<view style="color: #ff5f19;font-size:17px;">人数 <text>{{item.minperson||"0"}}</text><text>/{{item.maxperson||"9999+"}}</text></view>
+					</block>
+        </view>
+      </view>
+			<!--
+      <view class="order-price right">
+        <text></text>
+      </view>
+			-->
+    </view>
+    <view class="order-additional">
+
+    </view>
+    <view class="order-sum">
+		  <text><text class="num">{{item.num||0}}</text>个报名</text>
+			<text style="margin-left:3px" wx:if="{{item.dispass_num>0}}"><text class="num" style="color:red;">{{item.dispass_num||0}}</text>个未通过</text>
+      <text style="margin-left:3px" wx:if="{{item.feetype=='1'}}">合计：<text class="num">¥{{substr.toFix(item.total_pay)||0}}</text></text>
+    </view>
+    <view class="time-show">
+			<text class="iconfont icon-clock"></text>
+      <text>{{item.updatetime}}</text>
+    </view>
+    <view class="order-bottom">
+			<!--<text class="btn order-btn" catchtap="onListEnroll" data-index="{{index}}">人员信息</text>-->
+			<text class="btn order-btn" catchtap="onMod" data-index="{{index}}">修改</text>
+			<!-- 100039 0:"启动",1:"暂停",2:"结束",9:"删除" -->
+			<text class="btn order-btn" catchtap="onPause" data-index="{{index}}">{{item.actionstatus=='1'?'启用':'暂停'}}</text>
+			<text class="btn order-btn" catchtap="onGenQr" data-index="{{index}}">更多操作</text>		
+    </view>
+  </view>
+</block>
+</template>

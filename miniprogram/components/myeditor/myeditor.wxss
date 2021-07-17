@@ -1,0 +1,51 @@
+/*@import "./assets/weui.wxss";*/
+@import "./assets/iconfont.wxss";
+
+.wrapper {
+  padding: 5px;
+}
+
+.iconfont {
+  display: inline-block;
+  padding: 8px 8px;
+  cursor: pointer;
+  font-size: 20px;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
+.toolbar {
+  box-sizing: border-box;
+  /* border: 1px solid #ccc; */
+  background:#eee;
+  border-bottom: 0;
+  white-space: nowrap; 
+  display: flex;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  position: sticky;
+  top:0;
+  z-index:1;
+  overflow-x: hidden;
+  height: 38px;
+}
+
+.container,.page-body,.wrapper{
+  height: 100%;
+}
+.ql-container {
+  box-sizing: border-box;
+  padding: 10px 15px 10px 15px;
+  width: 100%;  
+ /*  height: calc(100%-80px) !important;
+  min-height: 30vh; border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; */
+  background: #fff;
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.ql-active {
+  color: #06c;
+}

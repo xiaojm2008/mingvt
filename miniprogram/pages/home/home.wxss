@@ -1,0 +1,185 @@
+/*@import "../../components/shoptheme/nodetree/nodetree.wxss";*/
+@import "../../components/coupon/coupon.wxss";
+page{
+  min-height: 100vh;
+  box-sizing: border-box;
+  /*border:1px solid red;*/
+}
+.container{
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+.home {
+  background-color: white;
+  margin-left: auto;
+}
+
+.carousel-head {
+  display: flex;
+  padding: 10px 0 0 10px;
+}
+
+.carousel-title {
+  font-size: 20px;
+  color: #a79c9c;
+}
+
+.carousel {
+  width: 100%;
+  height: 380px;
+  box-sizing: border-box;
+}
+
+swiper {
+  height: 360px;
+}
+
+.swiper-text {
+  font-size: 16px;
+  color: #333;
+  padding: 8px 10px;
+}
+
+.swiper-price {
+  color: rgb(185, 159, 159);
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+swiper-item {
+  /* 此时的swiper-item是占据一个页面的 */
+  text-align: left; /*让其中的内容居中显示 */
+}
+
+swiper-item image {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.box {
+  /* box设置宽高（更具设计稿自定义吧）*/
+  width: 95%;
+  height: 320px;
+  display: inline-block;
+  margin-top: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 4px 4px #f2f2f2; /* 给box添加阴影效果更显著 */
+  border-radius: 15px;
+}
+
+
+.subject {
+  height: 30px;
+  line-height: 30px;
+  margin-top: 12px;
+  width: 100%;
+  margin-left: 10px;
+  position: relative;
+  padding-bottom: 8px;
+}
+/*
+.subject:after {
+  border-bottom: 1px solid #ccc;
+  transform: scale(0.5);
+  width: 200%;
+  display: block;
+  content: "";
+  position: absolute;
+  left: -50%;
+  bottom: 0;
+  top: 30px;
+  height: 1px;
+}
+*/
+.sub-icon-left {
+  float: left;
+  font-size: 22px;
+  line-height: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.subname {
+  font-size: 20px;
+  color: #a79c9c;
+  line-height: 30px;
+  height: 30px;
+}
+
+.sub-icon-right {
+  width: 20px;
+  height: 30px;
+  line-height: 30px;
+  float: right;
+  color: #ccc;
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.toprank {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+}
+
+.toprank .row {
+  padding: 10px 10px 10px 10px;
+  display: flex;
+}
+.showline:hover{
+  background-color:rgb(243, 242, 242);
+  filter: grayscale(50%);  
+}
+.showline {
+  position: relative;
+  width: 100%;
+}
+.showline:after {
+  border-bottom: 1px solid #ccc;
+  transform: scale(0.5);
+  width: 200%;
+  display: block;
+  content: "";
+  position: absolute;
+  left: -50%;
+  bottom: 0;
+  top: 119px;
+  height: 1px;
+}
+
+.toprank .column1 {
+  width: 130px;
+  height: 100px;
+}
+
+.column1 .trump {
+  width: 100%;
+  height: 100%;
+}
+
+.toprank .column2 {
+  height: 100px;
+  width: 100%;
+}
+
+.toprank .text-col {
+  padding-left: 5px;
+  font-size: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.list-wrap{
+  padding: 0 0 0 10px;
+}
+.list-wrap .content {
+  border: 1px solid #eee;
+}
+/*
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}*/

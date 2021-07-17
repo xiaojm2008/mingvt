@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "action": "../../components/action/action"
+  },
+    "navigationBarTitleText": "活动详情"
+}

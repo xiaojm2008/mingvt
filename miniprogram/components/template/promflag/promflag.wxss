@@ -1,0 +1,84 @@
+.promflag{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: red;
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+}
+.promtxt{
+  position: absolute;
+  top: 5px;
+  right: 45px;
+  font-size: 25px;
+  width: 90px;
+  height: 40px;
+  display: block;
+  color: red;
+  text-align: right;
+  line-height: 40px;
+  text-decoration:underline;
+}
+.iconprom {
+  font-family: "iconprom" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-zhekou1:before {
+  content: "\e62f";
+}
+.icon-xianliangmiaosha:before {
+  content: "\e607";
+}
+.icon-xianshimiaosha:before {
+  content: "\e630";
+}
+.icon-xianshimiaosha3:before {
+  content: "\e708";
+}
+.icon-jinrimiaosha:before {
+  content: "\e67c";
+}
+.icon-miaosha:before {
+  content: "\e636";
+}
+.icon-miaosha11:before {
+  content: "\e634";
+}
+.icon-mingrimiaosha:before {
+  content: "\e62b";
+}
+.icon-manjian1:before {
+  content: "\e60c";
+}
+
+.icon-zhutihuodong:before {
+  content: "\e637";
+}
+.icon-manjian3:before {
+  content: "\e60b";
+}
+.icon-zhijian:before {
+  content: "\e64f";
+}
+.icon-xianshiqianggou3:before {
+  content: "\e649";
+}
+.icon-tuangou1:before {
+  content: "\e735";
+}
+
+.icon-pinpaituan:before {
+  content: "\e66b";
+}
+.icon-kanjia2:before {
+  content: "\e672";
+}
+.icon-tejia2:before {
+  content: "\e698";
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "modaldialog": "../../../components/modaldialog/modaldialog"
+  },
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "店铺信息"
+}

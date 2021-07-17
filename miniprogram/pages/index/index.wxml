@@ -1,0 +1,42 @@
+<!--miniprogram/pages/home/home.wxml-->
+<import src="../../components/shoptheme/template/node.wxml" />
+<import src="../../components/loading/loading.wxml" />
+<view class="first-show" wx:if="{{show}}">
+  <swiper display-multiple-items='1' circular="{{false}}" current="{{current}}" autoplay="{{false}}" vertical="{{true}}" class="box" bindchange="change">
+    <swiper-item wx:for="{{listData}}" wx:key="_id">
+      <view class="item {{current==index?'item-active':'q'}}">
+        <image class="img" mode="aspectFill" src='{{item.picpath}}'></image>
+        <view class="textDiv fadeIn">
+          <text class="text fadeIn">{{item.text}}</text>
+          <text class="text fadeIn">{{item.ext}}</text>
+        </view>
+        <view class="regDiv fadeIn">
+          <view class="regBtn fadeIn" catchtap="goLogin">
+            <view class="in-btn raised">
+              <view class="anim"></view>
+              <text>注册</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="close" style="top:{{statusBarHeight+10}}px;" catchtap='hide'>
+    <text class="iconfont icon-clear"></text>
+  </view>
+</view>
+<view wx:elif="{{nodes}}" class="fu-page">
+  <view class="fu-head" style="height:{{statusBarHeight+45}}px;">
+    <view class="nav" style="margin-top:{{statusBarHeight}}px;">
+      <text>首页</text>
+    </view>
+  </view>
+   <view style="top:{{statusBarHeight+45}}px" class="fu-content">
+    <block wx:for="{{nodes}}" wx:key="id" wx:for-item="node" wx:for-index="index">
+      <template is="node" data="{{node:node.children}}"></template>
+    </block>
+   </view>
+</view>
+<view wx:else class="center-panel loading-wrap">
+  <template is="loading" data="{{loadFinish:loadFinish,len:1,finishText:'加载完成'}}"></template>
+</view>

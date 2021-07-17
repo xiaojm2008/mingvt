@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "shoptheme1": "../../../../components/shoptheme/theme1/theme1"
+  },
+  "navigationBarTitleText": "店铺装修"
+}

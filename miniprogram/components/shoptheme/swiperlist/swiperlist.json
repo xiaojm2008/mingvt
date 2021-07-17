@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "swipertab": "../../swipertab/swipertab",
+    "scroll": "../../scroll/scroll",
+    "enrolldetail":"../../enrolldetail/enrolldetail",
+    "modaldialog":"../../modaldialog/modaldialog",
+    "mymodal":"../../mymodal/mymodal",
+    "mymenu": "../../mymenu/mymenu"
+  }
+}

@@ -1,0 +1,2 @@
+<swiperlist id="swiperlist" category="{{category}}" action="{{action}}" manager="{{manager}}" orderby="{{orderby}}" temptype="{{temptype}}" my-style="background:#eee">
+</swiperlist>

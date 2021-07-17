@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "enrolldetail": "../enrolldetail/enrolldetail",
+    "share": "../share/share"
+  }
+}

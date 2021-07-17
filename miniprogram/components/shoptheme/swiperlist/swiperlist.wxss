@@ -1,0 +1,44 @@
+@import "../../template/goodslist/goodslist.wxss";
+@import "../../template/orderlist/orderlist.wxss";
+@import "../../template/orderdo/orderdo.wxss";
+@import "../../template/rows/rows.wxss";
+@import "../../template/promcenter/promcenter.wxss";
+@import "../../template/shopimg/shopimg.wxss";
+@import "../../template/dodelivery/dodelivery.wxss";
+@import "../../template/actionlist/actionlist.wxss";
+.topview{
+  width: 100%;
+  height: 1px;
+  position: fixed;
+  top:0;
+  left:0;
+  visibility: hidden;
+}
+.topview1{
+  width: 100%;
+  height: 2px;
+  position: relative;
+  top:0;
+  left:0;
+}
+
+.top-wrap {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 99;
+}
+/*
+.top-wrap{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 99;
+}*/
+
+.swiper {
+  height: 100vh;
+}

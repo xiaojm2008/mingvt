@@ -1,0 +1,41 @@
+var dictTrs = function (dict, code, app) {
+  //console.log('code=' + code);
+  if (code === undefined || code === '') { return '' }
+  if (!dict || dict.length == 0) return '';
+  if (code === null) {
+    code = 0;
+  }
+  for (var i = 0; i < dict.length; i++) {
+    if (dict[i].code == code) {
+      return (!app ? code + "-" : '') + (dict[i].name || dict[i].cname.trim());
+    }
+  }
+  if (i == dict.length) {
+    return code + "--";
+  }
+}
+var dictIdx = function (dict, code) {
+  if (code === undefined || code === '') { return 0; }
+  if (!dict || dict.length == 0) return 0;
+  if (code === null) {
+    code = 0;
+  }
+  for (var i = 0; i < dict.length; i++) {
+    if (dict[i].code == code) {
+      return i;
+    }
+  }
+  if (i == dict.length) {
+    return 0;
+  }
+}
+var focus=function(fSet,name,index){
+  //console.log(name, index, fSet[index+name]);
+  return index ? fSet[index+name] : fSet[name];
+}
+
+module.exports = {
+  trs: dictTrs,
+  idx: dictIdx,
+  focus: focus
+};

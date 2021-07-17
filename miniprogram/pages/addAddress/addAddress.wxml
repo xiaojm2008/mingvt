@@ -1,0 +1,39 @@
+<view class="fu-content">
+  <view class="ext-horiz-view">
+    <view class="view-item">
+      <text class="left subname required ">收件人</text>
+      <view class='right'>
+        <input class="text-input" placeholder="收件人" id="name" value="{{ name }}" bindinput="inputTogger" />
+      </view>
+    </view>
+    <view class="view-item">
+      <text class="left subname required">联系电话</text>
+      <view class='right'>
+        <input class="text-input" placeholder="联系电话" id="contact" value="{{ contact }}" bindinput="inputTogger" />
+      </view>
+    </view>
+    <view class="view-item">
+      <text class="left subname required">所在地区</text>
+      <view class='right'>
+        <picker mode="selector" mode="region" class="inp-selector" bindchange="inputTogger" id="areainfo" value="{{ areainfo }}">
+          <input class="text-input" disabled placeholder="地区选择" value="{{ areainfo[0] || '省'}}-{{ areainfo[1] || '市' }}-{{ areainfo[2] || '区' }}"></input>
+        </picker>
+      </view>
+    </view>
+    <view class="view-item">
+      <text class="left subname required">详细地址</text>
+      <view class='right'>
+        <input class="text-input" placeholder="详细地址" id="detailaddress" value="{{ detailaddress }}" bindinput="inputTogger" />
+      </view>
+    </view>
+    <view class="view-item">
+      <text class="left subname ">设为默认</text>
+      <view class='right'>
+        <switch id="is_default" checked="{{is_default}}" value="{{is_default}}" bindchange="inputTogger" />
+      </view>
+    </view>
+  </view>
+</view>
+<view class="fu-bottom">
+  <text class="btn one" bindtap="addAddress">保存</text>
+</view>

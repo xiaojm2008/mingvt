@@ -1,0 +1,6 @@
+{
+ "usingComponents": {
+  "modaldialog": "../../../components/modaldialog/modaldialog"
+},
+"navigationBarTitleText": "店内产品分类"
+}

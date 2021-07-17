@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "enroll": "../../components/enroll/enroll"
+  },
+  "navigationBarTitleText": "活动报名"
+}

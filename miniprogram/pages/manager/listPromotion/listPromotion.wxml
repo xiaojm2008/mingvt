@@ -1,0 +1,66 @@
+<import src="../../../components/loading/loading.wxml" />
+<wxs module="dictTrs" src="../../../lib/dictTrs.wxs"></wxs>
+<wxs module="pipi" src="../../../lib/pipi.wxs"></wxs>
+<!--pages/login/login.wxml-->
+<view class="ext-horiz-view fu-card" wx:for="{{inList}}" wx:key="_id" wx:for-index="index" wx:for-item="prom">
+  <view class="view-item card-head" hover-class="view-active">
+    <view class="row">
+      <view class='left'>
+        <text class="iconfont icon-tuandui"></text>
+        <text class="t line-clamp">{{dictTrs.trs(dict[100016],prom.promtype,'1')}}</text>
+      </view>
+      <view class='right'>
+        <view class="flex-box">
+          <view class="view-box" catchtap="addTogger">
+            <text hover-class="icon-hover" class='simple-btn iconfont icon-plus'></text>
+            <text class="text">新增</text>
+          </view>
+          <view class="view-box" data-index="{{index}}" catchtap="modTogger">
+            <text class="simple-btn iconfont icon-edit"></text>
+            <text class="text">修改</text>
+          </view>
+          <view class="view-box" data-index="{{index}}" catchtap="delTogger">
+            <text hover-class="icon-hover" class='simple-btn iconfont icon-closes'></text>
+            <text class="text">删除</text>
+          </view>
+          <view class="view-box" data-index="{{index}}" catchtap="goToPage" data-page='listPromGoods' data-params='promtype={{prom.promtype}}&prom_id={{prom._id}}'>
+            <text hover-class="icon-hover" class='simple-btn iconfont icon-list'></text>
+            <text class="text" style="margin-left:2px;">商品</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="item-view card-image">
+    <image src="{{ prom.prompic[0].fileID||prom.prompic[0].path }}" mode="scaleToFill" data-index="{{index}}" catchtap="previewImg"></image>
+  </view>
+  <view class="view-item card-content">
+    <view class="card-item" style="border-bottom:0">
+      <view class="subjectarea" >
+        <view class="head">
+          <text>{{prom.promfullname}}</text>
+          <text class="warning-label">{{dictTrs.trs(dict[100017],prom.limittimeflag,'1')}}</text>
+          <text class="warning-label">{{dictTrs.trs(dict[100018],prom.status,'1')}}</text>
+        </view>
+        <view class="body">
+          <view class="row line3-clamp">{{prom.prominfo}}</view>
+          <view class="row" wx:if="{{prom.limittimeflag=='1'}}">{{prom.begtime[0]+" "+prom.begtime[1]}}/{{prom.endtime[0]+" "+prom.endtime[1]}}</view>
+        </view>
+        <view class="bottom">
+          <text class="iconfont icon-history"></text>
+          <text style="margin-left:5px;">{{ pipi.dFormat(prom.updatetime) }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="top_btn" wx:if="{{loadFinish&&inList.length ==0}}" catchtap="addTogger">
+  <text>点击新增</text>
+</view>
+<view class="loading-wrap">
+  <template is="loading" data="{{loadFinish:loadFinish,len:inList.length}}"></template>
+</view>
+
+<view class="">
+  <modaldialog id="modalDlg"></modaldialog>
+</view>

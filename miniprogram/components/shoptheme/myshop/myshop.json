@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "nodeShow": "../nodeShow/nodeShow"
+  }
+}
