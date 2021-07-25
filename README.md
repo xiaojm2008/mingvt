@@ -31,3 +31,6 @@
 ### 我的页与商品维护页
 ![image](https://user-images.githubusercontent.com/85377437/126893665-e9ad9477-6bad-4f9b-9606-4f62012b4bca.png)
 ![image](https://user-images.githubusercontent.com/85377437/126893666-1c515dd2-435a-48b3-90d4-f5dfbcb022ba.png)
+## 视频演示
+### 主页设计
+https://isee.weishi.qq.com/ws/app-pages/share/index.html?wxplay=1&id=7f8DETlrr1JbitPYx&spid=1581695693496417&qua=v1_iph_weishi_8.30.2_230_app_a&chid=100081014&pkg=&attach=cp_reserves3_1000370011
