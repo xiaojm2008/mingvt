@@ -38,3 +38,5 @@ https://isee.weishi.qq.com/ws/app-pages/share/index.html?wxplay=1&id=7f8DETlrr1J
 怎样新增或修改商品>>https://isee.weishi.qq.com/ws/app-pages/share/index.html?wxplay=1&id=7f8DETlrr1J9vQcY9&spid=1581695693496417&qua=v1_iph_weishi_8.30.2_230_app_a&chid=100081014&pkg=&attach=cp_reserves3_1000370011
 ### 购买
 https://isee.weishi.qq.com/ws/app-pages/share/index.html?wxplay=1&id=7f8DETlrr1J59XBzk&spid=1581695693496417&qua=v1_iph_weishi_8.30.2_230_app_a&chid=100081014&pkg=&attach=cp_reserves3_1000370011
+### 预约功能
+https://isee.weishi.qq.com/ws/app-pages/share/index.html?wxplay=1&id=7f8DETlrr1J5kHJbZ&spid=1581695693496417&qua=v1_iph_weishi_8.30.2_230_app_a&chid=100081014&pkg=&attach=cp_reserves3_1000370011
